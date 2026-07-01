@@ -1,0 +1,12 @@
+# Optional dependencies for later increments: database, async jobs, ML, and SIEM integrations
+sqlalchemy
+psycopg2-binary
+celery
+redis
+scikit-learn
+xgboost
+pandas
+numpy
+elasticsearch
+splunk-sdk
+requests
