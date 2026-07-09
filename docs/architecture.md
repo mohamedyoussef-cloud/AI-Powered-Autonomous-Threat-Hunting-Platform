@@ -2,8 +2,7 @@
 
 ## Architecture Direction
 
-The full platform architecture is modular. Implementation starts with the **Core Threat Hunting MVP**, then adds query generation, SIEM execution, ML triage, case management, and reporting.
-
+The full platform architecture is modular. Implementation starts with the Core Threat Hunting MVP and a baseline AI engine, then adds full LLM-based query generation, SIEM execution, ML triage, case management, and reporting.
 ## Core Threat Hunting MVP Architecture Scope
 
 ```text
@@ -16,6 +15,7 @@ FastAPI Backend
       +--> MITRE Mapping Service
       +--> Hypothesis Planning Service
       +--> Notes / Status History Service
+      +--> AI Engine (baseline)
       |
       v
 Database / Prototype Storage
