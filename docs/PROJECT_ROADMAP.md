@@ -9,6 +9,7 @@ The project will not attempt to build the full autonomous platform in one step. 
 
 
 ##Search & Reference Plan
+
 Before and during each increment, the team searches for existing GitHub repositories, datasets, and ML/LLM techniques relevant to that increment's problem, so decisions are grounded in what already exists rather than assumed. This runs from Increment 1 onward, not as a step added after implementation.
 The datasets already named in the project brief are the starting point, not the full list — each still needs to be checked for size, licensing, and whether it fits the ATT&CK techniques the team ends up targeting:
 
