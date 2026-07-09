@@ -15,11 +15,11 @@ Before and during each increment, the team searches for existing repos, datasets
 
 | Increment | Search Focus |
 |---|---|
-| 1 — AI Baseline | Rule-based ATT&CK-to-hypothesis mapping approaches (ref: MITRE `tram` project) |
-| 2 — Hypothesis & Query Generation | LLM-to-Sigma pipelines that avoid hallucinated rules (SigmaHQ, SigmaOptimizer) |
-| 3 — Simulated Query Runner | Mock/simulated SIEM connector patterns (Elastic, Splunk, Sentinel) |
-| 4 — ML False-Positive Suppression | Alert-triage research for precision/recall benchmarks (LLMCloudHunter, CORTEX, PACT) + extra labeled datasets |
-| 5 — Case Manager & Reporting | Existing hunt-report/case-management formats |
+| 1 - AI Baseline | Rule-based ATT&CK-to-hypothesis mapping approaches (ref: MITRE `tram` project) |
+| 2 - Hypothesis & Query Generation | LLM-to-Sigma pipelines that avoid hallucinated rules (SigmaHQ, SigmaOptimizer) |
+| 3 - Simulated Query Runner | Mock/simulated SIEM connector patterns (Elastic, Splunk, Sentinel) |
+| 4 - ML False-Positive Suppression | Alert-triage research for precision/recall benchmarks (LLMCloudHunter, CORTEX, PACT) + extra labeled datasets |
+| 5 - Case Manager & Reporting | Existing hunt-report/case-management formats |
 
 Findings are used directly: papers feed the literature review, reference repos shape architecture decisions, and better datasets replace or supplement the baseline list.
 
