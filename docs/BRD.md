@@ -384,10 +384,10 @@ The timeline below follows an incremental implementation model. Dates can be adj
 |---|---|---|---|
 | Phase 1: Planning and BRD | July 1–July 7, 2026 | Finalize project scope, prepare BRD, create GitHub repository | BRD v1, GitHub repository |
 | Phase 2: Core Threat Hunting Design | July 8–July 14, 2026 | Define campaign screens, entities, workflow, roles, and API structure | SRS draft, wireframes, data model |
-| Phase 3: Core Backend Prototype | July 15–July 28, 2026 | Build campaign APIs, status workflow, MITRE mapping structure, and storage layer | Backend prototype |
+Phase 3: Core Backend Prototype | July 15–July 28, 2026 | Build campaign APIs, status workflow, MITRE mapping structure, and storage layer, and set up the AI engine scaffolding and baseline hypothesis suggestion alongside it | Backend prototype, AI engine scaffolding
 | Phase 4: Core Dashboard Prototype | July 29–August 11, 2026 | Build campaign dashboard, create/update screens, status tracking, filters, and notes | Web dashboard prototype |
-| Phase 5: Hypothesis and Query Generation | August 12–September 1, 2026 | Add hypothesis support and query generation for one detection language | Query generation prototype |
-| Phase 6: Query Execution or Simulation | September 2–September 15, 2026 | Add simulated SIEM execution and result collection | Query runner prototype |
+Phase 5: Hypothesis and Query Generation | August 12–September 1, 2026 | Build on the Phase 3 AI scaffolding to deliver full LLM-based hypothesis support and query generation for one detection language | Query generation prototype|
+|Phase 6: Query Execution or Simulation | September 2–September 15, 2026 | Add simulated SIEM execution and result collection | Query runner prototype |
 | Phase 7: ML Triage | September 16–September 29, 2026 | Train and evaluate false-positive classifier | ML model and evaluation metrics |
 | Phase 8: Case Management and Reporting | September 30–October 20, 2026 | Add hunt case lifecycle and editable report generation | Case and report prototype |
 | Phase 9: Final Integration and Evaluation | October 21–November 10, 2026 | Integrate modules, test scenarios, compare manual vs platform-assisted workflow | Final MSc project package |
@@ -399,7 +399,7 @@ The timeline below follows an incremental implementation model. Dates can be adj
 | GitHub repository created | July 1, 2026 |
 | BRD v1 ready for review | July 7, 2026 |
 | Core threat hunting workflow and data model completed | July 14, 2026 |
-| Core backend prototype completed | July 28, 2026 |
+| Core backend prototype completed and AI engine scaffolding completed | July 28, 2026 |
 | Core dashboard prototype completed | August 11, 2026 |
 | Hypothesis and query generation prototype completed | September 1, 2026 |
 | Query runner prototype completed | September 15, 2026 |
@@ -419,4 +419,4 @@ The timeline below follows an incremental implementation model. Dates can be adj
 | Status | Ready for Academic Review |
 | Prepared By | Team2 |
 | Purpose | BRD version aligned with incremental threat hunting capability delivery |
-| Implementation Approach | Core Threat Hunting MVP followed by planned expansion capabilities |
+| Implementation Approach | Core Threat Hunting MVP with a baseline AI engine, followed by progressive platform and AI capability expansion |
