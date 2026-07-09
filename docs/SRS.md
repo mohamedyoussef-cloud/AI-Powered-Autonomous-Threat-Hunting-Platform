@@ -1,13 +1,13 @@
 # Software Requirements Specification
 ## AI-Powered Autonomous Threat Hunting Platform
 
-**Current Technical Focus:** Core Threat Hunting MVP  
+**Current Technical Focus:** Core Threat Hunting MVP, including a baseline AI engine  
 **Version:** 1.0  
 **Status:** Initial Technical Scope
 
 ## 1. Purpose
 
-This SRS defines the first technical implementation scope derived from the BRD. The first release focuses on the Core Threat Hunting MVP before adding query generation, query execution, ML triage, case management, and reporting.
+This SRS defines the first technical implementation scope derived from the BRD. The first release focuses on the Core Threat Hunting MVP, including a baseline AI engine, before adding full LLM-based query generation, query execution, ML triage, case management, and reporting.
 
 ## 2. MVP Functional Requirements
 
@@ -23,6 +23,7 @@ This SRS defines the first technical implementation scope derived from the BRD. 
 | SRS-FR-08 | The system shall allow analysts to add notes, assumptions, and evidence placeholders. |
 | SRS-FR-09 | The system shall allow manager review status to be recorded. |
 | SRS-FR-10 | The system shall store campaign data, hypothesis data, MITRE mappings, notes, and status history. |
+| SRS-FR-11 | The system shall provide a baseline rule-based hypothesis suggestion, using the ai-engine module. |
 
 ## 3. Initial API Direction
 
@@ -35,6 +36,7 @@ This SRS defines the first technical implementation scope derived from the BRD. 
 | `/campaigns/{id}/status` | PATCH | Update campaign lifecycle status |
 | `/campaigns/{id}/mitre-mappings` | POST | Add ATT&CK tactic or technique mapping |
 | `/campaigns/{id}/hypotheses` | POST | Add or select campaign hypothesis |
+| `/campaigns/{id}/hypotheses/suggest` | GET | Return a baseline rule-based hypothesis suggestion |
 | `/campaigns/{id}/notes` | POST | Add analyst note or evidence placeholder |
 
 ## 4. Initial Data Entities
@@ -47,10 +49,12 @@ This SRS defines the first technical implementation scope derived from the BRD. 
 - TelemetrySource
 - AnalystNote
 - ManagerReview
+- HypothesisSuggestion
+
 
 ## 5. Non-Functional Requirements
 
 - The MVP shall run locally for academic demonstration.
 - The system shall avoid using sensitive production data.
-- Generated or AI-assisted outputs in later increments shall require analyst review.
+- Generated or AI-assisted outputs shall require analyst review, including the baseline hypothesis suggestion in the MVP.
 - The codebase shall remain modular so query generation, SIEM execution, ML triage, cases, and reports can be added progressively.
