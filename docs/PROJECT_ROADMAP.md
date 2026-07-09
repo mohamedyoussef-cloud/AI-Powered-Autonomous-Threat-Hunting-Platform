@@ -5,7 +5,7 @@ This roadmap follows an incremental delivery model. The project focus is threat 
 
 ## Delivery Strategy
 
-The project will not attempt to build the full autonomous platform in one step. It will start with a core threat hunting workflow, then add automation and intelligence capabilities gradually.
+The project will not attempt to build the full autonomous platform in one step. It will start with a core threat hunting workflow and a baseline AI engine built alongside it, then add automation and intelligence capabilities gradually.
 
 ## Increment 1 - Core Threat Hunting MVP
 
@@ -22,17 +22,18 @@ The project will not attempt to build the full autonomous platform in one step. 
 - Campaign lifecycle status tracking
 - Analyst notes and evidence placeholders
 - Basic manager review status
+- Baseline AI engine setup: prompt templates, LLM connectivity, and a rule-based hypothesis suggestion
 
 ### Output
 
-A working dashboard where a SOC analyst can create and manage a threat hunt campaign from draft to completed/closed status.
+A working dashboard where a SOC analyst can create and manage a threat hunt campaign from draft to completed/closed status, with a baseline AI-assisted hypothesis suggestion already in place.
 
 ## Increment 2 - Hypothesis and Query Generation
 
 **Goal:** Convert approved hunt hypotheses into detection logic.
 
 ### Included Capabilities
-
+-Upgrade the baseline hypothesis suggestion into a full LLM-based Hypothesis Engine
 - Query generation for one detection language first
 - Analyst review/edit step
 - Query validation checklist
