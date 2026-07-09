@@ -30,8 +30,7 @@ At a high level, the platform will support the following threat hunting capabili
 6. Result review, finding classification, and false-positive suppression.
 7. Hunt case management and editable hunt report generation.
 
-The project will be delivered incrementally. The first implementation target is the **Core Threat Hunting MVP**, which establishes the campaign workflow, hypothesis planning, MITRE ATT&CK alignment, telemetry selection, lifecycle status tracking, analyst notes, and local prototype storage. Later increments will add query generation, execution, ML triage, case management, and reporting.
-
+The project will be delivered incrementally. Delivery is organized around a core threat hunting workflow and a supporting AI engine that are built side by side . The Core Threat Hunting MVP establishes the campaign workflow, hypothesis planning, MITRE ATT&CK alignment, telemetry selection, lifecycle status tracking, analyst notes, and local prototype storage. Alongside this, the MVP also introduces a baseline AI engine consisting of a rule-based hypothesis suggestion and the initial LLM connectivity scaffolding. Later increments build on this baseline, expanding it into full LLM-based query generation, ML-based triage, and AI-assisted reporting, while the core platform continues to mature in parallel.
 ### 1.2 Business Context
 
 Modern SOC teams process large volumes of alerts from SIEM, EDR, firewall, endpoint, cloud, and network monitoring platforms. Many SOC workflows are reactive: analysts investigate after a detection rule fires or after a high-confidence alert is generated.
