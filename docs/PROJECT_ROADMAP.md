@@ -7,6 +7,20 @@ This roadmap follows an incremental delivery model. The project focus is threat 
 
 The project will not attempt to build the full autonomous platform in one step. It will start with a core threat hunting workflow and a baseline AI engine built alongside it, then add automation and intelligence capabilities gradually.
 
+##Search & Reference Plan
+Before and during each increment, the team searches for existing GitHub repositories, datasets, and ML/LLM techniques relevant to that increment's problem, so decisions are grounded in what already exists rather than assumed. This runs from Increment 1 onward, not as a step added after implementation.
+The datasets already named in the project brief are the starting point, not the full list — each still needs to be checked for size, licensing, and whether it fits the ATT&CK techniques the team ends up targeting:
+
+MITRE ATT&CK Enterprise (STIX/TAXII)
+Splunk BOTS v3 — github.com/splunk/botsv3
+EVTX-ATTACK-SAMPLES — github.com/sbousseaden/EVTX-ATTACK-SAMPLES
+Sigma Rules Repository — github.com/SigmaHQ/sigma
+DARPA Transparent Computing datasets
+
+Beyond these, the search covers three areas, tied to where each increment's AI work sits:
+IncrementWhat to search for1 - Core MVP (AI baseline)Lightweight rule-based suggestion approaches for mapping ATT&CK techniques to hypotheses, so the baseline isn't designed blind. MITRE's own center-for-threat-informed-defense/tram project (automated ATT&CK technique mapping) is a useful reference point.2 - Hypothesis and Query GenerationExisting LLM-to-Sigma pipelines and how they keep generated rules grounded instead of hallucinated — the SigmaHQ ecosystem itself, plus published approaches like SigmaOptimizer, are worth reviewing before designing the query synthesizer.3 - Simulated Query RunnerExisting mock/simulated SIEM connector patterns for Elastic, Splunk, or Sentinel, to avoid building a connector layer from scratch.4 - ML False-Positive SuppressionPublished alert-triage research for benchmark precision/recall numbers and feature ideas — papers such as LLMCloudHunter, CORTEX, and PACT are useful starting points — plus any additional labeled alert datasets beyond BOTS v3 that could help training.5 - Case Manager and ReportingExisting hunt-report or case-management formats, so the report structure isn't invented from zero.
+Anything found gets used directly: papers and prior work inform the literature review, reference repos influence the architecture decisions, and any better dataset replaces or supplements the ones listed above.
+
 ## Increment 1 - Core Threat Hunting MVP
 
 **Goal:** Build the core business workflow for creating and tracking threat hunt campaigns.
