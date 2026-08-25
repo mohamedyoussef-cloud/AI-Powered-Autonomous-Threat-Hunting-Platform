@@ -73,200 +73,60 @@ def generate_sigma(hypothesis, model, tokenizer):
 
 # PIPELINE:
 
-╔══════════════════════════════════════════════════════════════════╗
-║          Hypothesis → Sigma Fine-Tuning Pipeline                 ║
-║                    Qwen3-8B + QLoRA                              ║
-╚══════════════════════════════════════════════════════════════════╝
+## Pipeline
 
-┌─────────────────────────────────────────────────────────────────┐
-│  PHASE 1: ENVIRONMENT SETUP                                      │
-│                                                                  │
-│  ✅ CUDA 12.4 GPU (15.69 GB VRAM)                               │
-│  ✅ PyTorch 2.5.1                                                │
-│  ✅ bitsandbytes 0.50.1 (4-bit quantization)                    │
-│  ✅ HuggingFace connection verified                              │
-└─────────────────────────┬───────────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────────┐
-│  PHASE 2: BASE MODEL LOADING (Cell 3)                           │
-│                                                                  │
-│  Model: Qwen/Qwen3-8B (8.2 Billion parameters)                 │
-│                                                                  │
-│  Technique: 4-bit Quantization (QLoRA)                          │
-│  ┌─────────────────────────────────┐                            │
-│  │  Normal: 8.2B × 32bit = ~33GB  │ ← impossible on 16GB GPU  │
-│  │  With 4-bit: ~5GB only!        │ ← fits easily ✅           │
-│  └─────────────────────────────────┘                            │
-│                                                                  │
-│  Settings:                                                       │
-│  • quant_type = nf4                                             │
-│  • compute_dtype = bfloat16                                     │
-│  • double_quant = True                                          │
-└─────────────────────────┬───────────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────────┐
-│  PHASE 3: LoRA ADAPTER ATTACHMENT (Cell 4)                      │
-│                                                                  │
-│  LoRA = Low-Rank Adaptation                                     │
-│  (إضافة "كتاب مذاكرة" صغير للموديل بدون تغيير دماغه)          │
-│                                                                  │
-│  Target Modules (7 layers):                                     │
-│  q_proj, k_proj, v_proj, o_proj,                               │
-│  gate_proj, up_proj, down_proj                                  │
-│                                                                  │
-│  ┌────────────────────────────────────────┐                     │
-│  │ Total params:     8,234,382,336 (8.2B) │                     │
-│  │ Trainable params:    43,646,976 (43M)  │                     │
-│  │ Trainable %:              0.53%        │                     │
-│  └────────────────────────────────────────┘                     │
-│                                                                  │
-│  فقط 0.53% من الموديل بيتدرب = سريع + موفر للـ VRAM           │
-└─────────────────────────┬───────────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────────┐
-│  PHASE 4: DATA PREPARATION (Cell 5)                             │
-│                                                                  │
-│  Source Files:                                                   │
-│  • train.jsonl  → 3,770 examples                               │
-│  • val.jsonl    →   245 examples                               │
-│  • test.jsonl   →   398 examples                               │
-│                                                                  │
-│  Format of each example:                                        │
-│  ┌──────────────────────────────────────────────────┐          │
-│  │ ### Hypothesis:                                   │          │
-│  │ An adversary may be using non-standard ports...   │ INPUT   │
-│  │                                                   │          │
-│  │ ### Sigma Detection:                              │          │
-│  │ title: Suspicious Communication...               │ OUTPUT  │
-│  │ logsource: ...                                   │          │
-│  │ detection: ...                                   │          │
-│  └──────────────────────────────────────────────────┘          │
-│                                                                  │
-│  max_seq_length = 512 tokens                                    │
-│  All token IDs within vocab range ✅                            │
-└─────────────────────────┬───────────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────────┐
-│  PHASE 5: TRAINING (Cells 6a + 6)                               │
-│                                                                  │
-│  Special Fix: BF16LossTrainer                                   │
-│  (bypasses Qwen3's internal float32 cast → saves 600MB VRAM)   │
-│                                                                  │
-│  Training Settings:                                             │
-│  ┌─────────────────────────────────────────────┐               │
-│  │ epochs:                    3                │               │
-│  │ batch_size:                1                │               │
-│  │ gradient_accumulation:     8 steps          │               │
-│  │ effective_batch_size:      8                │               │
-│  │ learning_rate:             2e-4             │               │
-│  │ optimizer:                 paged_adamw_8bit │               │
-│  │ precision:                 bfloat16         │               │
-│  └─────────────────────────────────────────────┘               │
-│                                                                  │
-│  Training Progress:                                             │
-│  ┌─────────────────────────────────────────────┐               │
-│  │ Step  │ Train Loss │ Val Loss               │               │
-│  │   50  │   8.77     │   1.19  ← start        │               │
-│  │  150  │   6.73     │   1.09                 │               │
-│  │  300  │   5.59     │   1.05                 │               │
-│  │  450  │   5.24     │ 1.006  ← BEST ⭐       │               │
-│  │  600  │   4.61     │   1.04                 │               │
-│  │  708  │   4.57     │   1.03  ← end          │               │
-│  └─────────────────────────────────────────────┘               │
-│                                                                  │
-│  Total Training Time: ~10 hours                                 │
-│  Total Steps: 708                                               │
-└─────────────────────────┬───────────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────────┐
-│  PHASE 6: BEST MODEL SELECTION (Cell 7)                         │
-│                                                                  │
-│  Best Checkpoint: Step 450                                      │
-│  (lowest validation loss = 1.006)                               │
-│                                                                  │
-│  Saved to: ./final_adapter (175MB only!)                        │
-│  ┌─────────────────────────────────────┐                        │
-│  │ adapter_model.safetensors  (175MB)  │                        │
-│  │ adapter_config.json                 │                        │
-│  │ tokenizer.json                      │                        │
-│  └─────────────────────────────────────┘                        │
-│                                                                  │
-│  Note: Base model (16GB) stays on HuggingFace separately       │
-└─────────────────────────┬───────────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────────┐
-│  PHASE 7: BACKUP TO HUGGINGFACE (Cell 8)                        │
-│                                                                  │
-│  Repository: mar7788yam/hypothesis-to-sigma-qwen3-8b (private) │
-│  Uploaded: adapter weights (175MB) + tokenizer (11.4MB)        │
-│                                                                  │
-│  ✅ Model safely backed up to the cloud                         │
-└─────────────────────────┬───────────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────────┐
-│  PHASE 8: EVALUATION - TASK 51 (Cell 11)                        │
-│                                                                  │
-│  Test Set: 398 examples                                         │
-│                                                                  │
-│  Pipeline for each example:                                     │
-│                                                                  │
-│  Hypothesis (text)                                              │
-│       ↓                                                         │
-│  Fine-tuned Model generates Sigma                               │
-│       ↓                                                         │
-│  SigmaStopCriteria (stops infinite loops)                       │
-│       ↓                                                         │
-│  fix_sigma() (repairs truncated output)                         │
-│       ↓                                                         │
-│  validate_sigma() (checks YAML structure)                       │
-│       ↓                                                         │
-│  Results logged                                                 │
-│                                                                  │
-│  ┌────────────────────────────────────────────┐                 │
-│  │ RESULTS (Fine-tuned Model):                │                 │
-│  │                                            │                 │
-│  │ Valid Sigma Rules: 394/398 = 99.0% ✅      │                 │
-│  │ Technique Match:  265/398 = 66.6% 🎯      │                 │
-│  └────────────────────────────────────────────┘                 │
-└─────────────────────────┬───────────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────────┐
-│  PHASE 9: BASELINE EVALUATION - TASK 49 (Baseline Notebook)     │
-│                                                                  │
-│  Same 398 examples BUT without any training                     │
-│                                                                  │
-│  ┌────────────────────────────────────────────┐                 │
-│  │ RESULTS (Base Model - NO training):        │                 │
-│  │                                            │                 │
-│  │ Output: Explains WHAT Sigma is instead     │                 │
-│  │         of generating it!                  │                 │
-│  │                                            │                 │
-│  │ Valid Sigma Rules: ~1-5% ❌                │                 │
-│  │ (still running...)                         │                 │
-│  └────────────────────────────────────────────┘                 │
-└─────────────────────────┬───────────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────────┐
-│  FINAL COMPARISON (Task 49 vs Task 51)                          │
-│                                                                  │
-│  ┌──────────────────┬──────────────┬──────────────┐            │
-│  │ Metric           │ Base Model   │ Fine-tuned   │            │
-│  │                  │ (no training)│ (your model) │            │
-│  ├──────────────────┼──────────────┼──────────────┤            │
-│  │ Valid Sigma      │  ~1-5% ❌   │  99.0% ✅    │            │
-│  │ Technique Match  │  ~0% ❌     │  66.6% 🎯    │            │
-│  │ Output Quality   │ Explains     │ Generates    │            │
-│  │                  │ Sigma        │ Sigma rule   │            │
-│  └──────────────────┴──────────────┴──────────────┘            │
-│                                                                  │
-│  = PROOF that 10 hours of fine-tuning made a HUGE difference!  │
-└─────────────────────────────────────────────────────────────────┘
+```
+╔══════════════════════════════════════════════════════╗
+║       Hypothesis → Sigma Fine-Tuning Pipeline        ║
+║                  Qwen3-8B + QLoRA                    ║
+╚══════════════════════════════════════════════════════╝
+
+Phase 1: ENVIRONMENT SETUP
+  CUDA 12.4 GPU (15.69 GB VRAM)
+  PyTorch 2.5.1 + bitsandbytes 0.50.1
+          ↓
+Phase 2: BASE MODEL LOADING
+  Qwen3-8B loaded in 4-bit QLoRA
+  Normal: ~33GB → With 4-bit: ~5GB only
+          ↓
+Phase 3: LoRA ADAPTER
+  Trainable: 43M / 8.2B params (0.53%)
+  Target: q,k,v,o,gate,up,down projections
+          ↓
+Phase 4: DATA PREPARATION
+  train.jsonl  → 3,770 examples
+  val.jsonl    →   245 examples
+  test.jsonl   →   398 examples
+  Format: Hypothesis (input) → Sigma Rule (output)
+          ↓
+Phase 5: TRAINING
+  Epochs: 3  |  Time: ~10 hours
+  Custom BF16LossTrainer (saves ~600MB VRAM)
+  Step  | Train Loss | Val Loss
+  50    |   8.77     |  1.192
+  150   |   6.73     |  1.094
+  300   |   5.59     |  1.054
+  450   |   5.24     |  1.006  ← BEST
+  708   |   4.57     |  1.033
+          ↓
+Phase 6: BEST CHECKPOINT
+  Step 450 → lowest val loss: 1.006
+  Saved to: ./final_adapter (175MB)
+          ↓
+Phase 7: HUGGINGFACE BACKUP
+  mar7788yam/hypothesis-to-sigma-qwen3-8b
+  Adapter: 175MB + Tokenizer: 11.4MB
+          ↓
+Phase 8: EVALUATION (Task 51)
+  Fine-tuned model on 398 test examples
+  Valid Sigma: 394/398 = 99.0% ✅
+          ↓
+Phase 9: BASELINE (Task 49)
+  Base model (no training) on 398 examples
+  Valid Sigma: 0/398 = 0.0% ❌
+          ↓
+FINAL COMPARISON
+  Base Model  →  0%  ❌
+  Fine-Tuned  → 99%  ✅
+  Improvement → +99% 🚀
+```
