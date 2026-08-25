@@ -1,0 +1,44 @@
+{
+  "task": "52",
+  "title": "LLM Generation Strategy Selection",
+  "comparison": [
+    {
+      "approach": "Prompt-Only (Base Model)",
+      "valid_sigma_pct": "0.0%",
+      "technique_match": "52.5%",
+      "needs_training": "No",
+      "needs_vector_db": "No",
+      "inference_speed": "Fast",
+      "deployment_size": "16GB base only",
+      "verdict": "\u274c Not usable"
+    },
+    {
+      "approach": "RAG + Prompting (Mohamed)",
+      "valid_sigma_pct": "100.0%",
+      "technique_match": "N/A",
+      "needs_training": "No",
+      "needs_vector_db": "Yes",
+      "inference_speed": "Slower (retrieval step)",
+      "deployment_size": "16GB base + Sigma DB",
+      "verdict": "\u2705 Good but complex"
+    },
+    {
+      "approach": "Fine-Tuned QLoRA (Maryam)",
+      "valid_sigma_pct": "99.0%",
+      "technique_match": "66.6%",
+      "needs_training": "Yes (done \u2705)",
+      "needs_vector_db": "No",
+      "inference_speed": "Fast",
+      "deployment_size": "16GB base + 175MB adapter",
+      "verdict": "\u2705 Recommended"
+    }
+  ],
+  "selected_strategy": "fine-tuned",
+  "reasons": [
+    "99% valid Sigma on unseen test data",
+    "No vector database required",
+    "Fast inference",
+    "175MB adapter \u2014 lightweight deployment",
+    "Works directly from hypothesis (simpler input than RAG)"
+  ]
+}
