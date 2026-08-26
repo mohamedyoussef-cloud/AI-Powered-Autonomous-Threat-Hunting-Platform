@@ -168,10 +168,15 @@ Since ML model needs finding-level labels (TP/FP/NR):
 
 
 OTRF  → known attack scenarios  = label 1 (True Positive)
+
 OTRF  → normal activity         = label 0 (False Positive)
+
 CICIDS → BENIGN traffic          = label 0 (False Positive)
+
 CICIDS → attack traffic          = label 1 (True Positive)
+
 BETH  → benign events            = label 0 (False Positive)
+
 BETH  → malicious events         = label 1 (True Positive)
 
 
