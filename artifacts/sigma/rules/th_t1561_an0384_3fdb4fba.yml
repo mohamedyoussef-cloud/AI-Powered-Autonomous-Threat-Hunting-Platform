@@ -1,0 +1,17 @@
+title: "Disk Wipe - Analytic 0384 Baseline"
+id: "3fdb4fba-bc78-5b16-a69c-f8c3035f91f3"
+status: "experimental"
+description: "Unusual direct disk access attempts (e.g., use of \\\\.\\PhysicalDrive notation), abnormal writes to MBR/boot sectors, and installation of kernel drivers that grant raw disk access. Correlate anomalous process creation with disk modification attempts and driver loads."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1561"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "PhysicalDrive"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

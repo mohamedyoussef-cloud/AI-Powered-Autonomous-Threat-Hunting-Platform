@@ -1,0 +1,17 @@
+title: "COR_PROFILER - Analytic 1319 Baseline"
+id: "5d4698a2-f2fb-50ac-959f-b485ad054a7b"
+status: "experimental"
+description: "Modification of COR_PROFILER-related environment variables or Registry keys (COR_ENABLE_PROFILING, COR_PROFILER, COR_PROFILER_PATH), combined with anomalous .NET process creation or unmanaged DLL loads. Defender observes registry modifications, suspicious process creation with altered environment variables, and profiler DLLs loaded unexpectedly into .NET CLR processes."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1574.012"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "COR_PROFILER-related"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

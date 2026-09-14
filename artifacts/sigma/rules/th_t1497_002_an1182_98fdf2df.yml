@@ -1,0 +1,17 @@
+title: "User Activity Based Checks - Analytic 1182 Baseline"
+id: "98fdf2df-74d3-56d7-bdb8-8486b336368d"
+status: "experimental"
+description: "Process execution that probes user activity artifacts (e.g., desktop files, registry history) following recent user login/unlock events."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1497.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "Process execution that probes user activity artifacts (e.g., desktop files, registry history) following recent user login/unlock events."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

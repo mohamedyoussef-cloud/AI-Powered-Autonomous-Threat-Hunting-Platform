@@ -1,0 +1,17 @@
+title: "Exploitation for Stealth - Analytic 1633 Baseline"
+id: "0ec61cd5-62ba-5787-b607-f3cb50005503"
+status: "experimental"
+description: "Detects exploitation attempts targeting defensive security software or OS services. Defender observation includes abnormal process behavior (e.g., AV or EDR crashing unexpectedly), unsigned/untrusted modules loaded into defensive processes, or privilege escalation from security agent services. Multi-event correlation ties exploitation attempts to subsequent evasive behavior like service termination or missing logs."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1211"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Multi-event"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

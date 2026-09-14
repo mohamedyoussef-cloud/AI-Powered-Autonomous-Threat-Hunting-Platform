@@ -1,0 +1,19 @@
+title: "Clear Command History - Analytic 0469 Baseline"
+id: "5853d0af-f087-5da1-9dca-8e1c959cb0d2"
+status: "experimental"
+description: "Detects PowerShell `Clear-History` invocation or deletion of `ConsoleHost_history.txt` to erase past PowerShell session history."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1070.003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:PowerShell, WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "Clear-History"
+        - "ConsoleHost_history.txt"
+        - "PowerShell"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

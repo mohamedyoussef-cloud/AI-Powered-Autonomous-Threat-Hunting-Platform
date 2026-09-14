@@ -1,0 +1,18 @@
+title: "Non-Application Layer Protocol - Analytic 1254 Baseline"
+id: "d4afacf9-d3cc-5579-add9-6102eb60c5ce"
+status: "experimental"
+description: "Anomalous use of ICMP or UDP by non-network service processes for data exfiltration or remote control, especially if traffic bypasses proxy infrastructure or shows unusual flow patterns."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1095"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "non-network"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

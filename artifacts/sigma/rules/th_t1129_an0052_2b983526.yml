@@ -1,0 +1,20 @@
+title: "Shared Modules - Analytic 0052 Baseline"
+id: "2b983526-94df-5c34-8293-bc30af8b6fdb"
+status: "experimental"
+description: "A process (often LOLBin or user-launched program) loads a DLL from a user-writable/UNC/Temp path or unsigned/invalid signer. Within a short window the DLL is (a) newly written to disk, (b) spawned as follow-on execution (rundll32/regsvr32), or (c) establishes outbound C2."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1129"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "LOLBin"
+        - "user-launched"
+        - "user-writable"
+        - "follow-on"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

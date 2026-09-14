@@ -1,0 +1,18 @@
+title: "Exfiltration Over Other Network Medium - Analytic 0212 Baseline"
+id: "f7c12285-e0d9-5ade-a281-67e9a54cd7d1"
+status: "experimental"
+description: "Execution of file transfer or network access activity through non-primary interfaces (e.g., WiFi, Bluetooth, cellular) by processes not typically associated with such behavior (e.g., rundll32, powershell, regsvr32)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1011"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "non-primary"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

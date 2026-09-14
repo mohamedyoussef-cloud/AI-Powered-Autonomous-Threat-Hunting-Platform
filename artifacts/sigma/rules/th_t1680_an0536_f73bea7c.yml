@@ -1,0 +1,22 @@
+title: "Local Storage Discovery - Analytic 0536 Baseline"
+id: "f73bea7c-cec6-5fb6-bcfe-9957be6b0e90"
+status: "experimental"
+description: "Drive enumeration using PowerShell (`Get-PSDrive`), `wmic logicaldisk`, or Win32 API indicative of local volume enumeration by non-admin users or executed outside of baseline system inventory scripts."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1680"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Get-PSDrive"
+        - "wmic logicaldisk"
+        - "PowerShell"
+        - "PSDrive"
+        - "non-admin"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

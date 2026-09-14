@@ -1,0 +1,18 @@
+title: "Compromise Hardware Supply Chain - Analytic 1035 Baseline"
+id: "510fac45-76b1-501a-97ca-4b926ba43e98"
+status: "experimental"
+description: "Detects tampered hardware or firmware via anomalous host status telemetry. Behavioral chain: (1) Pre-OS or firmware components exhibit unexpected version changes, signature failures, or modified boot paths; (2) System management/firmware tools log hardware inventory drift; (3) Sensor health telemetry or boot attestation events fail baseline checks; (4) Follow-on process execution from altered firmware or unknown drivers after boot."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1195.003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Microsoft-Windows-CodeIntegrity/Operational, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Pre-OS"
+        - "Follow-on"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,22 @@
+title: "Token Impersonation/Theft - Analytic 1324 Baseline"
+id: "b9112090-ef6f-5db8-bdda-b168b7e881b0"
+status: "experimental"
+description: "Detection of token duplication and impersonation attempts by correlating suspicious command-line executions (e.g., runas) with API calls to DuplicateToken, DuplicateTokenEx, ImpersonateLoggedOnUser, or SetThreadToken. The chain includes the initial command execution or in-memory API invocation → token handle duplication or thread token assignment → a new or existing process assuming the impersonated user's context."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1134.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "DuplicateToken"
+        - "DuplicateTokenEx"
+        - "ImpersonateLoggedOnUser"
+        - "SetThreadToken"
+        - "command-line"
+        - "in-memory"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

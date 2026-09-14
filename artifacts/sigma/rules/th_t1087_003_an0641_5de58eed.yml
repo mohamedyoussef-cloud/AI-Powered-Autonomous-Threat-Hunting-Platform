@@ -1,0 +1,21 @@
+title: "Email Account - Analytic 0641 Baseline"
+id: "5de58eed-4e31-5ebc-8d63-17e891b5c66c"
+status: "experimental"
+description: "Enumeration of global address lists or email account metadata via PowerShell cmdlets (e.g., Get-GlobalAddressList) or MAPI/RPC from non-admin, non-mailserver systems."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1087.003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:PowerShell, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "PowerShell"
+        - "GlobalAddressList"
+        - "Get-GlobalAddressList"
+        - "non-admin"
+        - "non-mailserver"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

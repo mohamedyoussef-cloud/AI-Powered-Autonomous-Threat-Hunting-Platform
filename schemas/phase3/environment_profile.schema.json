@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "environment_profile.schema.json",
+  "title": "Threat Hunting Environment Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "profile_version",
+    "environment_id",
+    "environment_name",
+    "platforms",
+    "telemetry_sources",
+    "assets",
+    "incident_history",
+    "detection_coverage"
+  ],
+  "properties": {
+    "profile_version": {
+      "type": "string"
+    },
+    "environment_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "environment_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "platforms": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "telemetry_sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_name",
+          "source_family",
+          "enabled",
+          "evidence_source"
+        ],
+        "properties": {
+          "source_name": {
+            "type": "string"
+          },
+          "source_family": {
+            "type": "string",
+            "enum": [
+              "process",
+              "authentication",
+              "network",
+              "dns",
+              "file",
+              "registry",
+              "service",
+              "web",
+              "database",
+              "cloud",
+              "other"
+            ]
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "evidence_source": {
+            "type": "string",
+            "enum": [
+              "botsv3",
+              "evtx",
+              "client",
+              "synthetic",
+              "unknown"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "asset_id",
+          "asset_type",
+          "platform",
+          "criticality"
+        ],
+        "properties": {
+          "asset_id": {
+            "type": "string"
+          },
+          "asset_type": {
+            "type": "string"
+          },
+          "platform": {
+            "type": "string"
+          },
+          "criticality": {
+            "type": ["number", "null"],
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    },
+    "incident_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "technique_id",
+          "relevance"
+        ],
+        "properties": {
+          "technique_id": {
+            "type": "string",
+            "pattern": "^T[0-9]{4}(\\.[0-9]{3})?$"
+          },
+          "relevance": {
+            "type": ["number", "null"],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "incident_count": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "detection_coverage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "technique_id",
+          "coverage"
+        ],
+        "properties": {
+          "technique_id": {
+            "type": "string",
+            "pattern": "^T[0-9]{4}(\\.[0-9]{3})?$"
+          },
+          "coverage": {
+            "type": ["number", "null"],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "source": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

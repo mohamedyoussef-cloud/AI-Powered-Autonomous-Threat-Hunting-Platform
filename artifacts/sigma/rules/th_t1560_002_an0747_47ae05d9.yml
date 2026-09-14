@@ -1,0 +1,17 @@
+title: "Archive via Library - Analytic 0747 Baseline"
+id: "47ae05d9-8956-5943-bda5-60e0ae30415b"
+status: "experimental"
+description: "Detects adversarial archiving using libraries (zlib, zip APIs) invoked by scripts or binaries. Correlates process executions of Python, PowerShell, or custom .NET binaries with DLL/module loads linked to compression libraries, followed by archive file creation."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1560.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "PowerShell"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

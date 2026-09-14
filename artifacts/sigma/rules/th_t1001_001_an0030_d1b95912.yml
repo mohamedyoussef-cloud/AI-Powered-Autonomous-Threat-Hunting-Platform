@@ -1,0 +1,18 @@
+title: "Junk Data - Analytic 0030 Baseline"
+id: "d1b95912-e0d0-5663-b741-c8d5f4df2014"
+status: "experimental"
+description: "Processes generating large outbound connections with disproportionate send/receive ratios, often to uncommon ports or hosts, potentially inserting meaningless data into protocol payloads."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1001.001"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Processes generating large outbound connections with disproportionate send/receive ratios, often to uncommon ports or hosts, potentially inserting meaningless data into protocol payloads."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

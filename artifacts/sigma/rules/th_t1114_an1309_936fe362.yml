@@ -1,0 +1,18 @@
+title: "Email Collection - Analytic 1309 Baseline"
+id: "936fe362-91f2-5869-846c-b55717eefb75"
+status: "experimental"
+description: "Correlates creation of email forwarding rules or header anomalies (e.g., X-MS-Exchange-Organization-AutoForwarded) with suspicious process execution, file access of .pst/.ost files, and network connections to external SMTP servers."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1114"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:PowerShell, WinEventLog:Application, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "AutoForwarded"
+        - "X-MS-Exchange-Organization-AutoForwarded"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

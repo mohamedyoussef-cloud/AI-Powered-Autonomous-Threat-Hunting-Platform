@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "threat-hunting-data"
+version = "0.4.0"
+description = "Data preparation and unification layer for an AI-powered threat hunting platform"
+requires-python = ">=3.10"
+dependencies = [
+  "jsonschema>=4.21",
+  "PyYAML>=6.0",
+  "python-dateutil>=2.9",
+  "pandas>=2.2",
+  "pysigma==1.5.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.optional-dependencies]
+raw-evtx = ["python-evtx==0.8.1"]

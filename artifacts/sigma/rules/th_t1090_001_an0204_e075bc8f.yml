@@ -1,0 +1,20 @@
+title: "Internal Proxy - Analytic 0204 Baseline"
+id: "e075bc8f-647c-5243-826c-d913fd9220df"
+status: "experimental"
+description: "Anomalous process (e.g., `rundll32`, `svchost`, `cmd`) initiates connections to internal peer hosts not seen in typical communication baselines, used to proxy or forward traffic internally, often using SMB, RPC, or high ports."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1090.001"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "rundll32"
+        - "svchost"
+        - "cmd"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

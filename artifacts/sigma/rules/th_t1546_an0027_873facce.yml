@@ -1,0 +1,18 @@
+title: "Event Triggered Execution - Analytic 0027 Baseline"
+id: "873facce-c3a6-5315-b685-d2129993eef9"
+status: "experimental"
+description: "Monitors cloud function creation triggered by specific audit log events (e.g., IAM changes, object creation), followed by anomalous behavior from new service accounts."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1546"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "Monitors cloud function creation triggered by specific audit log events (e.g., IAM changes, object creation), followed by anomalous behavior from new service accounts."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

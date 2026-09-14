@@ -1,0 +1,17 @@
+title: "Pre-OS Boot - Analytic 0774 Baseline"
+id: "cd1ddbd5-16e8-5be7-b195-b7443132f9a4"
+status: "experimental"
+description: "Unusual modification of boot records (MBR, VBR) or EFI partitions not associated with legitimate patch cycles or OS upgrades. Registry or WMI events associated with firmware update tools executed from unexpected parent processes. API calls (e.g., DeviceIoControl) writing directly to raw disk sectors. Subsequent abnormal boot configuration changes followed by unsigned driver loads."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1542"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "DeviceIoControl"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

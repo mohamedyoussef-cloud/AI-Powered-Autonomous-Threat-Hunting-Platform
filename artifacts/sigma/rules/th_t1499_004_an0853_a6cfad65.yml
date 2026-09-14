@@ -1,0 +1,18 @@
+title: "Application or System Exploitation - Analytic 0853 Baseline"
+id: "a6cfad65-530a-521d-82cd-1dbf92177dbe"
+status: "experimental"
+description: "Cloud workload exploitation leads to repeated container, service, or VM termination/restart, typically associated with CVE-based crash triggers or fuzzed payloads."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1499.004"
+logsource:
+    product: "aws"
+    service: "cloudwatch"
+    definition: "Grounded source(s): AWS:CloudWatch"
+detection:
+    keywords:
+        - "CVE-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

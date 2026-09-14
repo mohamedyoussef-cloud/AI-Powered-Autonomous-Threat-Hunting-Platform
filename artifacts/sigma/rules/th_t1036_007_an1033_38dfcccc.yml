@@ -1,0 +1,19 @@
+title: "Double File Extension - Analytic 1033 Baseline"
+id: "38dfcccc-600f-5860-9197-dedd6e78c120"
+status: "experimental"
+description: "Detects adversary behavior where a file with a benign-looking first extension (e.g., .txt, .jpg) ends with a dangerous second extension (e.g., .exe, .scr), and is subsequently executed. The behavior chain includes file creation with misleading naming and user or system-initiated process execution from the disguised file."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1036.007"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "benign-looking"
+        - "system-initiated"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

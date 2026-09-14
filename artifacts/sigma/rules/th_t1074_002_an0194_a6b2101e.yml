@@ -1,0 +1,17 @@
+title: "Remote Data Staging - Analytic 0194 Baseline"
+id: "a6b2101e-8021-5149-a18e-56dd8c49497f"
+status: "experimental"
+description: "Detects file transfers or mounting operations from remote hosts followed by write actions into a local staging directory, often using SMB or remote shell activity."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1074.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "Detects file transfers or mounting operations from remote hosts followed by write actions into a local staging directory, often using SMB or remote shell activity."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

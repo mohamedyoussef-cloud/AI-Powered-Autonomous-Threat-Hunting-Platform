@@ -1,0 +1,19 @@
+title: "Steganography - Analytic 0331 Baseline"
+id: "0d321184-15de-55c9-b3df-c2c97e581518"
+status: "experimental"
+description: "Detects execution of image viewers or PowerShell scripts accessing or decoding files with mismatched MIME headers or embedded script-like byte patterns; often correlated with suspicious parent-child process lineage and outbound connections."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1027.003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "PowerShell"
+        - "script-like"
+        - "parent-child"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

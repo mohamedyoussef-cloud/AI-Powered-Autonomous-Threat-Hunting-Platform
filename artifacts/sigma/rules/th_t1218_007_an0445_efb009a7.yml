@@ -1,0 +1,18 @@
+title: "Msiexec - Analytic 0445 Baseline"
+id: "efb009a7-b9a0-5180-8552-7e9d06477976"
+status: "experimental"
+description: "Detection of msiexec.exe execution where command-line arguments reference remote MSI packages, UNC paths, HTTP/HTTPS URLs, or DLLs, correlated with subsequent module loads and/or network connections to previously unseen destinations. The behavioral chain links process creation of msiexec.exe with suspicious parameters, network activity to retrieve payloads, and module loading indicative of malicious installation or DLL execution."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1218.007"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "msiexec.exe"
+        - "command-line"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

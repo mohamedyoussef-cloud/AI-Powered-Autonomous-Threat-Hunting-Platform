@@ -1,0 +1,22 @@
+title: "Run Virtual Instance - Analytic 0909 Baseline"
+id: "179c2c60-6643-5cce-84f9-9965180c335e"
+status: "experimental"
+description: "Unusual execution of virtualization binaries (VBoxManage.exe, vmware-vmx.exe, vmwp.exe) with headless or suppressed notification arguments. Registry and service modifications linked to virtualization installs. Defender view: anomalies in process creation, service metadata, and registry writes tied to enabling hidden VMs."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1564.006"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "VBoxManage.exe"
+        - "vmware-vmx.exe"
+        - "vmwp.exe"
+        - "VBoxManage"
+        - "vmware-vmx"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

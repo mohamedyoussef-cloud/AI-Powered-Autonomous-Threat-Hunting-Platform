@@ -1,0 +1,18 @@
+title: "Symmetric Cryptography - Analytic 0400 Baseline"
+id: "9d1e46e3-0e1c-52ab-a913-d5c753f1cadb"
+status: "experimental"
+description: "Processes that typically do not perform cryptographic operations loading symmetric encryption libraries (e.g., bcryptprimitives.dll, aes.dll), then initiating outbound connections with high-entropy payloads. Defender correlates process creation, DLL load, and anomalous encrypted traffic patterns."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1573.001"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "high-entropy"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

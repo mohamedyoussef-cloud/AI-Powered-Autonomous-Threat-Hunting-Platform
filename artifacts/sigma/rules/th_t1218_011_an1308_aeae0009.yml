@@ -1,0 +1,19 @@
+title: "Rundll32 - Analytic 1308 Baseline"
+id: "aeae0009-4a14-5bc8-9cac-51867a857b25"
+status: "experimental"
+description: "Detects rundll32.exe invoked with atypical arguments (.dll, .cpl, javascript:, mshtml). DLLs not normally loaded by rundll32 are mapped into memory. Control_RunDLL or RunHTMLApplication invoked. Suspicious DLLs or scripts accessed from disk or network. Rundll32 reaches out to external domains (e.g., fetching .sct or .hta)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1218.011"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "rundll32.exe"
+        - "RunHTMLApplication"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

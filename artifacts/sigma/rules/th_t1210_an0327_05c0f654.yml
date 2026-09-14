@@ -1,0 +1,19 @@
+title: "Exploitation of Remote Services - Analytic 0327 Baseline"
+id: "05c0f654-89cd-5662-b823-2bbcba80ad88"
+status: "experimental"
+description: "Correlates inbound network access to remote service ports (e.g., SMB/RPC 445/135, RDP 3389, WinRM 5985/5986) with near-time instability in the target service (crash, abnormal restart), suspicious child process creation under the service, and post-access lateral-movement behaviors. The chain indicates likely exploitation rather than normal administration."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1210"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:System, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "near-time"
+        - "post-access"
+        - "lateral-movement"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

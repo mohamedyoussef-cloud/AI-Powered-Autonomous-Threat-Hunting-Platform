@@ -1,0 +1,22 @@
+title: "MSBuild - Analytic 1535 Baseline"
+id: "006f0672-b7d1-5bef-8771-0fc8df42cd03"
+status: "experimental"
+description: "MSBuild.exe is invoked outside expected developer/build contexts or with anomalous arguments (e.g., non-canonical paths, remote shares, Base64/obfuscated property values). Within a short window, it (a) spawns high-risk LOLBins/script interpreters, (b) writes new PE/DLL/script artifacts into user-writable paths and executes them, (c) loads unsigned/user-writable modules, (d) performs memory injection/thread creation into other processes, and/or (e) initiates outbound network connections."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1127.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "MSBuild.exe"
+        - "MSBuild"
+        - "LOLBins"
+        - "non-canonical"
+        - "high-risk"
+        - "user-writable"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

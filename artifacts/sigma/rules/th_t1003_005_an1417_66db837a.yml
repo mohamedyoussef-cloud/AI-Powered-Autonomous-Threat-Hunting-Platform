@@ -1,0 +1,18 @@
+title: "Cached Domain Credentials - Analytic 1417 Baseline"
+id: "66db837a-b45a-5ec9-92fe-2bbf63ebea43"
+status: "experimental"
+description: "Detects adversary behavior accessing Windows cached domain credential files using tools like Mimikatz, reg.exe, or PowerShell, often combined with registry exports or LSASS memory scraping."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1003.005"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "reg.exe"
+        - "PowerShell"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

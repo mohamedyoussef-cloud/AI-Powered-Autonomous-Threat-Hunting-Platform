@@ -1,0 +1,17 @@
+title: "DLL - Analytic 0577 Baseline"
+id: "b831bc9a-62a0-5495-8385-bdef8623afdb"
+status: "experimental"
+description: "DLL hijacking behaviors including unexpected DLL loads from non-standard directories, replacement of DLLs, phantom DLL insertion, redirection file creation, and substitution of legitimate DLLs. Defender correlates file system modifications, registry changes, and module load telemetry to detect abnormal DLL behavior in trusted processes."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1574.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "non-standard"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

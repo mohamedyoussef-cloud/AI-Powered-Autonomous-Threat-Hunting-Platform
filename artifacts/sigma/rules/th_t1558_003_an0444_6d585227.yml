@@ -1,0 +1,18 @@
+title: "Kerberoasting - Analytic 0444 Baseline"
+id: "6d585227-349a-5b80-b433-ef3728bb2cd6"
+status: "experimental"
+description: "Detects Kerberoasting attempts by monitoring for anomalous Kerberos TGS requests (Event ID 4769) with RC4 encryption (etype 0x17), accounts requesting an unusual number of service tickets in a short period, or service accounts targeted outside normal usage baselines. Also correlates suspicious process activity (e.g., Mimikatz invoking LSASS access) with Kerberos ticket anomalies."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1558.003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Event ID 4769"
+        - "0x17"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

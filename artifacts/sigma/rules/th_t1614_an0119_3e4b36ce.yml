@@ -1,0 +1,19 @@
+title: "System Location Discovery - Analytic 0119 Baseline"
+id: "3e4b36ce-535e-5b2b-adcc-76976c9e5ed1"
+status: "experimental"
+description: "Unusual process or API usage attempting to query system locale, timezone, or keyboard layout (e.g., calls to GetLocaleInfoW, GetTimeZoneInformation). Detection can be enhanced by correlating with processes not typically associated with system configuration queries, such as unknown binaries or scripts."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1614"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "GetLocaleInfoW"
+        - "GetTimeZoneInformation"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

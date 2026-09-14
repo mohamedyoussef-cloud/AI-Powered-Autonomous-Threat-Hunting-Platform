@@ -1,0 +1,17 @@
+title: "Hybrid Identity - Analytic 0814 Baseline"
+id: "075ac5f9-4ebf-5722-9697-672e2087ec2f"
+status: "experimental"
+description: "Detects injection or tampering of DLLs in hybrid identity agents (e.g., AzureADConnectAuthenticationAgentService), registry or configuration changes tied to PTA/AD FS, and anomalous LSASS or AD FS module loads correlated with authentication anomalies."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1556.007"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "AzureADConnectAuthenticationAgentService"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,18 @@
+schema_version: "1.0.0"
+categories:
+  process:
+    actions: [process_creation, process_access, process_termination, image_load]
+  authentication:
+    actions: [logon_success, logon_failure, logoff, privilege_assignment]
+  network:
+    actions: [connection, dns_query, http_request, flow]
+  file:
+    actions: [create, modify, delete, rename, access]
+  registry:
+    actions: [create_key, set_value, delete_key, delete_value]
+  cloud:
+    actions: [api_call, resource_create, resource_modify, resource_delete, identity_change]
+  email:
+    actions: [send, receive, attachment_open, link_click]
+  endpoint_security:
+    actions: [alert, quarantine, block, scan]

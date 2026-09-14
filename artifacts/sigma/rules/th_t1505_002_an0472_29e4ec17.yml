@@ -1,0 +1,17 @@
+title: "Transport Agent - Analytic 0472 Baseline"
+id: "29e4ec17-5d21-5a88-a00f-3bdb169e501c"
+status: "experimental"
+description: "Adversary registers a malicious Microsoft Exchange transport agent DLL (.NET assembly), configures it via PowerShell or Exchange Management Shell, and persists code execution by manipulating email processing logic based on rules or headers."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1505.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:PowerShell, WinEventLog:Application"
+detection:
+    keywords:
+        - "PowerShell"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,19 @@
+title: "Outlook Rules - Analytic 0264 Baseline"
+id: "d96cc211-747b-5b71-931f-1ccf5b240fdd"
+status: "experimental"
+description: "Adversary adds a new Outlook rule with modified or obfuscated PR_RULE_MSG_NAME and PR_RULE_MSG_PROVIDER attributes using MFCMapi or Ruler. Rule is triggered when email arrives, executing embedded or external code. Mailbox audit logs or Unified Audit Log shows automated rule-triggered action without user interaction."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1137.005"
+logsource:
+    product: "m365"
+    service: "messagetrace"
+    definition: "Grounded source(s): m365:messagetrace"
+detection:
+    keywords:
+        - "MFCMapi"
+        - "rule-triggered"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

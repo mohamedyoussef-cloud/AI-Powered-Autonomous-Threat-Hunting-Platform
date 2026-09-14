@@ -1,0 +1,18 @@
+title: "Remote Services - Analytic 0753 Baseline"
+id: "36acf290-0e5a-55df-a60f-6f8920a767d6"
+status: "experimental"
+description: "Use of cloud-based bastion or VM console session followed by commands that initiate outbound SSH or RDP sessions from the cloud instance to other environments."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1021"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "cloud-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

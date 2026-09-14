@@ -1,0 +1,156 @@
+{
+  "manifest_version": "2.0",
+  "environment_id": "reference-botsv3-evtx",
+  "environment_name": "BOTS v3 + EVTX Reference Environment",
+
+  "inputs": [
+    {
+      "adapter_id": "reference_field_adapter_01",
+      "dataset_name": "BOTS v3",
+      "connector_type": "prepared_field_mapping",
+      "root": "workspace",
+      "path": "datasets/processed/botsv3/mappings/botsv3_canonical_field_mapping_v1_2.csv",
+      "mode": "csv",
+
+      "evidence_kind": "field_observation",
+      "evidence_role": "operational",
+
+      "filter": {
+        "mapping_status": "mapped"
+      },
+
+      "field_map": {
+        "telemetry_source_type": "sourcetype",
+        "source_field": "source_field",
+        "canonical_field": "canonical_field",
+        "observed_count": "field_present_count",
+        "total_count": "search_rows",
+        "availability_ratio": "availability_pct",
+        "confidence_label": "confidence"
+      },
+
+      "scales": {
+        "availability_ratio": 0.01
+      },
+
+      "identity_fields": [
+        "sourcetype",
+        "source_field",
+        "canonical_field"
+      ],
+
+      "min_rows": 1
+    },
+
+    {
+      "adapter_id": "reference_capability_regression_01",
+      "dataset_name": "BOTS v3",
+      "connector_type": "prepared_capability_matrix",
+      "root": "workspace",
+      "path": "datasets/processed/botsv3/telemetry/botsv3_telemetry_capability_matrix.csv",
+      "mode": "csv",
+
+      "evidence_kind": "capability_observation",
+      "evidence_role": "regression_reference",
+
+      "field_map": {
+        "telemetry_source_type": "sourcetype",
+        "capability_id": "capability",
+        "capability_name": "capability",
+        "observed": "observed",
+        "event_count": "search_rows",
+        "unique_event_count": "unique_events",
+        "expected_field_count": "expected_field_count",
+        "observed_field_count": "observed_field_count",
+        "field_coverage_ratio": "field_coverage_pct",
+        "availability_weighted_coverage_ratio": "availability_weighted_coverage_pct",
+        "expected_fields": "expected_fields",
+        "observed_fields": "observed_fields"
+      },
+
+      "scales": {
+        "field_coverage_ratio": 0.01,
+        "availability_weighted_coverage_ratio": 0.01
+      },
+
+      "defaults": {
+        "confidence": 1.0
+      },
+
+      "identity_fields": [
+        "sourcetype",
+        "capability"
+      ],
+
+      "expected_rows": 1177
+    },
+
+    {
+      "adapter_id": "reference_field_adapter_02",
+      "dataset_name": "EVTX",
+      "connector_type": "prepared_canonical_field_profile",
+      "root": "project",
+      "path": "data/processed/telemetry/evtx_canonical_field_profile_v0_4.csv",
+      "mode": "csv",
+
+      "evidence_kind": "field_observation",
+      "evidence_role": "operational",
+
+      "field_map": {
+        "canonical_field": "canonical_field",
+        "observed_count": "non_null_count",
+        "availability_ratio": "coverage_ratio",
+        "unique_value_count": "observed_unique_values_capped"
+      },
+
+      "defaults": {
+        "telemetry_source_type": "evtx",
+        "platform_hint": "Windows",
+        "confidence": 1.0
+      },
+
+      "identity_fields": [
+        "canonical_field"
+      ],
+
+      "min_rows": 1
+    },
+
+    {
+      "adapter_id": "reference_event_adapter_01",
+      "dataset_name": "EVTX",
+      "connector_type": "prepared_event_profile",
+      "root": "project",
+      "path": "data/processed/telemetry/evtx_event_id_profile.csv",
+      "mode": "csv",
+
+      "evidence_kind": "exact_event_observation",
+      "evidence_role": "operational",
+
+      "field_map": {
+        "provider": "provider",
+        "channel": "channel",
+        "event_id": "event_id",
+        "event_count": "event_count",
+        "unique_file_count": "unique_files",
+        "canonical_category": "canonical_category",
+        "canonical_action": "canonical_action"
+      },
+
+      "defaults": {
+        "telemetry_source_type": "evtx",
+        "platform_hint": "Windows",
+        "observed": true,
+        "confidence": 1.0
+      },
+
+      "identity_fields": [
+        "provider",
+        "channel",
+        "event_id"
+      ],
+
+      "expected_rows": 153
+    }
+  ]
+}

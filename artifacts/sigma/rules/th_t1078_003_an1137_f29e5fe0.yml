@@ -1,0 +1,18 @@
+title: "Local Accounts - Analytic 1137 Baseline"
+id: "f29e5fe0-0e88-5b4c-b97e-cef24f34ca1b"
+status: "experimental"
+description: "Detects anomalous usage of local accounts to log into a system, especially accounts not typically used interactively or outside business hours."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1078.003"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "Detects anomalous usage of local accounts to log into a system, especially accounts not typically used interactively or outside business hours."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

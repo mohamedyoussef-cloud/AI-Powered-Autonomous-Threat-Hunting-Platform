@@ -1,0 +1,20 @@
+title: "Impersonation - Analytic 0792 Baseline"
+id: "fff9a3b0-de7e-57f8-83ee-5672ea9e87f2"
+status: "experimental"
+description: "Monitor for anomalous email activity originating from Windows-hosted applications (e.g., Outlook) where the sending account name or display name does not match the underlying SMTP address. Detect abnormal volume of outbound messages containing sensitive keywords (e.g., 'payment', 'wire transfer') or anomalous login locations for accounts associated with email sending activity."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1684.001"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "payment"
+        - "wire transfer"
+        - "Windows-hosted"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

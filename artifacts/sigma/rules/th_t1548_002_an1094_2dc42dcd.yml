@@ -1,0 +1,22 @@
+title: "Bypass User Account Control - Analytic 1094 Baseline"
+id: "2dc42dcd-78e9-53eb-837b-623e0216b288"
+status: "experimental"
+description: "Detects a multi-event behavior chain involving UAC bypass attempts via known auto-elevated binaries (e.g., eventvwr.exe, sdclt.exe), unauthorized Registry changes to UAC-related keys, and anomalous process execution with elevated privileges but lacking standard parent-child lineage. Suspicious patterns include invocation of auto-elevated COM objects or manipulation of isolatedCommand Registry entries without consent prompts."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1548.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "eventvwr.exe"
+        - "sdclt.exe"
+        - "multi-event"
+        - "auto-elevated"
+        - "UAC-related"
+        - "parent-child"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

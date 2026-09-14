@@ -1,0 +1,30 @@
+{
+  "assembly_errors": 0,
+  "attack_versions": [
+    "19.1"
+  ],
+  "audit_failures": 0,
+  "audit_version": "1.1",
+  "contract_version": "1.1",
+  "failure_categories": {},
+  "failures": [],
+  "final_detection_plans": 505,
+  "input_dispatch_records": 505,
+  "lineage_version_sets": [
+    {
+      "eligibility_gate_version": "1.0",
+      "environment_profile_version": "2.0",
+      "hypothesis_engine_version": "1.0",
+      "master_context_version": "2.0",
+      "telemetry_resolver_version": "2.1"
+    }
+  ],
+  "needs_path_resolution": 13,
+  "ready_for_baseline_sigma": 492,
+  "results_index_records": 505,
+  "schema_valid_records": 505,
+  "semantic_records": 505,
+  "source_semantic_audit_status": "PASS",
+  "source_semantic_corrected_records": 2,
+  "status": "PASS"
+}

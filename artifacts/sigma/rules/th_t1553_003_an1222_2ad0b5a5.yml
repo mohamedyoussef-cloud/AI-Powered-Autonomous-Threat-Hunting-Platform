@@ -1,0 +1,18 @@
+title: "SIP and Trust Provider Hijacking - Analytic 1222 Baseline"
+id: "2ad0b5a5-21de-5698-8195-ff2ac02d0ccb"
+status: "experimental"
+description: "Detection of anomalous registry modifications to Subject Interface Packages (SIPs) or trust provider DLL mappings, unexpected loading of non-Microsoft cryptographic modules, or attempts to redirect WinVerifyTrust validation logic. Defender view focuses on registry tampering, suspicious DLL loads into trusted processes, and abnormal trust validation failures correlated across event streams."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1553.003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "WinVerifyTrust"
+        - "non-Microsoft"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

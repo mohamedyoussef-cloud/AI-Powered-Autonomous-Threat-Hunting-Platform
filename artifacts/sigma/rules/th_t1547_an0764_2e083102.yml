@@ -1,0 +1,18 @@
+title: "Boot or Logon Autostart Execution - Analytic 0764 Baseline"
+id: "2e083102-778a-5f89-94cd-78687c942f77"
+status: "experimental"
+description: "Correlation of registry key modification for Run/RunOnce with abnormal parent-child process relationships and outlier execution at user logon or system startup"
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1547"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "RunOnce"
+        - "parent-child"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,18 @@
+title: "Bootkit - Analytic 0428 Baseline"
+id: "ae56e2e2-0344-5f3b-829b-91b04a6e8ec9"
+status: "experimental"
+description: "Detection of raw access to physical drives, modification of boot records (MBR/VBR), and suspicious file creation or alteration within the EFI System Partition (ESP). Correlates privileged process execution with low-level disk modification and unexpected driver or firmware interactions."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1542.003"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "low-level"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

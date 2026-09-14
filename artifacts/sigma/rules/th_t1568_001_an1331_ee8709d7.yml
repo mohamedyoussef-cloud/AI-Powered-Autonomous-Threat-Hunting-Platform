@@ -1,0 +1,18 @@
+title: "Fast Flux DNS - Analytic 1331 Baseline"
+id: "ee8709d7-de23-5578-9766-4d96eba2c3e3"
+status: "experimental"
+description: "Identify repeated DNS resolutions where the same domain name returns multiple IPs in short succession, combined with low TTL values and high query volume from unusual processes. Correlate with process lineage (e.g., Office apps spawning abnormal DNS lookups)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1568.001"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Identify repeated DNS resolutions where the same domain name returns multiple IPs in short succession, combined with low TTL values and high query volume from unusual processes. Correlate with process lineage (e.g., Office apps spawning abnormal DNS lookups)."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

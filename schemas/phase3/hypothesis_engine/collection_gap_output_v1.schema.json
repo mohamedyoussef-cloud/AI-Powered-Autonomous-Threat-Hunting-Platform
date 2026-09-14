@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Collection Gap Resolution Output v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "collection_gap",
+    "affected_data_components",
+    "required_collection",
+    "current_evidence_limitations",
+    "next_action"
+  ],
+  "properties": {
+    "collection_gap": {
+      "type": "string",
+      "minLength": 10
+    },
+    "affected_data_components": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "component_id",
+          "component_name",
+          "reason"
+        ],
+        "properties": {
+          "component_id": {
+            "type": "string",
+            "pattern": "^DC[0-9]{4}$"
+          },
+          "component_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "required_collection": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "component_id",
+          "component_name",
+          "requirement"
+        ],
+        "properties": {
+          "component_id": {
+            "type": "string",
+            "pattern": "^DC[0-9]{4}$"
+          },
+          "component_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "requirement": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "current_evidence_limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "next_action": {
+      "type": "string",
+      "minLength": 10
+    }
+  }
+}

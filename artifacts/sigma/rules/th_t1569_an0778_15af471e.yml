@@ -1,0 +1,19 @@
+title: "System Services - Analytic 0778 Baseline"
+id: "15af471e-1ed8-55e7-83e1-1fc577af1819"
+status: "experimental"
+description: "Monitor for abnormal creation or modification of Windows services (e.g., via sc.exe, PowerShell, or API calls) that load non-standard executables. Correlate registry changes in service keys with service creation events and process execution to detect service abuse for persistence or execution."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1569"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "sc.exe"
+        - "PowerShell"
+        - "non-standard"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

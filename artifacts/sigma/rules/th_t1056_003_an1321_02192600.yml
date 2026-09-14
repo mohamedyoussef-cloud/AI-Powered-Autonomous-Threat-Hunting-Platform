@@ -1,0 +1,19 @@
+title: "Web Portal Capture - Analytic 1321 Baseline"
+id: "02192600-0ff2-5463-a1e1-c9d8f7140dd4"
+status: "experimental"
+description: "Detects tampering of IIS-based login pages (e.g., default.aspx, login.aspx) tied to VPN, OWA, or SharePoint via script injection or unexpected editor processes modifying web roots."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1056.003"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "SharePoint"
+        - "IIS-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

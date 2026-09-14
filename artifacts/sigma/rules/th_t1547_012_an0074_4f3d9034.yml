@@ -1,0 +1,20 @@
+title: "Print Processors - Analytic 0074 Baseline"
+id: "4f3d9034-6495-577a-95b2-352b7b9f3776"
+status: "experimental"
+description: "Correlated registry modifications under Print Processors path, followed by DLL file creation within the system print processor directory, and DLL load by spoolsv.exe. Malicious execution often occurs during service restart or system boot, with SYSTEM-level privileges."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1547.012"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "spoolsv.exe"
+        - "SYSTEM"
+        - "SYSTEM-level"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,52 @@
+{
+  "router_version": "1.0",
+
+  "routes": {
+    "runtime_hunt": {
+      "task_mode": "generate_runtime_hunt_hypothesis",
+      "llm_dispatch_allowed": true,
+      "hypothesis_generation_allowed": true,
+      "runtime_hunt_candidate": true,
+      "requires_detection_eligibility_after_task": true,
+      "downstream_workflow": "runtime_hypothesis_pipeline",
+      "queue_sort": "runtime_hunt_rank"
+    },
+
+    "collection_gap_resolution": {
+      "task_mode": "resolve_collection_gap",
+      "llm_dispatch_allowed": true,
+      "hypothesis_generation_allowed": false,
+      "runtime_hunt_candidate": false,
+      "requires_detection_eligibility_after_task": false,
+      "downstream_workflow": "telemetry_collection_remediation",
+      "queue_sort": "technique_id"
+    },
+
+    "environment_resolution": {
+      "task_mode": "resolve_environment_presence",
+      "llm_dispatch_allowed": true,
+      "hypothesis_generation_allowed": false,
+      "runtime_hunt_candidate": false,
+      "requires_detection_eligibility_after_task": false,
+      "downstream_workflow": "environment_presence_resolution",
+      "queue_sort": "technique_id"
+    },
+
+    "pre_attack_hunt": {
+      "task_mode": "generate_pre_attack_hypothesis",
+      "llm_dispatch_allowed": true,
+      "hypothesis_generation_allowed": true,
+      "runtime_hunt_candidate": false,
+      "requires_detection_eligibility_after_task": true,
+      "downstream_workflow": "pre_attack_hypothesis_pipeline",
+      "queue_sort": "technique_id"
+    }
+  },
+
+  "global_constraints": {
+    "occurrence_claim_allowed": false,
+    "sigma_generation_allowed_in_router": false,
+    "client_detection_coverage_may_be_invented": false,
+    "missing_telemetry_may_be_invented": false
+  }
+}

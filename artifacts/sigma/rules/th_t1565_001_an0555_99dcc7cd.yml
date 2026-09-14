@@ -1,0 +1,18 @@
+title: "Stored Data Manipulation - Analytic 0555 Baseline"
+id: "99dcc7cd-a2e4-58fd-89cc-fd5b4c24f18d"
+status: "experimental"
+description: "Identify unauthorized creation, deletion, or modification of business-critical stored data such as Office documents, database files, and log archives. Detect anomalous processes modifying stored data outside of expected workflows (e.g., non-database processes modifying database files)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1565.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "business-critical"
+        - "non-database"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

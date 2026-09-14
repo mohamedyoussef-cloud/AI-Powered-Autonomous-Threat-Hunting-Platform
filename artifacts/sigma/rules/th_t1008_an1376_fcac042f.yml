@@ -1,0 +1,18 @@
+title: "Fallback Channels - Analytic 1376 Baseline"
+id: "fcac042f-30c6-507e-8e18-73d732cfa274"
+status: "experimental"
+description: "Establishing network connections on uncommon ports or protocols following C2 disruption or blocking. Often executed by processes that typically exhibit no network activity."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1008"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Establishing network connections on uncommon ports or protocols following C2 disruption or blocking. Often executed by processes that typically exhibit no network activity."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

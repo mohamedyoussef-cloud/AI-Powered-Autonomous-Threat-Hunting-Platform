@@ -1,0 +1,20 @@
+title: "Compiled HTML File - Analytic 0968 Baseline"
+id: "a0fcc9cc-0a42-50fe-9978-feaacda9b86d"
+status: "experimental"
+description: "Execution of hh.exe to open a .chm file followed by suspicious child processes or script engine invocation (VBScript, JScript, mshta, powershell). Behavior includes loading a CHM file from untrusted locations, or immediately spawning commands indicative of payload execution."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1218.001"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "hh.exe"
+        - "VBScript"
+        - "JScript"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

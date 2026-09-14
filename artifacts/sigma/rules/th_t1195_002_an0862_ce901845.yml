@@ -1,0 +1,19 @@
+title: "Compromise Software Supply Chain - Analytic 0862 Baseline"
+id: "ce901845-8e8e-5f96-966e-43ca01786bf5"
+status: "experimental"
+description: "Adversary ships a tampered application or update: an updater/installer (msiexec/setup/update.exe/vendor service) writes or replaces binaries; on first run it spawns scripts/shells or unsigned DLLs and beacons to non-approved update CDNs/hosts. Detection correlates: (1) process creation of installer/updater → (2) file metadata changes in program paths → (3) first-run children and module/signature anomalies → (4) outbound connections to unexpected hosts within a short window."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1195.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Microsoft-Windows-CodeIntegrity/Operational"
+detection:
+    keywords:
+        - "update.exe"
+        - "non-approved"
+        - "first-run"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

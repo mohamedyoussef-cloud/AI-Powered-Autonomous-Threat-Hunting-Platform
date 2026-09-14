@@ -1,0 +1,18 @@
+title: "Standard Encoding - Analytic 0345 Baseline"
+id: "367ba4aa-a12d-56e0-be3e-62a922e72b6c"
+status: "experimental"
+description: "Process invokes a standard encoder (e.g., PowerShell -enc, certutil -encode, base64 via .NET/Invoke-Expression) or emits long Base64/hex literals → shortly followed by outbound network egress with high bytes_out:bytes_in ratio or HTTP headers/payloads containing Base64/MIME blocks."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1132.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "PowerShell"
+        - "Invoke-Expression"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

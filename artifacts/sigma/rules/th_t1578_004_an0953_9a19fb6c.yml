@@ -1,0 +1,18 @@
+title: "Revert Cloud Instance - Analytic 0953 Baseline"
+id: "9a19fb6c-6f13-5810-b48d-94d4a735bffc"
+status: "experimental"
+description: "Defenders can detect suspicious reversion of cloud compute instances by monitoring for unusual snapshot restores, rollback actions, or ephemeral storage resets that occur outside expected administrative workflows. From a defender’s perspective, relevant detection chains include: a snapshot restore triggered by a new or rarely used account, a sequence of snapshot creation immediately followed by a restore and instance start, or rollbacks performed from anomalous geographic or network locations. These patterns may indicate attempts to remove forensic evidence or re-establish a clean execution state for persistence."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1578.004"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "re-establish"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

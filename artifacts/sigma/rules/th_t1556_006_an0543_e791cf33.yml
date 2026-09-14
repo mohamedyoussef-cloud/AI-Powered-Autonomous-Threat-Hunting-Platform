@@ -1,0 +1,19 @@
+title: "Multi-Factor Authentication - Analytic 0543 Baseline"
+id: "e791cf33-14e4-532e-9d37-1dc2fb2972dc"
+status: "experimental"
+description: "Detects registry and Group Policy modifications that disable or weaken MFA, suspicious PowerShell usage modifying MFA-related attributes, and anomalous login sessions succeeding without expected MFA challenge."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1556.006"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "PowerShell"
+        - "MFA-related"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

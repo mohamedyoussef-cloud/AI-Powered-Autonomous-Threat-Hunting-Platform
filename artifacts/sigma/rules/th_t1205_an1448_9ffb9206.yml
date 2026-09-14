@@ -1,0 +1,18 @@
+title: "Traffic Signaling - Analytic 1448 Baseline"
+id: "9ffb9206-1428-568b-9ffa-6cd430e3c798"
+status: "experimental"
+description: "A remote host sends a short sequence of failed connection attempts (RST/ICMP unreachable) to a set of closed ports. Within a brief window the endpoint (a) adds/enables a firewall rule or (b) a sniffer-backed process begins listening or opens a new socket, after which a successful connection occurs. Also detects Wake-on-LAN magic packets seen on local segment."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1205"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Microsoft-Windows-Windows Firewall With Advanced Security/Firewall"
+detection:
+    keywords:
+        - "sniffer-backed"
+        - "Wake-on-LAN"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,18 @@
+title: "AppInit DLLs - Analytic 1536 Baseline"
+id: "33ff91fb-38d2-5458-b635-8e18f0531984"
+status: "experimental"
+description: "Registry key modification to AppInit_DLLs value followed by anomalous DLL loading by processes importing user32.dll, especially unsigned or uncommon DLLs, suggesting unauthorized AppInit persistence or privilege escalation."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1546.010"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "AppInit"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

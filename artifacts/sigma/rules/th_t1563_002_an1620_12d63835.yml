@@ -1,0 +1,17 @@
+title: "RDP Hijacking - Analytic 1620 Baseline"
+id: "12d63835-27f7-5767-8f25-edc8b3a68a27"
+status: "experimental"
+description: "Detection of suspicious use of `tscon.exe` or equivalent methods to hijack legitimate RDP sessions. Defenders can observe anomalies such as session reassignments without corresponding authentication, processes spawned in the context of hijacked sessions, or unusual RDP network traffic flows that deviate from expected baselines."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1563.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon, WinEventLog:System"
+detection:
+    keywords:
+        - "tscon.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

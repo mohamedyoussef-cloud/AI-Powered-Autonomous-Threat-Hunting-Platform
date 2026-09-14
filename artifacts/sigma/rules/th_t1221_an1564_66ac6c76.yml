@@ -1,0 +1,19 @@
+title: "Template Injection - Analytic 1564 Baseline"
+id: "66ac6c76-345c-5ac2-b963-5e736f456e17"
+status: "experimental"
+description: "Detection of Office or document viewer processes (e.g., winword.exe) initiating network connections to remote templates or executing scripts due to manipulated template references (e.g., embedded in .docx, .rtf, or .dotm files), followed by suspicious child process creation (e.g., PowerShell)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1221"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "winword.exe"
+        - "PowerShell"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

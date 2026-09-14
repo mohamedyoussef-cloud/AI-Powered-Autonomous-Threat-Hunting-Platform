@@ -1,0 +1,18 @@
+title: "Account Discovery - Analytic 1612 Baseline"
+id: "2630636b-7d86-502d-b41f-ffc33bc22633"
+status: "experimental"
+description: "Detection of processes performing local or domain account enumeration by invoking account directory queries or security APIs followed by structured output of account lists. The defender observes command execution or API invocation patterns that retrieve account information and produce enumeration artifacts shortly afterward."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1087"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "Detection of processes performing local or domain account enumeration by invoking account directory queries or security APIs followed by structured output of account lists. The defender observes command execution or API invocation patterns that retrieve account information and produce enumeration artifacts shortly afterward."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

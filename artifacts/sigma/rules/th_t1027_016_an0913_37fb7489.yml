@@ -1,0 +1,19 @@
+title: "Junk Code Insertion - Analytic 0913 Baseline"
+id: "37fb7489-1bdc-5ffb-ba7e-10090c43bfd7"
+status: "experimental"
+description: "Detects the presence of executables with high NOP padding, unusually large binary size for their function, and follow-on execution or memory injection from such files, especially when originating from temp or user-space paths."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1027.016"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "follow-on"
+        - "user-space"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

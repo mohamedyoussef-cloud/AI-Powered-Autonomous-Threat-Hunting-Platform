@@ -1,0 +1,20 @@
+title: "IDE Extensions - Analytic 1548 Baseline"
+id: "9cfc4252-5333-56a7-9379-b84c3d776d90"
+status: "experimental"
+description: "Adversary installs or side-loads an IDE extension (VS Code, IntelliJ/JetBrains, Eclipse) or enables IDE tunneling. Chain: (1) IDE binary starts on a non-developer endpoint or server, often with install/force/tunnel flags → (2) extension files/registrations appear under user profile → (3) browser/IDE initiates outbound connections to extension marketplaces, update endpoints, or IDE remote/tunnel services → (4) optional child tools (ssh, node, powershell) execute under the IDE context."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1176.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "IntelliJ"
+        - "JetBrains"
+        - "side-loads"
+        - "non-developer"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

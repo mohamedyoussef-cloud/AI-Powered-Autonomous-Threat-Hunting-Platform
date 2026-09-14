@@ -1,0 +1,21 @@
+{
+  "assembler_version": "1.0",
+  "contract_version": "1.1",
+  "final_audit_status": "PASS",
+  "final_detection_plans": 505,
+  "generated_at_utc": "2026-08-18T22:05:02.623498+00:00",
+  "input_dispatch_records": 505,
+  "lineage_version_set_count": 1,
+  "needs_path_resolution": 13,
+  "processing_errors": 0,
+  "ready_for_baseline_sigma": 492,
+  "schema_valid": 505,
+  "semantic_artifact_version": "1.3",
+  "semantic_input_records": 505,
+  "source_hashes": {
+    "contract_schema_v1_1": "sha256:f5d2fcd0432f6124061d5c80f3150296e484eeb620c91cab3dc4e391c2c7d3cc",
+    "dispatch": "sha256:381e6ed2be2df99fc90f149d5bbe90551a0cb1e02e17e2798d704301059fee07",
+    "eligibility": "sha256:7584d5aa8e8dfdc4789ea66b0042c36f05c54dd0e001b53e549597a63c1227e8",
+    "semantic_v1_3": "sha256:e923dc5a816ad2729484367c85c69f45f24920c99e20af65751695e32b2545e6"
+  }
+}

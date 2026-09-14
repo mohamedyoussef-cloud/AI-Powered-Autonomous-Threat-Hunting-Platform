@@ -1,0 +1,22 @@
+title: "BITS Jobs - Analytic 0274 Baseline"
+id: "74a76699-3666-5c87-bf87-68d7baef6e78"
+status: "experimental"
+description: "Behavioral chain: (1) An actor creates or modifies a BITS job via bitsadmin.exe, PowerShell BITS cmdlets, or COM; (2) the job performs HTTP(S)/SMB network transfers while the owning user is logged on; (3) upon job completion/error, BITS launches a notify command (SetNotifyCmdLine) from svchost.exe -k netsvcs -s BITS, often establishing persistence by keeping long-lived jobs. The strategy correlates process creation, command/script telemetry, BITS-Client operational events, and network connections initiated by BITS."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1197"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon, WinEventLog:PowerShell, WinEventLog:System"
+detection:
+    keywords:
+        - "bitsadmin.exe"
+        - "svchost.exe"
+        - "PowerShell"
+        - "SetNotifyCmdLine"
+        - "long-lived"
+        - "BITS-Client"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

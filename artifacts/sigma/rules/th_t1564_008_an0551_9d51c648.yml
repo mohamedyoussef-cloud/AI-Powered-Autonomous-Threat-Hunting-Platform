@@ -1,0 +1,21 @@
+title: "Email Hiding Rules - Analytic 0551 Baseline"
+id: "9d51c648-3f94-5b06-8d63-a59f2673575f"
+status: "experimental"
+description: "Suspicious creation or modification of inbox rules through PowerShell (New-InboxRule, Set-InboxRule) to automatically delete, move, or hide emails. Defender perspective: unusual rule activity correlated with mailbox access and filtering patterns."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1564.008"
+logsource:
+    product: "windows"
+    service: "powershell"
+    definition: "Grounded source(s): WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "PowerShell"
+        - "InboxRule"
+        - "New-InboxRule"
+        - "Set-InboxRule"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,18 @@
+title: "Spearphishing Link - Analytic 0298 Baseline"
+id: "92839521-3059-5a26-9697-db20126efafa"
+status: "experimental"
+description: "Correlation of inbound emails with embedded links followed by user-driven browser navigation to suspicious or obfuscated domains. Detection chain includes malicious URL in email → user click recorded in Office logs → browser process spawning unusual child processes (e.g., PowerShell, cmd) or download activity."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1566.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "PowerShell"
+        - "user-driven"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

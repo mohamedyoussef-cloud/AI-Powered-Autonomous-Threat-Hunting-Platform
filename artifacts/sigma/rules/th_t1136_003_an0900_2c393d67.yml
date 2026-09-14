@@ -1,0 +1,19 @@
+title: "Cloud Account - Analytic 0900 Baseline"
+id: "2c393d67-0e8b-5b67-9c14-589a41457a1b"
+status: "experimental"
+description: "Adversaries use cloud API, CLI, or console to create IAM users or roles. Initial CreateUser is followed by policy/role attachment. Detection monitors temporal chains involving IAM:CreateUser, AttachUserPolicy, and credential generation, especially from automation or foreign IP ranges."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1136.003"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "CreateUser"
+        - "AttachUserPolicy"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

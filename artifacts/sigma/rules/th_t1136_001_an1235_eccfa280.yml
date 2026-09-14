@@ -1,0 +1,21 @@
+title: "Local Account - Analytic 1235 Baseline"
+id: "eccfa280-4f8c-5ad4-a694-8a9c85b6113f"
+status: "experimental"
+description: "Adversary uses built-in tools like 'net user /add', PowerShell, or WMI to create a local user. Sequence: Account creation event (4720) follows process creation of a suspicious executable (e.g., powershell.exe or net.exe)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1136.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "net user /add"
+        - "powershell.exe"
+        - "net.exe"
+        - "PowerShell"
+        - "built-in"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

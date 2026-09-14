@@ -1,0 +1,20 @@
+title: "ClickOnce - Analytic 0550 Baseline"
+id: "69148284-d4c9-5950-aee5-2a5e7f944ae9"
+status: "experimental"
+description: "Abuse of ClickOnce applications where rundll32.exe invokes dfshim.dll with ShOpenVerbApplication or dfsvc.exe spawns unexpected child processes or loads unsigned modules."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1127.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon, WinEventLog:Microsoft-Windows-Security-Mitigations/KernelMode"
+detection:
+    keywords:
+        - "rundll32.exe"
+        - "dfsvc.exe"
+        - "ClickOnce"
+        - "ShOpenVerbApplication"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

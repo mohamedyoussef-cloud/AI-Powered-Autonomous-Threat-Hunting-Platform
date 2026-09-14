@@ -1,0 +1,22 @@
+title: "Regsvcs/Regasm - Analytic 1028 Baseline"
+id: "57f74607-8e1c-5578-9995-986ecdb48d67"
+status: "experimental"
+description: "Abuse of Regsvcs.exe or Regasm.exe to execute arbitrary code embedded in .NET assemblies via [ComRegisterFunction]/[ComUnregisterFunction]. Behavioral chain: (1) Process creation of regsvcs/regasm with suspicious assembly paths/flags → (2) Assembly/DLL load inside regsvcs/regasm → (3) Registry writes to HKCR\\CLSID/ProgID during COM registration → (4) Optional child process or network activity spawned by installer/registration code."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1218.009"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "Regsvcs.exe"
+        - "Regasm.exe"
+        - "HKCR\\CLSID/ProgID during COM registration"
+        - "ComRegisterFunction"
+        - "ComUnregisterFunction"
+        - "ProgID"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,19 @@
+title: "Data Encoding - Analytic 0302 Baseline"
+id: "146ccaa1-367b-5714-b52e-37e5202fe903"
+status: "experimental"
+description: "Atypical processes (e.g., powershell.exe, regsvr32.exe) encode large outbound traffic using Base64 or other character encodings; this traffic is sent over uncommon ports or embedded in protocol fields (e.g., HTTP cookies or headers)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1132"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "powershell.exe"
+        - "regsvr32.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

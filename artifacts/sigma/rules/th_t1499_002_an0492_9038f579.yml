@@ -1,0 +1,18 @@
+title: "Service Exhaustion Flood - Analytic 0492 Baseline"
+id: "9038f579-0e5a-53b4-9c4e-b2eb308ae326"
+status: "experimental"
+description: "Automated or scripted HTTP/TLS flooding from one VM or cloud instance against another service, exploiting compute-based billing or exhaustion of service infrastructure."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1499.002"
+logsource:
+    product: "aws"
+    service: "cloudwatch"
+    definition: "Grounded source(s): AWS:CloudWatch"
+detection:
+    keywords:
+        - "compute-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

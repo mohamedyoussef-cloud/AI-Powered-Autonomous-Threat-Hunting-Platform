@@ -1,0 +1,19 @@
+title: "Safe Mode Boot - Analytic 0323 Baseline"
+id: "7f67e31b-a87f-56f2-93fc-92ac91d1e5b9"
+status: "experimental"
+description: "Abuse of safe mode via BCD modification, boot configuration utilities (bcdedit.exe, bootcfg.exe), and registry persistence under SafeBoot keys. Defender view: suspicious boot configuration changes correlated with registry edits that enable adversary persistence or disable defenses."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1688"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "bcdedit.exe"
+        - "bootcfg.exe"
+        - "SafeBoot"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

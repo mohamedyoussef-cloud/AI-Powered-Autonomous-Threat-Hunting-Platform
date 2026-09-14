@@ -1,0 +1,22 @@
+title: "Network Share Discovery - Analytic 0513 Baseline"
+id: "382f5c12-4a3b-5cc6-b5c2-7db0c828b547"
+status: "experimental"
+description: "Process or script enumerates network shares via CLI (net view/net share, PowerShell Get-SmbShare/WMI) or OS APIs (NetShareEnum/ srvsvc.NetShareEnumAll RPC) → bursts of outbound SMB/RPC connections (445/139, \\\\host\\IPC$ / srvsvc) to many hosts inside a short window → optional follow-on file listing or copy operations."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1135"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "PowerShell"
+        - "SmbShare"
+        - "NetShareEnum"
+        - "NetShareEnumAll"
+        - "Get-SmbShare"
+        - "follow-on"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

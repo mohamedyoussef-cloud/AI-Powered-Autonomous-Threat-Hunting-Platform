@@ -1,0 +1,17 @@
+title: "Remote Desktop Protocol - Analytic 0931 Baseline"
+id: "62da82d0-dd1b-5750-9a32-1c3fb16a4678"
+status: "experimental"
+description: "Remote Desktop (RDP) logon by a user followed by unusual process execution, file access, or lateral movement activity within a short timeframe."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1021.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Remote Desktop (RDP) logon by a user followed by unusual process execution, file access, or lateral movement activity within a short timeframe."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

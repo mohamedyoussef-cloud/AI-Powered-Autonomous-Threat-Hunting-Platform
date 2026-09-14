@@ -1,0 +1,18 @@
+title: "Lua - Analytic 0278 Baseline"
+id: "86f1f2e1-56c1-51b8-ba0b-17e75d2cec82"
+status: "experimental"
+description: "Detects execution of Lua interpreters or scripts (.lua), especially when correlated with suspicious parent processes or file drop events, indicating malicious use of embedded scripting."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1059.011"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Detects execution of Lua interpreters or scripts (.lua), especially when correlated with suspicious parent processes or file drop events, indicating malicious use of embedded scripting."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

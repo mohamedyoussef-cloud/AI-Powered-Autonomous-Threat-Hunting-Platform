@@ -1,0 +1,18 @@
+title: "Resource Hijacking - Analytic 0744 Baseline"
+id: "07582fa0-afab-59fe-bfd2-02184c781028"
+status: "experimental"
+description: "Sudden spikes in cloud VM CPU usage with outbound traffic to mining pools and unauthorized instance creation."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1496"
+logsource:
+    product: "aws"
+    service: "cloudwatch"
+    definition: "Grounded source(s): AWS:CloudWatch"
+detection:
+    keywords:
+        - "Sudden spikes in cloud VM CPU usage with outbound traffic to mining pools and unauthorized instance creation."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

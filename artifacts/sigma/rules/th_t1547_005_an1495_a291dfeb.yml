@@ -1,0 +1,23 @@
+title: "Security Support Provider - Analytic 1495 Baseline"
+id: "a291dfeb-e607-5fc2-83f4-0798e1ca67ff"
+status: "experimental"
+description: "Monitor registry modifications to `HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Security Packages` or `...\\OSConfig\\Security Packages`, especially insertions of new DLL entries. Correlate this with subsequent DLL module loads into `lsass.exe`. Track unsigned or anomalous DLLs loading into LSASS using image load auditing. LSASS loads unsigned DLL due to AuditLevel=8 registry configuration or System reboot followed by DLL load into lsass.exe"
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1547.005"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Security Packages"
+        - "...\\OSConfig\\Security Packages"
+        - "lsass.exe"
+        - "SYSTEM"
+        - "CurrentControlSet"
+        - "OSConfig"
+        - "AuditLevel"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

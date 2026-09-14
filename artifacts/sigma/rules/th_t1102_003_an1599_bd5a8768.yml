@@ -1,0 +1,18 @@
+title: "One-Way Communication - Analytic 1599 Baseline"
+id: "bd5a8768-9c98-564d-acea-797bda90ee01"
+status: "experimental"
+description: "Suspicious process initiating outbound connections to web services without corresponding response or return traffic, indicative of one-way command channels."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1102.003"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "one-way"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

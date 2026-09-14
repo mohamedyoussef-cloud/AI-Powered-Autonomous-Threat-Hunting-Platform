@@ -1,0 +1,13 @@
+{
+  "policy_version": "1.0",
+  "platform_compatibility_mode": "eligibility_gate",
+  "nominal_weights": {
+    "telemetry_readiness": 0.25,
+    "asset_criticality": 0.25,
+    "incident_history_relevance": 0.25,
+    "detection_coverage_gap": 0.25
+  },
+  "missing_factor_policy": "renormalize_available_weights",
+  "detection_gap_fallback": "sigma_detection_knowledge_gap_proxy",
+  "minimum_available_factors": 2
+}

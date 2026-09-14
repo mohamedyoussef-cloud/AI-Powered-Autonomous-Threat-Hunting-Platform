@@ -1,0 +1,21 @@
+title: "Steal Web Session Cookie - Analytic 1402 Baseline"
+id: "96149609-0772-52b6-8623-07e75cdae7e8"
+status: "experimental"
+description: "Detects suspicious access to browser session cookie storage (e.g., Chrome’s `Cookies` SQLite DB) or memory reads of browser processes. Anomalous injection or memory dump utilities targeting browser processes such as `chrome.exe`, `firefox.exe`, or `msedge.exe`."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1539"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "Cookies"
+        - "chrome.exe"
+        - "firefox.exe"
+        - "msedge.exe"
+        - "SQLite"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

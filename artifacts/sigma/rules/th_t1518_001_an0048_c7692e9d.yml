@@ -1,0 +1,17 @@
+title: "Security Software Discovery - Analytic 0048 Baseline"
+id: "c7692e9d-5489-558b-ad9e-b067ddae4aa1"
+status: "experimental"
+description: "Adversary executes commands to enumerate installed antivirus, EDR, or firewall agents using WMI, registry queries, and built-in tools (e.g., tasklist, netsh, sc query). Correlated with elevated process privileges or scripting engine usage."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1518.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "built-in"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

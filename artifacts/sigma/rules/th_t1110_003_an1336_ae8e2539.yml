@@ -1,0 +1,18 @@
+title: "Password Spraying - Analytic 1336 Baseline"
+id: "ae8e2539-1fa6-5892-bd91-81be09dbfe23"
+status: "experimental"
+description: "A high volume of authentication failures using a single password (or small set) across many different user accounts within a defined time window"
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1110.003"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "A high volume of authentication failures using a single password (or small set) across many different user accounts within a defined time window"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

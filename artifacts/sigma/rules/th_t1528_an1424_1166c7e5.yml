@@ -1,0 +1,18 @@
+title: "Steal Application Access Token - Analytic 1424 Baseline"
+id: "1166c7e5-40eb-5782-b488-f6e293fc1ad0"
+status: "experimental"
+description: "Token retrieval from instance metadata endpoints such as AWS IMDS or Azure IMDS, followed by API usage using the obtained token from non-standard applications."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1528"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "non-standard"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

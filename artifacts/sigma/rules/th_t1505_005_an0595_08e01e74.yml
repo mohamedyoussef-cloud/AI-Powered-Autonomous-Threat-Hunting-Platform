@@ -1,0 +1,20 @@
+title: "Terminal Services DLL - Analytic 0595 Baseline"
+id: "08e01e74-d59e-59fe-b2e0-2bf554f9714f"
+status: "experimental"
+description: "Adversary modifies or replaces the Terminal Services DLL (`termsrv.dll`) or changes the associated `ServiceDll` Registry value to load an arbitrary or patched DLL that enables persistent and enhanced RDP access. This may include binary replacement, registry tampering, and unexpected module loads by the `svchost.exe -k termsvcs` process."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1505.005"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "termsrv.dll"
+        - "ServiceDll"
+        - "svchost.exe -k termsvcs"
+        - "svchost.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

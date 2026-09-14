@@ -1,0 +1,20 @@
+title: "Compromise Software Dependencies and Development Tools - Analytic 0021 Baseline"
+id: "42199a0c-cbb5-50e3-b072-a9e17c89ce8a"
+status: "experimental"
+description: "Adversary manipulates dependencies/dev tools used by developers or CI: a package manager (npm/yarn/pnpm, pip/pipenv, nuget/dotnet, chocolatey/winget, maven/gradle) or a compiler/IDE downloads or restores content; files are written under project paths and execution paths (node_modules, packages, .nuget, .gradle, .m2, %AppData%\\npm, %UserProfile%\\.cargo\\bin, temp build dirs). First run of newly written components triggers scripts (preinstall/postinstall), shell/PowerShell spawning, or loader DLLs, followed by network egress to non-approved registries/CDNs."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1195.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Microsoft-Windows-CodeIntegrity/Operational"
+detection:
+    keywords:
+        - "AppData"
+        - "UserProfile"
+        - "PowerShell"
+        - "non-approved"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,17 @@
+title: "VNC - Analytic 0504 Baseline"
+id: "5d9d309e-8aab-5aec-9dd2-d6eb0eb273b0"
+status: "experimental"
+description: "Detection of VNC service or executable starting unexpectedly, followed by user session creation and interactive desktop activity (mouse/keyboard simulation)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1021.005"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "Detection of VNC service or executable starting unexpectedly, followed by user session creation and interactive desktop activity (mouse/keyboard simulation)."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

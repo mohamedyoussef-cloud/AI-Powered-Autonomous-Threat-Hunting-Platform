@@ -1,0 +1,17 @@
+title: "Software Extensions - Analytic 0251 Baseline"
+id: "9789adf7-558b-5780-9b39-11bfbbcd908c"
+status: "experimental"
+description: "Installation or execution of a malicious browser or IDE extension, followed by abnormal registry entries or outbound network connections from the host application"
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1176"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Installation or execution of a malicious browser or IDE extension, followed by abnormal registry entries or outbound network connections from the host application"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

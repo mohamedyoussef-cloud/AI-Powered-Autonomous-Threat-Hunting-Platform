@@ -1,0 +1,77 @@
+{
+  "manifest_version": "1.0",
+  "environment_id": "reference-botsv3-evtx",
+  "environment_name": "BOTS v3 + EVTX Reference Environment",
+
+  "expected_total_records": 1145,
+
+  "inputs": [
+    {
+      "source_id": "botsv3_sourcetypes",
+      "mode": "csv",
+      "connector_type": "prepared_profile",
+      "dataset_name": "BOTS v3",
+      "record_type": "sourcetype_profile",
+      "path": "data/processed/telemetry/botsv3/sourcetype_profile.csv",
+
+      "field_map": {
+        "source_type": "sourcetype",
+        "canonical_domain": "canonical_domain",
+        "event_family": "event_family",
+        "mapping_confidence": "mapping_confidence",
+        "event_count": "event_count",
+        "first_seen_utc": "earliest_utc",
+        "last_seen_utc": "latest_utc"
+      }
+    },
+
+    {
+      "source_id": "botsv3_sources",
+      "mode": "csv",
+      "connector_type": "prepared_profile",
+      "dataset_name": "BOTS v3",
+      "record_type": "source_profile",
+      "path": "data/processed/telemetry/botsv3/source_profile.csv",
+
+      "field_map": {
+        "source_name": "source",
+        "event_count": "event_count",
+        "first_seen_utc": "earliest_utc",
+        "last_seen_utc": "latest_utc"
+      }
+    },
+
+    {
+      "source_id": "botsv3_hosts",
+      "mode": "csv",
+      "connector_type": "prepared_profile",
+      "dataset_name": "BOTS v3",
+      "record_type": "host_profile",
+      "path": "data/processed/telemetry/botsv3/host_profile.csv",
+
+      "field_map": {
+        "host": "host",
+        "event_count": "event_count",
+        "first_seen_utc": "earliest_utc",
+        "last_seen_utc": "latest_utc"
+      }
+    },
+
+    {
+      "source_id": "evtx_reference",
+      "mode": "static",
+      "connector_type": "prepared_inventory",
+      "dataset_name": "EVTX",
+      "record_type": "dataset_evidence",
+
+      "defaults": {
+        "source_type": "evtx",
+        "canonical_domain": "endpoint",
+        "event_family": "endpoint_activity",
+        "platform_hint": "Windows",
+        "mapping_confidence": "high",
+        "raw_reference": "data/processed/telemetry/evtx_source_file_inventory.csv"
+      }
+    }
+  ]
+}

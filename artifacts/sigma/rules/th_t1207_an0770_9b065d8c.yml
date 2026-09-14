@@ -1,0 +1,24 @@
+title: "Rogue Domain Controller - Analytic 0770 Baseline"
+id: "9b065d8c-49ea-5c17-9f90-4e7f721f406b"
+status: "experimental"
+description: "Detection of rogue Domain Controller registration and Active Directory replication abuse by correlating: (1) creation/modification of nTDSDSA and server objects in the Configuration partition, (2) unexpected usage of Directory Replication Service SPNs (GC/ or E3514235-4B06-11D1-AB04-00C04FC2DCD2), (3) replication RPC calls (DrsAddEntry, DrsReplicaAdd, GetNCChanges) originating from non-DC hosts, and (4) Kerberos authentication by non-DC machines using DRS-related SPNs. These events in combination, especially from hosts outside the Domain Controllers OU, may indicate DCShadow or rogue DC activity."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1207"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "DrsAddEntry"
+        - "DrsReplicaAdd"
+        - "GetNCChanges"
+        - "DCShadow"
+        - "E3514235-4B06-11D1-AB04-00C04FC2DCD2"
+        - "non-DC"
+        - "DRS-related"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

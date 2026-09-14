@@ -1,0 +1,70 @@
+﻿{
+  "research_version": "1.0",
+  "task": "Task 46 - LLM Training Dataset Research",
+  "sources": [
+    {
+      "source_id": "sigmahq_rules",
+      "name": "SigmaHQ Main Rule Repository",
+      "role": "PRIMARY_SUPERVISED_SIGMA_SOURCE",
+      "license": "DRL-1.1",
+      "decision": "APPROVED_CANDIDATE",
+      "required_controls": [
+        "retain source rule id",
+        "retain author attribution",
+        "retain license provenance",
+        "deduplicate before splitting",
+        "split by technique/family before fine-tuning"
+      ]
+    },
+    {
+      "source_id": "mitre_attack_stix",
+      "name": "MITRE ATT&CK STIX 2.1",
+      "role": "GROUNDING_CONTEXT",
+      "attack_version": "19.1",
+      "decision": "APPROVED_GROUNDING",
+      "training_target_allowed": false
+    },
+    {
+      "source_id": "splunk_security_content",
+      "name": "Splunk Security Content",
+      "role": "AUXILIARY_DETECTION_ENGINEERING_CONTEXT",
+      "license": "Apache-2.0",
+      "decision": "APPROVED_CANDIDATE",
+      "direct_spl_to_sigma_target": false
+    },
+    {
+      "source_id": "sigma_specification",
+      "name": "Sigma Specification",
+      "role": "RAG_AND_VALIDATION_KNOWLEDGE",
+      "spec_version": "2.1.0",
+      "decision": "APPROVED_KNOWLEDGE",
+      "training_target_allowed": false
+    },
+    {
+      "source_id": "elastic_detection_rules",
+      "name": "Elastic Detection Rules",
+      "role": "RESEARCH_ONLY",
+      "license": "Elastic-License-2.0",
+      "decision": "HOLD_LICENSE_REVIEW",
+      "training_target_allowed": false
+    },
+    {
+      "source_id": "internal_baseline_sigma",
+      "name": "Project Baseline Sigma v1.1",
+      "role": "INTERNAL_BOOTSTRAP_CANDIDATE",
+      "records": 540,
+      "pysigma_passed": 540,
+      "status": "experimental",
+      "decision": "CANDIDATE_NOT_GOLD",
+      "training_target_allowed": "REQUIRES_TASK_47_SELECTION"
+    }
+  ],
+  "research_policy": {
+    "raw_logs_are_not_llm_supervision": true,
+    "mitre_context_is_not_detection_label": true,
+    "pysigma_pass_does_not_equal_gold_label": true,
+    "license_and_attribution_must_be_preserved": true,
+    "train_validation_test_leakage_must_be_prevented": true
+  },
+  "status": "PASS"
+}

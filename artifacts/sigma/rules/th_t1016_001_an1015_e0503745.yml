@@ -1,0 +1,18 @@
+title: "Internet Connection Discovery - Analytic 1015 Baseline"
+id: "e0503745-fc98-5f6d-9f6d-ff0eb49a7e87"
+status: "experimental"
+description: "Execution of utilities (e.g., ping, tracert, Test-NetConnection) or scripted methods to test Internet connectivity by interacting with external IPs/domains."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1016.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:PowerShell, WinEventLog:Security"
+detection:
+    keywords:
+        - "NetConnection"
+        - "Test-NetConnection"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

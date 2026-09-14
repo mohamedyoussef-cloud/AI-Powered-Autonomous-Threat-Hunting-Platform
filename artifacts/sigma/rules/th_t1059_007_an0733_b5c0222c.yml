@@ -1,0 +1,21 @@
+title: "JavaScript - Analytic 0733 Baseline"
+id: "b5c0222c-9c77-57cf-85d9-d36a6bb87486"
+status: "experimental"
+description: "Detects JavaScript execution through WSH (wscript.exe, cscript.exe) or HTA (mshta.exe), particularly when spawned from Office macros, web browsers, or abnormal user paths. Correlates script execution with outbound network activity or system modification."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1059.007"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "wscript.exe"
+        - "cscript.exe"
+        - "mshta.exe"
+        - "JavaScript"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

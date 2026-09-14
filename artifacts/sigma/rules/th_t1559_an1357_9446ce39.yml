@@ -1,0 +1,18 @@
+title: "Inter-Process Communication - Analytic 1357 Baseline"
+id: "9446ce39-c557-5896-83d3-018f88a767cd"
+status: "experimental"
+description: "Detects anomalous use of COM, DDE, or named pipes for execution. Correlates creation or access of IPC mechanisms (e.g., named pipes, COM objects) with unusual parent-child process relationships or code injection patterns (e.g., Office spawning cmd.exe via DDE)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1559"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "cmd.exe"
+        - "parent-child"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

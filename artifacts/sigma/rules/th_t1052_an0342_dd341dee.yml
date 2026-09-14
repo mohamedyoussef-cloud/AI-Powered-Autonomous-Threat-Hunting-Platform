@@ -1,0 +1,17 @@
+title: "Exfiltration Over Physical Medium - Analytic 0342 Baseline"
+id: "dd341dee-75b0-5b58-ab7b-c1b6aad6c892"
+status: "experimental"
+description: "Detects removable drive insertion followed by unusual file access, compression, or staging activity by unauthorized users or unexpected processes."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1052"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "Detects removable drive insertion followed by unusual file access, compression, or staging activity by unauthorized users or unexpected processes."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,21 @@
+title: "Exploit Public-Facing Application - Analytic 0219 Baseline"
+id: "9e393bbb-7350-59a0-bee3-3fb2e8ab7496"
+status: "experimental"
+description: "Adversary sends crafted HTTP/S (or other service) input to an Internet-facing app (IIS/ASP.NET, API, device portal). Chain: (1) abnormal request patterns to public endpoint → (2) elevated 4xx/5xx or unusual methods/paths → (3) server process (w3wp.exe/other service) spawns shell/LOLbins or loads non-standard modules → (4) optional outbound callback from the host/container."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1190"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "w3wp.exe"
+        - "LOLbins"
+        - "Internet-facing"
+        - "non-standard"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

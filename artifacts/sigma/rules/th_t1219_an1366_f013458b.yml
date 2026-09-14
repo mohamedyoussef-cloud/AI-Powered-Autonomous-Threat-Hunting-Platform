@@ -1,0 +1,19 @@
+title: "Remote Access Tools - Analytic 1366 Baseline"
+id: "f013458b-b6a3-5aa9-9523-72e73537f1a7"
+status: "experimental"
+description: "Chain of remote access tool behavior: (1) initial execution of remote-control/assist agent or GUI under user context; (2) persistence via service or autorun; (3) long-lived outbound connection/tunnel to external infrastructure; (4) interactive control signals such as shell or file-manager child processes spawned by the RAT parent."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1219"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:System"
+detection:
+    keywords:
+        - "remote-control"
+        - "long-lived"
+        - "file-manager"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

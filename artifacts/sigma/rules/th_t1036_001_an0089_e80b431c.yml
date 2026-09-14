@@ -1,0 +1,17 @@
+title: "Invalid Code Signature - Analytic 0089 Baseline"
+id: "e80b431c-b847-58d2-8ef7-6bbe0b9d1458"
+status: "experimental"
+description: "Execution of binaries with invalid digital signatures, where metadata claims code is signed but validation fails. Behavior is often correlated with suspicious parent processes or unexpected execution paths."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1036.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Windows Defender, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "Execution of binaries with invalid digital signatures, where metadata claims code is signed but validation fails. Behavior is often correlated with suspicious parent processes or unexpected execution paths."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

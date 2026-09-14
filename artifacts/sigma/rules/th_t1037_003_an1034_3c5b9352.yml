@@ -1,0 +1,17 @@
+title: "Network Logon Script - Analytic 1034 Baseline"
+id: "3c5b9352-9bae-519b-9661-8f98ebf94e7e"
+status: "experimental"
+description: "Correlates Group Policy updates that configure network logon scripts with subsequent remote file execution behaviors triggered by user logons to identify potential persistence or execution chains tied to adversarial manipulation of logon scripts."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1037.003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:System"
+detection:
+    keywords:
+        - "Correlates Group Policy updates that configure network logon scripts with subsequent remote file execution behaviors triggered by user logons to identify potential persistence or execution chains tied to adversarial manipulation of logon scripts."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

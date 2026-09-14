@@ -1,0 +1,17 @@
+title: "Right-to-Left Override - Analytic 1461 Baseline"
+id: "757ef89c-27b6-5aee-be6f-8f701a1a5543"
+status: "experimental"
+description: "Execution of files containing right-to-left override characters (U+202E) to masquerade true file extensions. Often found in phishing payloads or file downloads."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1036.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:PowerShell, WinEventLog:Windows Defender"
+detection:
+    keywords:
+        - "right-to-left"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

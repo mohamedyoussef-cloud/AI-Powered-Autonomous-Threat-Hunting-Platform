@@ -1,0 +1,18 @@
+title: "Bidirectional Communication - Analytic 0100 Baseline"
+id: "decadfc4-1b84-5a91-b786-0952dfa7ae92"
+status: "experimental"
+description: "Suspicious processes initiating encrypted HTTPS connections to common web service domains, followed by abnormal data upload behavior or automated posting behavior indicative of C2 bidirectional traffic."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1102.002"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Suspicious processes initiating encrypted HTTPS connections to common web service domains, followed by abnormal data upload behavior or automated posting behavior indicative of C2 bidirectional traffic."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

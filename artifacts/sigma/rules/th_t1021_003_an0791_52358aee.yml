@@ -1,0 +1,17 @@
+title: "Distributed Component Object Model - Analytic 0791 Baseline"
+id: "52358aee-c859-5c2e-91c8-e27cbf226022"
+status: "experimental"
+description: "A remote DCOM invocation by a privileged account using RPC (port 135), followed by abnormal process instantiation or module loading on the remote system indicative of code execution."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1021.003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "A remote DCOM invocation by a privileged account using RPC (port 135), followed by abnormal process instantiation or module loading on the remote system indicative of code execution."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

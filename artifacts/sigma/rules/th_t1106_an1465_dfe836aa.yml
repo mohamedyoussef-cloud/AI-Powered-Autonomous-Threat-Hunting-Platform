@@ -1,0 +1,18 @@
+title: "Native API - Analytic 1465 Baseline"
+id: "dfe836aa-0a88-5e1f-b55b-3663640fec35"
+status: "experimental"
+description: "Unusual or suspicious processes loading critical native API DLLs (e.g., ntdll.dll, kernel32.dll) followed by direct syscall behavior, memory manipulation, or hollowing."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1106"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Unusual or suspicious processes loading critical native API DLLs (e.g., ntdll.dll, kernel32.dll) followed by direct syscall behavior, memory manipulation, or hollowing."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

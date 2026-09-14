@@ -1,0 +1,18 @@
+title: "Multi-Factor Authentication Request Generation - Analytic 0451 Baseline"
+id: "31d885bf-2d76-50db-a992-89716a93dded"
+status: "experimental"
+description: "Detect repeated failed login events followed by MFA challenges triggered in rapid succession, especially if originating from service accounts or anomalous IP addresses."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1621"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "Detect repeated failed login events followed by MFA challenges triggered in rapid succession, especially if originating from service accounts or anomalous IP addresses."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

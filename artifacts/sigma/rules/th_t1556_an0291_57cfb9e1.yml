@@ -1,0 +1,18 @@
+title: "Modify Authentication Process - Analytic 0291 Baseline"
+id: "57cfb9e1-aa23-5998-b48c-487938321e36"
+status: "experimental"
+description: "Detects unauthorized changes to IAM authentication configurations such as disabling MFA, creating backdoor access keys, or altering trust policies. Correlates identity policy updates with unusual login behavior."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1556"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "Detects unauthorized changes to IAM authentication configurations such as disabling MFA, creating backdoor access keys, or altering trust policies. Correlates identity policy updates with unusual login behavior."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

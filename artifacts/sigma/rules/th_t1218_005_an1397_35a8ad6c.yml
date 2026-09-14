@@ -1,0 +1,20 @@
+title: "Mshta - Analytic 1397 Baseline"
+id: "35a8ad6c-0986-5076-bb29-aadbfa170d8c"
+status: "experimental"
+description: "Detection of mshta.exe execution where command-line arguments reference remote or local HTA/script content (VBScript/JScript) followed by subsequent file creation, network retrieval, or process spawning that indicates payload execution outside standard Internet Explorer security context. Correlation includes parent process lineage, command-line inspection, and network connection creation to untrusted or anomalous endpoints."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1218.005"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "mshta.exe"
+        - "VBScript"
+        - "JScript"
+        - "command-line"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

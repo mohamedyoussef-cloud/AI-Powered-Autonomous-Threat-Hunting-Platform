@@ -1,0 +1,20 @@
+title: "Wi-Fi Discovery - Analytic 1280 Baseline"
+id: "74b77025-3639-5a20-89dd-086eb40f7138"
+status: "experimental"
+description: "Enumeration of saved Wi-Fi profiles and cleartext password retrieval using `netsh wlan` or API-level access to `wlanAPI.dll`."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1016.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "netsh wlan"
+        - "wlanAPI.dll"
+        - "Wi-Fi"
+        - "API-level"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

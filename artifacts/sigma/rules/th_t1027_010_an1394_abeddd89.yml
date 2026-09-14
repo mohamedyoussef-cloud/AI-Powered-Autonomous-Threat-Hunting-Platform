@@ -1,0 +1,18 @@
+title: "Command Obfuscation - Analytic 1394 Baseline"
+id: "abeddd89-25a2-5b67-8fa7-d4c6ba9fcda8"
+status: "experimental"
+description: "Detection of command-line activity exhibiting syntactic obfuscation patterns, such as excessive escape characters, base64 encoding, command concatenation, or outlier command length and entropy."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1027.010"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "command-line"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

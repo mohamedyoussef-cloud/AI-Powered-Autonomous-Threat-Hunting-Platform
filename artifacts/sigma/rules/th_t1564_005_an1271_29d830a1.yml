@@ -1,0 +1,18 @@
+title: "Hidden File System - Analytic 1271 Baseline"
+id: "29d830a1-3527-5cf5-b4a9-fadc1bde40fc"
+status: "experimental"
+description: "Anomalous creation or mounting of hidden partitions or virtual file systems. Defender view: detection of registry modifications linked to non-standard file systems, suspicious disk I/O patterns, or bootkit-like behavior where hidden volumes are accessed outside normal file system APIs."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1564.005"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "non-standard"
+        - "bootkit-like"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

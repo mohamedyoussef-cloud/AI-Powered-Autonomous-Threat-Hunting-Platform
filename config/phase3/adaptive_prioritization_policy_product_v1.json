@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "name": "Adaptive Product Prioritization Policy",
+  "score_range": [0, 100],
+
+  "nominal_weights": {
+    "telemetry_readiness": 0.25,
+    "asset_criticality": 0.25,
+    "incident_history_relevance": 0.25,
+    "detection_coverage_gap": 0.25
+  },
+
+  "minimum_available_factors": 2,
+
+  "missing_factor_policy": "exclude_and_renormalize",
+
+  "detection_gap_policy": {
+    "prefer_client_detection_coverage": true,
+    "fallback": "prepared_sigma_corpus_proxy",
+    "fallback_is_client_detection_coverage": false
+  },
+
+  "ranking_scope": [
+    "observed_environment_applicable"
+  ],
+
+  "special_routes": {
+    "environment_presence_unknown": "retain_unscored_until_presence_known",
+    "pre_attack_scope": "route_to_pre_attack_workflow",
+    "known_present_collection_gap": "route_to_collection_gap_workflow",
+    "confirmed_not_present": "exclude_from_current_environment_only"
+  }
+}

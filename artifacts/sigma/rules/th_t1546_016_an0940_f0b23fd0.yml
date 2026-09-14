@@ -1,0 +1,18 @@
+title: "Installer Packages - Analytic 0940 Baseline"
+id: "f0b23fd0-af82-521c-9db5-0faf748e4211"
+status: "experimental"
+description: "Detection of msiexec.exe running installer packages that result in anomalous process creation. Look for unexpected binaries executed by msiexec or custom action DLLs in the temp directory."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1546.016"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "msiexec.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

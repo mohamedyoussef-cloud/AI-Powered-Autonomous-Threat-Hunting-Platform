@@ -1,0 +1,17 @@
+title: "Compromise Host Software Binary - Analytic 0949 Baseline"
+id: "5bb657c1-f6f0-5cdc-9792-e288b719a630"
+status: "experimental"
+description: "Monitors for unexpected modifications of system or application binaries, particularly signed executables. Correlates file write events with subsequent unsigned or anomalously signed process execution, and checks for tampered binaries outside normal patch cycles."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1554"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "Monitors for unexpected modifications of system or application binaries, particularly signed executables. Correlates file write events with subsequent unsigned or anomalously signed process execution, and checks for tampered binaries outside normal patch cycles."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

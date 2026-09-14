@@ -1,0 +1,19 @@
+title: "Web Shell - Analytic 1108 Baseline"
+id: "7f717d7a-a779-5414-a7f9-98eaa2e0cb92"
+status: "experimental"
+description: "Unexpected file creation in web directories followed by web server processes (e.g., w3wp.exe) spawning command shells or script interpreters (e.g., cmd.exe, powershell.exe)"
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1505.003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "w3wp.exe"
+        - "cmd.exe"
+        - "powershell.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

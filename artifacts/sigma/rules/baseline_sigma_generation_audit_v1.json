@@ -1,0 +1,18 @@
+{
+  "audit_failures": 0,
+  "audit_version": "1.0",
+  "blocked_techniques": 13,
+  "duplicate_filenames": 0,
+  "duplicate_rule_ids": 0,
+  "failure_categories": {},
+  "failures": [],
+  "generated_rules": 540,
+  "generation_errors": 0,
+  "input_generation_units": 540,
+  "invented_fields": 0,
+  "model_calls": 0,
+  "ready_techniques": 492,
+  "rule_files": 540,
+  "status": "PASS",
+  "unresolved_plans_generated": 0
+}

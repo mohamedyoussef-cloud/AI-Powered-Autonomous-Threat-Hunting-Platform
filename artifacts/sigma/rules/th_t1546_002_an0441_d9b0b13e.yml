@@ -1,0 +1,21 @@
+title: "Screensaver - Analytic 0441 Baseline"
+id: "d9b0b13e-ddb3-5ffb-b31f-9430f41bacac"
+status: "experimental"
+description: "Unusual screensaver (.scr) executions correlated with recent registry modifications to HKCU\\Control Panel\\Desktop values such as SCRNSAVE.exe, ScreenSaveTimeout, and ScreenSaveActive. Detection focuses on PE image paths not consistent with known legitimate screensavers and triggered after user inactivity timeout."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1546.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "SCRNSAVE.exe"
+        - "HKCU\\Control Panel\\Desktop values such as SCRNSAVE.exe"
+        - "SCRNSAVE"
+        - "ScreenSaveTimeout"
+        - "ScreenSaveActive"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

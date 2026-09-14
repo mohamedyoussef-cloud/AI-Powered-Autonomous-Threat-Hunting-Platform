@@ -1,0 +1,24 @@
+title: "System Language Discovery - Analytic 1561 Baseline"
+id: "43f20e87-792c-5517-900c-48088b2b5bc2"
+status: "experimental"
+description: "Registry access to system language keys (e.g., HKLM\\SYSTEM\\CurrentControlSet\\Control\\Nls\\Language) or suspicious processes invoking locale-related APIs (e.g., GetUserDefaultUILanguage, GetSystemDefaultUILanguage, GetKeyboardLayoutList). Defender visibility focuses on anomalous or non-standard processes issuing these queries, especially when run by unknown binaries or scripts."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1614.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "HKLM\\SYSTEM\\CurrentControlSet\\Control\\Nls\\Language) or suspicious processes invoking locale-related APIs (e.g."
+        - "SYSTEM"
+        - "CurrentControlSet"
+        - "GetUserDefaultUILanguage"
+        - "GetSystemDefaultUILanguage"
+        - "GetKeyboardLayoutList"
+        - "locale-related"
+        - "non-standard"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,22 @@
+title: "Proxy - Analytic 1229 Baseline"
+id: "f3912c30-0aa1-5c2a-9506-677d83873336"
+status: "experimental"
+description: "Suspicious process spawning (e.g., `rundll32`, `svchost`, `powershell`, or `netsh`) followed by network connection creation to internal hosts or uncommon external endpoints on high or non-standard ports."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1090"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "rundll32"
+        - "svchost"
+        - "powershell"
+        - "netsh"
+        - "non-standard"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

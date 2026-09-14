@@ -1,0 +1,19 @@
+title: "System Location Discovery - Analytic 0122 Baseline"
+id: "632bf279-f55e-5afd-8af7-d9054c8e7b5f"
+status: "experimental"
+description: "Detection of queries to instance metadata services (e.g., AWS IMDS, Azure Metadata Service) for availability zone, region, or network geolocation details. Correlation with non-management accounts or non-standard workloads may indicate adversary reconnaissance."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1614"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "non-management"
+        - "non-standard"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

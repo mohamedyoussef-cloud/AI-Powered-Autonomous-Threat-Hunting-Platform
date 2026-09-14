@@ -1,0 +1,18 @@
+title: "Time Based Checks - Analytic 0396 Baseline"
+id: "0de9bb42-8432-5c2d-821b-7db3d184cfff"
+status: "experimental"
+description: "Process creation involving suspicious delays (e.g., Sleep, ping -n loops, WaitForSingleObject), followed by sensitive system access or lateral movement behaviors."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1497.003"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "WaitForSingleObject"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

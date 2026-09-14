@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/hunt_finding.schema.json",
+  "title": "Canonical Hunt Finding",
+  "type": "object",
+  "required": [
+    "finding_id",
+    "finding_type",
+    "rule_ids",
+    "technique_ids",
+    "first_seen",
+    "last_seen",
+    "event_count",
+    "evidence_event_ids",
+    "aggregation_policy_id",
+    "label",
+    "lineage"
+  ],
+  "properties": {
+    "finding_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "finding_type": {
+      "enum": [
+        "process_behavior",
+        "authentication_behavior",
+        "network_behavior",
+        "file_behavior",
+        "registry_behavior",
+        "cloud_behavior",
+        "cross_domain_case"
+      ]
+    },
+    "rule_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "technique_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "primary_host_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "primary_user_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "first_seen": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_seen": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "event_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "evidence_event_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "source_datasets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "aggregation_policy_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "label": {
+      "type": "object",
+      "required": [
+        "value",
+        "source",
+        "confidence"
+      ],
+      "properties": {
+        "value": {
+          "enum": [
+            "malicious",
+            "benign",
+            "suspicious",
+            "requires_review",
+            "unknown"
+          ]
+        },
+        "source": {
+          "enum": [
+            "scenario_ground_truth",
+            "technique_mapping",
+            "analyst_review",
+            "weak_supervision",
+            "synthetic",
+            "unlabeled"
+          ]
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "reviewer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "supporting_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "lineage": {
+      "type": "object",
+      "required": [
+        "source_dataset",
+        "source_record_id",
+        "schema_version",
+        "pipeline_version"
+      ],
+      "properties": {
+        "source_dataset": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "schema_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pipeline_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_file": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ingested_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

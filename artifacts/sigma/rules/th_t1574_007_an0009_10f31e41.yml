@@ -1,0 +1,17 @@
+title: "Path Interception by PATH Environment Variable - Analytic 0009 Baseline"
+id: "10f31e41-bf71-564f-b2f9-708deec9773f"
+status: "experimental"
+description: "Abnormal modification of the PATH environment variable or registry keys controlling system paths, combined with execution of binaries named after legitimate system tools from user-writable directories. Defender correlates registry modifications, file creation of suspicious binaries, and process execution paths inconsistent with baseline system directories."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1574.007"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "user-writable"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

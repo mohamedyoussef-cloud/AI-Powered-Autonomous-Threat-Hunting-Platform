@@ -1,0 +1,18 @@
+title: "Office Application Startup - Analytic 1116 Baseline"
+id: "70604c47-d0e5-5061-8b97-6da9a4a08a60"
+status: "experimental"
+description: "Office-based persistence via Office template macros, Outlook forms/rules/homepage, or registry-persistent scripts. Adversary modifies registry keys or Office application directories to load malicious scripts at startup."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1137"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Application"
+detection:
+    keywords:
+        - "Office-based"
+        - "registry-persistent"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,18 @@
+title: "System Network Connections Discovery - Analytic 0908 Baseline"
+id: "a42ddb71-b836-5274-8d0d-ae52fae39765"
+status: "experimental"
+description: "Detects enumeration of cloud network interfaces, VPCs, subnets, or peer connections using CLI or SDKs (e.g., AWS CLI, Azure CLI, GCloud CLI)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1049"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "GCloud"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

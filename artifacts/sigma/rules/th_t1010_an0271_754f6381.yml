@@ -1,0 +1,20 @@
+title: "Application Window Discovery - Analytic 0271 Baseline"
+id: "754f6381-9cdf-532c-bd9d-1dd61887407c"
+status: "experimental"
+description: "Processes using Win32 API calls (e.g., EnumWindows, GetForegroundWindow) or scripting tools (e.g., PowerShell, VBScript) to enumerate open windows. These often appear with reconnaissance or data collection TTPs."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1010"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "EnumWindows"
+        - "GetForegroundWindow"
+        - "PowerShell"
+        - "VBScript"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

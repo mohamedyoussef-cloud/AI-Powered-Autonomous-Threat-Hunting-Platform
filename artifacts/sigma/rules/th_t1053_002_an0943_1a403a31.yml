@@ -1,0 +1,20 @@
+title: "At - Analytic 0943 Baseline"
+id: "1a403a31-8a29-5a13-b6c6-0753f3202fc3"
+status: "experimental"
+description: "Detects creation of scheduled tasks via `at.exe` or WMI `Win32_ScheduledJob` class, followed by execution of anomalous processes by svchost.exe or taskeng.exe."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1053.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "at.exe"
+        - "Win32_ScheduledJob"
+        - "svchost.exe"
+        - "taskeng.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

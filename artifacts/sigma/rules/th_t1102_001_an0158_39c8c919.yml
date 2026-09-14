@@ -1,0 +1,18 @@
+title: "Dead Drop Resolver - Analytic 0158 Baseline"
+id: "39c8c919-fd9c-5db8-95cd-faf9b0e1426d"
+status: "experimental"
+description: "Detection of a process or script that accesses a common web service to retrieve content containing obfuscated indicators of a secondary C2 server (dead drop resolver behavior)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1102.001"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Detection of a process or script that accesses a common web service to retrieve content containing obfuscated indicators of a secondary C2 server (dead drop resolver behavior)."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

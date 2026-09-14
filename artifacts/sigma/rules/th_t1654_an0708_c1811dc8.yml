@@ -1,0 +1,21 @@
+title: "Log Enumeration - Analytic 0708 Baseline"
+id: "c1811dc8-0eb8-5db8-b1ed-944d2ad23142"
+status: "experimental"
+description: "Monitor for cloud API calls that export or collect guest or system logs. Abnormal use of Azure VM Agent’s CollectGuestLogs.exe or AWS CloudWatch GetLogEvents across multiple instances should be correlated with lateral movement or data staging."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1654"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "CollectGuestLogs.exe"
+        - "CollectGuestLogs"
+        - "CloudWatch"
+        - "GetLogEvents"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

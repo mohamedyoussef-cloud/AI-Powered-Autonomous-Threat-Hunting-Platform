@@ -1,0 +1,17 @@
+title: "Password Cracking - Analytic 0292 Baseline"
+id: "8c0073b4-81d5-5d9f-843e-ee941382ee7d"
+status: "experimental"
+description: "Use of hash-cracking tools (e.g., John the Ripper, Hashcat) after credential dumping, combined with high CPU usage or GPU invocation via unsigned binaries accessing password hash files"
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1110.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "hash-cracking"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

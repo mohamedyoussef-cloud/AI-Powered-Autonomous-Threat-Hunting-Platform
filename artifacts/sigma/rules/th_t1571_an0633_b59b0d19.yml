@@ -1,0 +1,17 @@
+title: "Non-Standard Port - Analytic 0633 Baseline"
+id: "b59b0d19-27e4-5ea8-a5ed-c4319459fb2f"
+status: "experimental"
+description: "Processes initiating outbound connections on uncommon ports or using protocols inconsistent with the assigned port. Correlating process creation with subsequent network connections reveals anomalies such as svchost.exe or Office applications using high, atypical ports."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1571"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "svchost.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

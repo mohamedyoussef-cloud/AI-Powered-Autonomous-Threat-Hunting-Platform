@@ -1,0 +1,19 @@
+title: "Add-ins - Analytic 0137 Baseline"
+id: "cb6e6645-8adf-5021-95e6-2d51af016539"
+status: "experimental"
+description: "An adversary writes or drops a malicious Office Add-in (e.g., WLL, XLL, COM) to a trusted directory or modifies registry keys to load malicious add-ins on Office application launch. Upon user opening Word or Excel, the add-in is automatically loaded, triggering execution of the payload, often spawning scripting engines or anomalous child processes."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1137.006"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Add-in"
+        - "add-ins"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

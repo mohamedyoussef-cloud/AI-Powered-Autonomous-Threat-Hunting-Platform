@@ -1,0 +1,21 @@
+title: "Rename Legitimate Utilities - Analytic 0012 Baseline"
+id: "eda382b1-2121-524b-b062-c0cd20cd392e"
+status: "experimental"
+description: "Execution of binaries where the on-disk filename does not match PE metadata such as OriginalFilename or InternalName. Often observed with renamed LOLBAS or system binaries like rundll32, powershell, or psexec."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1036.003"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "OriginalFilename"
+        - "InternalName"
+        - "LOLBAS"
+        - "on-disk"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

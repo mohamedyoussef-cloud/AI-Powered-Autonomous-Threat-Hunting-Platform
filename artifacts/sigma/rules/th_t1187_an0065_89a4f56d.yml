@@ -1,0 +1,18 @@
+title: "Forced Authentication - Analytic 0065 Baseline"
+id: "89a4f56d-0dfd-5de6-aadf-921bc6995ba2"
+status: "experimental"
+description: "Adversary stages a lure that references a remote resource (e.g., LNK/SCF/Office template). When the user opens/renders the file or a shell enumerates icons, the host automatically attempts SMB or WebDAV authentication to the attacker host. The chain is: (1) lure file is created or modified in a user-exposed location → (2) user or system accesses the lure → (3) host makes outbound NTLM (SMB 139/445 or WebDAV over 80/443) to an untrusted destination → (4) repeated attempts from multiple users/hosts or from privileged workstations."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1187"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "WebDAV"
+        - "user-exposed"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

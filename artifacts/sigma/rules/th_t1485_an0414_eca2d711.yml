@@ -1,0 +1,19 @@
+title: "Data Destruction - Analytic 0414 Baseline"
+id: "eca2d711-4cee-5d75-8f3b-f293a53b3eaf"
+status: "experimental"
+description: "Adversary deletes critical infrastructure: EC2 instances, S3 buckets, snapshots, or volumes using elevated IAM credentials. Frequently includes batch API calls with `Delete*` or `TerminateInstances`."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1485"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "Delete*"
+        - "TerminateInstances"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

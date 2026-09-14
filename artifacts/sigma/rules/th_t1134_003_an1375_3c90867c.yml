@@ -1,0 +1,25 @@
+title: "Make and Impersonate Token - Analytic 1375 Baseline"
+id: "3c90867c-5924-5f73-a545-80f98f06b014"
+status: "experimental"
+description: "A process creates a brand‑new logon session/token (LogonUser*/LsaLogonUser) and then assigns/impersonates it (SetThreadToken/ImpersonateLoggedOnUser) to run actions under that freshly created security context. Chain: (1) suspicious command or script block (e.g., runas /netonly, PowerShell P/Invoke of LogonUser) → (2) ETW/API evidence of LogonUser*/SetThreadToken → (3) Security 4624 New Logon (often LogonType=9 NewCredentials or 2/3 from a non‑interactive parent) with no interactive desktop → (4) sysmon 1 process(es) executing with the new LogonId/SID different from the parent process → (5) optional privileged ops/lateral movement."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1134.003"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Primary grounded baseline source: WinEventLog:Security; all grounded source(s): WinEventLog:Security, etw:Microsoft-Windows-Security-Auditing"
+detection:
+    keywords:
+        - "LogonUser"
+        - "LsaLogonUser"
+        - "SetThreadToken"
+        - "ImpersonateLoggedOnUser"
+        - "PowerShell"
+        - "LogonType"
+        - "NewCredentials"
+        - "LogonId"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,21 @@
+title: "Pass the Hash - Analytic 1144 Baseline"
+id: "1a03c316-15ea-5cc9-9abe-8e61cae93a32"
+status: "experimental"
+description: "Detects anomalous NTLM LogonType 3 authentications that occur without accompanying domain logon events, especially from lateral systems or involving built-in administrative tools. Monitors for mismatches between source user context and system being accessed. Correlates LogonSession creation, NTLM authentications, and process/service initiation to identify suspicious use of stolen password hashes for remote access or service logon without password entry. Detects overpass-the-hash by combining Kerberos ticket issuance with NTLM-based lateral movement."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1550.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "LogonType"
+        - "LogonSession"
+        - "built-in"
+        - "overpass-the-hash"
+        - "NTLM-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

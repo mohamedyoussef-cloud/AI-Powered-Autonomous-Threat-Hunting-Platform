@@ -1,0 +1,17 @@
+title: "Local Email Collection - Analytic 0130 Baseline"
+id: "dd939412-049e-59a4-8d3b-b7bd18adcf61"
+status: "experimental"
+description: "Detection focuses on processes that attempt to locate, access, or exfiltrate local Outlook data files (.pst/.ost) using file system access, native Windows utilities (e.g., PowerShell, WMI), or remote access tools with file browsing capabilities. The behavior chain includes directory enumeration, file access, optional compression or staging, and network transfer."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1114.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "PowerShell"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

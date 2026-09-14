@@ -1,0 +1,17 @@
+title: "System Information Discovery - Analytic 1452 Baseline"
+id: "85c8d8ad-24a4-512a-9650-fcb4d67ea292"
+status: "experimental"
+description: "Detection of processes executing system environment inspection operations followed by access to OS configuration APIs or registry locations that expose OS version, architecture, patch level, or hardware characteristics. Defenders observe process execution retrieving system configuration metadata immediately after process startup."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1082"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:PowerShell, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Detection of processes executing system environment inspection operations followed by access to OS configuration APIs or registry locations that expose OS version, architecture, patch level, or hardware characteristics. Defenders observe process execution retrieving system configuration metadata immediately after process startup."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

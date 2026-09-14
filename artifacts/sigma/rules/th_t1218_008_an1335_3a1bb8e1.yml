@@ -1,0 +1,20 @@
+title: "Odbcconf - Analytic 1335 Baseline"
+id: "3a1bb8e1-9b19-58d4-9a5d-48ea858cddd9"
+status: "experimental"
+description: "Identifies abuse of odbcconf.exe to execute malicious DLLs using the REGSVR command flag. Behavior chain: (1) Process creation of odbcconf.exe with /REGSVR or /A {REGSVR ...} arguments → (2) DLL load by odbcconf.exe of non-standard or unsigned modules → (3) Optional follow-on process creation or network activity from loaded DLL."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1218.008"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "odbcconf.exe"
+        - "REGSVR"
+        - "non-standard"
+        - "follow-on"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

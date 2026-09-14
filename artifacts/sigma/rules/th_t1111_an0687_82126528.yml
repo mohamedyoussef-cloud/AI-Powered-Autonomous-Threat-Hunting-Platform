@@ -1,0 +1,17 @@
+title: "Multi-Factor Authentication Interception - Analytic 0687 Baseline"
+id: "82126528-a9cc-5e15-a4d9-26afd7087843"
+status: "experimental"
+description: "Behavior chain involving unexpected API calls to capture keyboard input, driver loads for keyloggers, or remote use of smart card authentication via logon sessions not initiated by local user interaction"
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1111"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "Behavior chain involving unexpected API calls to capture keyboard input, driver loads for keyloggers, or remote use of smart card authentication via logon sessions not initiated by local user interaction"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

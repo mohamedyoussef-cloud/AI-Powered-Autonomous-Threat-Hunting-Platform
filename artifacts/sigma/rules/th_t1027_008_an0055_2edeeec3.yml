@@ -1,0 +1,18 @@
+title: "Stripped Payloads - Analytic 0055 Baseline"
+id: "2edeeec3-dea2-5d0f-83ed-5b3cfdfd4031"
+status: "experimental"
+description: "Executable or script payloads lacking symbol information and readable strings that are created or dropped by unusual or short-lived processes."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1027.008"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "short-lived"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

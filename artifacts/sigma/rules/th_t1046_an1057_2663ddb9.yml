@@ -1,0 +1,18 @@
+title: "Network Service Discovery - Analytic 1057 Baseline"
+id: "2663ddb9-0407-5a35-b57b-5ce5d065132d"
+status: "experimental"
+description: "Detects processes performing network enumeration (e.g., port scans, service probing) by correlating process creation, socket connections, and sequential destination IP probing within a time window."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1046"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Detects processes performing network enumeration (e.g., port scans, service probing) by correlating process creation, socket connections, and sequential destination IP probing within a time window."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

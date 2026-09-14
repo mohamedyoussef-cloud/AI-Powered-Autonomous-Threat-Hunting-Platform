@@ -1,0 +1,17 @@
+title: "Taint Shared Content - Analytic 1298 Baseline"
+id: "67942eaf-4fe8-5d60-bf29-305bf7f187cb"
+status: "experimental"
+description: "Detects adversary tampering of shared directories via file drops (e.g., malicious LNK, EXE, VBS) followed by user execution or suspicious network activity."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1080"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "Detects adversary tampering of shared directories via file drops (e.g., malicious LNK, EXE, VBS) followed by user execution or suspicious network activity."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

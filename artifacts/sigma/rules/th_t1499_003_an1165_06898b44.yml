@@ -1,0 +1,17 @@
+title: "Application Exhaustion Flood - Analytic 1165 Baseline"
+id: "06898b44-b185-5044-b9d8-251e4703628e"
+status: "experimental"
+description: "Repeated invocation of high-resource application endpoints or GUI components causing CPU and memory spikes, logged as elevated request volumes, prolonged handle locks, or frequent crash recoveries."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1499.003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Application, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "high-resource"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

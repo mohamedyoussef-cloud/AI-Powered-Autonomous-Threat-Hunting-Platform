@@ -1,0 +1,19 @@
+title: "System Firmware - Analytic 0275 Baseline"
+id: "96f7d1a1-cbad-5f4a-800b-0224a883d7f5"
+status: "experimental"
+description: "Unexpected write operations to BIOS/UEFI firmware regions or EFI boot partitions that do not correlate with legitimate vendor firmware updates. API calls or utilities such as fwupdate.exe or vendor flash tools executed from non-administrative or non-IT management accounts. Suspicious raw disk writes targeting System Firmware GUID partitions followed by abnormal reboot sequences."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1542.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "fwupdate.exe"
+        - "non-administrative"
+        - "non-IT"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

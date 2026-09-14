@@ -1,0 +1,18 @@
+title: "System Network Configuration Discovery - Analytic 0559 Baseline"
+id: "8f3ebe86-4d59-588c-8ae3-0e01a0bb2648"
+status: "experimental"
+description: "Execution of built-in tools (e.g., ipconfig, route, netsh) or PowerShell/WMI queries to enumerate IP, MAC, interface status, or routing configuration."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1016"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "PowerShell"
+        - "built-in"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

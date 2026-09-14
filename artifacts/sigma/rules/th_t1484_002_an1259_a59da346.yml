@@ -1,0 +1,20 @@
+title: "Trust Modification - Analytic 1259 Baseline"
+id: "a59da346-9cd6-5918-824a-b4ee47c8f345"
+status: "experimental"
+description: "Adversary modifies Active Directory domain trust settings via `netdom`, `nltest`, or PowerShell to add new domain trust or alter federation. Modifications occur in AD object attributes like trustDirection, trustType, trustAttributes, often paired with SeEnableDelegationPrivilege or certificate injection."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1484.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "netdom"
+        - "nltest"
+        - "PowerShell"
+        - "SeEnableDelegationPrivilege"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

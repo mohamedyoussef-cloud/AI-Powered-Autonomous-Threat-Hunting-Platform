@@ -1,0 +1,17 @@
+title: "Firmware Corruption - Analytic 0474 Baseline"
+id: "f898e323-196f-5d67-b9bd-5a34d2e33362"
+status: "experimental"
+description: "Firmware flash utility invoked with elevated privileges followed by raw access to firmware device path or changes to boot configuration."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1495"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon, WinEventLog:Microsoft-Windows-Kernel-Boot"
+detection:
+    keywords:
+        - "Firmware flash utility invoked with elevated privileges followed by raw access to firmware device path or changes to boot configuration."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,20 @@
+title: "Name Resolution Poisoning and SMB Relay - Analytic 1274 Baseline"
+id: "826268e1-c91a-5604-8c75-5026cadf7c1c"
+status: "experimental"
+description: "Detects anomalous network traffic on UDP 5355 (LLMNR) and UDP 137 (NBT-NS) combined with unauthorized SMB relay attempts, registry modifications re-enabling multicast name resolution, or suspicious service creation indicative of adversary-in-the-middle credential interception."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1557.001"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "NBT-NS"
+        - "re-enabling"
+        - "adversary-in-the-middle"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

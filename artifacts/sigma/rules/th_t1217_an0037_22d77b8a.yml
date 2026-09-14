@@ -1,0 +1,18 @@
+title: "Browser Information Discovery - Analytic 0037 Baseline"
+id: "22d77b8a-0e1e-5407-882c-773cd08c69ee"
+status: "experimental"
+description: "Access to browser artifact locations (e.g., Chrome, Edge, Firefox) by processes like PowerShell, cmd.exe, or unknown tools, followed by file reads, decoding, or export operations indicating enumeration of bookmarks, autofill, or history databases."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1217"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "cmd.exe"
+        - "PowerShell"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

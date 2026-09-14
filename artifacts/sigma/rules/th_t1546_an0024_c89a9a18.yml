@@ -1,0 +1,20 @@
+title: "Event Triggered Execution - Analytic 0024 Baseline"
+id: "c89a9a18-49c7-54b7-81d3-dd159fead7c0"
+status: "experimental"
+description: "Correlates unexpected modifications to WMI event filters, scheduled task triggers, or registry autorun keys with subsequent execution of non-standard binaries by SYSTEM-level processes."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1546"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "SYSTEM"
+        - "non-standard"
+        - "SYSTEM-level"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

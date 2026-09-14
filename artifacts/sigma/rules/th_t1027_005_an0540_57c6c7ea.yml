@@ -1,0 +1,17 @@
+title: "Indicator Removal from Tools - Analytic 0540 Baseline"
+id: "57c6c7ea-fc4e-5a46-a545-2ea0664120de"
+status: "experimental"
+description: "Detection of known tools or malware flagged by antivirus, followed by a near-term drop of a similar binary with modified signature and resumed activity (execution, C2, or persistence)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1027.005"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Application, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "near-term"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

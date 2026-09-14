@@ -1,0 +1,18 @@
+title: "Browser Session Hijacking - Analytic 1398 Baseline"
+id: "be66c62f-bf26-55d3-bb2b-dec2534d9201"
+status: "experimental"
+description: "Adversary gains high integrity or special privileges (e.g., SeDebugPrivilege), locates a running browser process, opens it with write/inject rights, and modifies it (e.g., CreateRemoteThread / DLL load) to inherit cookies/tokens or establish a browser pivot. Optional step: create a new logon session or use explicit credentials, then drive the victim browser to intranet resources."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1185"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "SeDebugPrivilege"
+        - "CreateRemoteThread"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

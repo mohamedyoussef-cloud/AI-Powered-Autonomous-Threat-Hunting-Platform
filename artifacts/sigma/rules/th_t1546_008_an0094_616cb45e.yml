@@ -1,0 +1,22 @@
+title: "Accessibility Features - Analytic 0094 Baseline"
+id: "616cb45e-0785-586d-be4f-87898945ddfd"
+status: "experimental"
+description: "Defenders can observe suspicious replacement or tampering of system accessibility binaries (e.g., utilman.exe, sethc.exe, osk.exe) and anomalous modifications to registry keys used to redirect accessibility programs (such as IFEO keys). Additionally, execution of cmd.exe or other suspicious binaries triggered from the login screen by SYSTEM can be correlated as part of a behavior chain."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1546.008"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "utilman.exe"
+        - "sethc.exe"
+        - "osk.exe"
+        - "cmd.exe"
+        - "SYSTEM"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

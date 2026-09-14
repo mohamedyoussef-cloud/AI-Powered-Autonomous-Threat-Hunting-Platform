@@ -1,0 +1,17 @@
+title: "Component Object Model Hijacking - Analytic 1323 Baseline"
+id: "492d8290-7522-5d5f-97a7-87db47f4c721"
+status: "experimental"
+description: "Correlate suspicious registry modifications to known COM object CLSIDs with subsequent DLL loads or unexpected binary execution paths. Detect placement of COM CLSID entries under HKEY_CURRENT_USER\\Software\\Classes\\CLSID\\ overriding default HKLM paths. Flag anomalous DLL loads traced back to hijacked COM registry changes."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1546.015"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "CLSIDs"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

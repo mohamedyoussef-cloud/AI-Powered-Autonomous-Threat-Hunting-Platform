@@ -1,0 +1,19 @@
+title: "Local Groups - Analytic 0317 Baseline"
+id: "ce92f1b9-35e9-5925-89b8-cbc4205406a6"
+status: "experimental"
+description: "Detects attempts to enumerate local groups via Net.exe, PowerShell, or native API calls that precede lateral movement or privilege abuse."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1069.001"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "Net.exe"
+        - "PowerShell"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

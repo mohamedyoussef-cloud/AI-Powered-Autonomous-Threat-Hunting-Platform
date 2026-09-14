@@ -1,0 +1,18 @@
+title: "Boot or Logon Initialization Scripts - Analytic 0311 Baseline"
+id: "409a3371-bff5-5b6c-a36d-9751fd31c738"
+status: "experimental"
+description: "Monitoring modification and execution of user or system logon scripts such as in registry Run keys or startup folders."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1037"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "Monitoring modification and execution of user or system logon scripts such as in registry Run keys or startup folders."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

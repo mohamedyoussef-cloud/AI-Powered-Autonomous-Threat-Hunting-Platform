@@ -1,0 +1,17 @@
+title: "Automated Exfiltration - Analytic 1113 Baseline"
+id: "1164ba2d-fcbe-5608-a049-ca399170e25a"
+status: "experimental"
+description: "Detection of automated tools or scripts periodically transmitting data to external destinations using scheduled tasks or background processes."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1020"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Detection of automated tools or scripts periodically transmitting data to external destinations using scheduled tasks or background processes."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

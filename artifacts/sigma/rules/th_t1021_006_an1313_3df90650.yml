@@ -1,0 +1,17 @@
+title: "Windows Remote Management - Analytic 1313 Baseline"
+id: "3df90650-3ed2-5960-bd23-15c6c6d28b3c"
+status: "experimental"
+description: "Adversaries using WinRM to remotely execute commands, launch child processes, or access WMI. The detection chain includes service use, network activity, remote session logon, and process creation within a short temporal window."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1021.006"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon, WinEventLog:WinRM"
+detection:
+    keywords:
+        - "Adversaries using WinRM to remotely execute commands, launch child processes, or access WMI. The detection chain includes service use, network activity, remote session logon, and process creation within a short temporal window."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,19 @@
+title: "Process Doppelgänging - Analytic 1501 Baseline"
+id: "548760b0-ae7d-5553-8125-d45140e762a8"
+status: "experimental"
+description: "Detects adversary abuse of Transactional NTFS (TxF) and undocumented process loading mechanisms (e.g., NtCreateProcessEx) to create a hollowed process from an uncommitted, maliciously tainted file image in memory, later executed via NtCreateThreadEx."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1055.013"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "NtCreateProcessEx"
+        - "NtCreateThreadEx"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

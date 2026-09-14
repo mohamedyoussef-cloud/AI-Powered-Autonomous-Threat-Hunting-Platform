@@ -1,0 +1,178 @@
+{
+  "version": "2.0",
+
+  "explicit_platform_hint_confidence": 1.0,
+
+  "rules": [
+    {
+      "platform": "Windows",
+      "field": "source_type",
+      "patterns": [
+        "wineventlog:",
+        "xmlwineventlog:",
+        "sysmon"
+      ],
+      "confidence": 1.0,
+      "reason": "Windows event telemetry signature"
+    },
+    {
+      "platform": "Windows",
+      "field": "source_name",
+      "patterns": [
+        "c:\\windows\\",
+        "c:\\program files\\"
+      ],
+      "confidence": 0.95,
+      "reason": "Windows filesystem source signature"
+    },
+
+    {
+      "platform": "Linux",
+      "field": "source_type",
+      "patterns": [
+        "linux_audit",
+        "linux_secure",
+        "unix:"
+      ],
+      "confidence": 1.0,
+      "reason": "Linux or Unix host telemetry signature"
+    },
+    {
+      "platform": "Linux",
+      "field": "source_name",
+      "patterns": [
+        "/var/log/",
+        "/etc/"
+      ],
+      "confidence": 0.95,
+      "reason": "Linux or Unix filesystem source signature"
+    },
+
+    {
+      "platform": "macOS",
+      "field": "source_type",
+      "patterns": [
+        "macos",
+        "darwin",
+        "osx"
+      ],
+      "confidence": 1.0,
+      "reason": "Explicit macOS telemetry signature"
+    },
+    {
+      "platform": "macOS",
+      "field": "source_name",
+      "patterns": [
+        "/users/",
+        "/applications/",
+        "/library/"
+      ],
+      "confidence": 0.9,
+      "reason": "macOS filesystem source signature"
+    },
+
+    {
+      "platform": "IaaS",
+      "field": "source_type",
+      "patterns": [
+        "aws:",
+        "azure:",
+        "gcp:",
+        "cloudtrail",
+        "cloudwatch"
+      ],
+      "confidence": 0.95,
+      "reason": "Cloud infrastructure telemetry signature"
+    },
+    {
+      "platform": "IaaS",
+      "field": "source_name",
+      "patterns": [
+        "s3://"
+      ],
+      "confidence": 0.95,
+      "reason": "Cloud infrastructure storage telemetry"
+    },
+
+    {
+      "platform": "Identity Provider",
+      "field": "source_type",
+      "patterns": [
+        "ms:aad:",
+        "entra",
+        "okta",
+        "auth0"
+      ],
+      "confidence": 0.95,
+      "reason": "Identity provider telemetry signature"
+    },
+
+    {
+      "platform": "Office Suite",
+      "field": "source_type",
+      "patterns": [
+        "ms:o365:",
+        "o365:",
+        "office365",
+        "microsoft365"
+      ],
+      "confidence": 0.95,
+      "reason": "Enterprise office suite telemetry signature"
+    },
+
+    {
+      "platform": "SaaS",
+      "field": "source_type",
+      "patterns": [
+        "ms:o365:",
+        "o365:",
+        "salesforce",
+        "github:",
+        "slack:"
+      ],
+      "confidence": 0.9,
+      "reason": "SaaS application telemetry signature"
+    },
+
+    {
+      "platform": "Network Devices",
+      "field": "source_type",
+      "patterns": [
+        "cisco:",
+        "paloalto:",
+        "pan:",
+        "fortigate:",
+        "fortinet:",
+        "juniper:"
+      ],
+      "confidence": 0.95,
+      "reason": "Network device telemetry signature"
+    },
+
+    {
+      "platform": "Containers",
+      "field": "source_type",
+      "patterns": [
+        "docker:",
+        "container:",
+        "kubernetes:",
+        "kube:",
+        "containerd:"
+      ],
+      "confidence": 0.95,
+      "reason": "Container platform telemetry signature"
+    },
+
+    {
+      "platform": "ESXi",
+      "field": "source_type",
+      "patterns": [
+        "esxi",
+        "vmware:",
+        "vcenter:"
+      ],
+      "confidence": 0.95,
+      "reason": "VMware or ESXi telemetry signature"
+    }
+  ]
+}

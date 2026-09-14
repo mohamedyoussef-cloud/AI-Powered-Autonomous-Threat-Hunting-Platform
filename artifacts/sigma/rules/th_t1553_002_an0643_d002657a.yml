@@ -1,0 +1,17 @@
+title: "Code Signing - Analytic 0643 Baseline"
+id: "d002657a-de9e-54d1-b44e-a2a248d9353a"
+status: "experimental"
+description: "Detects execution of binaries signed with unusual or recently issued certificates, correlation of process execution with abnormal publisher metadata, and mismatched certificate chains. Monitors for revoked or unknown code signing certificates used in high-privilege contexts."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1553.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "high-privilege"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

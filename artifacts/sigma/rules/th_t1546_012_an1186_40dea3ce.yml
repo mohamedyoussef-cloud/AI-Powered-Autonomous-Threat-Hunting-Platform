@@ -1,0 +1,21 @@
+title: "Image File Execution Options Injection - Analytic 1186 Baseline"
+id: "40dea3ce-9e55-5d41-834b-88bc4a313ee5"
+status: "experimental"
+description: "Registry key modifications under IFEO paths (e.g., Debugger value set under Image File Execution Options), especially for security-related or accessibility binaries, followed by anomalous process execution with debugger flags or SYSTEM-level access at login. Detectable by correlating registry modifications, process creation, and parent-child anomalies with unusual command-line usage or access tokens."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1546.012"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "SYSTEM"
+        - "security-related"
+        - "SYSTEM-level"
+        - "parent-child"
+        - "command-line"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,23 @@
+title: "MMC - Analytic 0622 Baseline"
+id: "c0fa6d9c-bfd1-533f-810c-3b857de7406a"
+status: "experimental"
+description: "Abuse of mmc.exe to execute non-Microsoft or user-staged .msc files and malicious COM CLSIDs. Behavioral chain: (1) suspicious mmc.exe invocation with /a or -Embedding and non-standard .msc path → (2) COM activation of non-baseline CLSIDs by mmc.exe → (3) mmc.exe loads non-baseline DLLs (user-writable/UNC/unsigned) → (4) optional network/DNS activity from mmc.exe."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1218.014"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Microsoft-Windows-COM/Operational, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "mmc.exe"
+        - "CLSIDs"
+        - "non-Microsoft"
+        - "user-staged"
+        - "non-standard"
+        - "non-baseline"
+        - "user-writable"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

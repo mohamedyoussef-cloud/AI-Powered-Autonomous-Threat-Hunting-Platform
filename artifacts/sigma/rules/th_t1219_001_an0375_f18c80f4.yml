@@ -1,0 +1,21 @@
+title: "IDE Tunneling - Analytic 0375 Baseline"
+id: "f18c80f4-f545-59ca-9571-9a887297855f"
+status: "experimental"
+description: "Detection of the creation of VSCode or JetBrains CLI tunneling profiles followed by persistent remote access via IDE-integrated tunnels, potentially authenticated via GitHub or JetBrains accounts."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1219.001"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "VSCode"
+        - "JetBrains"
+        - "GitHub"
+        - "IDE-integrated"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

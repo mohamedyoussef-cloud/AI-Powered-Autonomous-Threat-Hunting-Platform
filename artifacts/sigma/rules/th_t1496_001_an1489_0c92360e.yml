@@ -1,0 +1,18 @@
+title: "Compute Hijacking - Analytic 1489 Baseline"
+id: "0c92360e-6291-589b-9989-cb0fc9e11517"
+status: "experimental"
+description: "Sustained execution of resource-intensive processes (e.g., cryptocurrency miners), often launched via scheduled tasks, WMI, or PowerShell. These processes frequently establish persistent external connections and attempt to evade detection using masqueraded or renamed binaries."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1496.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "PowerShell"
+        - "resource-intensive"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

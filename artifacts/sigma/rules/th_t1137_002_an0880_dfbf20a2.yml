@@ -1,0 +1,18 @@
+title: "Office Test - Analytic 0880 Baseline"
+id: "dfbf20a2-a497-5073-8511-c21c895f863f"
+status: "experimental"
+description: "Adversaries create the 'Office Test\\Special\\Perf' registry key and specify a malicious DLL path that is auto-loaded when an Office application starts. This DLL is injected into the Office process memory space and can provide persistent execution without requiring macro enablement."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1137.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Microsoft-Office-Alerts"
+detection:
+    keywords:
+        - "Office Test\\Special\\Perf"
+        - "auto-loaded"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,20 @@
+title: "Socket Filters - Analytic 0462 Baseline"
+id: "0d84ce72-e577-5ba7-8204-307e3b90b056"
+status: "experimental"
+description: "Adversary installs/uses packet-capture or raw-socket capability (WinPcap/Npcap, wpcap/packet DLLs or raw socket attach) and sets a filter. A crafted inbound packet is observed; within a short window the host process that loaded capture libraries initiates an outbound connection (e.g., reverse shell) to the packet origin."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1205.002"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "WinPcap"
+        - "packet-capture"
+        - "raw-socket"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

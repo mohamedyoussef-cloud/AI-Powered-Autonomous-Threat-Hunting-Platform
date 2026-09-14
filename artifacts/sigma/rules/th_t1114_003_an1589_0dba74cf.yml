@@ -1,0 +1,19 @@
+title: "Email Forwarding Rule - Analytic 1589 Baseline"
+id: "0dba74cf-4ad0-5d22-9f18-584eece1d028"
+status: "experimental"
+description: "Creation of inbox rules via PowerShell (New-InboxRule) or transport rules using Exchange cmdlets. Correlates user behavior, cmdlet usage, and rule properties."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1114.003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:PowerShell, WinEventLog:Security"
+detection:
+    keywords:
+        - "PowerShell"
+        - "InboxRule"
+        - "New-InboxRule"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

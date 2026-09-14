@@ -1,0 +1,19 @@
+title: "Web Cookies - Analytic 0483 Baseline"
+id: "11914076-0f94-5112-aff2-5f8dacbc25f7"
+status: "experimental"
+description: "Forged cookies in IaaS environments may appear as authentication attempts that bypass MFA, leveraging AssumeRole or session APIs with cookies that were never legitimately issued. Defenders should correlate cloud logs for cookie-based sessions without prior valid authentication, often followed by resource access from unfamiliar IP addresses."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1606.001"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "AssumeRole"
+        - "cookie-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

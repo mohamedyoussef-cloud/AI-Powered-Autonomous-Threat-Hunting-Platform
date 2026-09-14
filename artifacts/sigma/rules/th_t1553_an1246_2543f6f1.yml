@@ -1,0 +1,19 @@
+title: "Subvert Trust Controls - Analytic 1246 Baseline"
+id: "2543f6f1-e939-5d5c-8dd4-322a27e8a6a5"
+status: "experimental"
+description: "Detection correlates abnormal installation or modification of root or code-signing certificates, creation/modification of suspicious registry keys for trust providers, and unusual module loads from non-standard locations. Identifies unsigned or improperly signed executables bypassing trust prompts, combined with persistence artifacts."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1553"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "code-signing"
+        - "non-standard"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

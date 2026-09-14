@@ -1,0 +1,25 @@
+title: "Port Monitors - Analytic 0580 Baseline"
+id: "e0ba877f-957a-5ebd-af0a-62986e456c4b"
+status: "experimental"
+description: "Detects suspicious registry modifications under `HKLM\\SYSTEM\\CurrentControlSet\\Control\\Print\\Monitors\\*\\Driver`, DLL loads by `spoolsv.exe` of non-standard or unsigned modules, and abnormal usage of the `AddMonitor` API by non-installation processes. This pattern often indicates an attempt to persist a malicious DLL via the print monitor mechanism, particularly when correlated with creation of files in `C:\\Windows\\System32` not tied to known patches or installations."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1547.010"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Application"
+detection:
+    keywords:
+        - "HKLM\\SYSTEM\\CurrentControlSet\\Control\\Print\\Monitors\\*\\Driver"
+        - "spoolsv.exe"
+        - "AddMonitor"
+        - "C:\\Windows\\System32"
+        - "HKLM\\SYSTEM\\CurrentControlSet\\Control\\Print\\Monitors\\"
+        - "SYSTEM"
+        - "CurrentControlSet"
+        - "non-standard"
+        - "non-installation"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

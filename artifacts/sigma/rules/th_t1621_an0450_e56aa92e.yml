@@ -1,0 +1,18 @@
+title: "Multi-Factor Authentication Request Generation - Analytic 0450 Baseline"
+id: "e56aa92e-4205-5766-94ab-739a5b4c37cd"
+status: "experimental"
+description: "Detect abnormal MFA activity within cloud service provider logs, such as repeated generation of MFA challenges for the same user session or mismatched MFA device and login origin."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1621"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "Detect abnormal MFA activity within cloud service provider logs, such as repeated generation of MFA challenges for the same user session or mismatched MFA device and login origin."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

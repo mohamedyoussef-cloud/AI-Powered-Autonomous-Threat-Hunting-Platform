@@ -1,0 +1,17 @@
+title: "LSASS Driver - Analytic 0629 Baseline"
+id: "6add4341-4e1c-5f4a-8a4c-ccb9a30402c4"
+status: "experimental"
+description: "Unauthorized creation or modification of DLLs loaded by LSASS, abnormal registry values under LSA extensions, and anomalous DLL load activity into the lsass.exe process context—correlated during boot or logon events."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1547.008"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "lsass.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

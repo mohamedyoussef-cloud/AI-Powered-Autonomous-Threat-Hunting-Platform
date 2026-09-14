@@ -1,0 +1,18 @@
+title: "Network Denial of Service - Analytic 1434 Baseline"
+id: "4fef7e2d-49e0-55ed-8600-0adfc0d9e179"
+status: "experimental"
+description: "Executable or script generating large outbound network traffic targeting remote hosts or known amplification ports"
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1498"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Executable or script generating large outbound network traffic targeting remote hosts or known amplification ports"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

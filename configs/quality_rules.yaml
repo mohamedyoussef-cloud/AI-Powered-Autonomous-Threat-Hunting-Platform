@@ -1,0 +1,59 @@
+schema_version: "1.0.0"
+global:
+  - id: lineage_required
+    severity: error
+    rule: "Every processed record must contain source_dataset, source_record_id, schema_version, and pipeline_version."
+  - id: utc_timestamp
+    severity: error
+    rule: "Canonical timestamps must be UTC ISO-8601 values."
+  - id: raw_value_preservation
+    severity: error
+    rule: "Lossy transformations must preserve the original value."
+
+attack:
+  - id: attack_id_pattern
+    severity: error
+    rule: "Technique IDs must match Tdddd or Tdddd.ddd."
+  - id: revoked_separation
+    severity: warning
+    rule: "Revoked and deprecated objects must not enter the active technique table."
+
+sigma:
+  - id: yaml_parseable
+    severity: error
+  - id: detection_and_condition_present
+    severity: error
+  - id: attack_tag_resolves
+    severity: warning
+  - id: exact_duplicate_removed_from_split
+    severity: error
+  - id: near_duplicate_grouped_before_split
+    severity: warning
+
+telemetry:
+  - id: source_event_id_required
+    severity: error
+  - id: category_specific_validation
+    severity: error
+  - id: impossible_field_not_invented
+    severity: error
+    rule: "Missing domain fields remain null; values must not be fabricated."
+
+findings:
+  - id: evidence_required
+    severity: error
+  - id: aggregation_policy_required
+    severity: error
+  - id: confirmed_label_requires_evidence
+    severity: error
+
+ml:
+  - id: dataset_identity_excluded
+    severity: error
+    rule: "Source dataset identity must not be used as a predictive feature."
+  - id: temporal_leakage_check
+    severity: error
+  - id: split_group_leakage_check
+    severity: error
+  - id: missingness_indicator_review
+    severity: warning

@@ -1,0 +1,20 @@
+title: "Clipboard Data - Analytic 0965 Baseline"
+id: "5d107c26-62cb-545d-a9f6-941b607cce3d"
+status: "experimental"
+description: "Detection of clipboard access via OS utilities (e.g., clip.exe, Get-Clipboard) by non-interactive or abnormal parent processes, potentially chained with staging or exfiltration commands."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1115"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "clip.exe"
+        - "Get-Clipboard"
+        - "non-interactive"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,18 @@
+title: "Additional Cloud Roles - Analytic 0771 Baseline"
+id: "db191aa5-883e-554f-963d-408137e00bbb"
+status: "experimental"
+description: "Detection of new IAM roles or policies attached to a user/service in AWS/GCP/Azure outside normal patterns or hours, often following account compromise."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1098.003"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "Detection of new IAM roles or policies attached to a user/service in AWS/GCP/Azure outside normal patterns or hours, often following account compromise."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

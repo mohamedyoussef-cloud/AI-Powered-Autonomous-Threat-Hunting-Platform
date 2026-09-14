@@ -1,0 +1,20 @@
+title: "System Service Discovery - Analytic 1325 Baseline"
+id: "e836d623-24f4-5d71-b9fa-54551f40480a"
+status: "experimental"
+description: "Enumeration of services via native CLI tools (e.g., `sc query`, `tasklist /svc`, `net start`) or API calls via PowerShell and WMI."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1007"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "sc query"
+        - "tasklist /svc"
+        - "net start"
+        - "PowerShell"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

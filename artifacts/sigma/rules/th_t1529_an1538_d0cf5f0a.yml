@@ -1,0 +1,19 @@
+title: "System Shutdown/Reboot - Analytic 1538 Baseline"
+id: "d0cf5f0a-a1c7-5062-84a0-66433e45fa41"
+status: "experimental"
+description: "Correlate process execution of shutdown/reboot commands (e.g., shutdown.exe, restart-computer) with host status change logs (Event ID 1074) and absence of related administrative context (e.g., user not in Helpdesk group)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1529"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Event ID 1074"
+        - "shutdown.exe"
+        - "restart-computer"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

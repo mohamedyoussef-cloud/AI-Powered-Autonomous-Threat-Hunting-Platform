@@ -1,0 +1,18 @@
+title: "Application Shimming - Analytic 0051 Baseline"
+id: "c1a85f48-f5da-51a4-9c5f-7da93f975595"
+status: "experimental"
+description: "Correlated modification of AppCompat registry keys and execution of sdbinst.exe to install custom shim databases. Followed by DLL injection via shim behavior into target application processes."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1546.011"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "sdbinst.exe"
+        - "AppCompat"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

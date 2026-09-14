@@ -1,0 +1,17 @@
+title: "Application or System Exploitation - Analytic 0850 Baseline"
+id: "5f1c4750-f768-5446-a855-c36af91a428d"
+status: "experimental"
+description: "Exploitation of system or application vulnerability (e.g., CVE-based exploit) followed by service crash, restart, or repeated failure within a short time frame, impacting application/system availability."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1499.004"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Application, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "CVE-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

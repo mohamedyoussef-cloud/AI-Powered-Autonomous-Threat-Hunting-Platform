@@ -1,0 +1,18 @@
+title: "Data Staged - Analytic 0043 Baseline"
+id: "6d2b3a06-f493-5267-836d-2a5191fac29c"
+status: "experimental"
+description: "Detects virtual disk expansion or file copy operations to cloud buckets or mounted volumes from isolated instances."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1074"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "Detects virtual disk expansion or file copy operations to cloud buckets or mounted volumes from isolated instances."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

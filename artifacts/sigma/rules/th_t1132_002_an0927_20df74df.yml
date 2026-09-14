@@ -1,0 +1,21 @@
+title: "Non-Standard Encoding - Analytic 0927 Baseline"
+id: "20df74df-687e-5141-862f-54b87bf082e6"
+status: "experimental"
+description: "A process/script constructs or references a custom/alphabet translation table (e.g., 64/85/32+ arbitrary chars, XOR/base-N loops) or emits long high-entropy strings that do NOT validate as standard Base64/Hex → shortly after, the same process (or its child) generates outbound traffic with asymmetric bytes_out:bytes_in, fixed-size beacons, or protocol/header mismatches (e.g., Content-Type says JSON but body fails JSON parse / contains non-standard alphabet)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1132.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "base-N"
+        - "high-entropy"
+        - "fixed-size"
+        - "Content-Type"
+        - "non-standard"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

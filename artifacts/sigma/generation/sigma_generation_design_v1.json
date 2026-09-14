@@ -1,0 +1,31 @@
+{
+  "baseline_rule_policy": {
+    "attack_occurrence_claims_forbidden": true,
+    "baseline_not_production": true,
+    "grounded_paths_only": true,
+    "invented_event_ids_forbidden": true,
+    "invented_fields_forbidden": true,
+    "invented_log_sources_forbidden": true,
+    "siem_specific_queries_forbidden": true,
+    "sigma_status": "experimental",
+    "unresolved_paths_forbidden": true
+  },
+  "blocked_plan_count": 13,
+  "design_version": "1.0",
+  "generated_at_utc": "2026-08-18T22:17:21.596971+00:00",
+  "generation_granularity": "ONE_SIGMA_RULE_PER_GROUNDED_DETECTION_PATH",
+  "generation_unit_count": 540,
+  "input_population": {
+    "final_detection_plans": 505,
+    "needs_path_resolution": 13,
+    "ready_for_baseline_sigma": 492
+  },
+  "source_detection_plan_contract": "1.1",
+  "task": "Task 43 - Sigma Generation Design",
+  "task_44_contract": {
+    "blocked_inputs": "sigma_generation_blocked_v1.jsonl",
+    "input": "sigma_generation_units_v1.jsonl",
+    "output": "baseline Sigma YAML rules",
+    "validation_next": "pySigma"
+  }
+}

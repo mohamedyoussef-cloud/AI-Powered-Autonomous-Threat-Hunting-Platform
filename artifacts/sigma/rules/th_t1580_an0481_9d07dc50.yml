@@ -1,0 +1,20 @@
+title: "Cloud Infrastructure Discovery - Analytic 0481 Baseline"
+id: "9d07dc50-257c-5e00-8e68-79afaa79c1e5"
+status: "experimental"
+description: "Defenders should monitor for suspicious enumeration of cloud infrastructure components via APIs or CLI tools. Observable behaviors include repeated listing or description operations for compute instances, snapshots, storage buckets, and volumes. From a defender’s perspective, risky activity is often identified by new or untrusted identities making discovery calls (e.g., DescribeInstances, ListBuckets, az vm list, gcloud compute instances list), enumeration from unusual geolocations or IPs, or rapid multi-service discovery in sequence. Correlating discovery API usage with later snapshot creation or instance modification provides further context of adversary behavior."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1580"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "DescribeInstances"
+        - "ListBuckets"
+        - "multi-service"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,18 @@
+title: "Create Account - Analytic 1608 Baseline"
+id: "df66cc33-6e57-5ad6-bbf1-77254efb4081"
+status: "experimental"
+description: "Account creation via cloud service APIs or CLI, often associated with key generation. Monitored via CloudTrail or equivalent audit logs."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1136"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "CloudTrail"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

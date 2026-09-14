@@ -1,0 +1,18 @@
+title: "Steal or Forge Authentication Certificates - Analytic 0671 Baseline"
+id: "4c95aab3-d9eb-5762-a01b-2f880d361789"
+status: "experimental"
+description: "Monitor for abnormal certificate enrollment and usage activity in Active Directory Certificate Services (AD CS), registry access to certificate storage locations, and unusual process executions that attempt to export or access private keys."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1649"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "Monitor for abnormal certificate enrollment and usage activity in Active Directory Certificate Services (AD CS), registry access to certificate storage locations, and unusual process executions that attempt to export or access private keys."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

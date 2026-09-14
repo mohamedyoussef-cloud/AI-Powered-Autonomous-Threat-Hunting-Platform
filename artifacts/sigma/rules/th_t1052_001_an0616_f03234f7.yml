@@ -1,0 +1,17 @@
+title: "Exfiltration over USB - Analytic 0616 Baseline"
+id: "f03234f7-d30a-580a-a760-3a1e41833e06"
+status: "experimental"
+description: "Detects USB device insertion followed by high-volume or sensitive file access and staging activity by suspicious processes or accounts."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1052.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "high-volume"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,21 @@
+title: "Temporary Elevated Cloud Access - Analytic 1105 Baseline"
+id: "e45d2b07-0390-5e5c-a9e8-65156f71cce4"
+status: "experimental"
+description: "Multiple AWS CloudTrail events indicating temporary privilege escalation via PassRole and AssumeRole targeting newly created services or non-interactive infrastructure."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1548.005"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "CloudTrail"
+        - "PassRole"
+        - "AssumeRole"
+        - "non-interactive"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

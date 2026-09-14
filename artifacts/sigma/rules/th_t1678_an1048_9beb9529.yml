@@ -1,0 +1,19 @@
+title: "Delay Execution - Analytic 1048 Baseline"
+id: "9beb9529-62b5-503f-8463-d0519d1c243f"
+status: "experimental"
+description: "Correlated use of sleep/delay mechanisms (e.g., kernel32!Sleep, NTDLL APIs) in short-lived processes, combined with parent processes invoking suspicious scripts (e.g., wscript, powershell) with minimal user interaction."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1678"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "kernel32!Sleep"
+        - "short-lived"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,17 @@
+title: "Remote Services - Analytic 0750 Baseline"
+id: "cc983b7c-28f1-51d1-9146-de33d8b27990"
+status: "experimental"
+description: "Logon via RDP or WMI by a user account followed by uncommon command execution, file manipulation, or lateral network connections."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1021"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Logon via RDP or WMI by a user account followed by uncommon command execution, file manipulation, or lateral network connections."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,21 @@
+title: "Hidden Users - Analytic 1001 Baseline"
+id: "c0fd14c7-34ac-544a-8d70-618c0bc963f6"
+status: "experimental"
+description: "Registry modifications to HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\UserList setting user visibility to 0, or creation of user accounts not shown on login screen. Defender view: correlation of account creation with registry edits that mark users hidden."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1564.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\UserList setting user visibility to 0"
+        - "SOFTWARE"
+        - "CurrentVersion"
+        - "SpecialAccounts"
+        - "UserList"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

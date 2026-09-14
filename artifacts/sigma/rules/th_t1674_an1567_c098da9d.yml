@@ -1,0 +1,17 @@
+title: "Input Injection - Analytic 1567 Baseline"
+id: "c098da9d-5d08-5592-8415-f9bc45795b5a"
+status: "experimental"
+description: "Detects suspicious USB HID device enumeration and keystroke injection patterns, such as rapid sequences of input with no user context, scripts executed through simulated keystrokes, or rogue devices presenting themselves as keyboards."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1674"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "Detects suspicious USB HID device enumeration and keystroke injection patterns, such as rapid sequences of input with no user context, scripts executed through simulated keystrokes, or rogue devices presenting themselves as keyboards."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

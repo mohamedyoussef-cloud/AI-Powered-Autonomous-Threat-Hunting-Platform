@@ -1,0 +1,17 @@
+title: "External Defacement - Analytic 1622 Baseline"
+id: "2e6c8ae7-bf07-5ac7-b97f-2e0bfe882d0b"
+status: "experimental"
+description: "Adversary modifies externally-facing web content by accessing and overwriting hosted HTML/JS/CSS files, typically following web shell deployment, credential abuse, or exploitation of web application vulnerabilities."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1491.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "externally-facing"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

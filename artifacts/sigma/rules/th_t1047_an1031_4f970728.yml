@@ -1,0 +1,19 @@
+title: "Windows Management Instrumentation - Analytic 1031 Baseline"
+id: "4f970728-0a6c-5516-97d3-2e4bc3b23461"
+status: "experimental"
+description: "Detects adversarial abuse of WMI to execute local or remote commands via WMIC, PowerShell, or COM API through a multi-event chain: process creation, command execution, and corresponding network connection if remote."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1047"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "PowerShell"
+        - "multi-event"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,17 @@
+title: "Domain Accounts - Analytic 0590 Baseline"
+id: "b9ab4821-d153-5d51-a5e5-5e2aa3d5b100"
+status: "experimental"
+description: "Detection of suspicious logon behavior using valid domain accounts across multiple hosts, off-hours, or simultaneous sessions from geographically distant locations."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1078.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "off-hours"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

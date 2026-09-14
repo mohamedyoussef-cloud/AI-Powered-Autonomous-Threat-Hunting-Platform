@@ -1,0 +1,22 @@
+title: "Publish/Subscribe Protocols - Analytic 0002 Baseline"
+id: "a9b3ceb0-b10e-5ff6-b6ed-0e8285f91adb"
+status: "experimental"
+description: "Detects non-standard processes (e.g., PowerShell, python.exe, rundll32.exe) making outbound connections using publish/subscribe protocols (e.g., MQTT, AMQP) over non-browser, encrypted channels, often beaconing to message brokers."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1071.005"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "python.exe"
+        - "rundll32.exe"
+        - "PowerShell"
+        - "non-standard"
+        - "non-browser"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

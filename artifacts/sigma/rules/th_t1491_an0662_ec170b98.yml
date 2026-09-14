@@ -1,0 +1,17 @@
+title: "Defacement - Analytic 0662 Baseline"
+id: "ec170b98-cd7e-5a0f-8d8a-e766e8cd427c"
+status: "experimental"
+description: "Adversary modifies website or application-hosted content via unauthorized file changes or script injections, often by exploiting web servers or CMS access."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1491"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon, WinEventLog:Application"
+detection:
+    keywords:
+        - "application-hosted"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

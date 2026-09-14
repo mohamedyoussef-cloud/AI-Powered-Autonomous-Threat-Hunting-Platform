@@ -1,0 +1,17 @@
+title: "Local Data Staging - Analytic 0724 Baseline"
+id: "c682cd62-3905-5c1e-8900-c8ec196d7247"
+status: "experimental"
+description: "Detects file reads across locations followed by writes to temp or staging directories, often compressed or encrypted, indicating local staging behavior."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1074.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "Detects file reads across locations followed by writes to temp or staging directories, often compressed or encrypted, indicating local staging behavior."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

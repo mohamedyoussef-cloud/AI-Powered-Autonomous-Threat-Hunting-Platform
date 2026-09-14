@@ -1,0 +1,18 @@
+title: "PowerShell - Analytic 1252 Baseline"
+id: "c606d11c-ea92-55f7-9d99-c5b9503d968f"
+status: "experimental"
+description: "Detects behavioral chains where PowerShell is launched with encoded commands, unusual parent processes, or suspicious modules loaded, potentially followed by network connections or child process spawning. Supports detection of both direct (powershell.exe) and indirect (.NET automation) invocations."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1059.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "powershell.exe"
+        - "PowerShell"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

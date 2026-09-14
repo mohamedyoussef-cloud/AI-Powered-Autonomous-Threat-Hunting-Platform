@@ -1,0 +1,18 @@
+title: "Polymorphic Code - Analytic 0919 Baseline"
+id: "081caefb-6a11-5ce7-99c0-4a17dcf78cbf"
+status: "experimental"
+description: "Identifies self-modifying executables that exhibit changes in binary hash, entropy, or memory sections during or between executions—often tied to dynamic unpacking or decryption behaviors."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1027.014"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "self-modifying"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,529 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Detection Eligibility Output v1",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "contract_version",
+    "rules_version",
+    "gate_version",
+    "generated_at_utc",
+    "technique_id",
+    "technique_name",
+    "source_route",
+    "source_task_mode",
+    "router_queue_position",
+    "runtime_hunt_rank",
+    "processing_status",
+    "eligibility_decision",
+    "reason_codes",
+    "error_codes",
+    "decision_context",
+    "required_data_components",
+    "component_assessments",
+    "downstream_action",
+    "source_versions",
+    "grounding_assertions",
+    "input_fingerprint"
+  ],
+
+  "properties": {
+    "contract_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+
+    "rules_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+
+    "gate_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+
+    "generated_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "technique_id": {
+      "type": "string",
+      "pattern": "^T[0-9]{4}(\\.[0-9]{3})?$"
+    },
+
+    "technique_name": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "source_route": {
+      "type": "string",
+      "enum": [
+        "runtime_hunt",
+        "collection_gap_resolution",
+        "environment_resolution",
+        "pre_attack_hunt"
+      ]
+    },
+
+    "source_task_mode": {
+      "type": "string",
+      "enum": [
+        "generate_runtime_hunt_hypothesis",
+        "resolve_collection_gap",
+        "resolve_environment_presence",
+        "generate_pre_attack_hypothesis"
+      ]
+    },
+
+    "router_queue_position": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+
+    "runtime_hunt_rank": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+
+    "processing_status": {
+      "type": "string",
+      "enum": [
+        "SUCCESS",
+        "ERROR"
+      ]
+    },
+
+    "eligibility_decision": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "ELIGIBLE_FOR_DETECTION",
+        "COLLECTION_BLOCKED",
+        "ENVIRONMENT_BLOCKED",
+        "EXTERNAL_HUNT_ONLY",
+        "NOT_ELIGIBLE",
+        null
+      ]
+    },
+
+    "reason_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "RUNTIME_REQUIRED_COMPONENTS_ENVIRONMENT_GROUNDED",
+          "EXISTING_COLLECTION_GAP",
+          "REQUIRED_COMPONENT_NOT_ENVIRONMENT_GROUNDED",
+          "REQUIRED_COMPONENT_REQUIREMENT_UNSPECIFIED",
+          "ENVIRONMENT_PRESENCE_UNRESOLVED",
+          "PRE_ATTACK_EXTERNAL_SCOPE",
+          "DETECTION_PATH_NOT_SUPPORTED"
+        ]
+      }
+    },
+
+    "error_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+
+    "decision_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "current_environment_applicability",
+        "applicability_status",
+        "telemetry_readiness_state"
+      ],
+      "properties": {
+        "current_environment_applicability": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "applicability_status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "telemetry_readiness_state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+
+    "required_data_components": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^DC[0-9]{4}$"
+      }
+    },
+
+    "component_assessments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "component_id",
+          "component_name",
+          "required_by_hypothesis",
+          "current_environment_grounded",
+          "current_environment_exact_event",
+          "requirement_unspecified",
+          "global_best_evidence_status",
+          "eligibility_effect"
+        ],
+        "properties": {
+          "component_id": {
+            "type": "string",
+            "pattern": "^DC[0-9]{4}$"
+          },
+          "component_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required_by_hypothesis": {
+            "type": "boolean"
+          },
+          "current_environment_grounded": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "current_environment_exact_event": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "requirement_unspecified": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "global_best_evidence_status": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "eligibility_effect": {
+            "type": "string",
+            "enum": [
+              "SATISFIED",
+              "COLLECTION_BLOCKER",
+              "NOT_EVALUATED"
+            ]
+          }
+        }
+      }
+    },
+
+    "downstream_action": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "DETECTION_PLAN",
+        "COLLECTION_GAP_RESOLUTION",
+        "ENVIRONMENT_RESOLUTION",
+        "EXTERNAL_HUNT_WORKFLOW",
+        "NO_DETECTION_GENERATION",
+        null
+      ]
+    },
+
+    "source_versions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "attack_version",
+        "master_context_version",
+        "router_version",
+        "hypothesis_engine_version",
+        "telemetry_resolver_version",
+        "environment_profile_version"
+      ],
+      "properties": {
+        "attack_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "master_context_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "router_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hypothesis_engine_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "telemetry_resolver_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "environment_profile_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+
+    "grounding_assertions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "technique_occurrence_observed",
+        "telemetry_evidence_proves_occurrence",
+        "sigma_proxy_is_client_detection_coverage"
+      ],
+      "properties": {
+        "technique_occurrence_observed": {
+          "type": "boolean"
+        },
+        "telemetry_evidence_proves_occurrence": {
+          "type": "boolean",
+          "const": false
+        },
+        "sigma_proxy_is_client_detection_coverage": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+
+    "input_fingerprint": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  },
+
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "processing_status": {
+            "const": "ERROR"
+          }
+        },
+        "required": [
+          "processing_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "eligibility_decision": {
+            "const": null
+          },
+          "downstream_action": {
+            "const": null
+          },
+          "reason_codes": {
+            "maxItems": 0
+          },
+          "error_codes": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+
+    {
+      "if": {
+        "properties": {
+          "processing_status": {
+            "const": "SUCCESS"
+          }
+        },
+        "required": [
+          "processing_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "reason_codes": {
+            "minItems": 1
+          },
+          "error_codes": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+
+    {
+      "if": {
+        "properties": {
+          "eligibility_decision": {
+            "const": "ELIGIBLE_FOR_DETECTION"
+          }
+        },
+        "required": [
+          "eligibility_decision"
+        ]
+      },
+      "then": {
+        "properties": {
+          "processing_status": {
+            "const": "SUCCESS"
+          },
+          "downstream_action": {
+            "const": "DETECTION_PLAN"
+          },
+          "reason_codes": {
+            "contains": {
+              "const": "RUNTIME_REQUIRED_COMPONENTS_ENVIRONMENT_GROUNDED"
+            }
+          }
+        }
+      }
+    },
+
+    {
+      "if": {
+        "properties": {
+          "eligibility_decision": {
+            "const": "COLLECTION_BLOCKED"
+          }
+        },
+        "required": [
+          "eligibility_decision"
+        ]
+      },
+      "then": {
+        "properties": {
+          "processing_status": {
+            "const": "SUCCESS"
+          },
+          "downstream_action": {
+            "const": "COLLECTION_GAP_RESOLUTION"
+          },
+          "reason_codes": {
+            "contains": {
+              "enum": [
+                "EXISTING_COLLECTION_GAP",
+                "REQUIRED_COMPONENT_NOT_ENVIRONMENT_GROUNDED",
+                "REQUIRED_COMPONENT_REQUIREMENT_UNSPECIFIED"
+              ]
+            }
+          }
+        }
+      }
+    },
+
+    {
+      "if": {
+        "properties": {
+          "eligibility_decision": {
+            "const": "ENVIRONMENT_BLOCKED"
+          }
+        },
+        "required": [
+          "eligibility_decision"
+        ]
+      },
+      "then": {
+        "properties": {
+          "processing_status": {
+            "const": "SUCCESS"
+          },
+          "downstream_action": {
+            "const": "ENVIRONMENT_RESOLUTION"
+          },
+          "reason_codes": {
+            "contains": {
+              "const": "ENVIRONMENT_PRESENCE_UNRESOLVED"
+            }
+          }
+        }
+      }
+    },
+
+    {
+      "if": {
+        "properties": {
+          "eligibility_decision": {
+            "const": "EXTERNAL_HUNT_ONLY"
+          }
+        },
+        "required": [
+          "eligibility_decision"
+        ]
+      },
+      "then": {
+        "properties": {
+          "processing_status": {
+            "const": "SUCCESS"
+          },
+          "downstream_action": {
+            "const": "EXTERNAL_HUNT_WORKFLOW"
+          },
+          "reason_codes": {
+            "contains": {
+              "const": "PRE_ATTACK_EXTERNAL_SCOPE"
+            }
+          }
+        }
+      }
+    },
+
+    {
+      "if": {
+        "properties": {
+          "eligibility_decision": {
+            "const": "NOT_ELIGIBLE"
+          }
+        },
+        "required": [
+          "eligibility_decision"
+        ]
+      },
+      "then": {
+        "properties": {
+          "processing_status": {
+            "const": "SUCCESS"
+          },
+          "downstream_action": {
+            "const": "NO_DETECTION_GENERATION"
+          },
+          "reason_codes": {
+            "contains": {
+              "const": "DETECTION_PATH_NOT_SUPPORTED"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+title: "Bandwidth Hijacking - Analytic 0080 Baseline"
+id: "f30ff9c2-3873-53c9-a027-d0edd16114e5"
+status: "experimental"
+description: "Processes invoking network-intensive child processes or uploading large data volumes, often from non-standard user or system contexts, with evidence of long-duration TCP/UDP sessions to unusual destinations."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1496.002"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "network-intensive"
+        - "non-standard"
+        - "long-duration"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,20 @@
+title: "Security Account Manager - Analytic 0235 Baseline"
+id: "566594f8-a7de-5f48-bac3-5fe37dca667a"
+status: "experimental"
+description: "An adversary running with SYSTEM-level privileges executes commands or accesses registry keys to dump the SAM hive or directly reads sensitive local files from the config directory. This behavior often involves sequential access to HKLM\\SAM, HKLM\\SYSTEM, and creation of .save or .dmp files, enabling offline hash extraction."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1003.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "HKLM\\SAM"
+        - "HKLM\\SYSTEM"
+        - "SYSTEM"
+        - "SYSTEM-level"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

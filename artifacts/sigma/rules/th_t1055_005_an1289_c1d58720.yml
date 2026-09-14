@@ -1,0 +1,18 @@
+title: "Thread Local Storage - Analytic 1289 Baseline"
+id: "c1d58720-f5d2-5a42-956b-17047a6e3020"
+status: "experimental"
+description: "Detects thread local storage (TLS) callback injection by monitoring memory modifications to PE headers and TLS directory structures during or after process hollowing events, followed by anomalous thread behavior prior to main entry point execution."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1055.005"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Detects thread local storage (TLS) callback injection by monitoring memory modifications to PE headers and TLS directory structures during or after process hollowing events, followed by anomalous thread behavior prior to main entry point execution."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,26 @@
+title: "Indirect Command Execution - Analytic 0576 Baseline"
+id: "1d18a8d2-ba1b-5035-a68a-9bab2caba302"
+status: "experimental"
+description: "Cause→effect chain: (1) A user or service launches an indirection utility (e.g., forfiles.exe, pcalua.exe, wsl.exe, scriptrunner.exe, ssh.exe with -o ProxyCommand/LocalCommand). (2) That utility spawns a secondary program/command (PowerShell, cmd, msiexec, regsvr32, curl, arbitrary EXE) and/or opens outbound network connections. (3) Optional precursor modification of SSH config to persist LocalCommand/ProxyCommand. Correlate process creation, command/script content, file access to %USERPROFILE%\\.ssh\\config, and network connections from the utility or its child."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1202"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "forfiles.exe"
+        - "pcalua.exe"
+        - "wsl.exe"
+        - "scriptrunner.exe"
+        - "ssh.exe"
+        - "ProxyCommand"
+        - "LocalCommand"
+        - "PowerShell"
+        - "USERPROFILE"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

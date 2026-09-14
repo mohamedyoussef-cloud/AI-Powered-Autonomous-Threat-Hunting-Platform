@@ -1,0 +1,19 @@
+title: "User Execution - Analytic 1314 Baseline"
+id: "b370cac4-7b72-5e0b-baf7-602cf1b50c58"
+status: "experimental"
+description: "Cause→effect chain: (1) User-facing app (Office/PDF/archiver/browser) records an open/click or abnormal event, then (2) a downloaded file is created in a user-writable path and/or decompressed, (3) the parent user app spawns a living-off-the-land binary (e.g., powershell/cmd/mshta/rundll32/msiexec/wscript/expand/zip) or installer, and (4) immediate outbound HTTP(S)/DNS/SMB from the same lineage."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1204"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "User-facing"
+        - "user-writable"
+        - "living-off-the-land"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

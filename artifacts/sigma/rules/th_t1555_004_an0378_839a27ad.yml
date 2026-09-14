@@ -1,0 +1,19 @@
+title: "Windows Credential Manager - Analytic 0378 Baseline"
+id: "839a27ad-f1ea-59f0-95b9-3bfe1c7487eb"
+status: "experimental"
+description: "Detects unauthorized access to Windows Credential Manager through anomalous process execution (vaultcmd.exe, rundll32.exe keymgr.dll), suspicious API calls (CredEnumerateA), or direct file access to Credential Locker files. Correlates process creation with subsequent file reads of .vcrd/.vpol files under user Credential Locker directories."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1555.004"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "vaultcmd.exe"
+        - "rundll32.exe"
+        - "CredEnumerateA"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

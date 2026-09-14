@@ -1,0 +1,18 @@
+title: "Masquerade File Type - Analytic 0630 Baseline"
+id: "a94f297b-3a5b-59b2-99b2-b72545b5e14f"
+status: "experimental"
+description: "Detects behavior where files with non-executable or misleading extensions (e.g., .jpg, .txt) are created or modified but subsequently executed as binaries based on internal file headers or abnormal parent process lineage. This includes identifying polyglot files or malformed magic bytes indicative of masquerading attempts."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1036.008"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "non-executable"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

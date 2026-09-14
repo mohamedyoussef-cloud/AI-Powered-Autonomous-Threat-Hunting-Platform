@@ -1,0 +1,18 @@
+title: "Component Firmware - Analytic 0916 Baseline"
+id: "d0f65259-4025-5793-9687-20bfb72d7d25"
+status: "experimental"
+description: "Detection of anomalous driver and firmware interactions, including unsigned or unexpected firmware updates, driver loads linked to hardware components, and suspicious use of privileged APIs to read/write firmware or controller memory."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1542.002"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Detection of anomalous driver and firmware interactions, including unsigned or unexpected firmware updates, driver loads linked to hardware components, and suspicious use of privileged APIs to read/write firmware or controller memory."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

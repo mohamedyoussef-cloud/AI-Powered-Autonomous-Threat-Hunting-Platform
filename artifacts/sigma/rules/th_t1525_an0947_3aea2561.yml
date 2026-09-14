@@ -1,0 +1,18 @@
+title: "Implant Internal Image - Analytic 0947 Baseline"
+id: "3aea2561-f03f-5bfb-90dd-39b073516b26"
+status: "experimental"
+description: "Creation or modification of cloud virtual machine images (AMIs, custom images) with persistence mechanisms, followed by infrastructure provisioning that uses these implanted images."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1525"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "Creation or modification of cloud virtual machine images (AMIs, custom images) with persistence mechanisms, followed by infrastructure provisioning that uses these implanted images."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,18 @@
+title: "Reversible Encryption - Analytic 1621 Baseline"
+id: "7c82753c-aab6-540a-ad8c-a7b8ed7dc7ff"
+status: "experimental"
+description: "Detects enabling of reversible password encryption in Active Directory or Group Policy, suspicious PowerShell commands modifying AD user properties, and unusual account configuration changes correlated with policy modifications. Multi-event correlation links Group Policy edits, PowerShell command execution, and user account property changes to identify tampering with authentication encryption settings."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1556.005"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "PowerShell"
+        - "Multi-event"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

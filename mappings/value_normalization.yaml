@@ -1,0 +1,24 @@
+schema_version: "1.0.0"
+policies:
+  timestamps:
+    canonical_timezone: UTC
+    canonical_format: ISO_8601
+    preserve_original: true
+  strings:
+    trim_outer_whitespace: true
+    preserve_case_original: true
+    comparison_casefold: true
+  windows_paths:
+    strip_balanced_outer_quotes: true
+    normalize_separator_for_comparison: "\\"
+    preserve_original: true
+  users:
+    parse_domain_backslash_name: true
+    parse_upn: true
+    preserve_original: true
+  ips:
+    validate_ipv4_ipv6: true
+    preserve_private_loopback_flags: true
+  missing_values:
+    canonical_null: null
+    never_replace_with_zero_without_indicator: true

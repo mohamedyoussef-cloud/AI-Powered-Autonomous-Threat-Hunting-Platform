@@ -1,0 +1,18 @@
+title: "Exfiltration to Cloud Storage - Analytic 1571 Baseline"
+id: "e31d7bb3-0f28-519c-b472-3a74b9ec1aec"
+status: "experimental"
+description: "Unusual processes (e.g., powershell.exe, excel.exe) accessing large local files and subsequently initiating HTTPS POST requests to domains associated with cloud storage services (e.g., dropbox.com, drive.google.com, box.com). Defender perspective: correlation between file reads in sensitive directories and high outbound traffic volume to known storage APIs."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1567.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "powershell.exe"
+        - "excel.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

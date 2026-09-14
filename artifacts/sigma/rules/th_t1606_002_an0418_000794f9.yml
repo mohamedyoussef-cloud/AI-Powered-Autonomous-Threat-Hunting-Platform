@@ -1,0 +1,18 @@
+title: "SAML Tokens - Analytic 0418 Baseline"
+id: "000794f9-7a3a-539b-a5d0-faa1b6273dc1"
+status: "experimental"
+description: "Forged SAML tokens can be observed as authentication attempts with valid signatures but missing expected preceding Kerberos or authentication events. Defenders may correlate SAML assertions with absent Event IDs 4769, 1200, or 1202, or tokens issued with abnormal lifetimes, issuers, or claims compared to baseline."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1606.002"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "Event IDs 4769, 1200"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

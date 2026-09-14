@@ -1,0 +1,17 @@
+title: "Component Object Model - Analytic 0628 Baseline"
+id: "3d200234-85e1-577a-b15f-571341f2a7aa"
+status: "experimental"
+description: "Detects anomalous use of COM objects for execution, such as Office applications spawning scripting engines, enumeration of COM interfaces via registry queries, or processes loading atypical DLLs through COM activation. Correlates process creation, module loads, and registry queries to flag suspicious COM-based code execution or persistence."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1559.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "COM-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

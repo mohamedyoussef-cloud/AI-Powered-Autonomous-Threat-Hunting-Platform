@@ -1,0 +1,19 @@
+title: "Dynamic API Resolution - Analytic 0250 Baseline"
+id: "9f6916e9-eb6d-531f-baf0-40e610374715"
+status: "experimental"
+description: "Behavioral chain involving suspicious use of GetProcAddress and LoadLibrary following memory allocation and manual mapping, often paired with low entropy strings, abnormal API use without static import tables, or delayed module load behaviors."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1027.007"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "GetProcAddress"
+        - "LoadLibrary"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

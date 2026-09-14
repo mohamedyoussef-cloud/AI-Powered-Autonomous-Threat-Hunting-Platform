@@ -1,0 +1,17 @@
+title: "Exfiltration Over Asymmetric Encrypted Non-C2 Protocol - Analytic 1413 Baseline"
+id: "b49a0e72-d4e7-58c4-93a9-58ed94f6efca"
+status: "experimental"
+description: "Detects non-browser processes that establish encrypted outbound connections (e.g., TLS/SSL) to unfamiliar or atypical destinations for the host/user, following a data staging or compression event."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1048.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "non-browser"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

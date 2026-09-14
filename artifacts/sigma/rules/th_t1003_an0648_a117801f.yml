@@ -1,0 +1,17 @@
+title: "OS Credential Dumping - Analytic 0648 Baseline"
+id: "a117801f-80c1-58c7-a54a-42e52a3c6905"
+status: "experimental"
+description: "Processes accessing LSASS memory or SAM registry hives outside of trusted security tools, often followed by file creation or lateral movement. Detects unauthorized access to sensitive OS subsystems for credential extraction."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "Processes accessing LSASS memory or SAM registry hives outside of trusted security tools, often followed by file creation or lateral movement. Detects unauthorized access to sensitive OS subsystems for credential extraction."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

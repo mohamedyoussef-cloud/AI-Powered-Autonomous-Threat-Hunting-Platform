@@ -1,0 +1,17 @@
+title: "Clear Network Connection History and Configurations - Analytic 0133 Baseline"
+id: "9572dd53-ea7b-5bf4-9bcc-f8438eb41d94"
+status: "experimental"
+description: "Detects attempts to clear RDP/network history and modify network configuration artifacts through command execution, registry key deletion, firewall rule changes, and suspicious file deletions (e.g., Default.rdp, registry edits to Terminal Server Client keys)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1070.007"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Detects attempts to clear RDP/network history and modify network configuration artifacts through command execution, registry key deletion, firewall rule changes, and suspicious file deletions (e.g., Default.rdp, registry edits to Terminal Server Client keys)."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

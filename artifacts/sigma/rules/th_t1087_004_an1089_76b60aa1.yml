@@ -1,0 +1,20 @@
+title: "Cloud Account - Analytic 1089 Baseline"
+id: "76b60aa1-a02a-5b95-9e30-93f69bfb4cf7"
+status: "experimental"
+description: "Bulk enumeration of cloud user email identities through `Get-Recipient`, `Get-Mailbox`, `Get-User`, or Graph API directory listings by abnormal accounts or suspicious sessions."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1087.004"
+logsource:
+    product: "windows"
+    service: "powershell"
+    definition: "Grounded source(s): WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "Get-Recipient"
+        - "Get-Mailbox"
+        - "Get-User"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

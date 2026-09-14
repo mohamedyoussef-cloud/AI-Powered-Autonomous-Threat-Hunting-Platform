@@ -1,0 +1,19 @@
+title: "Remote Email Collection - Analytic 0131 Baseline"
+id: "505bee05-cfb9-5271-a16c-b437e98758be"
+status: "experimental"
+description: "Detects adversaries accessing remote mail systems (e.g., Exchange Online, O365) using stolen credentials or OAuth tokens, followed by scripted access to mailbox contents via PowerShell, AADInternals, or unattended API queries. Detection focuses on abnormal logon sessions, user agents, IP locations, and scripted or tool-based email data access."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1114.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:PowerShell, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "PowerShell"
+        - "AADInternals"
+        - "tool-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

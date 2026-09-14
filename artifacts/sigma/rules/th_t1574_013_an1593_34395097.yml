@@ -1,0 +1,20 @@
+title: "KernelCallbackTable - Analytic 1593 Baseline"
+id: "34395097-9310-5be1-845e-894a38ca1596"
+status: "experimental"
+description: "Unexpected modification of the KernelCallbackTable in a process’s PEB followed by invocation of modified callback functions (e.g., fnCOPYDATA) through Windows messages. Defender observes suspicious API call chains such as NtQueryInformationProcess → WriteProcessMemory → abnormal GUI callback execution, often correlating to anomalous process behavior such as network activity or code injection."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1574.013"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "KernelCallbackTable"
+        - "NtQueryInformationProcess"
+        - "WriteProcessMemory"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

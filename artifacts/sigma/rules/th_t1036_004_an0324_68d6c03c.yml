@@ -1,0 +1,17 @@
+title: "Masquerade Task or Service - Analytic 0324 Baseline"
+id: "68d6c03c-f9f1-510a-9734-8a02b9fa7a5a"
+status: "experimental"
+description: "Creation or modification of Windows services or scheduled tasks with names or descriptions mimicking legitimate entries, followed by anomalous execution of untrusted binaries or LOLBAS."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1036.004"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:System, WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "LOLBAS"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

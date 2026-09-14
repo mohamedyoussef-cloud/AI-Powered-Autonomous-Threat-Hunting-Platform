@@ -1,0 +1,19 @@
+title: "Spearphishing via Service - Analytic 0320 Baseline"
+id: "f2112ff6-ab55-57da-80b1-1fe58465ba68"
+status: "experimental"
+description: "Inbound spearphishing attempts delivered via third-party services (e.g., Gmail, LinkedIn messages) leading to malicious file downloads or browser-initiated script execution. Defender view includes correlation of external service logins, unexpected file write operations, and suspicious descendant processes spawned from productivity or browser applications."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1566.003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "LinkedIn"
+        - "third-party"
+        - "browser-initiated"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

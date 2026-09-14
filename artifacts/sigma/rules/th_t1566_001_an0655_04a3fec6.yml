@@ -1,0 +1,18 @@
+title: "Spearphishing Attachment - Analytic 0655 Baseline"
+id: "04a3fec6-303c-528c-bffe-805d71caa69c"
+status: "experimental"
+description: "Detection of spearphishing attachments by correlating suspicious email delivery with subsequent file creation and abnormal process execution (e.g., Office spawning PowerShell or CMD). Behavior chain includes inbound email metadata → attachment stored on disk → process execution → outbound network activity."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1566.001"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "PowerShell"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

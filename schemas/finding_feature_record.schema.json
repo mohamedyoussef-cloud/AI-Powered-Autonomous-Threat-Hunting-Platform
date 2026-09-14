@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/finding_feature_record.schema.json",
+  "title": "ML Finding Feature Record",
+  "type": "object",
+  "required": [
+    "finding_id",
+    "finding_type",
+    "feature_set_version",
+    "observation_cutoff",
+    "global_features",
+    "domain_features",
+    "missingness",
+    "label",
+    "lineage"
+  ],
+  "properties": {
+    "finding_id": {
+      "type": "string"
+    },
+    "finding_type": {
+      "type": "string"
+    },
+    "feature_set_version": {
+      "type": "string"
+    },
+    "observation_cutoff": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "global_features": {
+      "type": "object",
+      "required": [
+        "event_count",
+        "duration_seconds",
+        "unique_host_count",
+        "unique_user_count",
+        "rule_count",
+        "technique_count"
+      ],
+      "properties": {
+        "event_count": {
+          "type": "number"
+        },
+        "duration_seconds": {
+          "type": "number"
+        },
+        "unique_host_count": {
+          "type": "number"
+        },
+        "unique_user_count": {
+          "type": "number"
+        },
+        "unique_source_count": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "rule_count": {
+          "type": "number"
+        },
+        "technique_count": {
+          "type": "number"
+        },
+        "events_per_minute": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "after_hours_ratio": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "asset_criticality": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "technique_priority_score": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "domain_features": {
+      "type": "object"
+    },
+    "missingness": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "boolean"
+      }
+    },
+    "label": {
+      "enum": [
+        "malicious",
+        "benign",
+        "suspicious",
+        "requires_review",
+        "unknown"
+      ]
+    },
+    "excluded_metadata": {
+      "type": "object",
+      "description": "Traceability fields that must not be model predictors."
+    },
+    "lineage": {
+      "type": "object",
+      "required": [
+        "source_dataset",
+        "source_record_id",
+        "schema_version",
+        "pipeline_version"
+      ],
+      "properties": {
+        "source_dataset": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "schema_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pipeline_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_file": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ingested_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

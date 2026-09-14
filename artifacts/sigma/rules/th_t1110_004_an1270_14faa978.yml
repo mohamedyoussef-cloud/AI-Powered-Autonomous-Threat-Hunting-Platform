@@ -1,0 +1,18 @@
+title: "Credential Stuffing - Analytic 1270 Baseline"
+id: "14faa978-f883-57ee-a214-49c2cfdb66dc"
+status: "experimental"
+description: "Burst of failed login attempts across VM instances using leaked credential pairs from single IP in public cloud environments"
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1110.004"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "Burst of failed login attempts across VM instances using leaked credential pairs from single IP in public cloud environments"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

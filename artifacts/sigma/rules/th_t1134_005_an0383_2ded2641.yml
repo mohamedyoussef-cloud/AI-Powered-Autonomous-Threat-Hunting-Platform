@@ -1,0 +1,21 @@
+title: "SID-History Injection - Analytic 0383 Baseline"
+id: "2ded2641-276d-5ea6-8b9a-944fe3afc62b"
+status: "experimental"
+description: "Detection of unauthorized modification of Active Directory SID-History attributes to escalate privileges. This chain involves: (1) privileged operations or API calls to DsAddSidHistory or related AD modification functions, (2) observed attribute changes in SID-History (Event ID 5136), (3) new logon sessions where the token includes unexpected or privileged SID-History values, and (4) follow-on resource access using elevated privileges derived from SID-History injection."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1134.005"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "Event ID 5136"
+        - "DsAddSidHistory"
+        - "SID-History"
+        - "follow-on"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,17 @@
+title: "Replication Through Removable Media - Analytic 0841 Baseline"
+id: "35659e2a-cad5-58cb-986e-b45764eba302"
+status: "experimental"
+description: "Execution of files originating from removable media after drive mount, with correlation to file write activity, autorun usage, or lateral spread via staged tools."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1091"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Microsoft-Windows-Windows Defender/Operational"
+detection:
+    keywords:
+        - "Execution of files originating from removable media after drive mount, with correlation to file write activity, autorun usage, or lateral spread via staged tools."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

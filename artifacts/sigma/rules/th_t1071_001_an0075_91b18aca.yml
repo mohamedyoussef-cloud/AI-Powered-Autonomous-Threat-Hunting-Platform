@@ -1,0 +1,20 @@
+title: "Web Protocols - Analytic 0075 Baseline"
+id: "91b18aca-8c8e-5e53-88c1-1397ed1e9e2d"
+status: "experimental"
+description: "Detects unexpected or high-volume HTTP/S/WebSocket communication from suspicious processes (e.g., PowerShell, rundll32) using uncommon user agents or mimicking browser traffic to unusual domains or IPs."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1071.001"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "WebSocket"
+        - "PowerShell"
+        - "high-volume"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

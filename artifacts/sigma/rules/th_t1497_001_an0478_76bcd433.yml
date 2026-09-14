@@ -1,0 +1,18 @@
+title: "System Checks - Analytic 0478 Baseline"
+id: "76bcd433-16f3-50b9-902b-ae3a257e2c66"
+status: "experimental"
+description: "Script or binary performs a rapid sequence of system discovery checks (e.g., CPU count, RAM size, registry keys, running processes) indicative of VM detection"
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1497.001"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Script or binary performs a rapid sequence of system discovery checks (e.g., CPU count, RAM size, registry keys, running processes) indicative of VM detection"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

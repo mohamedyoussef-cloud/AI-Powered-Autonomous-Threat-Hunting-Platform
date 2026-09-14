@@ -1,0 +1,18 @@
+title: "Winlogon Helper DLL - Analytic 1133 Baseline"
+id: "9a55c11f-f436-5415-951f-314e6b276edf"
+status: "experimental"
+description: "Monitor Windows Registry modifications to Winlogon keys (Shell, Userinit, Notify) that introduce new executable or DLL paths. Correlate these changes with subsequent DLL loading, image loads, or process creation originating from winlogon.exe or userinit.exe. Abnormal child process lineage or unauthorized binaries in C:\\Windows\\System32 may indicate abuse."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1547.004"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "winlogon.exe"
+        - "userinit.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

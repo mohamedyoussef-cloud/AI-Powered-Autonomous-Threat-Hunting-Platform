@@ -1,0 +1,20 @@
+title: "Create Snapshot - Analytic 1187 Baseline"
+id: "de878e57-2b4e-5cfa-8a09-363a735bb8ac"
+status: "experimental"
+description: "Detection focuses on correlating snapshot creation events with subsequent instance creation and mounting activities. From a defender perspective, suspicious sequences include snapshot creation by unexpected or newly created IAM users, snapshots created from sensitive volumes without preceding change-control activity, or snapshots immediately followed by mounting to unauthorized instances. Cross-referencing with user behavior, IP geolocation, and automation context helps distinguish benign backup operations from adversary-driven snapshot exploitation."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1578.001"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "change-control"
+        - "Cross-referencing"
+        - "adversary-driven"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

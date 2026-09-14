@@ -1,0 +1,20 @@
+title: "Forge Web Credentials - Analytic 0717 Baseline"
+id: "bd830c4d-3475-5fc1-a2a5-89757ce0213a"
+status: "experimental"
+description: "Defenders may detect adversaries forging web credentials in IaaS environments by monitoring for anomalous API activity such as AssumeRole or GetFederationToken being executed by unusual principals. These events often correlate with sudden logon sessions from unfamiliar IP addresses or regions. The chain is usually secret material misuse (stolen private key or password) → API request generating a new token → access to high-value resources."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1606"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "AssumeRole"
+        - "GetFederationToken"
+        - "high-value"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

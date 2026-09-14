@@ -1,0 +1,97 @@
+{
+  "profile_version": "1.0",
+  "environment_id": "lab-windows-reference",
+  "environment_name": "Threat Hunting Lab Windows Reference Environment",
+  "platforms": [
+    "Windows"
+  ],
+  "telemetry_sources": [
+    {
+      "source_name": "BOTS v3 Process Telemetry",
+      "source_family": "process",
+      "enabled": true,
+      "evidence_source": "botsv3"
+    },
+    {
+      "source_name": "BOTS v3 Authentication Telemetry",
+      "source_family": "authentication",
+      "enabled": true,
+      "evidence_source": "botsv3"
+    },
+    {
+      "source_name": "BOTS v3 Network Telemetry",
+      "source_family": "network",
+      "enabled": true,
+      "evidence_source": "botsv3"
+    },
+    {
+      "source_name": "BOTS v3 DNS Telemetry",
+      "source_family": "dns",
+      "enabled": true,
+      "evidence_source": "botsv3"
+    },
+    {
+      "source_name": "BOTS v3 File Telemetry",
+      "source_family": "file",
+      "enabled": true,
+      "evidence_source": "botsv3"
+    },
+    {
+      "source_name": "BOTS v3 Service Telemetry",
+      "source_family": "service",
+      "enabled": true,
+      "evidence_source": "botsv3"
+    },
+    {
+      "source_name": "BOTS v3 Web Telemetry",
+      "source_family": "web",
+      "enabled": true,
+      "evidence_source": "botsv3"
+    },
+    {
+      "source_name": "BOTS v3 Database Telemetry",
+      "source_family": "database",
+      "enabled": true,
+      "evidence_source": "botsv3"
+    },
+    {
+      "source_name": "BOTS v3 Cloud Telemetry",
+      "source_family": "cloud",
+      "enabled": true,
+      "evidence_source": "botsv3"
+    },
+    {
+      "source_name": "EVTX Windows Process and Security Telemetry",
+      "source_family": "process",
+      "enabled": true,
+      "evidence_source": "evtx"
+    },
+    {
+      "source_name": "EVTX Windows Authentication Telemetry",
+      "source_family": "authentication",
+      "enabled": true,
+      "evidence_source": "evtx"
+    },
+    {
+      "source_name": "EVTX Windows Network Telemetry",
+      "source_family": "network",
+      "enabled": true,
+      "evidence_source": "evtx"
+    },
+    {
+      "source_name": "EVTX Windows File Telemetry",
+      "source_family": "file",
+      "enabled": true,
+      "evidence_source": "evtx"
+    },
+    {
+      "source_name": "EVTX Windows Registry Telemetry",
+      "source_family": "registry",
+      "enabled": true,
+      "evidence_source": "evtx"
+    }
+  ],
+  "assets": [],
+  "incident_history": [],
+  "detection_coverage": []
+}

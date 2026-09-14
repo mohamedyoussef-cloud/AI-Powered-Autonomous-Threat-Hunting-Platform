@@ -1,0 +1,17 @@
+title: "Invisible Unicode - Analytic 2063 Baseline"
+id: "1da86ed5-9f43-592c-80a8-d5963ca8acf6"
+status: "experimental"
+description: "Detection identifies execution of scripts or files that appear visually benign (low printable character ratio) but result in runtime decoding, dynamic evaluation, and subsequent process or network activity. Correlation links script execution with abnormal Unicode density and follow-on behavior such as child process creation or outbound connections."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1027.018"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "follow-on"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

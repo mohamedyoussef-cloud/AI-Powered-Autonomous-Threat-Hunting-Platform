@@ -1,0 +1,17 @@
+title: "Financial Theft - Analytic 1361 Baseline"
+id: "3fb49e19-1681-56b7-b893-6c50abaf98be"
+status: "experimental"
+description: "Monitor for anomalous access to financial applications, browser-based banking sessions, or enterprise ERP systems from Windows endpoints. Detect mass emailing of payment instructions, sudden rule changes in Outlook for financial staff, or use of clipboard data exfiltration tied to cryptocurrency wallet addresses."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1657"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "browser-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

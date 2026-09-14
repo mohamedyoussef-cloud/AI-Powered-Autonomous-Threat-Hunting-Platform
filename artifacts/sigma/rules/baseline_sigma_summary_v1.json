@@ -1,0 +1,19 @@
+{
+  "blocked_techniques": 13,
+  "field_names_generated": 0,
+  "generated_at_utc": "2026-08-18T22:33:56.368313+00:00",
+  "generated_rules": 540,
+  "generation_errors": 0,
+  "generation_strategy": "FIELDLESS_GROUNDED_KEYWORD_BASELINE",
+  "generator_version": "1.1",
+  "input_generation_units": 540,
+  "keyword_modes": {
+    "GROUNDED_DESCRIPTION_FALLBACK": 122,
+    "GROUNDED_LITERAL_KEYWORDS": 418
+  },
+  "model_calls": 0,
+  "production_ready": false,
+  "ready_techniques": 492,
+  "sigma_spec_target": "2.1.0",
+  "sigma_status": "experimental"
+}

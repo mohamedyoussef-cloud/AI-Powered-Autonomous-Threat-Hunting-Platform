@@ -1,0 +1,18 @@
+title: "Software Deployment Tools - Analytic 0626 Baseline"
+id: "8da7c9a0-b965-5cc1-a70d-43ba2cccb335"
+status: "experimental"
+description: "Detects cloud-native software deployment or management (e.g., SSM Run Command, Intune) initiating script execution on endpoints outside expected org IDs, admin groups, or maintenance windows."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1072"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "cloud-native"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

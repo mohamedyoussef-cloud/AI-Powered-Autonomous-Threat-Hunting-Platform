@@ -1,0 +1,112 @@
+{
+  "version": "1.0",
+  "rules": [
+    {
+      "platform": "Windows",
+      "field": "sourcetype",
+      "patterns": ["wineventlog:", "xmlwineventlog:"],
+      "confidence": 1.0,
+      "reason": "Windows Event Log telemetry observed"
+    },
+    {
+      "platform": "Windows",
+      "field": "source",
+      "patterns": ["c:\\windows\\", "c:\\program files\\"],
+      "confidence": 0.95,
+      "reason": "Windows filesystem telemetry source observed"
+    },
+
+    {
+      "platform": "Linux",
+      "field": "sourcetype",
+      "patterns": ["linux_audit", "linux_secure", "unix:"],
+      "confidence": 1.0,
+      "reason": "Linux/Unix telemetry observed"
+    },
+    {
+      "platform": "Linux",
+      "field": "source",
+      "patterns": ["/var/log/"],
+      "confidence": 0.95,
+      "reason": "Linux/Unix filesystem telemetry source observed"
+    },
+
+    {
+      "platform": "macOS",
+      "field": "sourcetype",
+      "patterns": ["macos", "darwin", "osx"],
+      "confidence": 1.0,
+      "reason": "Explicit macOS telemetry signature observed"
+    },
+    {
+      "platform": "macOS",
+      "field": "source",
+      "patterns": ["/users/", "/applications/"],
+      "confidence": 0.9,
+      "reason": "macOS-style filesystem telemetry source observed"
+    },
+
+    {
+      "platform": "IaaS",
+      "field": "sourcetype",
+      "patterns": ["aws:"],
+      "confidence": 1.0,
+      "reason": "AWS infrastructure telemetry observed"
+    },
+    {
+      "platform": "IaaS",
+      "field": "source",
+      "patterns": ["s3://"],
+      "confidence": 0.95,
+      "reason": "AWS S3 telemetry source observed"
+    },
+
+    {
+      "platform": "Identity Provider",
+      "field": "sourcetype",
+      "patterns": ["ms:aad:"],
+      "confidence": 1.0,
+      "reason": "Microsoft Entra/Azure AD identity telemetry observed"
+    },
+
+    {
+      "platform": "Office Suite",
+      "field": "sourcetype",
+      "patterns": ["ms:o365:", "o365:"],
+      "confidence": 1.0,
+      "reason": "Microsoft 365 / Office telemetry observed"
+    },
+
+    {
+      "platform": "SaaS",
+      "field": "sourcetype",
+      "patterns": ["ms:o365:", "o365:"],
+      "confidence": 0.95,
+      "reason": "SaaS application telemetry observed"
+    },
+
+    {
+      "platform": "Network Devices",
+      "field": "sourcetype",
+      "patterns": ["cisco:asa"],
+      "confidence": 1.0,
+      "reason": "Network-device telemetry observed"
+    },
+
+    {
+      "platform": "Containers",
+      "field": "sourcetype",
+      "patterns": ["docker:", "kubernetes:", "kube:", "container:"],
+      "confidence": 1.0,
+      "reason": "Container telemetry observed"
+    },
+
+    {
+      "platform": "ESXi",
+      "field": "sourcetype",
+      "patterns": ["esxi", "vmware:"],
+      "confidence": 1.0,
+      "reason": "VMware ESXi telemetry observed"
+    }
+  ]
+}

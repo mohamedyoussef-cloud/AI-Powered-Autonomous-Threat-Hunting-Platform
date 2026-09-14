@@ -1,0 +1,18 @@
+title: "Selective Exclusion - Analytic 2030 Baseline"
+id: "0ac29bdc-cef3-5df0-8f8b-8ae03524fa14"
+status: "experimental"
+description: "A process with no prior history or outside of known whitelisted tools initiates file or registry modifications to configure exclusion rules for antivirus, backup, or file-handling systems. Or a file system enumeration for specific file names andcritical extensions like .dll, .exe, .sys, or specific directories such as 'Program Files' or security tool paths or system component discovery for the exclusion of the files or components."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1679"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:PowerShell, WinEventLog:Security"
+detection:
+    keywords:
+        - "Program Files"
+        - "file-handling"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

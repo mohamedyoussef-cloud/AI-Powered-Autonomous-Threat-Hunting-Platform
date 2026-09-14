@@ -1,0 +1,27 @@
+title: "System Time Discovery - Analytic 0430 Baseline"
+id: "7eccbdf6-6e16-5bb3-9009-1c10dc655a2b"
+status: "experimental"
+description: "Untrusted or unusual process/script (cmd.exe, powershell.exe, w32tm.exe, net.exe, custom binaries) queries system time/timezone (e.g., w32tm /tz, net time \\\\host, Get-TimeZone, GetTickCount API) and (optionally) is followed within a short window by time-based scheduling or conditional execution (e.g., schtasks /create, at.exe, PowerShell Start-Sleep with large values)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1124"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "cmd.exe"
+        - "powershell.exe"
+        - "w32tm.exe"
+        - "net.exe"
+        - "at.exe"
+        - "TimeZone"
+        - "GetTickCount"
+        - "PowerShell"
+        - "Get-TimeZone"
+        - "time-based"
+        - "Start-Sleep"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

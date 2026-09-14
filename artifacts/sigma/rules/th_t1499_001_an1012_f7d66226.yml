@@ -1,0 +1,17 @@
+title: "OS Exhaustion Flood - Analytic 1012 Baseline"
+id: "f7d66226-a642-564c-a9a5-79eb615d7ae3"
+status: "experimental"
+description: "Burst of incomplete TCP handshakes (e.g., SYN floods) or uncorrelated ACK packets targeting the state table resulting in OS resource exhaustion."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1499.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Microsoft-Windows-TCPIP"
+detection:
+    keywords:
+        - "Burst of incomplete TCP handshakes (e.g., SYN floods) or uncorrelated ACK packets targeting the state table resulting in OS resource exhaustion."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

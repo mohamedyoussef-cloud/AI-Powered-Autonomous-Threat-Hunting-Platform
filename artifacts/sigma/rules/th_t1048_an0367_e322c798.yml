@@ -1,0 +1,19 @@
+title: "Exfiltration Over Alternative Protocol - Analytic 0367 Baseline"
+id: "e322c798-8173-5225-9cf9-22ca94b5c33c"
+status: "experimental"
+description: "Detects unusual outbound file transfer behavior using protocols like FTP, SMB, SMTP, or DNS, involving non-standard processes, off-hour activity, or uncommonly high volume."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1048"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "non-standard"
+        - "off-hour"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

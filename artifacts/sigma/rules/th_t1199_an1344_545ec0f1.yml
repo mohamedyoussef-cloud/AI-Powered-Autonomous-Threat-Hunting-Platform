@@ -1,0 +1,17 @@
+title: "Trusted Relationship - Analytic 1344 Baseline"
+id: "545ec0f1-c0d0-5cc2-9dca-ae6e9f0ff3ce"
+status: "experimental"
+description: "Behavioral chain: (1) a login from a third-party account or untrusted source network establishes an interactive/remote session; (2) the session acquires elevated privileges or accesses sensitive resources atypical for that account; (3) subsequent lateral movement or data access occurs from the same session/device. Correlate Windows logon events, token elevation/privileged use, and resource access with third-party context."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1199"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "third-party"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

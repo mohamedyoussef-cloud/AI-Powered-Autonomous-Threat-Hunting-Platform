@@ -1,0 +1,17 @@
+title: "Credentials from Web Browsers - Analytic 0105 Baseline"
+id: "80e229ff-f27a-5c0d-9869-77998f7dad43"
+status: "experimental"
+description: "Detects unauthorized access to web browser credential stores (e.g., Chrome Login Data, Edge Credential Locker) by processes other than the browser itself. Correlates file reads of credential databases with subsequent API calls to `CryptUnprotectData` or memory inspection attempts."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1555.003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "CryptUnprotectData"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

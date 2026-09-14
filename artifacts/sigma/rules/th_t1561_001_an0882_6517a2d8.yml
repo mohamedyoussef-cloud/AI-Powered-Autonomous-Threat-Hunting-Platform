@@ -1,0 +1,20 @@
+title: "Disk Content Wipe - Analytic 0882 Baseline"
+id: "6517a2d8-2956-5939-ac62-32bb963ba85e"
+status: "experimental"
+description: "Processes attempting raw disk access via \\\\.\\PhysicalDrive paths, abnormal file I/O to MBR/boot sectors, or loading of third-party drivers (e.g., RawDisk) that enable disk overwrite. Correlate process creation, privilege usage, and disk modification events within a short time window."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1561.001"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "PhysicalDrive"
+        - "RawDisk"
+        - "third-party"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

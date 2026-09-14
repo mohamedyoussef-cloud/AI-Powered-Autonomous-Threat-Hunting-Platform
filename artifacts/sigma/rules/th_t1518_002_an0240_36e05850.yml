@@ -1,0 +1,23 @@
+title: "Backup Software Discovery - Analytic 0240 Baseline"
+id: "36e05850-7c60-5a35-89af-0db19fbfe491"
+status: "experimental"
+description: "Defender observes execution of commands like `tasklist`, `sc query`, `reg query`, or PowerShell WMI/Registry queries targeting known backup products (e.g., Veeam, Acronis, CrashPlan). Behavior often includes parent-child lineage involving PowerShell or cmd.exe with discovery syntax, and enumeration of services, directories, or registry paths tied to backup software."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1518.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "tasklist"
+        - "sc query"
+        - "reg query"
+        - "cmd.exe"
+        - "PowerShell"
+        - "CrashPlan"
+        - "parent-child"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

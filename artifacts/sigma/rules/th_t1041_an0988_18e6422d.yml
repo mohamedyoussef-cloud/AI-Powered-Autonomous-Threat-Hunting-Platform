@@ -1,0 +1,17 @@
+title: "Exfiltration Over C2 Channel - Analytic 0988 Baseline"
+id: "18e6422d-584b-5a8e-b968-e8f2a93d23c9"
+status: "experimental"
+description: "Identifies suspicious outbound traffic volume mismatches from processes that typically do not generate network activity, particularly over C2 protocols like HTTPS, DNS, or custom TCP/UDP ports, following file or data access."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1041"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "Identifies suspicious outbound traffic volume mismatches from processes that typically do not generate network activity, particularly over C2 protocols like HTTPS, DNS, or custom TCP/UDP ports, following file or data access."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

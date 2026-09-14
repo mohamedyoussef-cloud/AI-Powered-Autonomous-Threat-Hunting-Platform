@@ -1,0 +1,19 @@
+title: "Netsh Helper DLL - Analytic 1588 Baseline"
+id: "044c71b5-3541-5d72-8e84-0b1204e53266"
+status: "experimental"
+description: "Detection focuses on monitoring registry modifications under HKLM\\SOFTWARE\\Microsoft\\Netsh that indicate the addition of helper DLLs, followed by anomalous child process activity or module load behavior initiated by netsh.exe. These behaviors are rarely legitimate and may represent an adversary establishing persistence."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1546.007"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "netsh.exe"
+        - "HKLM\\SOFTWARE\\Microsoft\\Netsh that indicate the addition of helper DLLs"
+        - "SOFTWARE"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

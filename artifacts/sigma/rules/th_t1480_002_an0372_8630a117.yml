@@ -1,0 +1,19 @@
+title: "Mutual Exclusion - Analytic 0372 Baseline"
+id: "8630a117-f9b9-5e88-bcec-e982d94a059d"
+status: "experimental"
+description: "Adversary-created named mutex using system APIs (e.g., CreateMutexW) followed by conditional process termination or alternate code path indicating malware avoiding reinfection."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1480.002"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "CreateMutexW"
+        - "Adversary-created"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,17 @@
+title: "Port Knocking - Analytic 0842 Baseline"
+id: "a6cd8bc7-0c79-5baa-9684-36d81547ab15"
+status: "experimental"
+description: "A remote source rapidly touches a short sequence of closed ports (SYN→RST/S0) on a Windows host. Within a short window the host changes firewall state (WFP rule added/modified or service starts listening) and then the same source completes the first successful handshake to the newly opened port."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1205.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Microsoft-Windows-Windows Firewall With Advanced Security/Firewall"
+detection:
+    keywords:
+        - "A remote source rapidly touches a short sequence of closed ports (SYN→RST/S0) on a Windows host. Within a short window the host changes firewall state (WFP rule added/modified or service starts listening) and then the same source completes the first successful handshake to the newly opened port."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

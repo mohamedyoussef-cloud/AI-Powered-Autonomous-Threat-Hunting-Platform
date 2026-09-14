@@ -1,0 +1,100 @@
+schema_version: 1.0.0
+project_scope: core
+sources:
+  mitre_attack_enterprise:
+    role: knowledge_foundation
+    expected_format: stix_2_1_json
+    expected_version: Enterprise v19.1
+    raw_path: data/raw/mitre_attack
+    primary_units:
+    - technique
+    - subtechnique
+    - tactic
+    - relationship
+    - data_component
+    - detection_strategy
+    - analytic
+    downstream_uses:
+    - environment_aware_technique_filtering
+    - technique_scoring
+    - hypothesis_explanation
+    - sigma_tag_validation
+    - finding_mapping
+    event_level_labels: false
+    observed_version: Enterprise v19.1
+    source_archive_sha256: 72b008f8edca87233dac9953407b883e677c95613afabe96d02b87201b6d13ce
+    selected_member: enterprise-attack/enterprise-attack-19.1.json
+    processing_status: processed_v0.2.0
+  sigma_rules_repository:
+    role: canonical_detection_and_llm_source
+    expected_format: yaml
+    raw_path: data/raw/sigma
+    primary_units:
+    - sigma_rule
+    downstream_uses:
+    - rag_corpus
+    - hypothesis_to_sigma_supervised_pairs
+    - rule_validation_baseline
+    - field_requirement_inventory
+    event_level_labels: false
+    observed_commit: 8eaafff1f2845a696050e05e72ba1140ee190698
+    origin: https://github.com/SigmaHQ/sigma.git
+    source_archive_sha256: 268b195af602de468a82cc359fc8b39703f90309dcb29c11d75cf05d693eff57
+    processing_status: processed_v0.2.0
+  bots_v3:
+    role: enterprise_telemetry_execution_and_evaluation
+    expected_format: preindexed_splunk_dataset
+    raw_path: data/raw/botsv3
+    primary_units:
+    - event
+    - scenario
+    - case
+    downstream_uses:
+    - spl_query_execution
+    - multi_source_correlation
+    - hunt_finding_generation
+    - false_positive_evaluation
+    - end_to_end_testing
+    event_level_labels: incomplete
+    warning: Do not infer a direct malicious/benign label for every event.
+    observed_version: v3
+    source_archive_md5: d7ccca99a01cff070dff3c139cdc10eb
+    source_archive_sha256: 734b7af174347a1c0bda8bec4ed5d2e073c6075d98ff07cafac55c75b5153df1
+    index_name: botsv3
+    active_bucket_count: 16
+    disabled_bucket_count: 1
+    manifest_event_count: 2030269
+    scenario_telemetry_event_count: 2030267
+    unique_sourcetypes: 107
+    unique_hosts: 30
+    unique_sources: 1007
+    processing_status: source_profiled_v0.4.0; full_event_export_and_normalization_pending_splunk_runtime
+  evtx_attack_samples:
+    role: windows_detection_validation
+    expected_format: evtx
+    raw_path: data/raw/evtx_attack_samples
+    primary_units:
+    - evtx_file
+    - windows_event
+    - technique_sample
+    downstream_uses:
+    - evtx_parsing
+    - windows_normalization
+    - sigma_validation
+    - positive_detection_evidence
+    - attack_coverage_measurement
+    event_level_labels: attack_oriented_not_complete
+    warning: Do not use as the sole benign/false-positive evaluation source.
+    observed_commit: 4ceed2f4706daf601c212a8f91c113dd85349a2c
+    source_archive_sha256: 67a26c69d51b51dcbde63f054b48c3af8fbf5c750cf66bcd3715be6f75a256a0
+    raw_evtx_file_count: 278
+    published_csv_event_count: 4633
+    published_csv_covered_files: 249
+    raw_files_pending_direct_parse: 29
+    processing_status: processed_v0.3.0_with_published_csv; direct_raw_parse_pending_for_29_files
+  darpa_transparent_computing:
+    role: future_extension_only
+    expected_format: provenance_graph_events
+    implementation_status: excluded_from_core
+    reason: Requires provenance graph reconstruction, entity resolution, causal path
+      analysis, graph storage, and separate evaluation.

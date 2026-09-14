@@ -1,0 +1,21 @@
+title: "Create Account - Analytic 1604 Baseline"
+id: "173ad663-9553-5e77-9eb2-5e9befbdfea4"
+status: "experimental"
+description: "Adversary uses built-in OS tools or API calls to create local or domain accounts for persistence or lateral movement. Tools such as 'net user', PowerShell, or MMC snap-ins may be used. Detection focuses on Event ID 4720 paired with process lineage and user context."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1136"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Event ID 4720"
+        - "net user"
+        - "PowerShell"
+        - "built-in"
+        - "snap-ins"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

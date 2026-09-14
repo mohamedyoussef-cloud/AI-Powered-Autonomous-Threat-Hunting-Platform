@@ -1,0 +1,20 @@
+title: "Abuse Elevation Control Mechanism - Analytic 0975 Baseline"
+id: "33d0857b-d73f-5f97-9613-77b051942469"
+status: "experimental"
+description: "Correlate registry modifications (e.g., UAC bypass registry keys), unusual parent-child process relationships (e.g., control.exe spawning cmd.exe), and unsigned elevated process executions with non-standard tokens or elevation flags."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1548"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "control.exe"
+        - "cmd.exe"
+        - "parent-child"
+        - "non-standard"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

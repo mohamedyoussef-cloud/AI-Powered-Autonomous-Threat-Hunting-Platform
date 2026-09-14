@@ -1,0 +1,22 @@
+title: "Browser Fingerprint - Analytic 2029 Baseline"
+id: "576baf63-efa7-5b92-8d23-eecccba0c789"
+status: "experimental"
+description: "Process execution without GUI context (e.g., powershell.exe, wscript.exe) generates HTTP traffic with a spoofed User-Agent mimicking a legitimate browser. No corresponding UI application (e.g., msedge.exe) is active or in parent lineage. The User-Agent deviates from known enterprise baselines or contains spoofed platform indicators.  User-Agent strings can be gathered with API calls such as `ShellExecuteW` to open the default browser on a socket to receive an HTTP reply, or by hard coding the User-Agent string for a specific browser."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1036.012"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "ShellExecuteW"
+        - "powershell.exe"
+        - "wscript.exe"
+        - "msedge.exe"
+        - "User-Agent"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,23 @@
+title: "Visual Basic - Analytic 0209 Baseline"
+id: "16370887-8694-522b-9279-788a9f289827"
+status: "experimental"
+description: "Detects execution of VB-based scripts or macros (VBS/VBA/VBScript) through cscript.exe/wscript.exe, Office-based process chains, or HTA usage. Focuses on chained behavior: Office or HTML container spawns script host > script host spawns PowerShell, network connections, or process injection."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1059.005"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "cscript.exe"
+        - "wscript.exe"
+        - "VBScript"
+        - "PowerShell"
+        - "VB-based"
+        - "Office-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

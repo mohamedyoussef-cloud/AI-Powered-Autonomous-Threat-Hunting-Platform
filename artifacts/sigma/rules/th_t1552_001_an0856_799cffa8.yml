@@ -1,0 +1,17 @@
+title: "Credentials In Files - Analytic 0856 Baseline"
+id: "799cffa8-11ad-5b9b-bd3d-fe61ac89da28"
+status: "experimental"
+description: "Correlated file access to insecure credential files (e.g., *.env, *.xml, *.ps1) followed by suspicious process execution or authentication using retrieved credentials. Detected through Sysmon logs and Windows Security Event logs."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1552.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "Correlated file access to insecure credential files (e.g., *.env, *.xml, *.ps1) followed by suspicious process execution or authentication using retrieved credentials. Detected through Sysmon logs and Windows Security Event logs."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

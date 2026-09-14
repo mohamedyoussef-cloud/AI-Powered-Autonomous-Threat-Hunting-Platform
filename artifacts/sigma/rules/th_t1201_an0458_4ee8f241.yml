@@ -1,0 +1,18 @@
+title: "Password Policy Discovery - Analytic 0458 Baseline"
+id: "4ee8f241-353b-55fa-80a2-0b410523cef6"
+status: "experimental"
+description: "Chain: (1) cloud API calls that fetch tenant/organization password policy (e.g., AWS `GetAccountPasswordPolicy`, GCP/OCI equivalents or IAM settings reads); (2) within a short window, the same principal creates users, rotates creds, or changes auth settings. Use cloud audit logs."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1201"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "GetAccountPasswordPolicy"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,20 @@
+title: "Trusted Relationship - Analytic 1348 Baseline"
+id: "23a46307-622e-5bfe-ab35-73002eff8ccd"
+status: "experimental"
+description: "Behavioral chain: (1) cross-account or third-party principal assumes a role into the tenant/subscription/project; (2) privileged API calls are made in short succession; (3) access originates from unfamiliar networks or geos. Correlate assume-role/federation events with sensitive API usage."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1199"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "cross-account"
+        - "third-party"
+        - "assume-role"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

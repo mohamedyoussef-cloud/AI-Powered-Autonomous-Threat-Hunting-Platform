@@ -1,0 +1,17 @@
+title: "SMB/Windows Admin Shares - Analytic 1468 Baseline"
+id: "027a19ff-527b-5f51-baca-09c9fb63ff42"
+status: "experimental"
+description: "An SMB-based remote file share access followed by lateral movement actions such as remote service creation, task scheduling, or suspicious process execution on the target host using ADMIN$ or C$ shares."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1021.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "SMB-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

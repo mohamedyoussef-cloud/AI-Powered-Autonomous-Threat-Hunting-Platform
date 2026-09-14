@@ -1,0 +1,23 @@
+title: "Thread Execution Hijacking - Analytic 0822 Baseline"
+id: "9ad736b1-3ac9-526f-8e56-81f80fce01af"
+status: "experimental"
+description: "Detects hijacking of an existing thread (OpenThread) through a behavioral chain involving thread suspension (SuspendThread), memory modification (VirtualAllocEx + WriteProcessMemory), context manipulation (SetThreadContext), and thread resumption—all within another live process's address space (ResumeThread)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1055.003"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "OpenThread"
+        - "SuspendThread"
+        - "VirtualAllocEx"
+        - "WriteProcessMemory"
+        - "SetThreadContext"
+        - "ResumeThread"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

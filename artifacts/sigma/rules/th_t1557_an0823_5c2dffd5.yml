@@ -1,0 +1,18 @@
+title: "Adversary-in-the-Middle - Analytic 0823 Baseline"
+id: "5c2dffd5-e415-570c-9eb6-6585790ab6cf"
+status: "experimental"
+description: "Detects suspicious DNS/ARP poisoning attempts, unauthorized modifications to registry/network configuration, or abnormal TLS downgrade activity. Correlates changes in system configuration with subsequent unusual network flows or authentication events."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1557"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Detects suspicious DNS/ARP poisoning attempts, unauthorized modifications to registry/network configuration, or abnormal TLS downgrade activity. Correlates changes in system configuration with subsequent unusual network flows or authentication events."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

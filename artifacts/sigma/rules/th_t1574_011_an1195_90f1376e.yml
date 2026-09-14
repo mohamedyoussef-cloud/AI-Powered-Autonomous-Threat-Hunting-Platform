@@ -1,0 +1,20 @@
+title: "Services Registry Permissions Weakness - Analytic 1195 Baseline"
+id: "90f1376e-315d-5313-9821-29508773a75d"
+status: "experimental"
+description: "Unauthorized modification of service-related registry keys such as ImagePath, FailureCommand, ServiceDll, or Performance/Parameters keys. Defender correlates registry modifications, anomalous service metadata changes, and subsequent service process executions that deviate from baseline configurations."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1574.011"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "ImagePath"
+        - "FailureCommand"
+        - "ServiceDll"
+        - "service-related"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

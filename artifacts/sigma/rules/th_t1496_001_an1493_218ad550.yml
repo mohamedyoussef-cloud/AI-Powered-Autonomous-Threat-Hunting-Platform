@@ -1,0 +1,18 @@
+title: "Compute Hijacking - Analytic 1493 Baseline"
+id: "218ad550-fe84-5639-9b73-667457c413b1"
+status: "experimental"
+description: "Unauthorized instance creation in unmonitored or unused regions. Burst of compute-intensive jobs in spot instances or sudden spike in resource usage in legitimate VMs."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1496.001"
+logsource:
+    product: "aws"
+    service: "cloudwatch"
+    definition: "Grounded source(s): AWS:CloudWatch"
+detection:
+    keywords:
+        - "compute-intensive"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

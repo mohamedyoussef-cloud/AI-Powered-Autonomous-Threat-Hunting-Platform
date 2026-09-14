@@ -1,0 +1,137 @@
+schema_version: "1.0.0"
+canonical_fields:
+  event.timestamp:
+    type: datetime_utc
+    sources:
+      sysmon_evtx: [System.TimeCreated.SystemTime]
+      windows_security_evtx: [System.TimeCreated.SystemTime]
+      splunk: [_time]
+
+  event.id:
+    type: string
+    sources:
+      sysmon_evtx: [System.EventID]
+      windows_security_evtx: [System.EventID]
+      splunk: [EventCode, event_id]
+
+  event.provider:
+    type: string
+    sources:
+      windows_evtx: [System.Provider.Name]
+      splunk: [source, provider]
+
+  host.name:
+    type: string
+    sources:
+      windows_evtx: [System.Computer]
+      sysmon: [Computer]
+      splunk: [host, dest]
+
+  user.name:
+    type: string
+    sources:
+      sysmon: [User]
+      windows_security_4688: [SubjectUserName]
+      splunk_cim: [user]
+
+  user.domain:
+    type: string
+    sources:
+      windows_security_4688: [SubjectDomainName]
+      splunk_cim: [user_domain]
+
+  process.name:
+    type: string
+    transformation: basename_of_executable
+    sources:
+      sysmon_event_1: [Image]
+      windows_security_4688: [NewProcessName]
+      splunk_cim: [process_name]
+
+  process.executable:
+    type: string
+    transformation: normalize_windows_path
+    sources:
+      sysmon_event_1: [Image]
+      windows_security_4688: [NewProcessName]
+      splunk_cim: [process_path]
+      elastic_ecs: [process.executable]
+
+  process.command_line:
+    type: string
+    sources:
+      sysmon_event_1: [CommandLine]
+      windows_security_4688: [ProcessCommandLine, CommandLine]
+      splunk_cim: [process]
+      elastic_ecs: [process.command_line]
+
+  process.pid:
+    type: integer
+    sources:
+      sysmon_event_1: [ProcessId]
+      windows_security_4688: [NewProcessId]
+      splunk_cim: [process_id]
+
+  process.parent.name:
+    type: string
+    transformation: basename_of_executable
+    sources:
+      sysmon_event_1: [ParentImage]
+      windows_security_4688: [ParentProcessName]
+      splunk_cim: [parent_process_name]
+
+  process.parent.executable:
+    type: string
+    transformation: normalize_windows_path
+    sources:
+      sysmon_event_1: [ParentImage]
+      windows_security_4688: [ParentProcessName]
+      splunk_cim: [parent_process_path]
+
+  source.ip:
+    type: ip
+    sources:
+      sysmon_event_3: [SourceIp]
+      splunk_cim: [src, src_ip]
+      elastic_ecs: [source.ip]
+
+  source.port:
+    type: integer
+    sources:
+      sysmon_event_3: [SourcePort]
+      splunk_cim: [src_port]
+      elastic_ecs: [source.port]
+
+  destination.ip:
+    type: ip
+    sources:
+      sysmon_event_3: [DestinationIp]
+      splunk_cim: [dest_ip]
+      elastic_ecs: [destination.ip]
+
+  destination.port:
+    type: integer
+    sources:
+      sysmon_event_3: [DestinationPort]
+      splunk_cim: [dest_port]
+      elastic_ecs: [destination.port]
+
+  file.path:
+    type: string
+    transformation: normalize_windows_path
+    sources:
+      sysmon_event_11: [TargetFilename]
+      splunk_cim: [file_path]
+      elastic_ecs: [file.path]
+
+  registry.path:
+    type: string
+    sources:
+      sysmon_events_12_13_14: [TargetObject]
+      elastic_ecs: [registry.path]
+
+mapping_policy:
+  preserve_original_value: true
+  record_selected_source_field: true
+  reject_ambiguous_conflicts: false
+  conflict_action: preserve_all_candidates_and_flag

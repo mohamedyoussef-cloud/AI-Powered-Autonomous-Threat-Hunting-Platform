@@ -1,0 +1,19 @@
+title: "Electron Applications - Analytic 0071 Baseline"
+id: "1f97d0ea-16c0-5054-9455-300f5aa59fad"
+status: "experimental"
+description: "Abuse of trusted Electron apps (Teams, Slack, Chrome) to spawn child processes or execute payloads via malicious command-line arguments (e.g., --gpu-launcher) and modified app resources (.asar). Behavior chain: suspicious parent process (Electron app) → unusual command-line args → child process creation → optional DLL/network artifacts."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1218.015"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "command-line"
+        - "gpu-launcher"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

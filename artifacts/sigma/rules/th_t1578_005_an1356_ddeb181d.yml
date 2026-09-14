@@ -1,0 +1,18 @@
+title: "Modify Cloud Compute Configurations - Analytic 1356 Baseline"
+id: "ddeb181d-b976-536d-87e4-6e1988ae9921"
+status: "experimental"
+description: "Defenders should monitor for anomalous or unauthorized changes to cloud compute configurations that alter quotas, tenant-wide policies, subscription associations, or allowed deployment regions. From a defender’s perspective, suspicious behavior chains include a sudden increase in compute quota requests followed by new instance or resource creation, policy modifications that weaken security restrictions, or enabling previously unused/unsupported cloud regions. Correlation across identity, configuration, and subsequent provisioning logs is critical to distinguish legitimate administrative activity from adversarial abuse."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1578.005"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "tenant-wide"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

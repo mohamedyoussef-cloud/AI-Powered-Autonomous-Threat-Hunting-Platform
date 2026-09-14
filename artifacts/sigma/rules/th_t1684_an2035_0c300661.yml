@@ -1,0 +1,17 @@
+title: "Social Engineering - Analytic 2035 Baseline"
+id: "0c300661-2dcd-57db-9f0c-294cd3e13b2d"
+status: "experimental"
+description: "Detects user execution of newly received content or instructions shortly after external communication, including script launches, Office child process spawning, browser-to-script execution chains, or credential prompts followed by new logon sessions."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1684"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "browser-to-script"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

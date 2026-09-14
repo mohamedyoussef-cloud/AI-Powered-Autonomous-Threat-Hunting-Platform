@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Environment Presence Resolution Output v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "unresolved_platforms",
+    "required_environment_evidence",
+    "resolution_questions",
+    "next_action"
+  ],
+  "properties": {
+    "unresolved_platforms": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required_environment_evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "resolution_questions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "next_action": {
+      "type": "string",
+      "minLength": 10
+    }
+  }
+}

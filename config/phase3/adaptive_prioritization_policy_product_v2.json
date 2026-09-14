@@ -1,0 +1,31 @@
+{
+  "policy_version": "2.0",
+
+  "nominal_weights": {
+    "telemetry_readiness": 0.25,
+    "asset_criticality": 0.25,
+    "incident_history_relevance": 0.25,
+    "detection_coverage_gap": 0.25
+  },
+
+  "minimum_available_factors": 2,
+
+  "routes": {
+    "hunt": "eligible_for_hunt_prioritization",
+    "collection_gap": "route_to_collection_gap_workflow",
+    "environment_unknown": "conditional_environment_resolution",
+    "pre_attack": "route_to_pre_attack_workflow",
+    "unresolved": "retain_unresolved"
+  },
+
+  "collection_gap_policy": {
+    "included_in_runtime_hunt_ranking": false,
+    "preserve_environment_applicability": true,
+    "priority_score_semantics": "not_scored_as_hunt_priority"
+  },
+
+  "detection_gap_fallback": {
+    "source": "prepared_sigma_corpus_proxy",
+    "is_client_detection_coverage": false
+  }
+}

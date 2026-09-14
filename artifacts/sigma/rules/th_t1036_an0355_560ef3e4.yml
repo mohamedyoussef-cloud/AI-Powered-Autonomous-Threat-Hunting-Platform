@@ -1,0 +1,17 @@
+title: "Masquerading - Analytic 0355 Baseline"
+id: "560ef3e4-7d4e-51d4-8e92-2bc4d84186b1"
+status: "experimental"
+description: "Adversary renames LOLBINs or deploys binaries with spoofed file names, internal PE metadata, or misleading icons to appear legitimate. File creation is followed by execution or service registration inconsistent with known usage."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1036"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:System"
+detection:
+    keywords:
+        - "LOLBINs"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,18 @@
+title: "Device Registration - Analytic 0104 Baseline"
+id: "cb4a0d93-9b2d-56d5-960b-d26842bd1ee0"
+status: "experimental"
+description: "Adversary registers a Windows device to Entra ID or bypasses conditional access by adding device via Intune registration pipeline using stolen credentials."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1098.005"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "Adversary registers a Windows device to Entra ID or bypasses conditional access by adding device via Intune registration pipeline using stolen credentials."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

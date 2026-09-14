@@ -1,0 +1,18 @@
+title: "Embedded Payloads - Analytic 0599 Baseline"
+id: "83eeda93-7d2a-586f-bb28-3f99d31a7212"
+status: "experimental"
+description: "Detection of executables or scripts containing hidden embedded resources or secondary payloads, often with anomalies in file size vs. functionality or dropped child binaries."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1027.009"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Detection of executables or scripts containing hidden embedded resources or secondary payloads, often with anomalies in file size vs. functionality or dropped child binaries."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

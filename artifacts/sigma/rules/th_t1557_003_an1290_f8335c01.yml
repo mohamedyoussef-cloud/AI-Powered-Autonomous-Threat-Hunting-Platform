@@ -1,0 +1,18 @@
+title: "DHCP Spoofing - Analytic 1290 Baseline"
+id: "f8335c01-5b4f-58d5-bb09-599c7c2185b7"
+status: "experimental"
+description: "Detects rogue DHCP server activity and anomalous DHCP OFFER/ACK messages assigning unexpected DNS or gateway values. Detection correlates DHCP server role changes, DHCP exhaustion warnings, and sudden network configuration changes across endpoints."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1557.003"
+logsource:
+    product: "windows"
+    service: "system"
+    definition: "Grounded source(s): WinEventLog:System"
+detection:
+    keywords:
+        - "Detects rogue DHCP server activity and anomalous DHCP OFFER/ACK messages assigning unexpected DNS or gateway values. Detection correlates DHCP server role changes, DHCP exhaustion warnings, and sudden network configuration changes across endpoints."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

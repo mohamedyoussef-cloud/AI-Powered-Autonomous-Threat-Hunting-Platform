@@ -1,0 +1,17 @@
+title: "Office Template Macros - Analytic 1436 Baseline"
+id: "a7cef81c-978a-5510-a3cf-79028c598dac"
+status: "experimental"
+description: "Adversaries inject VBA macros into Office templates such as Normal.dotm or Personal.xlsb or redirect Office template load path via registry key (GlobalDotName) to gain persistence. Template macros trigger execution of malicious code on application startup."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1137.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Microsoft-Office-Alerts"
+detection:
+    keywords:
+        - "GlobalDotName"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

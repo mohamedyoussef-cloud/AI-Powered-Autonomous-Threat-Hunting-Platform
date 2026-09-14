@@ -1,0 +1,18 @@
+title: "Scheduled Transfer - Analytic 1118 Baseline"
+id: "eb4fcb97-a730-512f-926c-49d4fe965f14"
+status: "experimental"
+description: "Recurring network exfiltration initiated by scheduled or script-based processes exhibiting time-based regularity and consistent external destinations."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1029"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:System"
+detection:
+    keywords:
+        - "script-based"
+        - "time-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

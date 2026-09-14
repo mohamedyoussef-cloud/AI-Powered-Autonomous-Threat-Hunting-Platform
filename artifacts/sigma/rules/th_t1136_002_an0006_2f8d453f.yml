@@ -1,0 +1,20 @@
+title: "Domain Account - Analytic 0006 Baseline"
+id: "2f8d453f-7d03-5115-8854-2235f90d9c9e"
+status: "experimental"
+description: "Adversary uses built-in tools such as 'net user /add /domain' or PowerShell to create a domain user account. The behavior chain includes: (1) suspicious process execution on a domain controller followed by (2) user account creation event (Event ID 4720) on the same host."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1136.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Event ID 4720"
+        - "net user /add /domain"
+        - "PowerShell"
+        - "built-in"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

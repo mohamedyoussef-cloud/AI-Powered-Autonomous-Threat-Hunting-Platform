@@ -1,0 +1,19 @@
+title: "Windows Command Shell - Analytic 0578 Baseline"
+id: "6af4e973-f0a8-5954-aa77-4b6e5a278f32"
+status: "experimental"
+description: "Detects interactive or scripted abuse of cmd.exe, batch files, or shell invocation chains. Focuses on parent-child relationships (e.g., cmd.exe launched from unusual parents), anomalous command-line parameters, and chaining with discovery, credential access, or lateral movement behaviors."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1059.003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "cmd.exe"
+        - "parent-child"
+        - "command-line"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

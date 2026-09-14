@@ -1,0 +1,21 @@
+title: "System Script Proxy Execution - Analytic 1288 Baseline"
+id: "3fb8ca6a-9679-51e9-8f03-7d9ec66904a5"
+status: "experimental"
+description: "Execution of Microsoft-signed scripts (e.g., pubprn.vbs, installutil.exe, wscript.exe, cscript.exe) used to proxy execution of untrusted or external binaries. Behavior is detected through command-line process lineage, child process spawning, and unsigned payload execution from signed parent."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1216"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "installutil.exe"
+        - "wscript.exe"
+        - "cscript.exe"
+        - "Microsoft-signed"
+        - "command-line"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

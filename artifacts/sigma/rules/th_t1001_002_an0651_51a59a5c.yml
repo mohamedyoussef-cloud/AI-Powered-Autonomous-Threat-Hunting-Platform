@@ -1,0 +1,18 @@
+title: "Steganography - Analytic 0651 Baseline"
+id: "51a59a5c-e706-5130-ba0d-fb252005a648"
+status: "experimental"
+description: "Detect the creation or modification of common media file formats (e.g., .jpg, .png, .wav) following suspicious process activity like compression or encryption, especially when paired with lateral movement or exfiltration behavior."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1001.002"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Detect the creation or modification of common media file formats (e.g., .jpg, .png, .wav) following suspicious process activity like compression or encryption, especially when paired with lateral movement or exfiltration behavior."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

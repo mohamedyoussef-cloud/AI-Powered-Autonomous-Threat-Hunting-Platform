@@ -1,0 +1,18 @@
+title: "IIS Components - Analytic 0184 Baseline"
+id: "af9739bc-b3d3-5608-89b8-46b6997e25c7"
+status: "experimental"
+description: "Adversary installs or modifies IIS components (ISAPI filters, extensions, or modules) using DLL files registered via configuration changes or administrative tools like AppCmd.exe. These components intercept or manipulate HTTP requests/responses for persistence or C2."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1505.004"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "AppCmd.exe"
+        - "AppCmd"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

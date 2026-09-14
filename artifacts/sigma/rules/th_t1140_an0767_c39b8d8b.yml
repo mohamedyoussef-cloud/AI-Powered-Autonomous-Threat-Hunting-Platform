@@ -1,0 +1,21 @@
+title: "Deobfuscate/Decode Files or Information - Analytic 0767 Baseline"
+id: "c39b8d8b-ae0f-5eb6-980d-21239d3eb93a"
+status: "experimental"
+description: "An adversary leverages built-in tools such as certutil.exe, powershell.exe, or copy.exe to decode, reassemble, or extract hidden malicious content from obfuscated containers or encoded formats. The decoding utility often spawns shortly after file staging or download and may be chained with script interpreters or further payload execution."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1140"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "certutil.exe"
+        - "powershell.exe"
+        - "copy.exe"
+        - "built-in"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

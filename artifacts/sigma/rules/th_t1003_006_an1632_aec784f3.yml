@@ -1,0 +1,19 @@
+title: "DCSync - Analytic 1632 Baseline"
+id: "aec784f3-5e59-524b-b0d6-88ecf65c84b0"
+status: "experimental"
+description: "Detects unauthorized invocation of replication operations (DCSync) via Directory Replication Service (DRS), often executed by threat actors using Mimikatz or similar tools from non-DC endpoints."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1003.006"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "DCSync"
+        - "non-DC"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

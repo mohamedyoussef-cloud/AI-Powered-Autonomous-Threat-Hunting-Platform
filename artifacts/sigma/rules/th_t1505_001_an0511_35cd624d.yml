@@ -1,0 +1,17 @@
+title: "SQL Stored Procedures - Analytic 0511 Baseline"
+id: "35cd624d-85e0-5740-a473-b603fdebf71c"
+status: "experimental"
+description: "Creation or modification of stored procedures invoking xp_cmdshell or CLR assemblies for command execution and persistence."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1505.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Application, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Creation or modification of stored procedures invoking xp_cmdshell or CLR assemblies for command execution and persistence."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

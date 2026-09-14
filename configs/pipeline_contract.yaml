@@ -1,0 +1,51 @@
+schema_version: "1.0.0"
+stages:
+  - id: raw_registration
+    input: original_source_files
+    output: dataset_manifest
+    must_preserve: [original_path, checksum, source_version, download_timestamp]
+
+  - id: source_parsing
+    input: original_source_files
+    output: source_native_records
+    must_preserve: [source_record_id, raw_payload, parse_status, parse_errors]
+
+  - id: normalization
+    input: source_native_records
+    output: canonical_records
+    must_preserve: [source_record_id, mapping_version, transformation_trace]
+
+  - id: entity_resolution
+    input: canonical_telemetry
+    output: entity_ids_and_aliases
+    must_preserve: [resolution_method, confidence, source_identifiers]
+
+  - id: enrichment
+    input: canonical_records
+    output: enriched_records
+    must_preserve: [value_source, enrichment_timestamp, confidence]
+
+  - id: detection_execution
+    input: [validated_sigma_rule, normalized_telemetry]
+    output: matched_events
+    must_preserve: [rule_id, compiled_query, backend, execution_job_id]
+
+  - id: finding_aggregation
+    input: matched_events
+    output: canonical_findings
+    must_preserve: [evidence_event_ids, aggregation_policy_id]
+
+  - id: labeling
+    input: canonical_findings
+    output: finding_labels
+    must_preserve: [label_source, label_confidence, reviewer, supporting_evidence]
+
+  - id: feature_extraction
+    input: labeled_or_unlabeled_findings
+    output: model_specific_feature_tables
+    must_preserve: [feature_set_version, observation_cutoff, leakage_checks]
+
+  - id: llm_dataset_construction
+    input: [validated_sigma_rules, attack_context]
+    output: [rag_documents, supervised_instruction_pairs]
+    must_preserve: [source_rule_ids, synthetic_flag, generation_method, split_group_id]

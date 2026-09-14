@@ -1,0 +1,20 @@
+title: "Email Forwarding Rule - Analytic 1591 Baseline"
+id: "e61e9ab4-99eb-5327-a191-f1e180dda1a7"
+status: "experimental"
+description: "Creation of email forwarding/redirect rules in Exchange Online via New-InboxRule or transport rule cmdlets, including auto-forwarding address field usage."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1114.003"
+logsource:
+    product: "m365"
+    service: "messagetrace"
+    definition: "Grounded source(s): m365:messagetrace"
+detection:
+    keywords:
+        - "InboxRule"
+        - "New-InboxRule"
+        - "auto-forwarding"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

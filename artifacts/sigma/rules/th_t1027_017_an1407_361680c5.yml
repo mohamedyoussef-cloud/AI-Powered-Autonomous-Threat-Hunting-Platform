@@ -1,0 +1,21 @@
+title: "SVG Smuggling - Analytic 1407 Baseline"
+id: "361680c5-850f-5e73-a55e-e42a2d7808fc"
+status: "experimental"
+description: "Detects suspicious SVG file creation or download events followed by script engine execution (e.g., wscript.exe, mshta.exe, rundll32.exe), network callbacks, or browser-based credential collection."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1027.017"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "wscript.exe"
+        - "mshta.exe"
+        - "rundll32.exe"
+        - "browser-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

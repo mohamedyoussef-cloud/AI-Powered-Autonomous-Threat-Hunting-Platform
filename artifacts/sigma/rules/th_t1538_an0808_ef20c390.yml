@@ -1,0 +1,20 @@
+title: "Cloud Service Dashboard - Analytic 0808 Baseline"
+id: "ef20c390-a5d7-5c9c-8a29-27add1f26365"
+status: "experimental"
+description: "Detects web console login events followed by read-only or metadata retrieval activity from GUI sources (e.g., browser session, mobile client) rather than API/CLI sources. Correlates across CloudTrail, IAM identity logs, and user-agent context."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1538"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "CloudTrail"
+        - "read-only"
+        - "user-agent"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,19 @@
+title: "Domain Trust Discovery - Analytic 0016 Baseline"
+id: "0200d55f-58a6-5ff0-b69f-e649329b0e87"
+status: "experimental"
+description: "Adversary uses nltest, PowerShell, or Win32/.NET API to enumerate domain trust relationships (via DSEnumerateDomainTrusts, GetAllTrustRelationships, or LDAP queries), followed by discovery or authentication staging."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1482"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:PowerShell, WinEventLog:Security"
+detection:
+    keywords:
+        - "PowerShell"
+        - "DSEnumerateDomainTrusts"
+        - "GetAllTrustRelationships"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

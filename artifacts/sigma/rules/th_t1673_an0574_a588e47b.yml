@@ -1,0 +1,24 @@
+title: "Virtual Machine Discovery - Analytic 0574 Baseline"
+id: "a588e47b-ffe9-5fc2-aac7-c78183baf547"
+status: "experimental"
+description: "Detects enumeration of VMs using PowerShell (`Get-VM`), VMware Workstation (`vmrun.exe`), or Hyper-V (`VBoxManage.exe`). Defender observes suspicious command lines executed by unexpected users or outside normal administrative sessions."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1673"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "Get-VM"
+        - "vmrun.exe"
+        - "VBoxManage.exe"
+        - "PowerShell"
+        - "VMware"
+        - "VBoxManage"
+        - "Hyper-V"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,16 @@
+{
+  "audit_version": "1.0",
+  "blocked_sigma_plans": 13,
+  "design_failures": 0,
+  "duplicate_path_units": 0,
+  "duplicate_unit_ids": 0,
+  "failure_categories": {},
+  "failures": [],
+  "final_detection_plans": 505,
+  "grounded_detection_paths": 540,
+  "needs_path_resolution_plans": 13,
+  "ready_detection_plans": 492,
+  "sigma_generation_units": 540,
+  "status": "PASS",
+  "unresolved_paths_exposed": 0
+}

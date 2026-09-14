@@ -1,0 +1,17 @@
+title: "Escape to Host - Analytic 0614 Baseline"
+id: "27913d9f-8ef2-5efe-b9bb-afe8298d6fb9"
+status: "experimental"
+description: "Detection of Windows container escape attempts by observing processes accessing host directories, symbolic link abuse, or privilege escalation attempts. Defenders may detect anomalous process execution with access to system-level directories outside of container boundaries."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1611"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "system-level"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

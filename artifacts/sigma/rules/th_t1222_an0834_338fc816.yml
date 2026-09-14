@@ -1,0 +1,17 @@
+title: "File and Directory Permissions Modification - Analytic 0834 Baseline"
+id: "338fc816-507c-50da-a592-811ed0c448f1"
+status: "experimental"
+description: "Sequential behavioral chain of privilege escalation through permission modification: (1) Process creation of permission-modifying utilities (icacls, takeown, attrib, cacls), (2) Correlation with unusual user context or timing, (3) DACL modification events targeting sensitive files/directories, (4) Subsequent file access or modification attempts indicating successful privilege bypass"
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1222"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "permission-modifying"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

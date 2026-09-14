@@ -1,0 +1,18 @@
+title: "Ingress Tool Transfer - Analytic 0165 Baseline"
+id: "9fb49714-43a6-5d76-a6b2-453419d29bd7"
+status: "experimental"
+description: "Unusual or uncommon processes initiate network connections to external destinations followed by file creation (tools downloaded)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1105"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Unusual or uncommon processes initiate network connections to external destinations followed by file creation (tools downloaded)."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

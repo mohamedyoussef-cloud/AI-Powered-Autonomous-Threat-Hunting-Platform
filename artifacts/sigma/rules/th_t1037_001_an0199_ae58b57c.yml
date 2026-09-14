@@ -1,0 +1,17 @@
+title: "Logon Script (Windows) - Analytic 0199 Baseline"
+id: "ae58b57c-913c-5723-bc5c-b902607bf478"
+status: "experimental"
+description: "Detects adversary use of logon script configuration via Group Policy or user object attributes, followed by script execution post-authentication. Behavior includes modification of script path or file, then process execution under user logon context."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1037.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:System"
+detection:
+    keywords:
+        - "post-authentication"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,18 @@
+title: "Verclsid - Analytic 0118 Baseline"
+id: "b165a552-b6f0-5082-9f79-4d16ca25d55d"
+status: "experimental"
+description: "Detects abuse of verclsid.exe to execute COM objects by monitoring process creation, CLSID arguments, DLLs or scriptlet engines loaded into memory, and If the CLSID points to remote SCT/HTA content, verclsid.exe makes outbound connections."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1218.012"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "verclsid.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

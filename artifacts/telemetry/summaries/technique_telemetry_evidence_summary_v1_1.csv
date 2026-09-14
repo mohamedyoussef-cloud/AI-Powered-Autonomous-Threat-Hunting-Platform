@@ -1,0 +1,698 @@
+technique_id,technique_name,platforms,tactics,data_components_referenced,data_components_with_any_evidence,data_components_with_exact_event_evidence,data_components_source_only,component_evidence_coverage_pct,exact_event_component_coverage_pct,telemetry_evidence_status,evidence_sources
+T1001,Data Obfuscation,ESXi | Linux | Windows | macOS,command-and-control,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1001.001,Junk Data,ESXi | Linux | Windows | macOS,command-and-control,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1001.002,Steganography,ESXi | Linux | Windows | macOS,command-and-control,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1001.003,Protocol or Service Impersonation,ESXi | Linux | Windows | macOS,command-and-control,4,4,2,2,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1003,OS Credential Dumping,Linux | Windows | macOS,credential-access,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1003.001,LSASS Memory,Windows,credential-access,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1003.002,Security Account Manager,Windows,credential-access,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1003.003,NTDS,Windows,credential-access,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1003.004,LSA Secrets,Windows,credential-access,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1003.005,Cached Domain Credentials,Linux | Windows,credential-access,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1003.006,DCSync,Windows,credential-access,3,3,1,2,100.0,33.333333,full_component_evidence,BOTS | EVTX
+T1003.007,Proc Filesystem,Linux,credential-access,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1003.008,/etc/passwd and /etc/shadow,Linux,credential-access,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1005,Data from Local System,ESXi | Linux | Network Devices | Windows | macOS,collection,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1006,Direct Volume Access,Network Devices | Windows,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1007,System Service Discovery,Linux | Windows | macOS,discovery,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1008,Fallback Channels,ESXi | Linux | Windows | macOS,command-and-control,2,2,1,1,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1010,Application Window Discovery,Linux | Windows | macOS,discovery,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1011,Exfiltration Over Other Network Medium,Linux | Windows | macOS,exfiltration,7,7,5,2,100.0,71.428571,full_component_evidence,BOTS | EVTX
+T1011.001,Exfiltration Over Bluetooth,Linux | Windows | macOS,exfiltration,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1012,Query Registry,Windows,discovery,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1014,Rootkit,Linux | Windows | macOS,stealth,6,6,6,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1016,System Network Configuration Discovery,ESXi | Linux | Network Devices | Windows | macOS,discovery,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1016.001,Internet Connection Discovery,ESXi | Linux | Windows | macOS,discovery,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1016.002,Wi-Fi Discovery,Linux | Windows | macOS,discovery,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1018,Remote System Discovery,ESXi | Linux | Network Devices | Windows | macOS,discovery,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1020,Automated Exfiltration,Linux | Network Devices | Windows | macOS,exfiltration,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1020.001,Traffic Duplication,IaaS | Network Devices,exfiltration,2,2,1,1,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1021,Remote Services,ESXi | IaaS | Linux | Windows | macOS,lateral-movement,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1021.001,Remote Desktop Protocol,Windows,lateral-movement,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1021.002,SMB/Windows Admin Shares,Windows,lateral-movement,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1021.003,Distributed Component Object Model,Windows,lateral-movement,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1021.004,SSH,ESXi | Linux | macOS,lateral-movement,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1021.005,VNC,Linux | Windows | macOS,lateral-movement,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1021.006,Windows Remote Management,Windows,lateral-movement,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1021.007,Cloud Services,IaaS | Identity Provider | Office Suite | SaaS,lateral-movement,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1021.008,Direct Cloud VM Connections,IaaS,lateral-movement,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1025,Data from Removable Media,Linux | Windows | macOS,collection,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1027,Obfuscated Files or Information,ESXi | Linux | Network Devices | Windows | macOS,stealth,7,7,6,1,100.0,85.714286,full_component_evidence,BOTS | EVTX
+T1027.001,Binary Padding,Linux | Windows | macOS,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1027.002,Software Packing,Linux | Windows | macOS,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1027.003,Steganography,Linux | Windows | macOS,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1027.004,Compile After Delivery,Linux | Windows | macOS,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1027.005,Indicator Removal from Tools,Linux | Windows | macOS,stealth,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1027.006,HTML Smuggling,Linux | Windows | macOS,stealth,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1027.007,Dynamic API Resolution,Windows,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1027.008,Stripped Payloads,Linux | Network Devices | Windows | macOS,stealth,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1027.009,Embedded Payloads,Linux | Windows | macOS,stealth,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1027.010,Command Obfuscation,Linux | Windows | macOS,stealth,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1027.011,Fileless Storage,Linux | Windows,stealth,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1027.012,LNK Icon Smuggling,Windows,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1027.013,Encrypted/Encoded File,Linux | Windows | macOS,stealth,6,6,6,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1027.014,Polymorphic Code,Linux | Windows | macOS,stealth,7,7,6,1,100.0,85.714286,full_component_evidence,BOTS | EVTX
+T1027.015,Compression,Linux | Windows | macOS,stealth,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1027.016,Junk Code Insertion,Linux | Windows | macOS,stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1027.017,SVG Smuggling,Linux | Windows | macOS,stealth,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1027.018,Invisible Unicode,Linux | Windows | macOS,stealth,8,8,8,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1029,Scheduled Transfer,Linux | Windows | macOS,exfiltration,4,4,2,2,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1030,Data Transfer Size Limits,ESXi | Linux | Windows | macOS,exfiltration,2,2,1,1,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1033,System Owner/User Discovery,Linux | Network Devices | Windows | macOS,discovery,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1036,Masquerading,Containers | ESXi | Linux | Windows | macOS,stealth,8,7,6,1,87.5,75.0,partial_component_evidence,BOTS | EVTX
+T1036.001,Invalid Code Signature,Windows | macOS,stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1036.002,Right-to-Left Override,Linux | Windows | macOS,stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1036.003,Rename Legitimate Utilities,Linux | Windows | macOS,stealth,6,6,5,1,100.0,83.333333,full_component_evidence,BOTS | EVTX
+T1036.004,Masquerade Task or Service,Linux | Windows | macOS,stealth,6,6,5,1,100.0,83.333333,full_component_evidence,BOTS | EVTX
+T1036.005,Match Legitimate Resource Name or Location,Containers | ESXi | Linux | Windows | macOS,stealth,10,9,8,1,90.0,80.0,partial_component_evidence,BOTS | EVTX
+T1036.006,Space after Filename,Linux | macOS,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1036.007,Double File Extension,Windows,stealth,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1036.008,Masquerade File Type,Linux | Windows | macOS,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1036.009,Break Process Trees,Linux | macOS,stealth,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1036.010,Masquerade Account Name,Containers | IaaS | Identity Provider | Linux | Office Suite | SaaS | Windows | macOS,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1036.011,Overwrite Process Arguments,Linux,stealth,2,2,1,1,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1036.012,Browser Fingerprint,Linux | Windows | macOS,stealth,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1037,Boot or Logon Initialization Scripts,ESXi | Linux | Network Devices | Windows | macOS,persistence | privilege-escalation,8,8,8,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1037.001,Logon Script (Windows),Windows,persistence | privilege-escalation,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1037.002,Login Hook,macOS,persistence | privilege-escalation,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1037.003,Network Logon Script,Windows,persistence | privilege-escalation,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1037.004,RC Scripts,ESXi | Linux | Network Devices | macOS,persistence | privilege-escalation,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1037.005,Startup Items,macOS,persistence | privilege-escalation,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1039,Data from Network Shared Drive,Linux | Windows | macOS,collection,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1040,Network Sniffing,IaaS | Linux | Network Devices | Windows | macOS,credential-access | discovery,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1041,Exfiltration Over C2 Channel,ESXi | Linux | Windows | macOS,exfiltration,5,5,3,2,100.0,60.0,full_component_evidence,BOTS | EVTX
+T1046,Network Service Discovery,Containers | IaaS | Linux | Network Devices | Windows | macOS,discovery,4,4,2,2,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1047,Windows Management Instrumentation,Windows,execution,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1048,Exfiltration Over Alternative Protocol,ESXi | IaaS | Linux | Network Devices | Office Suite | SaaS | Windows | macOS,exfiltration,9,9,6,3,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1048.001,Exfiltration Over Symmetric Encrypted Non-C2 Protocol,ESXi | Linux | Windows | macOS,exfiltration,5,5,3,2,100.0,60.0,full_component_evidence,BOTS | EVTX
+T1048.002,Exfiltration Over Asymmetric Encrypted Non-C2 Protocol,ESXi | Linux | Windows | macOS,exfiltration,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1048.003,Exfiltration Over Unencrypted Non-C2 Protocol,ESXi | Linux | Network Devices | Windows | macOS,exfiltration,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1049,System Network Connections Discovery,ESXi | IaaS | Linux | Network Devices | Windows | macOS,discovery,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1052,Exfiltration Over Physical Medium,Linux | Windows | macOS,exfiltration,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1052.001,Exfiltration over USB,Linux | Windows | macOS,exfiltration,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1053,Scheduled Task/Job,Containers | ESXi | Linux | Network Devices | Windows | macOS,execution | persistence | privilege-escalation,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1053.002,At,Linux | Windows | macOS,execution | persistence | privilege-escalation,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1053.003,Cron,ESXi | Linux | macOS,execution | persistence | privilege-escalation,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1053.005,Scheduled Task,Windows,execution | persistence | privilege-escalation,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1053.006,Systemd Timers,Linux,execution | persistence | privilege-escalation,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1053.007,Container Orchestration Job,Containers,execution | persistence | privilege-escalation,3,2,1,1,66.666667,33.333333,partial_component_evidence,BOTS | EVTX
+T1055,Process Injection,Linux | Windows | macOS,privilege-escalation | stealth,7,7,6,1,100.0,85.714286,full_component_evidence,BOTS | EVTX
+T1055.001,Dynamic-link Library Injection,Windows,privilege-escalation | stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1055.002,Portable Executable Injection,Windows,privilege-escalation | stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1055.003,Thread Execution Hijacking,Windows,privilege-escalation | stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1055.004,Asynchronous Procedure Call,Windows,privilege-escalation | stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1055.005,Thread Local Storage,Windows,privilege-escalation | stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1055.008,Ptrace System Calls,Linux,privilege-escalation | stealth,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1055.009,Proc Memory,Linux,privilege-escalation | stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1055.011,Extra Window Memory Injection,Windows,privilege-escalation | stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1055.012,Process Hollowing,Windows,privilege-escalation | stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1055.013,Process Doppelgänging,Windows,privilege-escalation | stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1055.014,VDSO Hijacking,Linux,privilege-escalation | stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1055.015,ListPlanting,Windows,privilege-escalation | stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1056,Input Capture,Linux | Network Devices | Windows | macOS,collection | credential-access,8,8,6,2,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1056.001,Keylogging,Linux | Network Devices | Windows | macOS,collection | credential-access,9,9,6,3,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1056.002,GUI Input Capture,Linux | Windows | macOS,collection | credential-access,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1056.003,Web Portal Capture,Linux | Windows | macOS,collection | credential-access,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1056.004,Credential API Hooking,Linux | Windows | macOS,collection | credential-access,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1057,Process Discovery,ESXi | Linux | Network Devices | Windows | macOS,discovery,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1059,Command and Scripting Interpreter,Containers | ESXi | IaaS | Identity Provider | Linux | Network Devices | Office Suite | SaaS | Windows | macOS,execution,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1059.001,PowerShell,Windows,execution,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1059.002,AppleScript,macOS,execution,1,1,1,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1059.003,Windows Command Shell,Windows,execution,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1059.004,Unix Shell,ESXi | Linux | Network Devices | macOS,execution,6,6,5,1,100.0,83.333333,full_component_evidence,BOTS | EVTX
+T1059.005,Visual Basic,Linux | Windows | macOS,execution,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1059.006,Python,ESXi | Linux | Windows | macOS,execution,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1059.007,JavaScript,Linux | Windows | macOS,execution,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1059.008,Network Device CLI,Network Devices,execution,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1059.009,Cloud API,IaaS | Identity Provider | Office Suite | SaaS,execution,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1059.010,AutoHotKey & AutoIT,Windows,execution,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1059.011,Lua,Linux | Network Devices | Windows | macOS,execution,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1059.012,Hypervisor CLI,ESXi,execution,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1059.013,Container CLI/API,Containers,execution,5,3,2,1,60.0,40.0,partial_component_evidence,BOTS | EVTX
+T1068,Exploitation for Privilege Escalation,Containers | Linux | Windows | macOS,privilege-escalation,7,7,6,1,100.0,85.714286,full_component_evidence,BOTS | EVTX
+T1069,Permission Groups Discovery,Containers | IaaS | Identity Provider | Linux | Office Suite | SaaS | Windows | macOS,discovery,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1069.001,Local Groups,Linux | Windows | macOS,discovery,1,1,1,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1069.002,Domain Groups,Linux | Windows | macOS,discovery,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1069.003,Cloud Groups,IaaS | Identity Provider | Office Suite | SaaS,discovery,3,2,2,0,66.666667,66.666667,partial_component_evidence,BOTS | EVTX
+T1070,Indicator Removal,Containers | ESXi | Linux | Network Devices | Office Suite | Windows | macOS,stealth,6,6,6,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1070.003,Clear Command History,ESXi | Linux | Network Devices | Windows | macOS,stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1070.004,File Deletion,ESXi | Linux | Windows | macOS,stealth,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1070.005,Network Share Connection Removal,Windows,stealth,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1070.006,Timestomp,ESXi | Linux | Windows | macOS,stealth,6,6,6,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1070.007,Clear Network Connection History and Configurations,Linux | Network Devices | Windows | macOS,stealth,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1070.008,Clear Mailbox Data,Linux | Office Suite | Windows | macOS,stealth,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1070.009,Clear Persistence,ESXi | Linux | Windows | macOS,stealth,6,6,5,1,100.0,83.333333,full_component_evidence,BOTS | EVTX
+T1070.010,Relocate Malware,Linux | Network Devices | Windows | macOS,stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1071,Application Layer Protocol,ESXi | Linux | Network Devices | Windows | macOS,command-and-control,5,5,3,2,100.0,60.0,full_component_evidence,BOTS | EVTX
+T1071.001,Web Protocols,ESXi | Linux | Network Devices | Windows | macOS,command-and-control,5,5,3,2,100.0,60.0,full_component_evidence,BOTS | EVTX
+T1071.002,File Transfer Protocols,ESXi | Linux | Network Devices | Windows | macOS,command-and-control,5,5,3,2,100.0,60.0,full_component_evidence,BOTS | EVTX
+T1071.003,Mail Protocols,Linux | Network Devices | Windows | macOS,command-and-control,4,4,2,2,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1071.004,DNS,ESXi | Linux | Network Devices | Windows | macOS,command-and-control,4,4,2,2,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1071.005,Publish/Subscribe Protocols,Linux | Network Devices | Windows | macOS,command-and-control,4,4,2,2,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1072,Software Deployment Tools,Linux | Network Devices | SaaS | Windows | macOS,execution | lateral-movement,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1074,Data Staged,ESXi | IaaS | Linux | Windows | macOS,collection,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1074.001,Local Data Staging,ESXi | Linux | Windows | macOS,collection,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1074.002,Remote Data Staging,ESXi | IaaS | Linux | Windows | macOS,collection,7,7,5,2,100.0,71.428571,full_component_evidence,BOTS | EVTX
+T1078,Valid Accounts,Containers | ESXi | IaaS | Identity Provider | Linux | Network Devices | Office Suite | SaaS | Windows | macOS,initial-access | persistence | privilege-escalation | stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1078.001,Default Accounts,Containers | ESXi | IaaS | Identity Provider | Linux | Network Devices | Office Suite | SaaS | Windows | macOS,initial-access | persistence | privilege-escalation | stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1078.002,Domain Accounts,ESXi | Linux | Windows | macOS,initial-access | persistence | privilege-escalation | stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1078.003,Local Accounts,Containers | ESXi | Linux | Network Devices | Windows | macOS,initial-access | persistence | privilege-escalation | stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1078.004,Cloud Accounts,IaaS | Identity Provider | Office Suite | SaaS,initial-access | persistence | privilege-escalation | stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1080,Taint Shared Content,Linux | Office Suite | SaaS | Windows | macOS,lateral-movement,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1082,System Information Discovery,ESXi | IaaS | Linux | Network Devices | Windows | macOS,discovery,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1083,File and Directory Discovery,ESXi | Linux | Network Devices | Windows | macOS,discovery,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1087,Account Discovery,ESXi | IaaS | Identity Provider | Linux | Office Suite | SaaS | Windows | macOS,discovery,7,7,6,1,100.0,85.714286,full_component_evidence,BOTS | EVTX
+T1087.001,Local Account,ESXi | Linux | Windows | macOS,discovery,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1087.002,Domain Account,Linux | Windows | macOS,discovery,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1087.003,Email Account,Office Suite | Windows,discovery,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1087.004,Cloud Account,IaaS | Identity Provider | Office Suite | SaaS,discovery,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1090,Proxy,ESXi | Linux | Network Devices | Windows | macOS,command-and-control,5,5,3,2,100.0,60.0,full_component_evidence,BOTS | EVTX
+T1090.001,Internal Proxy,ESXi | Linux | Network Devices | Windows | macOS,command-and-control,7,7,4,3,100.0,57.142857,full_component_evidence,BOTS | EVTX
+T1090.002,External Proxy,ESXi | Linux | Network Devices | Windows | macOS,command-and-control,5,5,2,3,100.0,40.0,full_component_evidence,BOTS | EVTX
+T1090.003,Multi-hop Proxy,ESXi | Linux | Network Devices | Windows | macOS,command-and-control,5,5,2,3,100.0,40.0,full_component_evidence,BOTS | EVTX
+T1090.004,Domain Fronting,ESXi | Linux | Windows | macOS,command-and-control,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1091,Replication Through Removable Media,Windows,initial-access | lateral-movement,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1092,Communication Through Removable Media,Linux | Windows | macOS,command-and-control,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1095,Non-Application Layer Protocol,ESXi | Linux | Network Devices | Windows | macOS,command-and-control,3,3,1,2,100.0,33.333333,full_component_evidence,BOTS | EVTX
+T1098,Account Manipulation,Containers | ESXi | IaaS | Identity Provider | Linux | Network Devices | Office Suite | SaaS | Windows | macOS,persistence | privilege-escalation,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1098.001,Additional Cloud Credentials,IaaS | Identity Provider | SaaS,persistence | privilege-escalation,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1098.002,Additional Email Delegate Permissions,Office Suite | Windows,persistence | privilege-escalation,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1098.003,Additional Cloud Roles,IaaS | Identity Provider | Office Suite | SaaS,persistence | privilege-escalation,1,1,1,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1098.004,SSH Authorized Keys,ESXi | IaaS | Linux | Network Devices | macOS,persistence | privilege-escalation,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1098.005,Device Registration,Identity Provider | Windows,persistence | privilege-escalation,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1098.006,Additional Container Cluster Roles,Containers,persistence | privilege-escalation,1,1,1,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1098.007,Additional Local or Domain Groups,Linux | Windows | macOS,persistence | privilege-escalation,1,1,1,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1102,Web Service,ESXi | Linux | Windows | macOS,command-and-control,3,3,1,2,100.0,33.333333,full_component_evidence,BOTS | EVTX
+T1102.001,Dead Drop Resolver,ESXi | Linux | Windows | macOS,command-and-control,3,3,1,2,100.0,33.333333,full_component_evidence,BOTS | EVTX
+T1102.002,Bidirectional Communication,ESXi | Linux | Windows | macOS,command-and-control,4,4,2,2,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1102.003,One-Way Communication,ESXi | Linux | Windows | macOS,command-and-control,4,4,2,2,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1104,Multi-Stage Channels,ESXi | Linux | Windows | macOS,command-and-control,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1105,Ingress Tool Transfer,ESXi | Linux | Network Devices | Windows | macOS,command-and-control,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1106,Native API,Linux | Windows | macOS,execution,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1110,Brute Force,Containers | ESXi | IaaS | Identity Provider | Linux | Network Devices | Office Suite | SaaS | Windows | macOS,credential-access,1,1,1,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1110.001,Password Guessing,Containers | ESXi | IaaS | Identity Provider | Linux | Network Devices | Office Suite | SaaS | Windows | macOS,credential-access,1,1,1,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1110.002,Password Cracking,Identity Provider | Linux | Network Devices | Office Suite | Windows | macOS,credential-access,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1110.003,Password Spraying,Containers | ESXi | IaaS | Identity Provider | Linux | Network Devices | Office Suite | SaaS | Windows | macOS,credential-access,1,1,1,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1110.004,Credential Stuffing,Containers | ESXi | IaaS | Identity Provider | Linux | Network Devices | Office Suite | SaaS | Windows | macOS,credential-access,1,1,1,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1111,Multi-Factor Authentication Interception,Linux | Windows | macOS,credential-access,6,6,6,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1112,Modify Registry,Windows,defense-impairment | persistence,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1113,Screen Capture,Linux | Windows | macOS,collection,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1114,Email Collection,Linux | Office Suite | Windows | macOS,collection,7,7,7,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1114.001,Local Email Collection,Windows,collection,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1114.002,Remote Email Collection,Office Suite | Windows,collection,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1114.003,Email Forwarding Rule,Linux | Office Suite | Windows | macOS,collection,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1115,Clipboard Data,Linux | Windows | macOS,collection,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1119,Automated Collection,IaaS | Linux | Office Suite | SaaS | Windows | macOS,collection,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1120,Peripheral Device Discovery,Linux | Windows | macOS,discovery,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1123,Audio Capture,Linux | Windows | macOS,collection,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1124,System Time Discovery,ESXi | Linux | Network Devices | Windows | macOS,discovery,11,11,9,2,100.0,81.818182,full_component_evidence,BOTS | EVTX
+T1125,Video Capture,Linux | Windows | macOS,collection,9,9,7,2,100.0,77.777778,full_component_evidence,BOTS | EVTX
+T1127,Trusted Developer Utilities Proxy Execution,Windows,execution | stealth,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1127.001,MSBuild,Windows,execution | stealth,8,8,7,1,100.0,87.5,full_component_evidence,BOTS | EVTX
+T1127.002,ClickOnce,Windows,execution | stealth,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1127.003,JamPlus,Windows,execution | stealth,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1129,Shared Modules,Linux | Windows | macOS,execution,7,7,5,2,100.0,71.428571,full_component_evidence,BOTS | EVTX
+T1132,Data Encoding,ESXi | Linux | Windows | macOS,command-and-control,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1132.001,Standard Encoding,ESXi | Linux | Windows | macOS,command-and-control,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1132.002,Non-Standard Encoding,ESXi | Linux | Windows | macOS,command-and-control,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1133,External Remote Services,Containers | Linux | Windows | macOS,initial-access | persistence,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1134,Access Token Manipulation,Windows,privilege-escalation | stealth,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1134.001,Token Impersonation/Theft,Windows,privilege-escalation | stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1134.002,Create Process with Token,Windows,privilege-escalation | stealth,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1134.003,Make and Impersonate Token,Windows,privilege-escalation | stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1134.004,Parent PID Spoofing,Windows,privilege-escalation | stealth,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1134.005,SID-History Injection,Windows,privilege-escalation | stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1135,Network Share Discovery,Linux | Windows | macOS,discovery,6,6,5,1,100.0,83.333333,full_component_evidence,BOTS | EVTX
+T1136,Create Account,Containers | ESXi | IaaS | Identity Provider | Linux | Network Devices | Office Suite | SaaS | Windows | macOS,persistence,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1136.001,Local Account,Containers | ESXi | Linux | Network Devices | Windows | macOS,persistence,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1136.002,Domain Account,Linux | Windows | macOS,persistence,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1136.003,Cloud Account,IaaS | Identity Provider | Office Suite | SaaS,persistence,4,3,3,0,75.0,75.0,partial_component_evidence,BOTS | EVTX
+T1137,Office Application Startup,Office Suite | Windows,persistence,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1137.001,Office Template Macros,Office Suite | Windows,persistence,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1137.002,Office Test,Office Suite | Windows,persistence,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1137.003,Outlook Forms,Office Suite | Windows,persistence,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1137.004,Outlook Home Page,Office Suite | Windows,persistence,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1137.005,Outlook Rules,Office Suite | Windows,persistence,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1137.006,Add-ins,Office Suite | Windows,persistence,6,6,6,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1140,Deobfuscate/Decode Files or Information,ESXi | Linux | Windows | macOS,stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1176,Software Extensions,Linux | Windows | macOS,persistence,6,6,5,1,100.0,83.333333,full_component_evidence,BOTS | EVTX
+T1176.001,Browser Extensions,Linux | Windows | macOS,persistence,7,7,6,1,100.0,85.714286,full_component_evidence,BOTS | EVTX
+T1176.002,IDE Extensions,Linux | Windows | macOS,persistence,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1185,Browser Session Hijacking,Windows,collection,7,7,7,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1187,Forced Authentication,Windows,credential-access,4,4,2,2,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1189,Drive-by Compromise,Identity Provider | Linux | Windows | macOS,initial-access,9,9,8,1,100.0,88.888889,full_component_evidence,BOTS | EVTX
+T1190,Exploit Public-Facing Application,Containers | ESXi | IaaS | Linux | Network Devices | Windows | macOS,initial-access,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1195,Supply Chain Compromise,Linux | SaaS | Windows | macOS,initial-access,7,7,6,1,100.0,85.714286,full_component_evidence,BOTS | EVTX
+T1195.001,Compromise Software Dependencies and Development Tools,Linux | Windows | macOS,initial-access,7,7,6,1,100.0,85.714286,full_component_evidence,BOTS | EVTX
+T1195.002,Compromise Software Supply Chain,Linux | Windows | macOS,initial-access,8,8,7,1,100.0,87.5,full_component_evidence,BOTS | EVTX
+T1195.003,Compromise Hardware Supply Chain,Linux | Windows | macOS,initial-access,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1197,BITS Jobs,Windows,execution | persistence | stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1199,Trusted Relationship,IaaS | Identity Provider | Linux | Office Suite | SaaS | Windows | macOS,initial-access,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1200,Hardware Additions,Linux | Windows | macOS,initial-access,8,8,6,2,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1201,Password Policy Discovery,IaaS | Identity Provider | Linux | Network Devices | Office Suite | SaaS | Windows | macOS,discovery,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1202,Indirect Command Execution,Windows,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1203,Exploitation for Client Execution,Linux | Windows | macOS,execution,7,7,6,1,100.0,85.714286,full_component_evidence,BOTS | EVTX
+T1204,User Execution,Containers | IaaS | Linux | Windows | macOS,execution,11,9,6,3,81.818182,54.545455,partial_component_evidence,BOTS | EVTX
+T1204.001,Malicious Link,Linux | Windows | macOS,execution,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1204.002,Malicious File,Linux | Windows | macOS,execution,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1204.003,Malicious Image,Containers | IaaS,execution,8,6,2,4,75.0,25.0,partial_component_evidence,BOTS | EVTX
+T1204.004,Malicious Copy and Paste,Linux | Windows | macOS,execution,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1204.005,Malicious Library,Linux | Windows | macOS,execution,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1205,Traffic Signaling,Linux | Network Devices | Windows | macOS,command-and-control | persistence | stealth,5,5,3,2,100.0,60.0,full_component_evidence,BOTS | EVTX
+T1205.001,Port Knocking,Linux | Network Devices | Windows | macOS,command-and-control | persistence | stealth,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1205.002,Socket Filters,Linux | Windows | macOS,command-and-control | persistence | stealth,6,6,5,1,100.0,83.333333,full_component_evidence,BOTS | EVTX
+T1207,Rogue Domain Controller,Windows,defense-impairment,5,5,3,2,100.0,60.0,full_component_evidence,BOTS | EVTX
+T1210,Exploitation of Remote Services,ESXi | Linux | Windows | macOS,lateral-movement,7,7,6,1,100.0,85.714286,full_component_evidence,BOTS | EVTX
+T1211,Exploitation for Stealth,IaaS | Linux | SaaS | Windows | macOS,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1212,Exploitation for Credential Access,Identity Provider | Linux | Windows | macOS,credential-access,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1213,Data from Information Repositories,IaaS | Linux | Office Suite | SaaS | Windows | macOS,collection,8,8,6,2,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1213.001,Confluence,SaaS,collection,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1213.002,Sharepoint,Office Suite | Windows,collection,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1213.003,Code Repositories,SaaS,collection,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1213.004,Customer Relationship Management Software,SaaS,collection,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1213.005,Messaging Applications,Office Suite | SaaS,collection,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1213.006,Databases,IaaS | Linux | SaaS | Windows | macOS,collection,8,8,5,3,100.0,62.5,full_component_evidence,BOTS | EVTX
+T1216,System Script Proxy Execution,Windows,stealth,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1216.001,PubPrn,Windows,stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1216.002,SyncAppvPublishingServer,Windows,stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1217,Browser Information Discovery,Linux | Windows | macOS,discovery,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1218,System Binary Proxy Execution,Linux | Windows | macOS,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1218.001,Compiled HTML File,Windows,stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1218.002,Control Panel,Windows,stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1218.003,CMSTP,Windows,stealth,7,7,7,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1218.004,InstallUtil,Windows,stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1218.005,Mshta,Windows,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1218.007,Msiexec,Windows,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1218.008,Odbcconf,Windows,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1218.009,Regsvcs/Regasm,Windows,stealth,7,7,7,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1218.010,Regsvr32,Windows,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1218.011,Rundll32,Windows,stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1218.012,Verclsid,Windows,stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1218.013,Mavinject,Windows,stealth,6,6,6,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1218.014,MMC,Windows,stealth,8,8,8,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1218.015,Electron Applications,Linux | Windows | macOS,stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1219,Remote Access Tools,Linux | Windows | macOS,command-and-control,6,6,6,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1219.001,IDE Tunneling,Linux | Windows | macOS,command-and-control,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1219.002,Remote Desktop Software,Linux | Windows | macOS,command-and-control,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1219.003,Remote Access Hardware,Linux | Windows | macOS,command-and-control,1,1,0,1,100.0,0.0,full_component_evidence,BOTS | EVTX
+T1220,XSL Script Processing,Windows,stealth,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1221,Template Injection,Windows,stealth,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1222,File and Directory Permissions Modification,ESXi | Linux | Windows | macOS,defense-impairment,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1222.001,Windows Permissions,Windows,defense-impairment,6,6,5,1,100.0,83.333333,full_component_evidence,BOTS | EVTX
+T1222.002,Linux and Mac Permissions,Linux | macOS,defense-impairment,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1480,Execution Guardrails,ESXi | Linux | Windows | macOS,stealth,11,11,10,1,100.0,90.909091,full_component_evidence,BOTS | EVTX
+T1480.001,Environmental Keying,Linux | Windows | macOS,stealth,8,8,7,1,100.0,87.5,full_component_evidence,BOTS | EVTX
+T1480.002,Mutual Exclusion,Linux | Windows | macOS,stealth,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1482,Domain Trust Discovery,Windows,discovery,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1484,Domain or Tenant Policy Modification,Identity Provider | Windows,defense-impairment | privilege-escalation,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1484.001,Group Policy Modification,Windows,defense-impairment | privilege-escalation,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1484.002,Trust Modification,Identity Provider | Windows,defense-impairment | privilege-escalation,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1485,Data Destruction,Containers | ESXi | IaaS | Linux | Windows | macOS,impact,7,7,5,2,100.0,71.428571,full_component_evidence,BOTS | EVTX
+T1485.001,Lifecycle-Triggered Deletion,IaaS,impact,1,1,0,1,100.0,0.0,full_component_evidence,BOTS
+T1486,Data Encrypted for Impact,ESXi | IaaS | Linux | Windows | macOS,impact,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1489,Service Stop,ESXi | IaaS | Linux | Windows | macOS,impact,6,6,6,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1490,Inhibit System Recovery,Containers | ESXi | IaaS | Linux | Network Devices | Windows | macOS,impact,7,7,5,2,100.0,71.428571,full_component_evidence,BOTS | EVTX
+T1491,Defacement,ESXi | IaaS | Linux | Windows | macOS,impact,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1491.001,Internal Defacement,ESXi | Linux | Windows | macOS,impact,7,7,7,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1491.002,External Defacement,IaaS | Linux | Windows | macOS,impact,7,7,4,3,100.0,57.142857,full_component_evidence,BOTS | EVTX
+T1495,Firmware Corruption,Linux | Network Devices | Windows | macOS,impact,4,4,2,2,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1496,Resource Hijacking,Containers | IaaS | Linux | SaaS | Windows | macOS,impact,8,8,4,4,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1496.001,Compute Hijacking,Containers | IaaS | Linux | Windows | macOS,impact,8,7,4,3,87.5,50.0,partial_component_evidence,BOTS | EVTX
+T1496.002,Bandwidth Hijacking,Containers | IaaS | Linux | Windows | macOS,impact,5,5,2,3,100.0,40.0,full_component_evidence,BOTS | EVTX
+T1496.003,SMS Pumping,SaaS,impact,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1496.004,Cloud Service Hijacking,SaaS,impact,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1497,Virtualization/Sandbox Evasion,Linux | Windows | macOS,discovery | stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1497.001,System Checks,Linux | Windows | macOS,discovery | stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1497.002,User Activity Based Checks,Linux | Windows | macOS,discovery | stealth,6,6,6,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1497.003,Time Based Checks,Linux | Windows | macOS,discovery | stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1498,Network Denial of Service,Containers | IaaS | Linux | Windows | macOS,impact,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1498.001,Direct Network Flood,IaaS | Linux | Windows | macOS,impact,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1498.002,Reflection Amplification,IaaS | Linux | Windows | macOS,impact,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1499,Endpoint Denial of Service,Containers | IaaS | Linux | Windows | macOS,impact,5,5,3,2,100.0,60.0,full_component_evidence,BOTS | EVTX
+T1499.001,OS Exhaustion Flood,Linux | Windows | macOS,impact,4,4,2,2,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1499.002,Service Exhaustion Flood,IaaS | Linux | Windows | macOS,impact,7,7,4,3,100.0,57.142857,full_component_evidence,BOTS | EVTX
+T1499.003,Application Exhaustion Flood,IaaS | Linux | Windows | macOS,impact,5,5,3,2,100.0,60.0,full_component_evidence,BOTS | EVTX
+T1499.004,Application or System Exploitation,IaaS | Linux | Windows | macOS,impact,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1505,Server Software Component,ESXi | Linux | Network Devices | Windows | macOS,persistence,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1505.001,SQL Stored Procedures,Linux | Windows,persistence,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1505.002,Transport Agent,Linux | Windows,persistence,6,6,6,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1505.003,Web Shell,Linux | Network Devices | Windows | macOS,persistence,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1505.004,IIS Components,Windows,persistence,6,6,5,1,100.0,83.333333,full_component_evidence,BOTS | EVTX
+T1505.005,Terminal Services DLL,Windows,persistence,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1505.006,vSphere Installation Bundles,ESXi,persistence,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1518,Software Discovery,ESXi | IaaS | Linux | Windows | macOS,discovery,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1518.001,Security Software Discovery,IaaS | Linux | Windows | macOS,discovery,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1518.002,Backup Software Discovery,Linux | Windows | macOS,discovery,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1525,Implant Internal Image,Containers | IaaS,persistence,3,3,0,3,100.0,0.0,full_component_evidence,BOTS
+T1526,Cloud Service Discovery,IaaS | Identity Provider | Office Suite | SaaS,discovery,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1528,Steal Application Access Token,Containers | IaaS | Identity Provider | Office Suite | SaaS,credential-access,6,6,3,3,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1529,System Shutdown/Reboot,ESXi | Linux | Network Devices | Windows | macOS,impact,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1530,Data from Cloud Storage,IaaS | Office Suite | SaaS,collection,4,4,2,2,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1531,Account Access Removal,ESXi | IaaS | Linux | Office Suite | SaaS | Windows | macOS,impact,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1534,Internal Spearphishing,Linux | Office Suite | SaaS | Windows | macOS,lateral-movement,7,7,6,1,100.0,85.714286,full_component_evidence,BOTS | EVTX
+T1535,Unused/Unsupported Cloud Regions,IaaS,stealth,4,4,2,2,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1537,Transfer Data to Cloud Account,IaaS | Office Suite | SaaS,exfiltration,7,7,1,6,100.0,14.285714,full_component_evidence,BOTS | EVTX
+T1538,Cloud Service Dashboard,IaaS | Identity Provider | Office Suite | SaaS,discovery,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1539,Steal Web Session Cookie,Linux | Office Suite | SaaS | Windows | macOS,credential-access,7,7,7,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1542,Pre-OS Boot,Linux | Network Devices | Windows | macOS,persistence | stealth,7,7,5,2,100.0,71.428571,full_component_evidence,BOTS | EVTX
+T1542.001,System Firmware,Network Devices | Windows,persistence | stealth,5,5,3,2,100.0,60.0,full_component_evidence,BOTS | EVTX
+T1542.002,Component Firmware,Linux | Windows | macOS,persistence | stealth,2,2,1,1,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1542.003,Bootkit,Linux | Windows,persistence | stealth,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1542.004,ROMMONkit,Network Devices,persistence | stealth,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1542.005,TFTP Boot,Network Devices,persistence | stealth,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1543,Create or Modify System Process,Containers | Linux | Windows | macOS,persistence | privilege-escalation,6,5,5,0,83.333333,83.333333,partial_component_evidence,BOTS | EVTX
+T1543.001,Launch Agent,macOS,persistence | privilege-escalation,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1543.002,Systemd Service,Linux,persistence | privilege-escalation,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1543.003,Windows Service,Windows,persistence | privilege-escalation,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1543.004,Launch Daemon,macOS,persistence | privilege-escalation,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1543.005,Container Service,Containers,persistence | privilege-escalation,4,3,2,1,75.0,50.0,partial_component_evidence,BOTS | EVTX
+T1546,Event Triggered Execution,IaaS | Linux | Office Suite | SaaS | Windows | macOS,persistence | privilege-escalation,10,10,7,3,100.0,70.0,full_component_evidence,BOTS | EVTX
+T1546.001,Change Default File Association,Windows,persistence | privilege-escalation,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1546.002,Screensaver,Windows,persistence | privilege-escalation,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1546.003,Windows Management Instrumentation Event Subscription,Windows,persistence | privilege-escalation,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1546.004,Unix Shell Configuration Modification,Linux | macOS,persistence | privilege-escalation,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1546.005,Trap,Linux | macOS,persistence | privilege-escalation,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1546.006,LC_LOAD_DYLIB Addition,macOS,persistence | privilege-escalation,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1546.007,Netsh Helper DLL,Windows,persistence | privilege-escalation,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1546.008,Accessibility Features,Windows,persistence | privilege-escalation,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1546.009,AppCert DLLs,Windows,persistence | privilege-escalation,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1546.010,AppInit DLLs,Windows,persistence | privilege-escalation,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1546.011,Application Shimming,Windows,persistence | privilege-escalation,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1546.012,Image File Execution Options Injection,Windows,persistence | privilege-escalation,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1546.013,PowerShell Profile,Windows,persistence | privilege-escalation,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1546.014,Emond,macOS,persistence | privilege-escalation,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1546.015,Component Object Model Hijacking,Windows,persistence | privilege-escalation,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1546.016,Installer Packages,Linux | Windows | macOS,persistence | privilege-escalation,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1546.017,Udev Rules,Linux,persistence | privilege-escalation,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1546.018,Python Startup Hooks,Linux | Windows | macOS,persistence | privilege-escalation,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1547,Boot or Logon Autostart Execution,Linux | Network Devices | Windows | macOS,persistence | privilege-escalation,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1547.001,Registry Run Keys / Startup Folder,Windows,persistence | privilege-escalation,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1547.002,Authentication Package,Windows,persistence | privilege-escalation,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1547.003,Time Providers,Windows,persistence | privilege-escalation,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1547.004,Winlogon Helper DLL,Windows,persistence | privilege-escalation,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1547.005,Security Support Provider,Windows,persistence | privilege-escalation,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1547.006,Kernel Modules and Extensions,Linux | macOS,persistence | privilege-escalation,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1547.007,Re-opened Applications,macOS,persistence | privilege-escalation,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1547.008,LSASS Driver,Windows,persistence | privilege-escalation,6,6,6,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1547.009,Shortcut Modification,Windows,persistence | privilege-escalation,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1547.010,Port Monitors,Windows,persistence | privilege-escalation,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1547.012,Print Processors,Windows,persistence | privilege-escalation,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1547.013,XDG Autostart Entries,Linux,persistence | privilege-escalation,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1547.014,Active Setup,Windows,persistence | privilege-escalation,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1547.015,Login Items,macOS,persistence | privilege-escalation,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1548,Abuse Elevation Control Mechanism,IaaS | Identity Provider | Linux | Office Suite | Windows | macOS,privilege-escalation,7,7,6,1,100.0,85.714286,full_component_evidence,BOTS | EVTX
+T1548.001,Setuid and Setgid,Linux | macOS,privilege-escalation,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1548.002,Bypass User Account Control,Windows,privilege-escalation,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1548.003,Sudo and Sudo Caching,Linux | macOS,privilege-escalation,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1548.004,Elevated Execution with Prompt,macOS,privilege-escalation,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1548.005,Temporary Elevated Cloud Access,IaaS | Identity Provider | Office Suite,privilege-escalation,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1548.006,TCC Manipulation,macOS,privilege-escalation,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1550,Use Alternate Authentication Material,Containers | IaaS | Identity Provider | Linux | Office Suite | SaaS | Windows,lateral-movement,6,6,5,1,100.0,83.333333,full_component_evidence,BOTS | EVTX
+T1550.001,Application Access Token,Containers | IaaS | Identity Provider | Office Suite | SaaS,lateral-movement,2,2,1,1,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1550.002,Pass the Hash,Windows,lateral-movement,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1550.003,Pass the Ticket,Windows,lateral-movement,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1550.004,Web Session Cookie,IaaS | Office Suite | SaaS,lateral-movement,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1552,Unsecured Credentials,Containers | IaaS | Identity Provider | Linux | Network Devices | Office Suite | SaaS | Windows | macOS,credential-access,9,9,7,2,100.0,77.777778,full_component_evidence,BOTS | EVTX
+T1552.001,Credentials In Files,Containers | IaaS | Linux | Windows | macOS,credential-access,6,6,6,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1552.002,Credentials in Registry,Windows,credential-access,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1552.003,Shell History,Linux | Windows | macOS,credential-access,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1552.004,Private Keys,Linux | Network Devices | Windows | macOS,credential-access,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1552.005,Cloud Instance Metadata API,IaaS,credential-access,3,3,1,2,100.0,33.333333,full_component_evidence,BOTS | EVTX
+T1552.006,Group Policy Preferences,Windows,credential-access,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1552.007,Container API,Containers,credential-access,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1552.008,Chat Messages,Office Suite | SaaS,credential-access,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1553,Subvert Trust Controls,Linux | Windows | macOS,defense-impairment,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1553.001,Gatekeeper Bypass,macOS,defense-impairment,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1553.002,Code Signing,Windows | macOS,defense-impairment,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1553.003,SIP and Trust Provider Hijacking,Windows,defense-impairment,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1553.004,Install Root Certificate,Linux | Windows | macOS,defense-impairment,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1553.005,Mark-of-the-Web Bypass,Windows,defense-impairment,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1553.006,Code Signing Policy Modification,Windows | macOS,defense-impairment,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1554,Compromise Host Software Binary,ESXi | Linux | Windows | macOS,persistence,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1555,Credentials from Password Stores,IaaS | Linux | Windows | macOS,credential-access,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1555.001,Keychain,macOS,credential-access,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1555.002,Securityd Memory,Linux | macOS,credential-access,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1555.003,Credentials from Web Browsers,Linux | Windows | macOS,credential-access,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1555.004,Windows Credential Manager,Windows,credential-access,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1555.005,Password Managers,Linux | Windows | macOS,credential-access,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1555.006,Cloud Secrets Management Stores,IaaS,credential-access,1,1,0,1,100.0,0.0,full_component_evidence,BOTS
+T1556,Modify Authentication Process,IaaS | Identity Provider | Linux | Network Devices | Office Suite | SaaS | Windows | macOS,credential-access | defense-impairment | persistence,7,7,6,1,100.0,85.714286,full_component_evidence,BOTS | EVTX
+T1556.001,Domain Controller Authentication,Windows,credential-access | defense-impairment | persistence,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1556.002,Password Filter DLL,Windows,credential-access | defense-impairment | persistence,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1556.003,Pluggable Authentication Modules,Linux | macOS,credential-access | defense-impairment | persistence,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1556.004,Network Device Authentication,Network Devices,credential-access | defense-impairment | persistence,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1556.005,Reversible Encryption,Windows,credential-access | defense-impairment | persistence,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1556.006,Multi-Factor Authentication,IaaS | Identity Provider | Linux | Office Suite | SaaS | Windows | macOS,credential-access | defense-impairment | persistence,7,7,6,1,100.0,85.714286,full_component_evidence,BOTS | EVTX
+T1556.007,Hybrid Identity,IaaS | Identity Provider | Office Suite | SaaS | Windows,credential-access | defense-impairment | persistence,6,6,5,1,100.0,83.333333,full_component_evidence,BOTS | EVTX
+T1556.008,Network Provider DLL,Windows,credential-access | defense-impairment | persistence,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1556.009,Conditional Access Policies,IaaS | Identity Provider,credential-access | defense-impairment | persistence,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1557,Adversary-in-the-Middle,Linux | Network Devices | Windows | macOS,collection | credential-access,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1557.001,Name Resolution Poisoning and SMB Relay,Windows,collection | credential-access,4,4,2,2,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1557.002,ARP Cache Poisoning,Linux | Windows | macOS,collection | credential-access,3,3,1,2,100.0,33.333333,full_component_evidence,BOTS | EVTX
+T1557.003,DHCP Spoofing,Linux | Windows | macOS,collection | credential-access,3,3,1,2,100.0,33.333333,full_component_evidence,BOTS | EVTX
+T1557.004,Evil Twin,Network Devices,collection | credential-access,3,3,1,2,100.0,33.333333,full_component_evidence,BOTS | EVTX
+T1558,Steal or Forge Kerberos Tickets,Linux | Windows | macOS,credential-access,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1558.001,Golden Ticket,Windows,credential-access,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1558.002,Silver Ticket,Windows,credential-access,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1558.003,Kerberoasting,Windows,credential-access,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1558.004,AS-REP Roasting,Windows,credential-access,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1558.005,Ccache Files,Linux | macOS,credential-access,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1559,Inter-Process Communication,Linux | Windows | macOS,execution,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1559.001,Component Object Model,Windows,execution,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1559.002,Dynamic Data Exchange,Windows,execution,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1559.003,XPC Services,macOS,execution,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1560,Archive Collected Data,Linux | Windows | macOS,collection,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1560.001,Archive via Utility,Linux | Windows | macOS,collection,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1560.002,Archive via Library,Linux | Windows | macOS,collection,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1560.003,Archive via Custom Method,Linux | Windows | macOS,collection,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1561,Disk Wipe,Linux | Network Devices | Windows | macOS,impact,7,7,6,1,100.0,85.714286,full_component_evidence,BOTS | EVTX
+T1561.001,Disk Content Wipe,Linux | Network Devices | Windows | macOS,impact,7,7,6,1,100.0,85.714286,full_component_evidence,BOTS | EVTX
+T1561.002,Disk Structure Wipe,Linux | Network Devices | Windows | macOS,impact,7,7,6,1,100.0,85.714286,full_component_evidence,BOTS | EVTX
+T1563,Remote Service Session Hijacking,Linux | Windows | macOS,lateral-movement,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1563.001,SSH Hijacking,Linux | macOS,lateral-movement,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1563.002,RDP Hijacking,Windows,lateral-movement,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1564,Hide Artifacts,ESXi | Linux | Office Suite | Windows | macOS,stealth,6,6,6,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1564.001,Hidden Files and Directories,Linux | Windows | macOS,stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1564.002,Hidden Users,Linux | Windows | macOS,stealth,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1564.003,Hidden Window,Linux | Windows | macOS,stealth,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1564.004,NTFS File Attributes,Windows,stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1564.005,Hidden File System,Linux | Windows | macOS,stealth,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1564.006,Run Virtual Instance,ESXi | Linux | Windows | macOS,stealth,7,6,6,0,85.714286,85.714286,partial_component_evidence,BOTS | EVTX
+T1564.007,VBA Stomping,Linux | Windows | macOS,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1564.008,Email Hiding Rules,Linux | Office Suite | Windows | macOS,stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1564.009,Resource Forking,macOS,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1564.010,Process Argument Spoofing,Windows,stealth,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1564.011,Ignore Process Interrupts,Linux | Windows | macOS,stealth,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1564.012,File/Path Exclusions,Linux | Windows | macOS,stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1564.013,Bind Mounts,Linux,stealth,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1564.014,Extended Attributes,Linux | macOS,stealth,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1565,Data Manipulation,Linux | Windows | macOS,impact,6,6,5,1,100.0,83.333333,full_component_evidence,BOTS | EVTX
+T1565.001,Stored Data Manipulation,Linux | Windows | macOS,impact,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1565.002,Transmitted Data Manipulation,Linux | Windows | macOS,impact,5,5,3,2,100.0,60.0,full_component_evidence,BOTS | EVTX
+T1565.003,Runtime Data Manipulation,Linux | Windows | macOS,impact,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1566,Phishing,Identity Provider | Linux | Office Suite | SaaS | Windows | macOS,initial-access,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1566.001,Spearphishing Attachment,Linux | Windows | macOS,initial-access,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1566.002,Spearphishing Link,Identity Provider | Linux | Office Suite | SaaS | Windows | macOS,initial-access,5,5,3,2,100.0,60.0,full_component_evidence,BOTS | EVTX
+T1566.003,Spearphishing via Service,Linux | Windows | macOS,initial-access,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1566.004,Spearphishing Voice,Identity Provider | Linux | Windows | macOS,initial-access,1,1,1,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1567,Exfiltration Over Web Service,ESXi | Linux | Office Suite | SaaS | Windows | macOS,exfiltration,8,8,6,2,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1567.001,Exfiltration to Code Repository,ESXi | Linux | Windows | macOS,exfiltration,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1567.002,Exfiltration to Cloud Storage,ESXi | Linux | Windows | macOS,exfiltration,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1567.003,Exfiltration to Text Storage Sites,ESXi | Linux | Windows | macOS,exfiltration,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1567.004,Exfiltration Over Webhook,ESXi | Linux | Office Suite | SaaS | Windows | macOS,exfiltration,7,7,5,2,100.0,71.428571,full_component_evidence,BOTS | EVTX
+T1568,Dynamic Resolution,ESXi | Linux | Windows | macOS,command-and-control,4,4,2,2,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1568.001,Fast Flux DNS,ESXi | Linux | Windows | macOS,command-and-control,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1568.002,Domain Generation Algorithms,ESXi | Linux | Windows | macOS,command-and-control,4,4,2,2,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1568.003,DNS Calculation,ESXi | Linux | Windows | macOS,command-and-control,4,4,2,2,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1569,System Services,Linux | Windows | macOS,execution,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1569.001,Launchctl,macOS,execution,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1569.002,Service Execution,Windows,execution,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1569.003,Systemctl,Linux,execution,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1570,Lateral Tool Transfer,ESXi | Linux | Windows | macOS,lateral-movement,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1571,Non-Standard Port,ESXi | Linux | Windows | macOS,command-and-control,5,5,3,2,100.0,60.0,full_component_evidence,BOTS | EVTX
+T1572,Protocol Tunneling,ESXi | Linux | Windows | macOS,command-and-control,5,5,3,2,100.0,60.0,full_component_evidence,BOTS | EVTX
+T1573,Encrypted Channel,ESXi | Linux | Network Devices | Windows | macOS,command-and-control,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1573.001,Symmetric Cryptography,ESXi | Linux | Network Devices | Windows | macOS,command-and-control,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1573.002,Asymmetric Cryptography,ESXi | Linux | Network Devices | Windows | macOS,command-and-control,6,6,4,2,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1574,Hijack Execution Flow,Linux | Windows | macOS,execution | stealth,6,6,6,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1574.001,DLL,Windows,execution | stealth,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1574.004,Dylib Hijacking,macOS,execution | stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1574.005,Executable Installer File Permissions Weakness,Windows,execution | stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1574.006,Dynamic Linker Hijacking,Linux | macOS,execution | stealth,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1574.007,Path Interception by PATH Environment Variable,Linux | Windows | macOS,execution | stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1574.008,Path Interception by Search Order Hijacking,Windows,execution | stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1574.009,Path Interception by Unquoted Path,Windows,execution | stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1574.010,Services File Permissions Weakness,Windows,execution | stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1574.011,Services Registry Permissions Weakness,Windows,execution | stealth,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1574.012,COR_PROFILER,Windows,execution | stealth,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1574.013,KernelCallbackTable,Windows,execution | stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1574.014,AppDomainManager,Windows,execution | stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1578,Modify Cloud Compute Infrastructure,IaaS,defense-impairment,9,9,0,9,100.0,0.0,full_component_evidence,BOTS | EVTX
+T1578.001,Create Snapshot,IaaS,defense-impairment,2,2,0,2,100.0,0.0,full_component_evidence,BOTS
+T1578.002,Create Cloud Instance,IaaS,defense-impairment,3,3,0,3,100.0,0.0,full_component_evidence,BOTS
+T1578.003,Delete Cloud Instance,IaaS,defense-impairment,3,2,0,2,66.666667,0.0,partial_component_evidence,BOTS
+T1578.004,Revert Cloud Instance,IaaS,defense-impairment,3,3,0,3,100.0,0.0,full_component_evidence,BOTS
+T1578.005,Modify Cloud Compute Configurations,IaaS,defense-impairment,1,1,0,1,100.0,0.0,full_component_evidence,BOTS
+T1580,Cloud Infrastructure Discovery,IaaS,discovery,3,3,0,3,100.0,0.0,full_component_evidence,BOTS
+T1583,Acquire Infrastructure,PRE,resource-development,5,0,0,0,0.0,0.0,not_observed,
+T1583.001,Domains,PRE,resource-development,3,0,0,0,0.0,0.0,not_observed,
+T1583.002,DNS Server,PRE,resource-development,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1583.003,Virtual Private Server,PRE,resource-development,2,0,0,0,0.0,0.0,not_observed,
+T1583.004,Server,PRE,resource-development,2,0,0,0,0.0,0.0,not_observed,
+T1583.005,Botnet,PRE,resource-development,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1583.006,Web Services,PRE,resource-development,1,0,0,0,0.0,0.0,not_observed,
+T1583.007,Serverless,PRE,resource-development,1,0,0,0,0.0,0.0,not_observed,
+T1583.008,Malvertising,PRE,resource-development,1,0,0,0,0.0,0.0,not_observed,
+T1584,Compromise Infrastructure,PRE,resource-development,5,0,0,0,0.0,0.0,not_observed,
+T1584.001,Domains,PRE,resource-development,3,0,0,0,0.0,0.0,not_observed,
+T1584.002,DNS Server,PRE,resource-development,2,0,0,0,0.0,0.0,not_observed,
+T1584.003,Virtual Private Server,PRE,resource-development,2,0,0,0,0.0,0.0,not_observed,
+T1584.004,Server,PRE,resource-development,2,0,0,0,0.0,0.0,not_observed,
+T1584.005,Botnet,PRE,resource-development,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1584.006,Web Services,PRE,resource-development,1,0,0,0,0.0,0.0,not_observed,
+T1584.007,Serverless,PRE,resource-development,1,0,0,0,0.0,0.0,not_observed,
+T1584.008,Network Devices,PRE,resource-development,1,0,0,0,0.0,0.0,not_observed,
+T1585,Establish Accounts,PRE,resource-development,2,1,0,1,50.0,0.0,partial_component_evidence,BOTS | EVTX
+T1585.001,Social Media Accounts,PRE,resource-development,2,1,0,1,50.0,0.0,partial_component_evidence,BOTS | EVTX
+T1585.002,Email Accounts,PRE,resource-development,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1585.003,Cloud Accounts,PRE,resource-development,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1586,Compromise Accounts,PRE,resource-development,2,1,0,1,50.0,0.0,partial_component_evidence,BOTS | EVTX
+T1586.001,Social Media Accounts,PRE,resource-development,2,1,0,1,50.0,0.0,partial_component_evidence,BOTS | EVTX
+T1586.002,Email Accounts,PRE,resource-development,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1586.003,Cloud Accounts,PRE,resource-development,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1587,Develop Capabilities,PRE,resource-development,3,0,0,0,0.0,0.0,not_observed,
+T1587.001,Malware,PRE,resource-development,2,0,0,0,0.0,0.0,not_observed,
+T1587.002,Code Signing Certificates,PRE,resource-development,1,0,0,0,0.0,0.0,not_observed,
+T1587.003,Digital Certificates,PRE,resource-development,1,0,0,0,0.0,0.0,not_observed,
+T1587.004,Exploits,PRE,resource-development,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1588,Obtain Capabilities,PRE,resource-development,4,0,0,0,0.0,0.0,not_observed,
+T1588.001,Malware,PRE,resource-development,2,0,0,0,0.0,0.0,not_observed,
+T1588.002,Tool,PRE,resource-development,1,0,0,0,0.0,0.0,not_observed,
+T1588.003,Code Signing Certificates,PRE,resource-development,1,0,0,0,0.0,0.0,not_observed,
+T1588.004,Digital Certificates,PRE,resource-development,2,0,0,0,0.0,0.0,not_observed,
+T1588.005,Exploits,PRE,resource-development,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1588.006,Vulnerabilities,PRE,resource-development,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1588.007,Artificial Intelligence,PRE,resource-development,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1589,Gather Victim Identity Information,PRE,reconnaissance,1,1,0,1,100.0,0.0,full_component_evidence,BOTS | EVTX
+T1589.001,Credentials,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1589.002,Email Addresses,PRE,reconnaissance,1,1,0,1,100.0,0.0,full_component_evidence,BOTS | EVTX
+T1589.003,Employee Names,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1590,Gather Victim Network Information,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1590.001,Domain Properties,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1590.002,DNS,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1590.003,Network Trust Dependencies,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1590.004,Network Topology,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1590.005,IP Addresses,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1590.006,Network Security Appliances,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1591,Gather Victim Org Information,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1591.001,Determine Physical Locations,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1591.002,Business Relationships,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1591.003,Identify Business Tempo,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1591.004,Identify Roles,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1592,Gather Victim Host Information,PRE,reconnaissance,1,0,0,0,0.0,0.0,not_observed,
+T1592.001,Hardware,PRE,reconnaissance,1,0,0,0,0.0,0.0,not_observed,
+T1592.002,Software,PRE,reconnaissance,1,0,0,0,0.0,0.0,not_observed,
+T1592.003,Firmware,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1592.004,Client Configurations,PRE,reconnaissance,1,0,0,0,0.0,0.0,not_observed,
+T1593,Search Open Websites/Domains,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1593.001,Social Media,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1593.002,Search Engines,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1593.003,Code Repositories,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1594,Search Victim-Owned Websites,PRE,reconnaissance,1,1,1,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1595,Active Scanning,PRE,reconnaissance,2,2,0,2,100.0,0.0,full_component_evidence,BOTS | EVTX
+T1595.001,Scanning IP Blocks,PRE,reconnaissance,2,2,0,2,100.0,0.0,full_component_evidence,BOTS | EVTX
+T1595.002,Vulnerability Scanning,PRE,reconnaissance,2,2,0,2,100.0,0.0,full_component_evidence,BOTS | EVTX
+T1595.003,Wordlist Scanning,PRE,reconnaissance,1,1,0,1,100.0,0.0,full_component_evidence,BOTS | EVTX
+T1596,Search Open Technical Databases,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1596.001,DNS/Passive DNS,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1596.002,WHOIS,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1596.003,Digital Certificates,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1596.004,CDNs,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1596.005,Scan Databases,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1597,Search Closed Sources,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1597.001,Threat Intel Vendors,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1597.002,Purchase Technical Data,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1598,Phishing for Information,PRE,reconnaissance,3,3,1,2,100.0,33.333333,full_component_evidence,BOTS | EVTX
+T1598.001,Spearphishing Service,PRE,reconnaissance,3,3,1,2,100.0,33.333333,full_component_evidence,BOTS | EVTX
+T1598.002,Spearphishing Attachment,PRE,reconnaissance,3,3,1,2,100.0,33.333333,full_component_evidence,BOTS | EVTX
+T1598.003,Spearphishing Link,PRE,reconnaissance,3,3,1,2,100.0,33.333333,full_component_evidence,BOTS | EVTX
+T1598.004,Spearphishing Voice,PRE,reconnaissance,1,1,1,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1599,Network Boundary Bridging,Network Devices,defense-impairment,2,2,0,2,100.0,0.0,full_component_evidence,BOTS | EVTX
+T1599.001,Network Address Translation Traversal,Network Devices,defense-impairment,2,2,0,2,100.0,0.0,full_component_evidence,BOTS | EVTX
+T1600,Weaken Encryption,Network Devices,defense-impairment,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1600.001,Reduce Key Space,Network Devices,defense-impairment,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1600.002,Disable Crypto Hardware,Network Devices,defense-impairment,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1601,Modify System Image,Network Devices,defense-impairment,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1601.001,Patch System Image,Network Devices,defense-impairment,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1601.002,Downgrade System Image,Network Devices,defense-impairment,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1602,Data from Configuration Repository,Network Devices,collection,2,2,1,1,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1602.001,SNMP (MIB Dump),Network Devices,collection,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1602.002,Network Device Configuration Dump,Network Devices,collection,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1606,Forge Web Credentials,IaaS | Identity Provider | Linux | Office Suite | SaaS | Windows | macOS,credential-access,6,6,3,3,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1606.001,Web Cookies,IaaS | Linux | SaaS | Windows | macOS,credential-access,5,5,4,1,100.0,80.0,full_component_evidence,BOTS | EVTX
+T1606.002,SAML Tokens,IaaS | Identity Provider | Office Suite | SaaS | Windows,credential-access,5,5,3,2,100.0,60.0,full_component_evidence,BOTS | EVTX
+T1608,Stage Capabilities,PRE,resource-development,1,0,0,0,0.0,0.0,not_observed,
+T1608.001,Upload Malware,PRE,resource-development,1,0,0,0,0.0,0.0,not_observed,
+T1608.002,Upload Tool,PRE,resource-development,1,0,0,0,0.0,0.0,not_observed,
+T1608.003,Install Digital Certificate,PRE,resource-development,1,0,0,0,0.0,0.0,not_observed,
+T1608.004,Drive-by Target,PRE,resource-development,1,0,0,0,0.0,0.0,not_observed,
+T1608.005,Link Target,PRE,resource-development,1,0,0,0,0.0,0.0,not_observed,
+T1608.006,SEO Poisoning,PRE,resource-development,1,0,0,0,0.0,0.0,not_observed,
+T1609,Container Administration Command,Containers,execution,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1610,Deploy Container,Containers,execution,4,3,2,1,75.0,50.0,partial_component_evidence,BOTS | EVTX
+T1611,Escape to Host,Containers | ESXi | Linux | Windows,privilege-escalation,6,5,3,2,83.333333,50.0,partial_component_evidence,BOTS | EVTX
+T1612,Build Image on Host,Containers,stealth,2,2,1,1,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1613,Container and Resource Discovery,Containers,discovery,2,1,0,1,50.0,0.0,partial_component_evidence,BOTS
+T1614,System Location Discovery,IaaS | Linux | Windows | macOS,discovery,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1614.001,System Language Discovery,Linux | Windows | macOS,discovery,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1615,Group Policy Discovery,Windows,discovery,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1619,Cloud Storage Object Discovery,IaaS,discovery,2,2,0,2,100.0,0.0,full_component_evidence,BOTS
+T1620,Reflective Code Loading,Linux | Windows | macOS,stealth,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1621,Multi-Factor Authentication Request Generation,IaaS | Identity Provider | Linux | Office Suite | SaaS | Windows | macOS,credential-access,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1622,Debugger Evasion,Linux | Windows | macOS,discovery | stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1647,Plist File Modification,macOS,defense-impairment,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1648,Serverless Execution,IaaS | Office Suite | SaaS,execution,2,2,1,1,100.0,50.0,full_component_evidence,BOTS | EVTX
+T1649,Steal or Forge Authentication Certificates,Identity Provider | Linux | Windows | macOS,credential-access,6,6,6,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1650,Acquire Access,PRE,resource-development,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1651,Cloud Administration Command,IaaS,execution,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1652,Device Driver Discovery,Linux | Windows | macOS,discovery,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1653,Power Settings,Linux | Network Devices | Windows | macOS,persistence,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1654,Log Enumeration,ESXi | IaaS | Linux | Windows | macOS,discovery,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1657,Financial Theft,Linux | Office Suite | SaaS | Windows | macOS,impact,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1659,Content Injection,Linux | Windows | macOS,command-and-control | initial-access,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1665,Hide Infrastructure,ESXi | Linux | Network Devices | Windows | macOS,command-and-control,6,3,2,1,50.0,33.333333,partial_component_evidence,BOTS | EVTX
+T1666,Modify Cloud Resource Hierarchy,IaaS,defense-impairment,1,1,0,1,100.0,0.0,full_component_evidence,BOTS
+T1667,Email Bombing,Linux | Office Suite | Windows | macOS,impact,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1668,Exclusive Control,Linux | Windows | macOS,persistence,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1669,Wi-Fi Networks,Linux | Network Devices | Windows | macOS,initial-access,5,5,2,3,100.0,40.0,full_component_evidence,BOTS | EVTX
+T1671,Cloud Application Integration,Office Suite | SaaS,persistence,3,3,2,1,100.0,66.666667,full_component_evidence,BOTS | EVTX
+T1673,Virtual Machine Discovery,ESXi | Linux | Windows | macOS,discovery,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1674,Input Injection,Linux | Windows | macOS,execution,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1675,ESXi Administration Command,ESXi,execution,1,1,1,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1677,Poisoned Pipeline Execution,SaaS,execution,5,5,2,3,100.0,40.0,full_component_evidence,BOTS | EVTX
+T1678,Delay Execution,Linux | Windows | macOS,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1679,Selective Exclusion,Windows,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1680,Local Storage Discovery,ESXi | IaaS | Linux | Windows | macOS,discovery,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1681,Search Threat Vendor Data,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1682,Query Public AI Services,PRE,reconnaissance,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1683,Generate Content,PRE,resource-development,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1683.001,Written Content,PRE,resource-development,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1683.002,Audio-Visual Content,PRE,resource-development,0,0,0,0,0.0,0.0,requirement_unspecified,
+T1684,Social Engineering,Linux | Office Suite | SaaS | Windows | macOS,stealth,9,9,9,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1684.001,Impersonation,Linux | Office Suite | SaaS | Windows | macOS,stealth,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1684.002,Email Spoofing,Linux | Office Suite | Windows | macOS,stealth,1,1,1,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1685,Disable or Modify Tools,Containers | ESXi | IaaS | Linux | Network Devices | Windows | macOS,defense-impairment,9,9,7,2,100.0,77.777778,full_component_evidence,BOTS | EVTX
+T1685.001,Disable or Modify Windows Event Log,Windows,defense-impairment,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1685.002,Disable or Modify Cloud Log,IaaS | Identity Provider | Office Suite | SaaS,defense-impairment,3,3,1,2,100.0,33.333333,full_component_evidence,BOTS | EVTX
+T1685.003,Modify or Spoof Tool UI,Linux | Windows | macOS,defense-impairment,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1685.004,Disable or Modify Linux Audit System Log,Linux,defense-impairment,4,4,4,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1685.005,Clear Windows Event Logs,Windows,defense-impairment,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1685.006,Clear Linux or Mac System Logs,Linux | macOS,defense-impairment,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1686,Disable or Modify System Firewall,ESXi | Linux | Network Devices | Windows | macOS,defense-impairment,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1686.001,Cloud Firewall,IaaS,defense-impairment,2,2,0,2,100.0,0.0,full_component_evidence,BOTS | EVTX
+T1686.002,Network Device Firewall,Network Devices,defense-impairment,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1686.003,Windows Host Firewall,Windows,defense-impairment,5,5,5,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1687,Exploitation for Defense Impairment,IaaS | Linux | SaaS | Windows | macOS,defense-impairment,11,10,5,5,90.909091,45.454545,partial_component_evidence,BOTS | EVTX
+T1688,Safe Mode Boot,Windows,defense-impairment,3,3,3,0,100.0,100.0,full_component_evidence,BOTS | EVTX
+T1689,Downgrade Attack,Linux | Windows | macOS,defense-impairment,4,4,3,1,100.0,75.0,full_component_evidence,BOTS | EVTX
+T1690,Prevent Command History Logging,ESXi | Linux | Network Devices | Windows | macOS,defense-impairment,2,2,2,0,100.0,100.0,full_component_evidence,BOTS | EVTX

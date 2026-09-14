@@ -1,0 +1,17 @@
+title: "Outlook Home Page - Analytic 0502 Baseline"
+id: "f86eb5be-9ca6-5bf1-bf4a-ce2c29e64a71"
+status: "experimental"
+description: "Adversary uses a tool like Ruler to configure a malicious Outlook folder Home Page that loads a remote or embedded HTML payload upon folder interaction. Execution chain begins with Outlook launching, a specific folder being accessed, and a suspicious child process being spawned or COM-based execution invoked."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1137.004"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Application, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "COM-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,20 @@
+title: "PowerShell Profile - Analytic 1245 Baseline"
+id: "8b3e0ede-9ce2-5fb0-ac63-ad05a9e331e2"
+status: "experimental"
+description: "Defenders can identify PowerShell profile-based persistence by correlating file creation or modification in known profile locations with subsequent PowerShell process launches that do not use the `-NoProfile` flag. Profile scripts loading unusual modules or launching external programs, particularly under elevated contexts, are suspicious and may represent adversary persistence or privilege escalation."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1546.013"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "-NoProfile"
+        - "PowerShell"
+        - "NoProfile"
+        - "profile-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

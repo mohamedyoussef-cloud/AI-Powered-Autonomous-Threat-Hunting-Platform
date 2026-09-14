@@ -1,0 +1,17 @@
+title: "Valid Accounts - Analytic 1543 Baseline"
+id: "69f2aef4-b8fc-5388-bfb4-6019e5bce358"
+status: "experimental"
+description: "Detection of compromised or misused valid accounts via anomalous logon patterns, abnormal logon types, and inconsistent geographic or time-based activity across Windows endpoints."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1078"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "time-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

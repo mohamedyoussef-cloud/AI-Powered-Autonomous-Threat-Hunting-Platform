@@ -1,0 +1,17 @@
+title: "Mark-of-the-Web Bypass - Analytic 0712 Baseline"
+id: "341d34f2-c188-5c4e-a203-0dc1c1eb5ede"
+status: "experimental"
+description: "Detects extraction or mounting of container/archive files (e.g., .iso, .vhd, .zip) that originated from the Internet but whose contained files lack Zone.Identifier MOTW tagging. Correlates file creation metadata with subsequent execution of unsigned or untrusted binaries launched outside SmartScreen or Protected View."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1553.005"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "SmartScreen"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

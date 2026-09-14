@@ -1,0 +1,20 @@
+title: "Control Panel - Analytic 0558 Baseline"
+id: "61b410c2-1d10-5c5e-815d-806f635909f8"
+status: "experimental"
+description: "Execution of control.exe or rundll32.exe with parameters pointing to CPL files, especially from non-standard directories or newly created files, followed by suspicious child process execution or registry modifications registering new Control Panel items."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1218.002"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "control.exe"
+        - "rundll32.exe"
+        - "non-standard"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

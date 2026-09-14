@@ -1,0 +1,17 @@
+title: "Clear Windows Event Logs - Analytic 1472 Baseline"
+id: "d3f704f6-09f7-59eb-9c6a-995c0352c639"
+status: "experimental"
+description: "Detects behavioral sequence where an adversary gains elevated privileges and clears event logs using native binaries (e.g., wevtutil), PowerShell, or direct file deletion of .evtx files."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1685.005"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "PowerShell"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

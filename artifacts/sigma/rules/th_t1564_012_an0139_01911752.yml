@@ -1,0 +1,17 @@
+title: "File/Path Exclusions - Analytic 0139 Baseline"
+id: "01911752-0318-552d-9aa9-c7113dc8b72f"
+status: "experimental"
+description: "Creation or modification of files in directories known to be excluded from AV scanning (e.g., C:\\Windows\\Temp, Exchange server directories, or default AV exclusions). Defender perspective: correlate file creation with execution behavior or anomalous parent processes writing to excluded paths."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1564.012"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "Creation or modification of files in directories known to be excluded from AV scanning (e.g., C:\\Windows\\Temp, Exchange server directories, or default AV exclusions). Defender perspective: correlate file creation with execution behavior or anomalous parent processes writing to excluded paths."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,17 @@
+title: "Encrypted/Encoded File - Analytic 0237 Baseline"
+id: "f357c93a-cb66-5725-80d3-160b52db8af9"
+status: "experimental"
+description: "Detection of processes that load or decode encrypted/encoded files in memory and subsequently execute or inject them, indicating payload unpacking or memory-resident malware."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1027.013"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "memory-resident"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

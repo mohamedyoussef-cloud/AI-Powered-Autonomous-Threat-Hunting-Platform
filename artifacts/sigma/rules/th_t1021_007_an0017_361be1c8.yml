@@ -1,0 +1,18 @@
+title: "Cloud Services - Analytic 0017 Baseline"
+id: "361be1c8-97b1-5d07-90ce-40e662bc4894"
+status: "experimental"
+description: "Cloud login from atypical geolocation or user-agent string, followed by resource enumeration or infrastructure manipulation using cloud CLI/API"
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1021.007"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "user-agent"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

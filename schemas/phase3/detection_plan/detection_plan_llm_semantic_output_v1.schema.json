@@ -1,0 +1,49 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "detection_plan_llm_semantic_output_v1.schema.json",
+  "title": "Detection Plan LLM Semantic Output v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "technique_id",
+    "detection_intent",
+    "known_limitations"
+  ],
+  "properties": {
+    "technique_id": {
+      "type": "string",
+      "pattern": "^T[0-9]{4}(\\.[0-9]{3})?$"
+    },
+    "detection_intent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "objective",
+        "observable_behaviors"
+      ],
+      "properties": {
+        "objective": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observable_behaviors": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "known_limitations": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

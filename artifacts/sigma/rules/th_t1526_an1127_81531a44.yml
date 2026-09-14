@@ -1,0 +1,18 @@
+title: "Cloud Service Discovery - Analytic 1127 Baseline"
+id: "81531a44-3121-56f1-9dd6-e792edf9cc0d"
+status: "experimental"
+description: "Unusual enumeration of services and resources through cloud APIs such as AWS CLI `describe-*`, Azure Resource Manager queries, or GCP project listings. Defender perspective includes anomalous API calls, unexpected volume of service enumeration, and correlation of discovery with recently compromised sessions."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1526"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "describe-*"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

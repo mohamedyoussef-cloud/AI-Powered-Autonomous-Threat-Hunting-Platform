@@ -1,0 +1,22 @@
+title: "Device Driver Discovery - Analytic 1595 Baseline"
+id: "5ca8f72c-185c-5714-9302-f2aa4177f1a6"
+status: "experimental"
+description: "Monitor for suspicious usage of driver enumeration utilities (driverquery.exe) or API calls such as EnumDeviceDrivers(). Registry queries against HKLM\\SYSTEM\\CurrentControlSet\\Services and HardwareProfiles that are abnormal may also indicate attempts to discover installed drivers and services. Correlate command execution, process creation, and registry access to build a behavioral chain of driver discovery."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1652"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "driverquery.exe"
+        - "HKLM\\SYSTEM\\CurrentControlSet\\Services and HardwareProfiles that are abnormal may also indicate attempts to discover installed drivers and services. Correlate command execution"
+        - "EnumDeviceDrivers"
+        - "SYSTEM"
+        - "CurrentControlSet"
+        - "HardwareProfiles"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,18 @@
+title: "Remote Access Tools - Analytic 1367 Baseline"
+id: "d3bc6419-e775-5752-b442-4764187addc0"
+status: "experimental"
+description: "Sequence of RAT agent execution, systemd persistence, and long-lived external egress; optional interactive shells spawned from the agent."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1219"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "long-lived"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,18 @@
+title: "DNS Calculation - Analytic 0728 Baseline"
+id: "616fc660-c0f4-59fc-8f94-c4202e3b9778"
+status: "experimental"
+description: "Monitor DNS query results where subsequent connections use derived or unusual port numbers not explicitly resolved, especially when tied to suspicious processes. Correlate Sysmon DNS logs (Event ID 22) with process creation and socket activity."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1568.003"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Event ID 22"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

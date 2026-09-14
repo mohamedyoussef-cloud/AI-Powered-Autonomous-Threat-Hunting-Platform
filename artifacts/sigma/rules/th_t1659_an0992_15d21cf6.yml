@@ -1,0 +1,17 @@
+title: "Content Injection - Analytic 0992 Baseline"
+id: "15d21cf6-6d07-5351-b691-39e8d31a9d33"
+status: "experimental"
+description: "Detect suspicious file creations and process executions triggered by browser activity (e.g., injected payloads written to %AppData% or Temp directories, then executed). Correlate network anomalies with subsequent local process creation or script execution."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1659"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "AppData"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

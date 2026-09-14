@@ -1,0 +1,17 @@
+title: "Steal or Forge Kerberos Tickets - Analytic 1443 Baseline"
+id: "267d68d6-acdc-5949-afff-33128bbee1fb"
+status: "experimental"
+description: "Detects anomalous Kerberos activity such as forged or stolen tickets by correlating malformed fields in logon events, RC4-encrypted TGTs, or TGS requests without corresponding TGT requests. Also detects suspicious processes accessing LSASS memory for ticket extraction."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1558"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "RC4-encrypted"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

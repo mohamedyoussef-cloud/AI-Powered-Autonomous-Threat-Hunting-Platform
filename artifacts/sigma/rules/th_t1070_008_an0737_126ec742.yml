@@ -1,0 +1,19 @@
+title: "Clear Mailbox Data - Analytic 0737 Baseline"
+id: "126ec742-9255-5420-8a7a-d0d1b3485d3a"
+status: "experimental"
+description: "Detects mailbox manipulation or deletion via PowerShell (e.g., Remove-MailboxExportRequest), file deletion from Outlook data stores (Unistore.db), or tampering with quarantined mail logs."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1070.008"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:PowerShell, WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "PowerShell"
+        - "MailboxExportRequest"
+        - "Remove-MailboxExportRequest"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

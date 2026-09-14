@@ -1,0 +1,17 @@
+title: "Binary Padding - Analytic 1528 Baseline"
+id: "958af766-dab0-5da1-abb5-f4fb1e893833"
+status: "experimental"
+description: "Detects the creation or execution of padded binary files (e.g., large size but minimal legitimate content) followed by process execution or lateral movement from the host."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1027.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Detects the creation or execution of padded binary files (e.g., large size but minimal legitimate content) followed by process execution or lateral movement from the host."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

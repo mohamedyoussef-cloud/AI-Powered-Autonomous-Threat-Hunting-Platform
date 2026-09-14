@@ -1,0 +1,18 @@
+title: "Exploitation for Stealth - Analytic 1636 Baseline"
+id: "34f08ead-0b8d-58b5-a138-dc2290f3854b"
+status: "experimental"
+description: "Detects exploitation of IaaS cloud security boundaries to evade defense controls. Defender perspective includes anomalous API calls that bypass audit logging, disable monitoring, or manipulate guardrails (e.g., CloudTrail tampering). Correlation highlights when exploitation attempts precede sudden absence of expected telemetry."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1211"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "CloudTrail"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

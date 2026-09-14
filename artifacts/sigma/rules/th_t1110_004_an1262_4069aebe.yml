@@ -1,0 +1,18 @@
+title: "Credential Stuffing - Analytic 1262 Baseline"
+id: "4069aebe-aafa-5df0-8e0f-07757a2af8ce"
+status: "experimental"
+description: "Multiple failed authentication attempts using distinct username/password pairs from a single IP address or session within a short time window, targeting common services like RDP or SMB"
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1110.004"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "Multiple failed authentication attempts using distinct username/password pairs from a single IP address or session within a short time window, targeting common services like RDP or SMB"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,626 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Detection Plan Contract v1.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "generated_at_utc",
+    "plan_id",
+    "environment_id",
+    "artifact_revision",
+    "plan_input_fingerprint",
+    "execution_context",
+    "technique",
+    "eligibility",
+    "attack_provenance",
+    "hypothesis",
+    "processing_status",
+    "plan_status",
+    "reason_codes",
+    "error_codes",
+    "detection_intent",
+    "required_components",
+    "detection_paths",
+    "known_limitations",
+    "downstream_action",
+    "grounding_assertions",
+    "lineage"
+  ],
+  "properties": {
+    "contract_version": {
+      "type": "string",
+      "const": "1.1"
+    },
+    "generated_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "technique": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "technique_id",
+        "technique_name"
+      ],
+      "properties": {
+        "technique_id": {
+          "type": "string",
+          "pattern": "^T[0-9]{4}(\\.[0-9]{3})?$"
+        },
+        "technique_name": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "eligibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision",
+        "gate_version",
+        "input_fingerprint"
+      ],
+      "properties": {
+        "decision": {
+          "const": "ELIGIBLE_FOR_DETECTION"
+        },
+        "gate_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input_fingerprint": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        }
+      }
+    },
+    "attack_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "attack_version",
+        "detection_strategy_ids",
+        "analytic_ids"
+      ],
+      "properties": {
+        "attack_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "detection_strategy_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "analytic_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "hypothesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "investigation_focus",
+        "confidence_level"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "investigation_focus": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "confidence_level": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "processing_status": {
+      "type": "string",
+      "enum": [
+        "SUCCESS",
+        "ERROR"
+      ]
+    },
+    "plan_status": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "READY_FOR_BASELINE_SIGMA",
+        "NEEDS_PATH_RESOLUTION",
+        null
+      ]
+    },
+    "reason_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "TECHNIQUE_SPECIFIC_PATH_GROUNDED",
+          "TECHNIQUE_SPECIFIC_PATH_NOT_RESOLVED",
+          "FIELD_BINDING_NOT_RESOLVED",
+          "COMPONENT_EVIDENCE_ONLY"
+        ]
+      }
+    },
+    "error_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "detection_intent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "objective",
+        "observable_behaviors"
+      ],
+      "properties": {
+        "objective": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "observable_behaviors": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "required_components": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "component_id",
+          "component_name",
+          "environment_grounded",
+          "requirement_unspecified",
+          "best_evidence_status"
+        ],
+        "properties": {
+          "component_id": {
+            "type": "string",
+            "pattern": "^DC[0-9]{4}$"
+          },
+          "component_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "environment_grounded": {
+            "type": "boolean"
+          },
+          "requirement_unspecified": {
+            "type": "boolean"
+          },
+          "best_evidence_status": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "detection_paths": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path_id",
+          "component_ids",
+          "grounding_status",
+          "requirement_ids",
+          "log_sources",
+          "event_ids",
+          "canonical_category",
+          "canonical_action",
+          "field_bindings",
+          "evidence_ids"
+        ],
+        "properties": {
+          "path_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "component_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^DC[0-9]{4}$"
+            }
+          },
+          "grounding_status": {
+            "type": "string",
+            "enum": [
+              "TECHNIQUE_SPECIFIC_GROUNDED",
+              "COMPONENT_LEVEL_ONLY",
+              "UNRESOLVED"
+            ]
+          },
+          "requirement_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "log_sources": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "event_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "canonical_category": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "canonical_action": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "field_bindings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "canonical_field",
+                "source_field",
+                "evidence_id"
+              ],
+              "properties": {
+                "canonical_field": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source_field": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "evidence_id": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "evidence_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "known_limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "downstream_action": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "BASELINE_SIGMA_GENERATION",
+        "DETECTION_PATH_RESOLUTION",
+        null
+      ]
+    },
+    "grounding_assertions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "component_evidence_is_not_technique_specific_path",
+        "telemetry_evidence_proves_occurrence",
+        "unresolved_fields_must_not_be_invented",
+        "sigma_generation_performed_here"
+      ],
+      "properties": {
+        "component_evidence_is_not_technique_specific_path": {
+          "const": true
+        },
+        "telemetry_evidence_proves_occurrence": {
+          "const": false
+        },
+        "unresolved_fields_must_not_be_invented": {
+          "const": true
+        },
+        "sigma_generation_performed_here": {
+          "const": false
+        }
+      }
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "master_context_version",
+        "hypothesis_engine_version",
+        "eligibility_gate_version",
+        "environment_profile_version",
+        "telemetry_resolver_version"
+      ],
+      "properties": {
+        "master_context_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hypothesis_engine_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "eligibility_gate_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "environment_profile_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "telemetry_resolver_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "plan_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "environment_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact_revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "plan_input_fingerprint": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "execution_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "campaign_id",
+        "run_id",
+        "trace_id"
+      ],
+      "properties": {
+        "campaign_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "run_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "trace_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "processing_status": {
+            "const": "ERROR"
+          }
+        },
+        "required": [
+          "processing_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "plan_status": {
+            "const": null
+          },
+          "downstream_action": {
+            "const": null
+          },
+          "reason_codes": {
+            "maxItems": 0
+          },
+          "error_codes": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "plan_status": {
+            "const": "NEEDS_PATH_RESOLUTION"
+          }
+        },
+        "required": [
+          "plan_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "processing_status": {
+            "const": "SUCCESS"
+          },
+          "downstream_action": {
+            "const": "DETECTION_PATH_RESOLUTION"
+          },
+          "reason_codes": {
+            "contains": {
+              "const": "TECHNIQUE_SPECIFIC_PATH_NOT_RESOLVED"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "processing_status": {
+            "const": "SUCCESS"
+          }
+        },
+        "required": [
+          "processing_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "plan_status": {
+            "type": "string"
+          },
+          "downstream_action": {
+            "type": "string"
+          },
+          "error_codes": {
+            "maxItems": 0
+          },
+          "reason_codes": {
+            "minItems": 1
+          },
+          "detection_intent": {
+            "properties": {
+              "objective": {
+                "type": "string",
+                "minLength": 1
+              },
+              "observable_behaviors": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "plan_status": {
+            "const": "READY_FOR_BASELINE_SIGMA"
+          }
+        },
+        "required": [
+          "plan_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "processing_status": {
+            "const": "SUCCESS"
+          },
+          "downstream_action": {
+            "const": "BASELINE_SIGMA_GENERATION"
+          },
+          "reason_codes": {
+            "contains": {
+              "const": "TECHNIQUE_SPECIFIC_PATH_GROUNDED"
+            }
+          },
+          "detection_paths": {
+            "minItems": 1,
+            "contains": {
+              "type": "object",
+              "properties": {
+                "grounding_status": {
+                  "const": "TECHNIQUE_SPECIFIC_GROUNDED"
+                },
+                "requirement_ids": {
+                  "minItems": 1
+                },
+                "log_sources": {
+                  "minItems": 1
+                },
+                "evidence_ids": {
+                  "minItems": 1
+                },
+                "field_bindings": {}
+              },
+              "required": [
+                "grounding_status",
+                "requirement_ids",
+                "log_sources",
+                "evidence_ids",
+                "field_bindings"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

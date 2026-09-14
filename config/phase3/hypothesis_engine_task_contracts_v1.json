@@ -1,0 +1,50 @@
+{
+  "contract_version": "1.0",
+  "tasks": {
+    "generate_runtime_hunt_hypothesis": {
+      "route": "runtime_hunt",
+      "required_output_fields": [
+        "hypothesis",
+        "rationale",
+        "investigation_focus",
+        "required_telemetry",
+        "known_collection_limitations",
+        "confidence"
+      ],
+      "output_schema": "schemas/phase3/hypothesis_engine/runtime_hunt_output_v1.schema.json"
+    },
+    "resolve_collection_gap": {
+      "route": "collection_gap_resolution",
+      "required_output_fields": [
+        "collection_gap",
+        "affected_data_components",
+        "required_collection",
+        "current_evidence_limitations",
+        "next_action"
+      ],
+      "output_schema": "schemas/phase3/hypothesis_engine/collection_gap_output_v1.schema.json"
+    },
+    "resolve_environment_presence": {
+      "route": "environment_resolution",
+      "required_output_fields": [
+        "unresolved_platforms",
+        "required_environment_evidence",
+        "resolution_questions",
+        "next_action"
+      ],
+      "output_schema": "schemas/phase3/hypothesis_engine/environment_resolution_output_v1.schema.json"
+    },
+    "generate_pre_attack_hypothesis": {
+      "route": "pre_attack_hunt",
+      "required_output_fields": [
+        "hypothesis",
+        "rationale",
+        "investigation_focus",
+        "required_external_evidence",
+        "limitations",
+        "confidence"
+      ],
+      "output_schema": "schemas/phase3/hypothesis_engine/pre_attack_output_v1.schema.json"
+    }
+  }
+}

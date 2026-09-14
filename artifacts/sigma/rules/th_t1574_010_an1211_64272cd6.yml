@@ -1,0 +1,17 @@
+title: "Services File Permissions Weakness - Analytic 1211 Baseline"
+id: "64272cd6-ed3b-5ff6-ac82-995d6e571890"
+status: "experimental"
+description: "Modification or replacement of service executables due to weak file or directory permissions. Defender observes file writes to service binary paths, unexpected modifications of executables associated with registered services, and subsequent service execution of attacker-supplied binaries under elevated permissions."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1574.010"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:System"
+detection:
+    keywords:
+        - "attacker-supplied"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

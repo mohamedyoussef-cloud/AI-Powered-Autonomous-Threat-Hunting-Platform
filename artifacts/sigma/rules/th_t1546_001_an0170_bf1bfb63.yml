@@ -1,0 +1,18 @@
+title: "Change Default File Association - Analytic 0170 Baseline"
+id: "bf1bfb63-fad3-5ed9-8bbe-f85f29f22bf4"
+status: "experimental"
+description: "Detects modification of registry keys used for default file handlers, followed by anomalous process execution from user-initiated file opens. This includes tracking changes under HKCU and HKCR for file extension mappings, and correlating them with new or suspicious handler paths launching unusual child processes (e.g., PowerShell, cmd, wscript)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1546.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "PowerShell"
+        - "user-initiated"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

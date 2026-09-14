@@ -1,0 +1,18 @@
+title: "System Owner/User Discovery - Analytic 0254 Baseline"
+id: "a6501400-d95a-5289-bc86-c00a9e6f8cee"
+status: "experimental"
+description: "Adversary launches built-in system tools (e.g., whoami, query user, net user) or scripts that enumerate user account information via local execution or remote API queries (e.g., WMI, PowerShell)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1033"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "PowerShell"
+        - "built-in"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

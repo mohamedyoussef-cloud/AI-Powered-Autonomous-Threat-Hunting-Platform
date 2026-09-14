@@ -1,0 +1,17 @@
+title: "Execution Guardrails - Analytic 1551 Baseline"
+id: "9bb47073-16c4-590c-8c91-601de4e7e3bf"
+status: "experimental"
+description: "Windows environmental validation behavioral chain: (1) Rapid system discovery reconnaissance through WMI queries, registry enumeration, and network share discovery, (2) Environment-specific artifact collection (hostname, domain, IP addresses, installed software, hardware identifiers), (3) Cryptographic operations or conditional logic based on collected environmental values, (4) Selective payload execution contingent on environmental validation results, (5) Temporal correlation between discovery activities and subsequent execution or network communication"
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1480"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Environment-specific"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,21 @@
+title: "Dynamic-link Library Injection - Analytic 1095 Baseline"
+id: "830940f1-b1e8-57b9-a3f8-6335316990fd"
+status: "experimental"
+description: "Detects DLL injection through correlation of memory allocation and writing to remote process memory (e.g., VirtualAllocEx, WriteProcessMemory), followed by remote thread creation (e.g., CreateRemoteThread) that loads a suspicious or unsigned DLL using LoadLibrary or reflective loading."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1055.001"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "VirtualAllocEx"
+        - "WriteProcessMemory"
+        - "CreateRemoteThread"
+        - "LoadLibrary"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

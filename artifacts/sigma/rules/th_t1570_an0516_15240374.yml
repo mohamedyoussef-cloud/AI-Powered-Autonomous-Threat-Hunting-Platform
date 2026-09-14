@@ -1,0 +1,19 @@
+title: "Lateral Tool Transfer - Analytic 0516 Baseline"
+id: "15240374-a303-5171-935d-bf17621439f1"
+status: "experimental"
+description: "Correlate suspicious file transfers over SMB or Admin$ shares with process creation events (e.g., cmd.exe, powershell.exe, certutil.exe) that do not align with normal administrative behavior. Detect remote file writes followed by execution of transferred binaries."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1570"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "cmd.exe"
+        - "powershell.exe"
+        - "certutil.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

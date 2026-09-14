@@ -1,0 +1,27 @@
+title: "Malicious Library - Analytic 0699 Baseline"
+id: "8f4e7f33-479d-5b57-93df-f0c5d79db491"
+status: "experimental"
+description: "Execution of `pip.exe`, `npm.cmd`, or MSI installers within user context, followed by script interpreter startup (e.g., python.exe) or PowerShell with unusual child processes or file writes in `%APPDATA%`, `%TEMP%`, or `%LOCALAPPDATA%`. Defender correlates command-line install tools with Sysmon and Event Logs to trace downstream behavior."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1204.005"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "pip.exe"
+        - "npm.cmd"
+        - "%APPDATA%"
+        - "%TEMP%"
+        - "%LOCALAPPDATA%"
+        - "python.exe"
+        - "PowerShell"
+        - "APPDATA"
+        - "LOCALAPPDATA"
+        - "command-line"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,19 @@
+title: "LSASS Memory - Analytic 1030 Baseline"
+id: "d61c025d-0daa-5550-acb7-6559c77e4b19"
+status: "experimental"
+description: "A non-privileged or abnormal process attempts to open a handle with full access (0x1F0FFF) to lsass.exe and subsequently invokes memory dump, file creation, or registry modification indicative of credential scraping. This behavior chain reflects staged credential theft activity."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1003.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "lsass.exe"
+        - "0x1F0FFF"
+        - "non-privileged"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,124 @@
+{
+  "registry_version": "2.0",
+
+  "semantics": {
+    "purpose": "Product-level semantic telemetry capability registry",
+    "extensible": true,
+    "is_attack_data_component_registry": false,
+    "observation_rule": "A capability is observed when at least one expected canonical field has operational field evidence.",
+    "field_alias_policy": "For duplicate mappings to the same canonical field within one telemetry source, use maximum observed availability rather than summing aliases.",
+    "absence_semantics": "No observed expected field means not observed in current telemetry evidence; it does not prove that the capability or platform is globally absent."
+  },
+
+  "capabilities": [
+    {
+      "capability_id": "host_context",
+      "capability_name": "Host Context",
+      "expected_fields": [
+        "host.name",
+        "host.id"
+      ]
+    },
+
+    {
+      "capability_id": "identity",
+      "capability_name": "Identity",
+      "expected_fields": [
+        "user.name",
+        "user.id",
+        "user.context.name"
+      ]
+    },
+
+    {
+      "capability_id": "authentication",
+      "capability_name": "Authentication",
+      "expected_fields": [
+        "user.name",
+        "authentication.logon_id",
+        "authentication.logon_type",
+        "source.ip"
+      ]
+    },
+
+    {
+      "capability_id": "process",
+      "capability_name": "Process Activity",
+      "expected_fields": [
+        "process.name",
+        "process.pid",
+        "process.command_line",
+        "process.parent.pid",
+        "process.working_directory"
+      ]
+    },
+
+    {
+      "capability_id": "network_connection",
+      "capability_name": "Network Connection",
+      "expected_fields": [
+        "source.ip",
+        "source.port",
+        "destination.ip",
+        "destination.port",
+        "network.protocol",
+        "network.transport",
+        "network.application",
+        "network.flow.id"
+      ]
+    },
+
+    {
+      "capability_id": "dns",
+      "capability_name": "DNS Activity",
+      "expected_fields": [
+        "dns.question.name",
+        "dns.question.type",
+        "dns.response.code",
+        "dns.transaction.id",
+        "dns.message.type"
+      ]
+    },
+
+    {
+      "capability_id": "file",
+      "capability_name": "File Activity",
+      "expected_fields": [
+        "file.name",
+        "file.path"
+      ]
+    },
+
+    {
+      "capability_id": "service",
+      "capability_name": "Service Activity",
+      "expected_fields": [
+        "service.name"
+      ]
+    },
+
+    {
+      "capability_id": "web",
+      "capability_name": "Web Activity",
+      "expected_fields": [
+        "http.response.bytes"
+      ]
+    },
+
+    {
+      "capability_id": "database",
+      "capability_name": "Database Activity",
+      "expected_fields": [
+        "database.query"
+      ]
+    },
+
+    {
+      "capability_id": "cloud",
+      "capability_name": "Cloud Activity",
+      "expected_fields": [
+        "cloud.region"
+      ]
+    }
+  ]
+}

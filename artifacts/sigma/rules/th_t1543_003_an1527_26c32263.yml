@@ -1,0 +1,24 @@
+title: "Windows Service - Analytic 1527 Baseline"
+id: "26c32263-bd8d-5a3e-a441-36186d7853a6"
+status: "experimental"
+description: "Detects creation or modification of Windows Services through command-line tools (e.g., `sc.exe`, `powershell.exe`), Registry key changes under `HKLM\\System\\CurrentControlSet\\Services`, and service execution under SYSTEM with unsigned or anomalous binary paths. Detects privilege escalation via driver installation or `CreateServiceW` usage. Correlates parent-child lineage, startup behavior, and rare service names."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1543.003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "sc.exe"
+        - "powershell.exe"
+        - "HKLM\\System\\CurrentControlSet\\Services"
+        - "CreateServiceW"
+        - "CurrentControlSet"
+        - "SYSTEM"
+        - "command-line"
+        - "parent-child"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

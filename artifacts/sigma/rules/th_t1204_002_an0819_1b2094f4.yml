@@ -1,0 +1,25 @@
+title: "Malicious File - Analytic 0819 Baseline"
+id: "1b2094f4-6b67-5123-a34f-6eea6a22480a"
+status: "experimental"
+description: "User opens a file delivered by email, web, chat, or share. The handler application (Word/PDF reader/archiver) creates a file in user-controlled paths (Downloads, Temp, Desktop) and then spawns a new or unusual child process (e.g., powershell.exe, wscript.exe, cmd.exe, regsvr32.exe, rundll32.exe, msiexec.exe). Optional precursors include FileStreamCreated (URL/UNC) and Office → system32 batch writes."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1204.002"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "powershell.exe"
+        - "wscript.exe"
+        - "cmd.exe"
+        - "regsvr32.exe"
+        - "rundll32.exe"
+        - "msiexec.exe"
+        - "FileStreamCreated"
+        - "user-controlled"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

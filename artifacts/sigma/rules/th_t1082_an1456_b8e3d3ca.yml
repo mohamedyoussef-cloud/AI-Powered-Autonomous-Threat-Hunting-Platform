@@ -1,0 +1,18 @@
+title: "System Information Discovery - Analytic 1456 Baseline"
+id: "b8e3d3ca-9c05-52dd-9977-ea70b1e6b84e"
+status: "experimental"
+description: "Use of cloud API calls (e.g., AWS EC2 DescribeInstances, Azure VM Inventory) to enumerate system configurations across assets."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1082"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "DescribeInstances"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

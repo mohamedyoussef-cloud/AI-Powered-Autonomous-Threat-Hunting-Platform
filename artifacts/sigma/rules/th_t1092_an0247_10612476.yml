@@ -1,0 +1,17 @@
+title: "Communication Through Removable Media - Analytic 0247 Baseline"
+id: "10612476-09c3-58e2-8d95-e228d5f8dd48"
+status: "experimental"
+description: "Behavioral sequence where removable media is mounted, files are written/updated, and subsequently read/executed on a separate host, suggesting removable-media relay communication."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1092"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:System, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "removable-media"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

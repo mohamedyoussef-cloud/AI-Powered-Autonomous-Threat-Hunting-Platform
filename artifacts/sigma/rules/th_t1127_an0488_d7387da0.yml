@@ -1,0 +1,23 @@
+title: "Trusted Developer Utilities Proxy Execution - Analytic 0488 Baseline"
+id: "d7387da0-0611-5d80-8659-21aa7dcc8206"
+status: "experimental"
+description: "A trusted/signed developer utility (parent) is executed in a non-developer context and (a) spawns suspicious children (e.g., powershell.exe, cmd.exe, rundll32.exe, regsvr32.exe, wscript.exe), (b) loads unsigned/user-writable DLLs, (c) writes and then runs a new PE from user-writable paths, and/or (d) immediately makes outbound network connections."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1127"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "powershell.exe"
+        - "cmd.exe"
+        - "rundll32.exe"
+        - "regsvr32.exe"
+        - "wscript.exe"
+        - "non-developer"
+        - "user-writable"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

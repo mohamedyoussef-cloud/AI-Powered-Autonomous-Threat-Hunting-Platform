@@ -1,0 +1,19 @@
+title: "Keylogging - Analytic 0243 Baseline"
+id: "7c82cffd-fbe1-5c8d-9f8b-5a28b8ce01ca"
+status: "experimental"
+description: "Monitors suspicious usage of Windows API calls like SetWindowsHookEx, GetKeyState, or polling functions within non-UI service processes, combined with Registry or driver modifications."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1056.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "SetWindowsHookEx"
+        - "GetKeyState"
+        - "non-UI"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

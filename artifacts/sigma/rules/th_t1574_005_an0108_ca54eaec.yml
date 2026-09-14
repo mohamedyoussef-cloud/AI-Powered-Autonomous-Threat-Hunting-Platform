@@ -1,0 +1,18 @@
+title: "Executable Installer File Permissions Weakness - Analytic 0108 Baseline"
+id: "ca54eaec-910b-5fe6-9cfe-ecb93ea49bf0"
+status: "experimental"
+description: "Executables written or modified in installer directories (e.g., %TEMP% subdirectories or Program Files installer paths) followed by execution under elevated context. Defender observes abnormal file replacement activity, process creation by installer processes pointing to attacker-supplied binaries, and unexpected module loads in elevated processes."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1574.005"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "attacker-supplied"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,20 @@
+title: "Domain Account - Analytic 0363 Baseline"
+id: "0004bcf3-9b24-51e0-a0c7-6745afbe8086"
+status: "experimental"
+description: "Adversary enumeration of domain accounts using net.exe, PowerShell, WMI, or LDAP queries from non-domain controllers or non-admin endpoints."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1087.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "net.exe"
+        - "PowerShell"
+        - "non-domain"
+        - "non-admin"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

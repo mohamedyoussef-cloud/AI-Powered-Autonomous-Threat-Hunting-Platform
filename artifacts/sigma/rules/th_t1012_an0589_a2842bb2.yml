@@ -1,0 +1,17 @@
+title: "Query Registry - Analytic 0589 Baseline"
+id: "a2842bb2-217b-5180-942d-cd8e3cdd91dd"
+status: "experimental"
+description: "Registry read access associated with suspicious or non-interactive processes querying system config, installed software, or security settings."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1012"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "non-interactive"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

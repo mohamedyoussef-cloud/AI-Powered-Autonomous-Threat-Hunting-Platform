@@ -1,0 +1,21 @@
+title: "Compile After Delivery - Analytic 1381 Baseline"
+id: "7086200d-0375-57d3-bf5a-be9b84d2bd3d"
+status: "experimental"
+description: "Detects compilation activity using csc.exe, ilasm.exe, or msbuild.exe initiated by user-space processes outside typical development environments, followed by execution or network activity from newly written binaries."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1027.004"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "csc.exe"
+        - "ilasm.exe"
+        - "msbuild.exe"
+        - "user-space"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,18 @@
+title: "Additional Local or Domain Groups - Analytic 0865 Baseline"
+id: "0a56a4de-f1c4-578e-8473-bf206536af71"
+status: "experimental"
+description: "Detects unauthorized additions of users or machine accounts to privileged local or domain groups (e.g., Administrators, Remote Desktop Users)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1098.007"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "Detects unauthorized additions of users or machine accounts to privileged local or domain groups (e.g., Administrators, Remote Desktop Users)."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,18 @@
+title: "Transfer Data to Cloud Account - Analytic 1580 Baseline"
+id: "144d2cc0-6fdb-5b80-853f-804f48e5f4fe"
+status: "experimental"
+description: "Detects snapshot sharing, backup exports, or data object transfers from victim-owned cloud accounts to other cloud identities within the same provider (e.g., AWS, Azure) using snapshot sharing, S3 bucket policy updates, or SAS URI generation."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1537"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "victim-owned"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,17 @@
+title: "Rootkit - Analytic 1061 Baseline"
+id: "503c0dc8-dd54-5613-a90e-a7c297b077bd"
+status: "experimental"
+description: "Unauthorized or anomalous loading of kernel-mode drivers or DLLs, concealed services, or abnormal modification of boot components indicative of rootkit activity."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1014"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:System"
+detection:
+    keywords:
+        - "kernel-mode"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

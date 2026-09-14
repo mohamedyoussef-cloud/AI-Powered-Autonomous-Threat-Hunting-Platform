@@ -1,0 +1,21 @@
+title: "Mavinject - Analytic 1207 Baseline"
+id: "2ba4407a-b7fb-5040-a1bf-6c261dc56747"
+status: "experimental"
+description: "Abuse of mavinject.exe to inject DLLs or import descriptors into another running process. Chain: (1) mavinject.exe starts with /INJECTRUNNING or /HMODULE → (2) mavinject obtains high-access handles to a target process (VM_WRITE/CREATE_THREAD) → (3) target process loads attacker DLL (module load) → (4) optional follow-on child activity or network egress from the target process."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1218.013"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "mavinject.exe"
+        - "INJECTRUNNING"
+        - "HMODULE"
+        - "high-access"
+        - "follow-on"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

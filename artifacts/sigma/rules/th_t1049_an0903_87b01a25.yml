@@ -1,0 +1,20 @@
+title: "System Network Connections Discovery - Analytic 0903 Baseline"
+id: "87b01a25-593e-54e8-a845-125d54be0343"
+status: "experimental"
+description: "Detects usage of commands or binaries (e.g., netstat, PowerShell Get-NetTCPConnection) and WMI or API calls to enumerate local or remote network connections."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1049"
+logsource:
+    product: "windows"
+    service: "powershell"
+    definition: "Grounded source(s): WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "PowerShell"
+        - "NetTCPConnection"
+        - "Get-NetTCPConnection"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

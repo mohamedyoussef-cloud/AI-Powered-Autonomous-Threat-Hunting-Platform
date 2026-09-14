@@ -1,0 +1,19 @@
+title: "Data Destruction - Analytic 0411 Baseline"
+id: "a9a1ffe1-2323-54ab-842c-c2860e9a2dc1"
+status: "experimental"
+description: "Adversary spawns command-line tools (e.g., del, cipher /w, SDelete) or scripts to recursively delete or overwrite user/system files. This may be correlated with abnormal file IO activity, registry writes, or tampering in critical system directories."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1485"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "SDelete"
+        - "command-line"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

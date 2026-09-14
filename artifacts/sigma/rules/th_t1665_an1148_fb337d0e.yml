@@ -1,0 +1,19 @@
+title: "Hide Infrastructure - Analytic 1148 Baseline"
+id: "fb337d0e-e301-574a-a513-0ba1ab05be28"
+status: "experimental"
+description: "Monitor DNS queries, proxy logs, and user-agent strings for anomalous patterns associated with adversary attempts to hide infrastructure. Defenders may observe DNS resolutions to short-lived domains, abnormal WHOIS registration data, or filtering of known defensive/responder IP addresses."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1665"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "user-agent"
+        - "short-lived"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

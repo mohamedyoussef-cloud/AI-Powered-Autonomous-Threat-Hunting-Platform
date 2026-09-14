@@ -1,0 +1,22 @@
+title: "System Binary Proxy Execution - Analytic 0226 Baseline"
+id: "478fb6a8-f201-5d32-867f-d32c40f2c103"
+status: "experimental"
+description: "Execution of trusted, Microsoft-signed binaries such as `rundll32.exe`, `msiexec.exe`, or `regsvr32.exe` used to execute externally hosted, unsigned, or suspicious payloads through command-line parameters or network retrieval."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1218"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "rundll32.exe"
+        - "msiexec.exe"
+        - "regsvr32.exe"
+        - "Microsoft-signed"
+        - "command-line"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

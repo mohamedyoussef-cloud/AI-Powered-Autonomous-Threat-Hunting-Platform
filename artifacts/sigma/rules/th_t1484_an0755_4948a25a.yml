@@ -1,0 +1,18 @@
+title: "Domain or Tenant Policy Modification - Analytic 0755 Baseline"
+id: "4948a25a-ffb9-52f2-bbb8-37607d40e953"
+status: "experimental"
+description: "Adversary modifies Group Policy Objects (GPOs), domain trust, or directory service objects via GUI, CLI, or programmatic APIs. Behavior includes creation/modification of GPOs, delegation permissions, trust objects, or rogue domain controller registration."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1484"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "Adversary modifies Group Policy Objects (GPOs), domain trust, or directory service objects via GUI, CLI, or programmatic APIs. Behavior includes creation/modification of GPOs, delegation permissions, trust objects, or rogue domain controller registration."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

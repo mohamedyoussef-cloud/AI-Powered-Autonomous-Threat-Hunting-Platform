@@ -1,0 +1,18 @@
+title: "Exploitation for Defense Impairment - Analytic 2038 Baseline"
+id: "896957b9-0019-5305-9072-a1feacded3d5"
+status: "experimental"
+description: "Detects suspicious interactions with security products followed by service crashes, unexpected restarts, driver unloads, telemetry gaps, or tamper-state changes. Correlates exploit precursor behavior with immediate degradation of defensive services and follow-on process execution."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1687"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "tamper-state"
+        - "follow-on"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

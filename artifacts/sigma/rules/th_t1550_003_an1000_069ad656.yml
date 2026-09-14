@@ -1,0 +1,18 @@
+title: "Pass the Ticket - Analytic 1000 Baseline"
+id: "069ad656-53eb-5c67-a376-0621c4250d64"
+status: "experimental"
+description: "Detects unauthorized Kerberos ticket injection by correlating service ticket (TGS - 4769) requests with absent corresponding account logons (4624) and prior Ticket Granting Ticket (TGT - 4768) activity. Highlights anomalous service ticket generation chains involving unexpected users, hosts, or times, and suspicious injection of tickets via mimikatz-like tooling into LSASS memory. Behavior also includes network lateral movement using Kerberos authentication absent expected interactive logon patterns."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1550.003"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "mimikatz-like"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,19 @@
+title: "Video Capture - Analytic 0568 Baseline"
+id: "5c4a1a18-c6bd-5fdb-9315-5a4c8392ed07"
+status: "experimental"
+description: "A non-standard process (or script-hosted process) loads camera/video-capture libraries (e.g., avicap32.dll, mf.dll, ksproxy.ax), opens the Camera Frame Server/device, writes video/image artifacts (e.g., .mp4/.avi/.yuv) to unusual locations, and optionally initiates outbound transfer shortly after."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1125"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "non-standard"
+        - "script-hosted"
+        - "video-capture"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

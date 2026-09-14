@@ -1,0 +1,18 @@
+title: "Credentials In Files - Analytic 0860 Baseline"
+id: "46664379-2823-5501-9c82-1ee5a15f4b13"
+status: "experimental"
+description: "Access to local credential/config files (e.g., ~/.aws/credentials) followed by metadata API calls or cloud role assumptions."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1552.001"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "Access to local credential/config files (e.g., ~/.aws/credentials) followed by metadata API calls or cloud role assumptions."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

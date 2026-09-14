@@ -1,0 +1,18 @@
+title: "Hide Artifacts - Analytic 1384 Baseline"
+id: "dbee6c75-e87f-551e-bfbb-933d2c4cf8bd"
+status: "experimental"
+description: "Abuse of file/registry attributes to hide malicious files, directories, or services. Defender view: detection of attrib.exe setting hidden/system flags, creation of Alternate Data Streams, or registry keys altering file visibility."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1564"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "attrib.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

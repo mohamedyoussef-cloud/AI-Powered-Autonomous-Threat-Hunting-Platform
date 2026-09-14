@@ -1,0 +1,19 @@
+title: "Screen Capture - Analytic 0980 Baseline"
+id: "60c9ad6e-877d-562f-94ba-82ab9786f6b0"
+status: "experimental"
+description: "Unusual use of screen capture APIs (e.g., CopyFromScreen) or command-line tools to write image files to disk."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1113"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "CopyFromScreen"
+        - "command-line"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

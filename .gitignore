@@ -1,35 +1,150 @@
+﻿# ============================================================
 # Python
+# ============================================================
 __pycache__/
 *.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
 .venv/
 venv/
-.env
+env/
+*.egg-info/
 
-# Node
+# ============================================================
+# Environment / secrets
+# ============================================================
+.env
+.env.*
+!.env.example
+
+*.pem
+*.key
+
+# ============================================================
+# Node / frontend build artifacts
+# ============================================================
 node_modules/
 dist/
 build/
+.next/
+coverage/
 
-# IDE
+# ============================================================
+# IDE / editor
+# ============================================================
 .vscode/
 .idea/
+*.swp
+*.swo
 
-# OS
+# ============================================================
+# OS-generated files
+# ============================================================
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Data / models
-*.pkl
-*.joblib
-*.h5
-*.onnx
-*.csv
-*.jsonl
-*.evtx
-*.spl
-*.zip
-*.tar.gz
+# ============================================================
+# Notebook/runtime caches
+# ============================================================
+.ipynb_checkpoints/
+.cache/
+.cache-*/
+huggingface/
+hf_cache/
 
-# Logs
+# ============================================================
+# Logs / temporary runtime files
+# ============================================================
 logs/
 *.log
+*.tmp
+*.temp
+
+# ============================================================
+# Local databases / runtime state
+# ============================================================
+postgres_data/
+redis_data/
+*.db
+*.sqlite
+*.sqlite3
+
+# ============================================================
+# ML / LLM model weights and checkpoints
+# ============================================================
+models/
+checkpoints/
+finetune_checkpoints/
+
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.onnx
+*.h5
+*.joblib
+*.pkl
+
+# ============================================================
+# Raw / local datasets
+# Curated repository artifacts are stored separately under
+# artifacts/ and ARE intentionally version-controlled.
+# ============================================================
+data/raw/**/*
+data/interim/**/*
+data/processed/**/*
+data/quarantine/**/*
+
+!data/raw/**/.gitkeep
+!data/interim/**/.gitkeep
+!data/processed/**/.gitkeep
+!data/quarantine/**/.gitkeep
+
+datasets/raw/
+datasets/downloads/
+datasets/cache/
+
+# ============================================================
+# Raw security telemetry
+# ============================================================
+*.evtx
+
+# ============================================================
+# Archives / transfer bundles
+# ============================================================
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+
+_handoff/
+gpu/
+gpu_bundle*/
+*_gpu_bundle*/
+final_snapshots/
+release_verification/
+
+# ============================================================
+# Generated reports / local exports
+# ============================================================
+reports/generated/
+exports/
+downloads/
+backups/
+restore/
+
+# ============================================================
+# IMPORTANT
+# ============================================================
+# Do NOT globally ignore *.json, *.jsonl, *.csv, *.yml or *.yaml.
+# The repository intentionally versions curated schemas,
+# configuration, evaluation results and validated Phase 1
+# artifacts in these formats.

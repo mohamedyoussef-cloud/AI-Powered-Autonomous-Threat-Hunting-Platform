@@ -1,0 +1,17 @@
+title: "Data from Removable Media - Analytic 1410 Baseline"
+id: "ee04eb46-4075-54d0-979c-974deb047bab"
+status: "experimental"
+description: "Adversary mounts a USB device and begins enumerating, copying, or compressing files using scripting engines, cmd, or remote access tools."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1025"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:System, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Adversary mounts a USB device and begins enumerating, copying, or compressing files using scripting engines, cmd, or remote access tools."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

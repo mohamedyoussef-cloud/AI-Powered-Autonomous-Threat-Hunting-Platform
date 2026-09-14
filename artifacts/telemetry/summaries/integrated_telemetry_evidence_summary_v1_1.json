@@ -1,0 +1,30 @@
+{
+  "artifact": "Integrated Telemetry Evidence",
+  "artifact_version": "1.1.0",
+  "active_techniques": 697,
+  "evidence_rows": 398098,
+  "expected_technique_component_references": 2638,
+  "component_summary_rows": 2638,
+  "technique_summary_rows": 697,
+  "exact_event_observed_rows": 4693,
+  "event_requirement_unverified_rows": 2746,
+  "false_exact_event_rows": 0,
+  "event_requirement_overclaim_rows": 0,
+  "invalid_status_rows": 0,
+  "row_status_counts": {
+    "exact_event_observed": 4693,
+    "not_observed": 336862,
+    "requirement_unspecified": 45,
+    "source_family_observed": 41110,
+    "source_observed": 12642,
+    "source_observed_event_unverified": 2746
+  },
+  "technique_status_counts": {
+    "full_component_evidence": 595,
+    "not_observed": 35,
+    "partial_component_evidence": 22,
+    "requirement_unspecified": 45
+  },
+  "important_note": "These fields describe observed telemetry evidence. They are not the Phase 3 weighted Telemetry Readiness score, and they do not prove that a technique itself occurs in a dataset.",
+  "status": "PASS"
+}

@@ -1,0 +1,20 @@
+title: "External Proxy - Analytic 0922 Baseline"
+id: "87e79dd5-7368-5733-9c2c-7af4c229983f"
+status: "experimental"
+description: "Unusual process (e.g., `rundll32`, `mshta`, `wscript`, or custom payloads) initiates network connection to external IPs/domains that proxy C2 traffic, often over uncommon ports or high entropy HTTP/S connections."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1090.002"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "rundll32"
+        - "mshta"
+        - "wscript"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

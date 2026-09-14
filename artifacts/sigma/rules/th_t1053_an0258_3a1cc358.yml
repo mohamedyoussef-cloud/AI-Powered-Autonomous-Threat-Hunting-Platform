@@ -1,0 +1,18 @@
+title: "Scheduled Task/Job - Analytic 0258 Baseline"
+id: "3a1cc358-3c00-5471-a0f0-89e674e75e5b"
+status: "experimental"
+description: "Detects creation or modification of scheduled tasks using schtasks.exe, at.exe, or COM objects followed by execution of outlier processes tied to the scheduled job."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1053"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "schtasks.exe"
+        - "at.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

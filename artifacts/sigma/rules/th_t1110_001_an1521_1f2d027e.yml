@@ -1,0 +1,18 @@
+title: "Password Guessing - Analytic 1521 Baseline"
+id: "1f2d027e-0fb7-561e-9d92-791079ad6c92"
+status: "experimental"
+description: "Series of authentication failures (Event ID 4625) targeting the same or similar user accounts over time from one or more remote IPs"
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1110.001"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "Event ID 4625"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,17 @@
+title: "Supply Chain Compromise - Analytic 1480 Baseline"
+id: "3601697a-cf46-5661-8499-366c173cc800"
+status: "experimental"
+description: "1) New or updated software is delivered/installed from atypical sources or with signature/hash mismatches; 2) installer/updater writes binaries to unexpected paths or replaces existing signed files; 3) first run causes unsigned/abnormally signed modules to load or child processes to execute, optionally followed by network egress to new destinations."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1195"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Microsoft-Windows-CodeIntegrity/Operational"
+detection:
+    keywords:
+        - "1) New or updated software is delivered/installed from atypical sources or with signature/hash mismatches; 2) installer/updater writes binaries to unexpected paths or replaces existing signed files; 3) first run causes unsigned/abnormally signed modules to load or child processes to execute, optionally followed by network egress to new destinations."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

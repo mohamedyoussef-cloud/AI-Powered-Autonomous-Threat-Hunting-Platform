@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PRE-Attack Hypothesis Output v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "hypothesis",
+    "rationale",
+    "investigation_focus",
+    "required_external_evidence",
+    "limitations",
+    "confidence"
+  ],
+  "properties": {
+    "hypothesis": {
+      "type": "string",
+      "minLength": 20
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 20
+    },
+    "investigation_focus": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required_external_evidence": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "component_id",
+          "component_name",
+          "evidence_needed"
+        ],
+        "properties": {
+          "component_id": {
+            "type": "string",
+            "pattern": "^DC[0-9]{4}$"
+          },
+          "component_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_needed": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "score",
+        "explanation"
+      ],
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "score": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

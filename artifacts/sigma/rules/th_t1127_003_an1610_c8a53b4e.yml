@@ -1,0 +1,18 @@
+title: "JamPlus - Analytic 1610 Baseline"
+id: "c8a53b4e-f399-51d4-9d4a-f08baab04300"
+status: "experimental"
+description: "Abuse of JamPlus.exe to launch malicious payloads via crafted .jam files, resulting in abnormal process creation, command execution, or artifact generation outside of standard development workflows."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1127.003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "JamPlus.exe"
+        - "JamPlus"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

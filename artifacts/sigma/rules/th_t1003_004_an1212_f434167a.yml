@@ -1,0 +1,19 @@
+title: "LSA Secrets - Analytic 1212 Baseline"
+id: "f434167a-d250-55dc-b943-84aadc65034e"
+status: "experimental"
+description: "Detects adversary activity aimed at accessing LSA Secrets, including registry key export of HKEY_LOCAL_MACHINE\\SECURITY\\Policy\\Secrets or memory scraping via tools such as Mimikatz or PowerSploit's Invoke-Mimikatz."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1003.004"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "SECURITY"
+        - "PowerSploit"
+        - "Invoke-Mimikatz"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

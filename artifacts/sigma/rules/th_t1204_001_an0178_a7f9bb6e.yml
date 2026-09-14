@@ -1,0 +1,19 @@
+title: "Malicious Link - Analytic 0178 Baseline"
+id: "a7f9bb6e-081a-505e-aa50-dfce379f4f12"
+status: "experimental"
+description: "Behavioral chain: (1) a user-facing app (browser/Office/email client) launches a URL or handles a link, then (2) the same process lineage makes an outbound connection to an untrusted domain/IP, (3) a file is downloaded or unpacked to a user-writable location shortly after the click. Optional enrichment: subsequent child execution by LOLBINs."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1204.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "LOLBINs"
+        - "user-facing"
+        - "user-writable"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

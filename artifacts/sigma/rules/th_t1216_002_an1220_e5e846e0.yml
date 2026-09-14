@@ -1,0 +1,22 @@
+title: "SyncAppvPublishingServer - Analytic 1220 Baseline"
+id: "e5e846e0-2f94-54dc-9445-dc0db754782f"
+status: "experimental"
+description: "Execution of SyncAppvPublishingServer.vbs through wscript.exe with a command-line containing embedded PowerShell, proxying malicious PowerShell execution through a Microsoft-signed VBScript interpreter to evade detection and restrictions."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1216.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "wscript.exe"
+        - "SyncAppvPublishingServer"
+        - "PowerShell"
+        - "VBScript"
+        - "command-line"
+        - "Microsoft-signed"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

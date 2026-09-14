@@ -1,0 +1,19 @@
+title: "Cloud API - Analytic 0215 Baseline"
+id: "6db15347-a6d8-585c-8675-a13eb915a35b"
+status: "experimental"
+description: "Detects adversarial use of cloud APIs for command execution, resource control, or reconnaissance. Focuses on CLI/SDK/scripting language abuse via stolen credentials or in-browser Cloud Shells. Monitors for anomalous API calls chained with authentication context shifts (e.g., stolen token -> privileged action) and cross-service impacts."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1059.009"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "in-browser"
+        - "cross-service"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

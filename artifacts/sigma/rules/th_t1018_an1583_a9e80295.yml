@@ -1,0 +1,20 @@
+title: "Remote System Discovery - Analytic 1583 Baseline"
+id: "a9e80295-2639-5070-b5ed-81ed24bbf68b"
+status: "experimental"
+description: "Execution of network enumeration utilities (e.g., net.exe, ping.exe, tracert.exe) in short succession, often chained with lateral movement tools or system enumeration commands."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1018"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "net.exe"
+        - "ping.exe"
+        - "tracert.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

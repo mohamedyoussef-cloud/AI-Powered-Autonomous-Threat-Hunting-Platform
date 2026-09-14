@@ -1,0 +1,17 @@
+title: "Inhibit System Recovery - Analytic 0933 Baseline"
+id: "67cfddd3-10fe-5ef3-a1ac-371135b40c2f"
+status: "experimental"
+description: "Process chains that use native utilities (vssadmin, wbadmin, diskshadow, bcdedit, REAgentC, wmic) with arguments to delete shadow copies, disable recovery, or remove backup catalogs"
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1490"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Microsoft-Windows-Backup, WinEventLog:System"
+detection:
+    keywords:
+        - "REAgentC"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

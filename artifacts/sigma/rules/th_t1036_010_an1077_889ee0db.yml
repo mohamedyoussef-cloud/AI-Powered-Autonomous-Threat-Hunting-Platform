@@ -1,0 +1,20 @@
+title: "Masquerade Account Name - Analytic 1077 Baseline"
+id: "889ee0db-09ec-53b0-832b-804fe12c49e1"
+status: "experimental"
+description: "Detects adversary behavior where a newly created or renamed user account closely resembles existing service or administrator accounts to blend in and avoid detection. Common patterns include prefix/suffix modifications, homoglyphs, or use of names like 'admin1', 'adm1n', or 'backup_help'."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1036.010"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "admin1"
+        - "adm1n"
+        - "backup_help"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

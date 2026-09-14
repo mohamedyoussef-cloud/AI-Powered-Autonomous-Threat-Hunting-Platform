@@ -1,0 +1,18 @@
+title: "Exploitation for Defense Impairment - Analytic 2041 Baseline"
+id: "eca3eff8-9702-5e62-b3b2-c6e2d0219301"
+status: "experimental"
+description: "Detects exploitation of cloud-native security boundaries or management components followed by disabled logging, detached agents, changed security groups, policy bypass, or telemetry suppression. Correlates suspicious API activity with reduced control coverage."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1687"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "cloud-native"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

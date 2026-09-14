@@ -1,0 +1,21 @@
+title: "Protocol Tunneling - Analytic 1483 Baseline"
+id: "400af35d-2fe4-5212-bb84-c1841e412efd"
+status: "experimental"
+description: "Processes such as plink.exe, ssh.exe, or netsh.exe establishing outbound network connections where traffic patterns show encapsulated protocols (e.g., RDP over SSH). Defender observations include anomalous process-to-network relationships, large asymmetric data flows, and port usage mismatches."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1572"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "plink.exe"
+        - "ssh.exe"
+        - "netsh.exe"
+        - "process-to-network"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

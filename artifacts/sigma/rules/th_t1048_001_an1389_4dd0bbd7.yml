@@ -1,0 +1,19 @@
+title: "Exfiltration Over Symmetric Encrypted Non-C2 Protocol - Analytic 1389 Baseline"
+id: "4dd0bbd7-e826-5737-b73b-b45c0a08d7e8"
+status: "experimental"
+description: "Detects the execution of non-browser processes establishing outbound encrypted network connections using uncommon symmetric encryption protocols (e.g., AES via PowerShell or custom scripts) to alternate external destinations."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1048.001"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "PowerShell"
+        - "non-browser"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

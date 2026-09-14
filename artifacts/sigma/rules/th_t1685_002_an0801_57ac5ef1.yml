@@ -1,0 +1,20 @@
+title: "Disable or Modify Cloud Log - Analytic 0801 Baseline"
+id: "57ac5ef1-e153-57dd-8ffd-52a409e533f7"
+status: "experimental"
+description: "Cloud API events where logging services are stopped, deleted, or modified in a way that disables audit visibility. Defender view: unauthorized StopLogging, DeleteTrail, or UpdateSink operations correlated with privileged user activity."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1685.002"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "StopLogging"
+        - "DeleteTrail"
+        - "UpdateSink"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

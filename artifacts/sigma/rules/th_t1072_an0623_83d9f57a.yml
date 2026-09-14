@@ -1,0 +1,20 @@
+title: "Software Deployment Tools - Analytic 0623 Baseline"
+id: "83d9f57a-377b-515a-b4d2-ade2668e4a03"
+status: "experimental"
+description: "Detects SCCM, Intune, or remote push execution spawning scripts or binaries from SYSTEM context or unusual consoles (e.g., cmtrace.exe launching PowerShell or cmd.exe)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1072"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Application"
+detection:
+    keywords:
+        - "cmtrace.exe"
+        - "cmd.exe"
+        - "SYSTEM"
+        - "PowerShell"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

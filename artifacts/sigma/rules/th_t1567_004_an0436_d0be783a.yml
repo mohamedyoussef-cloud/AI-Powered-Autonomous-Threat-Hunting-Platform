@@ -1,0 +1,20 @@
+title: "Exfiltration Over Webhook - Analytic 0436 Baseline"
+id: "d0be783a-aa1a-5bc9-aaec-38c19f530857"
+status: "experimental"
+description: "Unusual processes (e.g., powershell.exe, wscript.exe, mshta.exe) posting data to webhook endpoints (Discord, Slack, webhook.site) using HTTP POST/PUT requests. Defender perspective: suspicious process lineage followed by outbound HTTPS traffic to webhook domains."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1567.004"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "powershell.exe"
+        - "wscript.exe"
+        - "mshta.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

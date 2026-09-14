@@ -1,0 +1,22 @@
+title: "Authentication Package - Analytic 0583 Baseline"
+id: "429c9b54-2a4d-556a-8bfc-9a0174eb5d49"
+status: "experimental"
+description: "Registry modification of the LSA Authentication Packages key followed by LSASS loading a non-standard or unsigned DLL. This includes unusual write access to `HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa`, especially during non-installation timeframes. Correlated with `lsass.exe` loading DLLs not present in baseline or lacking valid signatures."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1547.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa"
+        - "lsass.exe"
+        - "SYSTEM"
+        - "CurrentControlSet"
+        - "non-standard"
+        - "non-installation"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

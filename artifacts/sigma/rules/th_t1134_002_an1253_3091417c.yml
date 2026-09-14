@@ -1,0 +1,20 @@
+title: "Create Process with Token - Analytic 1253 Baseline"
+id: "3091417c-4f99-5e69-a0ad-65f426c3efa7"
+status: "experimental"
+description: "A process (often after stealing/creating a token) calls CreateProcessWithTokenW/CreateProcessAsUserW or uses runas to spawn a **new** process whose security context (SID/LogonId/IntegrityLevel) differs from its parent. Chain: (1) suspicious command/API → (2) privileged handle or token duplication/open → (3) new child process running as another user / higher integrity → (4) optional follow‑on privileged/lateral actions."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1134.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "CreateProcessWithTokenW"
+        - "CreateProcessAsUserW"
+        - "LogonId"
+        - "IntegrityLevel"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

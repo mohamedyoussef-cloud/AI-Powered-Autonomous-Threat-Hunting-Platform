@@ -1,0 +1,24 @@
+title: "Log Enumeration - Analytic 0705 Baseline"
+id: "8c893a73-737c-50bf-977d-24e7c000e138"
+status: "experimental"
+description: "Monitor for use of native utilities such as wevtutil.exe or PowerShell cmdlets (Get-WinEvent, Get-EventLog) to enumerate or export logs. Unusual access to security or system event channels, especially by non-administrative users or processes, should be correlated with subsequent file export or network transfer activity."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1654"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "wevtutil.exe"
+        - "PowerShell"
+        - "WinEvent"
+        - "EventLog"
+        - "Get-WinEvent"
+        - "Get-EventLog"
+        - "non-administrative"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

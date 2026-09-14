@@ -1,0 +1,20 @@
+title: "File and Directory Discovery - Analytic 1040 Baseline"
+id: "aa223202-5edb-547e-83ac-21646a496951"
+status: "experimental"
+description: "Execution of file enumeration commands (e.g., 'dir', 'tree') from non-standard processes or unusual user contexts, followed by recursive directory traversal or access to sensitive locations."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1083"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "dir"
+        - "tree"
+        - "non-standard"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

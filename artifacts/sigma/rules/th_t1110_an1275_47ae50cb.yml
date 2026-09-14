@@ -1,0 +1,18 @@
+title: "Brute Force - Analytic 1275 Baseline"
+id: "47ae50cb-377f-504b-8c9e-d14f3bb0ff5e"
+status: "experimental"
+description: "High volume of failed logon attempts followed by a successful one from a suspicious user, host, or timeframe"
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1110"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "High volume of failed logon attempts followed by a successful one from a suspicious user, host, or timeframe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

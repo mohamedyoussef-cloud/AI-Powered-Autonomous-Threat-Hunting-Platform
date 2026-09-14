@@ -1,0 +1,22 @@
+title: "Python - Analytic 0172 Baseline"
+id: "4e4abf6a-2c8c-5857-97e0-8fef4dcec1fd"
+status: "experimental"
+description: "Detects Python execution via python.exe or py.exe with anomalous parent lineage (e.g., Office macros, LOLBAS), execution from unusual directories, or chained network/PowerShell/system-level activity."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1059.006"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "python.exe"
+        - "py.exe"
+        - "LOLBAS"
+        - "PowerShell"
+        - "system-level"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

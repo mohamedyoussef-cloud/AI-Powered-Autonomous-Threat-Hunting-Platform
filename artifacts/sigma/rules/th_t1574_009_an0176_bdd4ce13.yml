@@ -1,0 +1,17 @@
+title: "Path Interception by Unquoted Path - Analytic 0176 Baseline"
+id: "bdd4ce13-1006-5e31-912c-78107e961b4b"
+status: "experimental"
+description: "Unquoted service or shortcut paths that contain spaces and allow path interception by higher-level executables. Defender observes registry service configurations with unquoted paths, file creation of executables in parent directories of unquoted paths, and subsequent process execution from unexpected locations."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1574.009"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "higher-level"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

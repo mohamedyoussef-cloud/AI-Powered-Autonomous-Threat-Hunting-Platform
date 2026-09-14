@@ -1,0 +1,19 @@
+title: "Extra Window Memory Injection - Analytic 0608 Baseline"
+id: "cf205d0f-28c0-517f-b47f-f02bf9ffec48"
+status: "experimental"
+description: "Detects adversary manipulation of Extra Window Memory (EWM) in a GUI process, where the attacker uses SetWindowLong or SetClassLong to redirect function pointers to injected shellcode stored in shared memory, then triggers execution via a window message like SendNotifyMessage."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1055.011"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "SetWindowLong"
+        - "SetClassLong"
+        - "SendNotifyMessage"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

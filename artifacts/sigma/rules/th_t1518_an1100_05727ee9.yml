@@ -1,0 +1,17 @@
+title: "Software Discovery - Analytic 1100 Baseline"
+id: "05727ee9-ce4a-5b3a-bc56-fb9b2c169bb0"
+status: "experimental"
+description: "Adversary spawns a process or script to enumerate installed software using WMI, registry, or PowerShell, potentially followed by additional discovery or evasion behavior."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1518"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "PowerShell"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

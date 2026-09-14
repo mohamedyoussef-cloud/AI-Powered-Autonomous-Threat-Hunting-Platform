@@ -1,0 +1,17 @@
+title: "Domain Controller Authentication - Analytic 0757 Baseline"
+id: "e584e0ea-4752-50a4-a9d3-877878ae7994"
+status: "experimental"
+description: "Detects anomalous process access to LSASS on domain controllers, suspicious module loads of authentication DLLs, and registry or file modifications indicative of Skeleton Key–style patching. Correlates LSASS access attempts with subsequent abnormal logon activity patterns."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1556.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security, WinEventLog:System"
+detection:
+    keywords:
+        - "Detects anomalous process access to LSASS on domain controllers, suspicious module loads of authentication DLLs, and registry or file modifications indicative of Skeleton Key–style patching. Correlates LSASS access attempts with subsequent abnormal logon activity patterns."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

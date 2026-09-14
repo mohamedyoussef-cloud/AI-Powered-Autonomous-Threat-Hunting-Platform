@@ -1,0 +1,17 @@
+title: "Account Manipulation - Analytic 0265 Baseline"
+id: "6721292c-a04c-58c1-b3ea-ea799c23100f"
+status: "experimental"
+description: "Account attribute changes (e.g., password set, group membership, servicePrincipalName, logon hours) correlated with unusual process lineage or timing, indicating privilege escalation or persistence via valid accounts."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1098"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Account attribute changes (e.g., password set, group membership, servicePrincipalName, logon hours) correlated with unusual process lineage or timing, indicating privilege escalation or persistence via valid accounts."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

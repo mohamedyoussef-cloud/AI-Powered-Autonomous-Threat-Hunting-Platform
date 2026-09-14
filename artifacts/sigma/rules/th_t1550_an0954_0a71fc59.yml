@@ -1,0 +1,17 @@
+title: "Use Alternate Authentication Material - Analytic 0954 Baseline"
+id: "0a71fc59-b34b-533a-b44f-0628b72d6703"
+status: "experimental"
+description: "Use of stolen Kerberos tickets or token impersonation resulting in logon sessions from accounts without expected interactive logon events."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1550"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Use of stolen Kerberos tickets or token impersonation resulting in logon sessions from accounts without expected interactive logon events."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

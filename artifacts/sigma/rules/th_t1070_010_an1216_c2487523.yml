@@ -1,0 +1,18 @@
+title: "Relocate Malware - Analytic 1216 Baseline"
+id: "c2487523-fc23-5720-b6d5-d27b83940bc0"
+status: "experimental"
+description: "Detects the relocation of malicious executables via copy/move actions across suspicious folders (e.g., from Downloads to System32), followed by deletion of the original source or renaming to blend into legitimate binaries."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1070.010"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Detects the relocation of malicious executables via copy/move actions across suspicious folders (e.g., from Downloads to System32), followed by deletion of the original source or renaming to blend into legitimate binaries."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

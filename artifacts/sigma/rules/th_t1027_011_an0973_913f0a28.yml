@@ -1,0 +1,17 @@
+title: "Fileless Storage - Analytic 0973 Baseline"
+id: "913f0a28-3fee-5290-8fe1-0e6730f460bb"
+status: "experimental"
+description: "Detects abuse of fileless storage mechanisms such as Registry keys, WMI classes, and Event Logs used to stage payloads, scripts, or encoded content outside traditional files."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1027.011"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Application"
+detection:
+    keywords:
+        - "Detects abuse of fileless storage mechanisms such as Registry keys, WMI classes, and Event Logs used to stage payloads, scripts, or encoded content outside traditional files."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

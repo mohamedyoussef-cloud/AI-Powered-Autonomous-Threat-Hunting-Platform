@@ -1,0 +1,17 @@
+title: "Modify Authentication Process - Analytic 0287 Baseline"
+id: "0a559996-0977-5ade-9014-9fa8df3aeedf"
+status: "experimental"
+description: "Detects modification of LSASS and authentication DLLs, suspicious registry changes to password filter packages, and abnormal process access to lsass.exe. Correlates registry modifications, DLL loads, and process handle access events."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1556"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "lsass.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

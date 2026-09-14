@@ -1,0 +1,17 @@
+title: "Direct Volume Access - Analytic 1193 Baseline"
+id: "139b71fe-5d65-5cde-8e0c-b4148b5cc02b"
+status: "experimental"
+description: "Processes accessing raw logical drives (e.g., \\.\\C:) to bypass file system protections or directly manipulate data structures."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1006"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "Processes accessing raw logical drives (e.g., \\.\\C:) to bypass file system protections or directly manipulate data structures."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

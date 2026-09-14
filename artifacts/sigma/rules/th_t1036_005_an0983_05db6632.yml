@@ -1,0 +1,17 @@
+title: "Match Legitimate Resource Name or Location - Analytic 0983 Baseline"
+id: "05db6632-a38d-51a2-9d6c-36e75cb3b204"
+status: "experimental"
+description: "Detects processes or binaries executed from trusted directories (e.g., System32) or using trusted names (e.g., svchost.exe) where the metadata, hash, or parent process does not align with legitimate activity patterns."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1036.005"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "svchost.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

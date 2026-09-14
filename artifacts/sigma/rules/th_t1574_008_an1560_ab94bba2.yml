@@ -1,0 +1,23 @@
+title: "Path Interception by Search Order Hijacking - Analytic 1560 Baseline"
+id: "ab94bba2-358b-5853-9f05-85a9a0a595d5"
+status: "experimental"
+description: "Processes executing binaries named after legitimate system utilities (e.g., net.exe, findstr.exe, python.exe) from non-standard or application-specific directories, combined with file creation or modification events for such binaries. Defender correlates file writes in vulnerable directories, process execution paths inconsistent with baseline system paths, and abnormal parent-child relationships in process lineage."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1574.008"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "net.exe"
+        - "findstr.exe"
+        - "python.exe"
+        - "non-standard"
+        - "application-specific"
+        - "parent-child"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

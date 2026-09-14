@@ -1,0 +1,18 @@
+title: "Modify or Spoof Tool UI - Analytic 0868 Baseline"
+id: "a9ac612b-524a-5416-bb36-6a8cd2c9c729"
+status: "experimental"
+description: "Detection of inconsistencies between reported sensor health and actual process/service state. For example, Windows Defender tray icon/UI showing healthy status while corresponding Defender services (WinDefend, MsMpEng) are stopped or disabled. Correlates process creation events with missing or terminated security processes and spoofed health events."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1685.003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:System, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "WinDefend"
+        - "MsMpEng"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

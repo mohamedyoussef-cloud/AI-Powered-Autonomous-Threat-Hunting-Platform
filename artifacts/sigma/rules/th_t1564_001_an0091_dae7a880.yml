@@ -1,0 +1,20 @@
+title: "Hidden Files and Directories - Analytic 0091 Baseline"
+id: "dae7a880-e3cc-5390-8d9a-3beb2bd0d511"
+status: "experimental"
+description: "Suspicious use of attrib.exe or PowerShell commands to set hidden attributes on files/directories. Defender view: processes modifying file attributes to 'hidden' or creating files with ADS (alternate data streams)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1564.001"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "hidden"
+        - "attrib.exe"
+        - "PowerShell"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

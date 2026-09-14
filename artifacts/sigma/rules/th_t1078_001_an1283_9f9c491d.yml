@@ -1,0 +1,18 @@
+title: "Default Accounts - Analytic 1283 Baseline"
+id: "9f9c491d-8522-57dd-8a42-15526cfb5873"
+status: "experimental"
+description: "Detection of default account usage such as Guest or Administrator performing interactive or remote logons on systems outside of installation or maintenance windows."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1078.001"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "Detection of default account usage such as Guest or Administrator performing interactive or remote logons on systems outside of installation or maintenance windows."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

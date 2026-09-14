@@ -1,0 +1,18 @@
+title: "Virtualization/Sandbox Evasion - Analytic 0127 Baseline"
+id: "8012f4eb-7758-5681-8625-4fc25a92ffac"
+status: "experimental"
+description: "Execution of discovery commands or API calls for virtualization artifacts (e.g., registry keys, device drivers, services), sleep/skipped execution behavior, or sandbox evasion DLLs before payload deployment."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1497"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Execution of discovery commands or API calls for virtualization artifacts (e.g., registry keys, device drivers, services), sleep/skipped execution behavior, or sandbox evasion DLLs before payload deployment."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

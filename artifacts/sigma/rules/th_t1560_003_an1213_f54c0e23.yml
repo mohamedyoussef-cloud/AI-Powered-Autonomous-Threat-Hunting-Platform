@@ -1,0 +1,19 @@
+title: "Archive via Custom Method - Analytic 1213 Baseline"
+id: "f54c0e23-94af-520e-bb4b-d108a54fbc6f"
+status: "experimental"
+description: "Detects suspicious custom compression/encryption routines through anomalous script or binary execution that produces high-entropy files without standard archiving utilities. Correlates script execution, memory API usage (bitwise ops, CryptoAPI calls), and creation of archive-like files with uncommon headers."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1560.003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "CryptoAPI"
+        - "high-entropy"
+        - "archive-like"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

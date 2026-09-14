@@ -1,0 +1,20 @@
+title: "Timestomp - Analytic 1626 Baseline"
+id: "9c05357c-11c0-52d9-8e56-5b86be94b782"
+status: "experimental"
+description: "Detects attempts to modify file timestamps via API usage (e.g., `SetFileTime`), CLI tools (e.g., `w32tm`, PowerShell), or double-timestomp behavior where $SI and $FN timestamps are mismatched or reverted."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1070.006"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "SetFileTime"
+        - "w32tm"
+        - "PowerShell"
+        - "double-timestomp"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

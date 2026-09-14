@@ -1,0 +1,19 @@
+title: "Cloud Account - Analytic 1087 Baseline"
+id: "ad2f160d-fb59-55e8-b7bd-604106182a4b"
+status: "experimental"
+description: "Enumeration of identity roles and users via API calls such as `Get-MsolRoleMember`, `az ad user list`, or Graph API tokens from unauthorized users or automation accounts."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1087.004"
+logsource:
+    product: "microsoft_entra_id_audit_logs"
+    definition: "Grounded source(s): Microsoft Entra ID Audit Logs"
+detection:
+    keywords:
+        - "Get-MsolRoleMember"
+        - "az ad user list"
+        - "MsolRoleMember"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

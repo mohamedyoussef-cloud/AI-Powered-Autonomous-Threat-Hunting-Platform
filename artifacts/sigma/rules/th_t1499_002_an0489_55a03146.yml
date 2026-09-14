@@ -1,0 +1,18 @@
+title: "Service Exhaustion Flood - Analytic 0489 Baseline"
+id: "55a03146-1bab-586f-b8a2-f356c91a9180"
+status: "experimental"
+description: "High-frequency, repetitive service requests (e.g., HTTP, TLS renegotiation) originating from a single or small set of source IPs targeting endpoint web services or application ports, leading to exhaustion of CPU or memory on targeted Windows services."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1499.002"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "High-frequency"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

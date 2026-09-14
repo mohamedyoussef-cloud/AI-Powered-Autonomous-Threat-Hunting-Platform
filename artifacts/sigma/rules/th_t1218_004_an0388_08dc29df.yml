@@ -1,0 +1,21 @@
+title: "InstallUtil - Analytic 0388 Baseline"
+id: "08dc29df-e586-540b-9fb2-408e7a560b96"
+status: "experimental"
+description: "Execution of InstallUtil.exe from .NET framework directories with arguments specifying non-standard or attacker-supplied assemblies, especially when followed by suspicious child process creation or script execution. Detection also includes correlation of newly created binaries prior to InstallUtil invocation and anomalous command-line usage compared to historical baselines."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1218.004"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:PowerShell, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "InstallUtil.exe"
+        - "InstallUtil"
+        - "non-standard"
+        - "attacker-supplied"
+        - "command-line"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,20 @@
+title: "External Defacement - Analytic 1625 Baseline"
+id: "1ae73cc2-94c5-5692-a546-90bc5a5b92b1"
+status: "experimental"
+description: "Adversary modifies content in cloud-hosted websites (e.g., AWS S3-backed, Azure Blob-hosted sites) by gaining access to management consoles or APIs and uploading altered HTML/JS files."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1491.002"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "cloud-hosted"
+        - "S3-backed"
+        - "Blob-hosted"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

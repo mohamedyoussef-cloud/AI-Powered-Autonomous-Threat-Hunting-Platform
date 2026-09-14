@@ -1,0 +1,18 @@
+title: "Software Packing - Analytic 0066 Baseline"
+id: "f9342c0e-f75c-5894-ae21-c53cca85c77f"
+status: "experimental"
+description: "Detection of unpacking behavior through abnormal memory allocation, followed by executable code injection and execution from non-image sections."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1027.002"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "non-image"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

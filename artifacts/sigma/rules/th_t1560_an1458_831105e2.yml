@@ -1,0 +1,21 @@
+title: "Archive Collected Data - Analytic 1458 Baseline"
+id: "831105e2-1f27-5dc8-a5c3-8a05dac2089e"
+status: "experimental"
+description: "Detects adversarial archiving of files prior to exfiltration by correlating execution of compression/encryption utilities (e.g., makecab.exe, rar.exe, 7z.exe, powershell Compress-Archive) with subsequent creation of large compressed or encrypted files. Identifies abnormal process lineage involving crypt32.dll usage, command-line arguments invoking compression switches, and file write operations to temporary or staging directories."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1560"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "makecab.exe"
+        - "rar.exe"
+        - "7z.exe"
+        - "Compress-Archive"
+        - "command-line"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

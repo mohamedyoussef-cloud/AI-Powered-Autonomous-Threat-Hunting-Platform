@@ -1,0 +1,18 @@
+title: "Application Access Token - Analytic 0526 Baseline"
+id: "9b4116bf-3bb9-5046-93c7-b08138016994"
+status: "experimental"
+description: "Use of AWS STS or GCP IAM APIs to request temporary tokens or federation sessions inconsistent with normal account activity, including from unexpected principals or regions."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1550.001"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "Use of AWS STS or GCP IAM APIs to request temporary tokens or federation sessions inconsistent with normal account activity, including from unexpected principals or regions."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

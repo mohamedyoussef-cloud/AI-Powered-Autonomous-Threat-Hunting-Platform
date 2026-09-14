@@ -1,0 +1,17 @@
+title: "Endpoint Denial of Service - Analytic 0584 Baseline"
+id: "5722c1be-abad-5bc6-aa12-e43405dbaa67"
+status: "experimental"
+description: "Excessive resource exhaustion or service crash induced by processes launched by users or scripts that rapidly consume CPU/memory or attempt malformed service interactions."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1499"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Application, WinEventLog:System"
+detection:
+    keywords:
+        - "Excessive resource exhaustion or service crash induced by processes launched by users or scripts that rapidly consume CPU/memory or attempt malformed service interactions."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,18 @@
+{
+  "audit_version": "1.0",
+  "blocking_failures": 0,
+  "expected_rule_ids": 540,
+  "failure_categories": {},
+  "failures": [],
+  "high_validation_issues": 0,
+  "loaded_rules": 540,
+  "loaded_unique_rule_ids": 540,
+  "low_validation_warnings": 2,
+  "medium_validation_issues": 0,
+  "missing_rule_ids": 0,
+  "parse_errors": 0,
+  "rule_files": 540,
+  "status": "PASS",
+  "unexpected_rule_ids": 0,
+  "validation_scope": "FULL_540_RULE_UNIVERSE"
+}

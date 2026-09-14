@@ -1,0 +1,20 @@
+title: "AppCert DLLs - Analytic 1029 Baseline"
+id: "32fe62c7-8e29-587f-946e-198fbf2b2f08"
+status: "experimental"
+description: "Detection of AppCert DLL abuse involves correlating registry modifications to the AppCertDLLs key with subsequent unexpected DLL load behavior during process creation events. Specifically, defenders can observe abnormal DLLs being loaded into standard Windows processes after changes to the 'AppCertDLLs' registry value. Monitoring CreateProcess-family API executions with injected DLLs and linking those DLLs back to recent registry edits is key to identifying misuse. This is often accompanied by elevated privileges and potential lateral movement or discovery behavior."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1546.009"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "AppCertDLLs"
+        - "AppCert"
+        - "CreateProcess"
+        - "CreateProcess-family"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

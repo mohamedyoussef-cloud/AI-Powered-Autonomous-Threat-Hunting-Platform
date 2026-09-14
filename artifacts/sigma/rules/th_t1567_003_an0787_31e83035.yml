@@ -1,0 +1,18 @@
+title: "Exfiltration to Text Storage Sites - Analytic 0787 Baseline"
+id: "31e83035-6305-50c9-9110-9556330d8bcd"
+status: "experimental"
+description: "Unexpected processes (e.g., powershell.exe, wscript.exe, office apps) initiating HTTP POST/PUT requests to text storage domains like pastebin.com or hastebin.com, particularly when preceded by file access in sensitive directories. Defender perspective: correlation of process lineage, large clipboard/file read operations, and outbound uploads to text storage services."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1567.003"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "powershell.exe"
+        - "wscript.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

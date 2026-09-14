@@ -1,0 +1,18 @@
+title: "Power Settings - Analytic 1174 Baseline"
+id: "d8cec389-daea-58ee-adf5-acac2fb1bc96"
+status: "experimental"
+description: "Monitor command execution of powercfg.exe with arguments modifying sleep, hibernate, or display timeouts. Abnormal or repeated modifications to power settings outside administrative baselines may indicate persistence attempts. Correlate process creation with registry and system configuration changes to build behavioral chains."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1653"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "powercfg.exe"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

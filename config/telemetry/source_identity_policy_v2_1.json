@@ -1,0 +1,78 @@
+{
+    "version":  "2.1",
+    "source_activity_min_score":  0.8,
+    "exact_event_source_min_score":  0.65,
+    "alias_groups":  {
+                         "microsoft365":  [
+                                              "m365",
+                                              "o365",
+                                              "office365",
+                                              "microsoft365",
+                                              "ms365"
+                                          ],
+                         "azuread":  [
+                                         "aad",
+                                         "azuread",
+                                         "entra",
+                                         "entraid"
+                                     ],
+                         "windowseventlog":  [
+                                                 "wineventlog",
+                                                 "winevent",
+                                                 "windowseventlog",
+                                                 "windowsevents",
+                                                 "evtx",
+                                                 "eventlog"
+                                             ],
+                         "sysmon":  [
+                                        "sysmon"
+                                    ],
+                         "linux":  [
+                                       "linux",
+                                       "unix",
+                                       "ubuntu",
+                                       "debian",
+                                       "centos",
+                                       "rhel",
+                                       "redhat"
+                                   ],
+                         "syslog":  [
+                                        "syslog",
+                                        "rsyslog"
+                                    ],
+                         "auditd":  [
+                                        "auditd",
+                                        "linuxaudit"
+                                    ],
+                         "aws":  [
+                                     "aws",
+                                     "amazonwebservices"
+                                 ],
+                         "cloudtrail":  [
+                                            "cloudtrail",
+                                            "awscloudtrail"
+                                        ],
+                         "kubernetes":  [
+                                            "kubernetes",
+                                            "k8s",
+                                            "kube"
+                                        ],
+                         "networkdevice":  [
+                                               "cisco",
+                                               "paloalto",
+                                               "fortigate",
+                                               "fortinet",
+                                               "juniper"
+                                           ]
+                     },
+    "noise_tokens":  [
+                         "log",
+                         "logs",
+                         "event",
+                         "events",
+                         "activity",
+                         "telemetry",
+                         "source",
+                         "data"
+                     ]
+}

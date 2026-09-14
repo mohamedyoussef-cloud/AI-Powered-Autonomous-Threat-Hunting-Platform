@@ -1,0 +1,17 @@
+title: "Hijack Execution Flow - Analytic 0609 Baseline"
+id: "4112cabc-6599-549d-b7d1-a3d25c150ec5"
+status: "experimental"
+description: "Unusual modifications to service binary paths, registry keys, or DLL load paths resulting in alternate execution flow. Defender observes registry key modifications, suspicious file writes into system directories, and processes loading libraries from abnormal paths."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1574"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "Unusual modifications to service binary paths, registry keys, or DLL load paths resulting in alternate execution flow. Defender observes registry key modifications, suspicious file writes into system directories, and processes loading libraries from abnormal paths."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

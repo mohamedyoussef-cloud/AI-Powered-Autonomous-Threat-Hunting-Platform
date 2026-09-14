@@ -1,0 +1,17 @@
+title: "Exploitation for Privilege Escalation - Analytic 1419 Baseline"
+id: "7fe1aff0-f60e-53dc-ad8f-9ffe9feba6d6"
+status: "experimental"
+description: "Detects exploitation attempts targeting vulnerable kernel drivers or OS components, often followed by unusual process or token behavior."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1068"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "Detects exploitation attempts targeting vulnerable kernel drivers or OS components, often followed by unusual process or token behavior."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

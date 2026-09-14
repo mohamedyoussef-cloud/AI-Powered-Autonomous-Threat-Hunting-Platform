@@ -1,0 +1,136 @@
+schema_version: "1.0.0"
+default:
+  category: other
+  action: windows_event
+
+providers:
+  Microsoft-Windows-Sysmon:
+    event_ids:
+      "1": {category: process, action: process_creation}
+      "2": {category: file, action: creation_time_changed}
+      "3": {category: network, action: connection}
+      "4": {category: endpoint_security, action: sysmon_service_state_changed}
+      "5": {category: process, action: process_termination}
+      "6": {category: endpoint_security, action: driver_load}
+      "7": {category: process, action: image_load}
+      "8": {category: process, action: remote_thread_create}
+      "9": {category: file, action: raw_access_read}
+      "10": {category: process, action: process_access}
+      "11": {category: file, action: create}
+      "12": {category: registry, action: create_or_delete_key}
+      "13": {category: registry, action: set_value}
+      "14": {category: registry, action: rename_key}
+      "15": {category: file, action: alternate_data_stream_create}
+      "16": {category: endpoint_security, action: sysmon_configuration_changed}
+      "17": {category: network, action: named_pipe_create}
+      "18": {category: network, action: named_pipe_connect}
+      "19": {category: other, action: wmi_event_filter_created}
+      "20": {category: other, action: wmi_event_consumer_created}
+      "21": {category: other, action: wmi_binding_created}
+      "22": {category: network, action: dns_query}
+      "23": {category: file, action: delete_archived}
+      "24": {category: other, action: clipboard_changed}
+      "25": {category: process, action: process_tampering}
+      "26": {category: file, action: delete}
+
+  Microsoft-Windows-Security-Auditing:
+    event_ids:
+      "1102": {category: endpoint_security, action: audit_log_cleared}
+      "4611": {category: authentication, action: trusted_logon_process_registered}
+      "4624": {category: authentication, action: logon_success, outcome: success}
+      "4625": {category: authentication, action: logon_failure, outcome: failure}
+      "4634": {category: authentication, action: logoff}
+      "4647": {category: authentication, action: user_initiated_logoff}
+      "4648": {category: authentication, action: explicit_credentials_logon}
+      "4656": {category: file, action: object_handle_requested}
+      "4658": {category: file, action: object_handle_closed}
+      "4661": {category: other, action: object_handle_requested}
+      "4662": {category: other, action: directory_service_object_access}
+      "4663": {category: file, action: access}
+      "4672": {category: authentication, action: special_privileges_assigned}
+      "4673": {category: authentication, action: privileged_service_called}
+      "4688": {category: process, action: process_creation}
+      "4689": {category: process, action: process_termination}
+      "4697": {category: endpoint_security, action: service_installed}
+      "4698": {category: process, action: scheduled_task_created}
+      "4699": {category: process, action: scheduled_task_deleted}
+      "4702": {category: process, action: scheduled_task_updated}
+      "4703": {category: authentication, action: token_privileges_adjusted}
+      "4719": {category: endpoint_security, action: audit_policy_changed}
+      "4720": {category: authentication, action: user_account_created}
+      "4722": {category: authentication, action: user_account_enabled}
+      "4723": {category: authentication, action: password_change_attempt}
+      "4724": {category: authentication, action: password_reset_attempt}
+      "4728": {category: authentication, action: global_group_member_added}
+      "4732": {category: authentication, action: local_group_member_added}
+      "4738": {category: authentication, action: user_account_changed}
+      "4742": {category: authentication, action: computer_account_changed}
+      "4756": {category: authentication, action: universal_group_member_added}
+      "4765": {category: authentication, action: sid_history_added}
+      "4768": {category: authentication, action: kerberos_tgt_requested}
+      "4769": {category: authentication, action: kerberos_service_ticket_requested}
+      "4771": {category: authentication, action: kerberos_preauthentication_failed, outcome: failure}
+      "4776": {category: authentication, action: credential_validation}
+      "4798": {category: authentication, action: user_local_group_membership_enumerated}
+      "4799": {category: authentication, action: local_group_membership_enumerated}
+      "4794": {category: authentication, action: dsrm_password_set_attempt}
+      "4826": {category: endpoint_security, action: boot_configuration_loaded}
+      "4985": {category: other, action: transaction_state_changed}
+      "5136": {category: other, action: directory_service_object_modified}
+      "5140": {category: network, action: network_share_accessed}
+      "5142": {category: network, action: network_share_added}
+      "5145": {category: network, action: network_share_object_checked}
+      "5156": {category: network, action: connection_allowed, outcome: success}
+      "5158": {category: network, action: local_port_bind_allowed, outcome: success}
+
+  Microsoft-Windows-Eventlog:
+    event_ids:
+      "1102": {category: endpoint_security, action: audit_log_cleared}
+
+  MsiInstaller:
+    event_ids:
+      "1040": {category: endpoint_security, action: software_install_started}
+      "1042": {category: endpoint_security, action: software_install_ended}
+
+  MSSQLSERVER:
+    event_ids:
+      "18456": {category: authentication, action: database_logon_failure, outcome: failure}
+      "15457": {category: endpoint_security, action: database_configuration_changed}
+
+  Microsoft-Windows-Application-Experience:
+    default: {category: process, action: application_compatibility_telemetry}
+
+  Microsoft-Windows-Program-Compatibility-Assistant:
+    default: {category: process, action: program_compatibility_event}
+
+  Microsoft-Windows-PowerShell:
+    event_ids:
+      "4103": {category: process, action: powershell_module_logging}
+      "4104": {category: process, action: powershell_script_block}
+
+  Microsoft-Windows-TerminalServices-RemoteConnectionManager:
+    event_ids:
+      "1149": {category: authentication, action: remote_desktop_authentication_success, outcome: success}
+    default: {category: network, action: remote_desktop_session_event}
+
+  Microsoft-Windows-RemoteDesktopServices-RdpCoreTS:
+    default: {category: network, action: remote_desktop_protocol_event}
+
+  Microsoft-Windows-Bits-Client:
+    default: {category: network, action: bits_transfer_event}
+
+  Microsoft-Windows-WinRM:
+    default: {category: network, action: winrm_event}
+
+  Service Control Manager:
+    event_ids:
+      "7036": {category: endpoint_security, action: service_state_changed}
+      "7045": {category: endpoint_security, action: service_installed}
+
+channel_fallbacks:
+  Security: {category: other, action: security_audit_event}
+  System: {category: endpoint_security, action: system_event}
+  Application: {category: other, action: application_event}
+  Microsoft-Windows-PowerShell/Operational: {category: process, action: powershell_event}
+  Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational: {category: network, action: remote_desktop_session_event}
+  Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational: {category: network, action: remote_desktop_protocol_event}

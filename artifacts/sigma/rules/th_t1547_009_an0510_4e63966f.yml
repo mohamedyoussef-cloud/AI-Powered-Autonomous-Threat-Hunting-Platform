@@ -1,0 +1,19 @@
+title: "Shortcut Modification - Analytic 0510 Baseline"
+id: "4e63966f-9a8b-5b34-9f01-a600b8ccbbdc"
+status: "experimental"
+description: "Detection correlates file creation or modification of `.lnk` (shortcut) files in autostart locations with anomalous parent-child process lineage or unsigned binaries. Defenders should watch for LNK creation/modification events outside of known software installations, patch events, or OS updates. Flag shortcut targets pointing to suspicious locations or unknown binaries, particularly those written by script interpreters or spawned from phishing delivery chains."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1547.009"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - ".lnk"
+        - "parent-child"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

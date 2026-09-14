@@ -1,0 +1,25 @@
+title: "Databases - Analytic 0679 Baseline"
+id: "1b4eb911-d103-5822-a4f6-38581ba79f6e"
+status: "experimental"
+description: "Database enumeration and export activity (e.g., `SELECT * FROM`, `SHOW DATABASES`) issued via ephemeral VMs, admin APIs, or cloud shell from non-monitoring accounts. Defender correlates audit logs (CloudTrail, GCP Admin, AzureDiagnostics), storage write ops, and cross-region transfers by identities not tied to DB operations."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1213.006"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "SELECT * FROM"
+        - "SHOW DATABASES"
+        - "SELECT"
+        - "DATABASES"
+        - "CloudTrail"
+        - "AzureDiagnostics"
+        - "non-monitoring"
+        - "cross-region"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,20 @@
+title: "Service Stop - Analytic 0061 Baseline"
+id: "30522cb6-fea2-5a12-b350-a516065e31ad"
+status: "experimental"
+description: "Adversary disables or stops critical services (e.g., Exchange, SQL, AV, endpoint monitoring) using native utilities or API calls, often preceding destructive actions (T1485, T1486). Behavioral chain: Elevated execution context + stop-service or sc.exe or ChangeServiceConfigW + terminated or disabled service + possible follow-up file manipulation."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1489"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security, WinEventLog:System"
+detection:
+    keywords:
+        - "sc.exe"
+        - "ChangeServiceConfigW"
+        - "stop-service"
+        - "follow-up"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

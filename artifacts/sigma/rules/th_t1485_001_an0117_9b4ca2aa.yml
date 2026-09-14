@@ -1,0 +1,18 @@
+title: "Lifecycle-Triggered Deletion - Analytic 0117 Baseline"
+id: "9b4ca2aa-7525-5d75-bbdc-3816f39ec2ff"
+status: "experimental"
+description: "Adversary with write access to storage modifies lifecycle policies (e.g., via PutBucketLifecycle) to schedule rapid object deletion across one or more storage buckets. This is often used to trigger impact (destruction), remove logs (defense evasion), or force extortion (ransomware)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1485.001"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "PutBucketLifecycle"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,21 @@
+title: "Additional Email Delegate Permissions - Analytic 1052 Baseline"
+id: "5e2a69f8-0f9d-56cf-9936-dfe70c66d9f6"
+status: "experimental"
+description: "Execution of PowerShell commands that modify mailbox permissions using Exchange cmdlets (e.g., Add-MailboxPermission), often tied to BEC or post-compromise persistence."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1098.002"
+logsource:
+    product: "windows"
+    service: "security"
+    definition: "Grounded source(s): WinEventLog:Security"
+detection:
+    keywords:
+        - "PowerShell"
+        - "MailboxPermission"
+        - "Add-MailboxPermission"
+        - "post-compromise"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

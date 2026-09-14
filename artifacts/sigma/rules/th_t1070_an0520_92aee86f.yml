@@ -1,0 +1,17 @@
+title: "Indicator Removal - Analytic 0520 Baseline"
+id: "92aee86f-4e07-5e08-9b8f-c35590ad71e2"
+status: "experimental"
+description: "Monitors sequences involving deletion/modification of logs, registry keys, scheduled tasks, or prefetch files following suspicious process activity or elevated access escalation."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1070"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "Monitors sequences involving deletion/modification of logs, registry keys, scheduled tasks, or prefetch files following suspicious process activity or elevated access escalation."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

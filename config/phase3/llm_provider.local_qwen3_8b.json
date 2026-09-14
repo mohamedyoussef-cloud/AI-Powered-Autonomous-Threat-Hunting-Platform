@@ -1,0 +1,16 @@
+{
+  "config_version": "1.0",
+  "provider": "local_vllm",
+  "model_family": "Qwen3-8B",
+  "inference_model": "Qwen/Qwen3-8B-AWQ",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "api_key_required": false,
+  "generation": {
+    "temperature": 0.2,
+    "top_p": 0.9,
+    "max_tokens": 1400,
+    "thinking_mode": false
+  },
+  "request_timeout_seconds": 180,
+  "output_schema": "schemas/phase3/hypothesis_output.schema.json"
+}

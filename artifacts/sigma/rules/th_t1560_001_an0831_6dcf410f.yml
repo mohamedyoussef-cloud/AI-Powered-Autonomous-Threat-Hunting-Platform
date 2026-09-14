@@ -1,0 +1,22 @@
+title: "Archive via Utility - Analytic 0831 Baseline"
+id: "6dcf410f-6c9e-54ad-90d8-595b5fa68bd2"
+status: "experimental"
+description: "Detects adversarial archiving using built-in or third-party utilities (makecab, diantz, xcopy, certutil, 7z, WinRAR, WinZip). Correlates suspicious process creation events with command-line arguments for compression/encoding, followed by creation of archive files (.cab, .zip, .7z, .rar). Identifies anomalous loading of crypt32.dll for encryption operations or execution of diantz.exe to compress remotely staged files."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1560.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "diantz.exe"
+        - "WinRAR"
+        - "WinZip"
+        - "built-in"
+        - "third-party"
+        - "command-line"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,49 @@
+schema_version: "1.0.0"
+source: evtx_attack_samples_csv
+canonical_fields:
+  timestamp:
+    candidates: [SystemTime, UtcTime]
+  event.id:
+    candidates: [EventID]
+  event.provider:
+    candidates: [ProviderName]
+  event.channel:
+    candidates: [Channel]
+  host.name:
+    candidates: [Computer, WorkstationName, Workstation]
+  user.combined:
+    candidates: [User, SubjectUserName, TargetUserName, username, AccountName]
+  user.domain:
+    candidates: [SubjectDomainName, TargetDomainName]
+  user.id:
+    candidates: [SubjectUserSid, TargetUserSid, UserID]
+  process.executable:
+    candidates: [Image, NewProcessName, ProcessName, ImagePath, processPath, Application]
+  process.command_line:
+    candidates: [CommandLine, ScriptBlockText]
+  process.pid:
+    candidates: [ProcessId, NewProcessId]
+  process.parent.executable:
+    candidates: [ParentImage, CallerProcessName]
+  process.parent.command_line:
+    candidates: [ParentCommandLine]
+  process.parent.pid:
+    candidates: [ParentProcessId, CallerProcessId]
+  source.ip:
+    candidates: [SourceIp, SourceAddress, IpAddress, ClientIP]
+  source.port:
+    candidates: [SourcePort, IpPort]
+  destination.ip:
+    candidates: [DestinationIp, DestAddress]
+  destination.port:
+    candidates: [DestinationPort, DestPort]
+  file.path:
+    candidates: [TargetFilename, ObjectName, Path]
+  registry.path:
+    candidates: [TargetObject]
+  registry.data:
+    candidates: [Details]
+selection_policy:
+  choose_first_non_empty: true
+  preserve_all_non_null_source_fields_in_raw: true
+  preserve_selected_source_field: true

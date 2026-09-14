@@ -1,0 +1,23 @@
+title: "Cloud Account - Analytic 1088 Baseline"
+id: "6280856b-e16e-5174-81a4-a9f8e8e6f16f"
+status: "experimental"
+description: "Use of AWS CLI (`aws iam list-users`, `list-roles`), Azure CLI (`az ad user list`), or GCP CLI (`gcloud iam service-accounts list`) from endpoints or cloud shells where such activity is unexpected."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1087.004"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "aws iam list-users"
+        - "list-roles"
+        - "az ad user list"
+        - "gcloud iam service-accounts list"
+        - "list-users"
+        - "service-accounts"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

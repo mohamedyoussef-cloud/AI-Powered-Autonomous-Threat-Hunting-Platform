@@ -1,0 +1,18 @@
+title: "Process Argument Spoofing - Analytic 0126 Baseline"
+id: "8b3e3772-9ea5-50eb-9e89-57f09d155f03"
+status: "experimental"
+description: "Inconsistencies between process command-line arguments logged at creation time and subsequent process behavior. Defender perspective: monitoring for processes launched in a suspended state, followed by memory modifications (e.g., WriteProcessMemory targeting the PEB) that overwrite arguments before execution resumes. Detection also includes observing anomalous behaviors from processes whose logged arguments do not align with executed activity (e.g., network connections, file writes, or registry modifications)."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1564.010"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "WriteProcessMemory"
+        - "command-line"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

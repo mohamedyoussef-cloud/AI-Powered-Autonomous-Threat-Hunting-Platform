@@ -1,0 +1,21 @@
+title: "Modify Cloud Resource Hierarchy - Analytic 0442 Baseline"
+id: "c9809718-62da-5bc2-8683-a531d6761560"
+status: "experimental"
+description: "Monitor for unauthorized or unusual modifications to cloud resource hierarchies such as AWS Organizations or Azure Management Groups. Defenders may observe anomalous calls to APIs like `LeaveOrganization`, `CreateAccount`, `MoveAccount`, or Azure subscription transfers. Correlate account activity with administrative role assignments, tenant transfers, or new subscription creation that deviates from organizational baselines. Multi-event correlation should track role elevation followed by hierarchy modifications within a short time window."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1666"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "LeaveOrganization"
+        - "CreateAccount"
+        - "MoveAccount"
+        - "Multi-event"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

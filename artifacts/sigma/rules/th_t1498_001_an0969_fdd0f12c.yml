@@ -1,0 +1,20 @@
+title: "Direct Network Flood - Analytic 0969 Baseline"
+id: "fdd0f12c-7771-5037-bacb-59dc4cfd8dd3"
+status: "experimental"
+description: "High-volume packet generation by local processes (e.g., PowerShell, cmd, curl.exe) or network service processes resulting in excessive outbound traffic over short time window, correlated with abnormal resource usage or degraded host responsiveness."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1498.001"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "curl.exe"
+        - "PowerShell"
+        - "High-volume"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

@@ -1,0 +1,19 @@
+title: "Add-ins - Analytic 0138 Baseline"
+id: "17bc6182-1c8f-5672-9483-2b3c256f37b6"
+status: "experimental"
+description: "Malicious Office add-ins loaded via VSTO, COM, or VBA auto-load paths. Upon launch of Word/Excel/Outlook, the add-in executes code without user action. Add-in resides in trusted directory or registered via Office COM/VBE subsystem. Behavior includes unsigned add-in execution, anomalous load context, or add-in spawning interpreter process."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1137.006"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Application, WinEventLog:Microsoft-Office/OutlookAddinMonitor"
+detection:
+    keywords:
+        - "add-ins"
+        - "auto-load"
+        - "add-in"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

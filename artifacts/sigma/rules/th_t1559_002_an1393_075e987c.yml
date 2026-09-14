@@ -1,0 +1,21 @@
+title: "Dynamic Data Exchange - Analytic 1393 Baseline"
+id: "075e987c-e9d4-5ab9-bc3d-6d8b153c8d56"
+status: "experimental"
+description: "Detects anomalous use of Dynamic Data Exchange (DDE) for code execution, such as Office applications (WINWORD.EXE, EXCEL.EXE) spawning command interpreters, or loading unusual modules through DDEAUTO/DDE formulas. Correlates suspicious parent-child process relationships, registry keys enabling DDE, and module loads inconsistent with normal Office usage."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1559.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "WINWORD.EXE"
+        - "EXCEL.EXE"
+        - "WINWORD"
+        - "DDEAUTO"
+        - "parent-child"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

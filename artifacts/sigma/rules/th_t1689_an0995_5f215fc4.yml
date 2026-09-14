@@ -1,0 +1,18 @@
+title: "Downgrade Attack - Analytic 0995 Baseline"
+id: "5f215fc4-afb5-5c57-8fb9-2a8cd71390c0"
+status: "experimental"
+description: "Detection of processes launching downgraded PowerShell versions (e.g., v2) or other legacy binaries that lack logging or security features. Correlates command-line arguments, process metadata, and version fields. Monitors registry changes to Defender or HVCI keys that could indicate intentional downgrades."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1689"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "PowerShell"
+        - "command-line"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

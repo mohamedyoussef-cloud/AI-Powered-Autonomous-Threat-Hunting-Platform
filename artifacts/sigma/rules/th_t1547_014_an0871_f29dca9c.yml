@@ -1,0 +1,21 @@
+title: "Active Setup - Analytic 0871 Baseline"
+id: "f29dca9c-d1be-5088-a6d0-a76cf6adb7e0"
+status: "experimental"
+description: "Multi-event correlation of Registry creation under Active Setup with anomalous execution of processes at user logon. Behavioral patterns include creation/modification of HKLM Active Setup keys with non-standard StubPath values, followed by process execution from uncommon paths, unsigned binaries, or unusual parent-child lineage post-user login."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1547.014"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "StubPath"
+        - "Multi-event"
+        - "non-standard"
+        - "parent-child"
+        - "post-user"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

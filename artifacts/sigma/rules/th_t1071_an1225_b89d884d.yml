@@ -1,0 +1,18 @@
+title: "Application Layer Protocol - Analytic 1225 Baseline"
+id: "b89d884d-988b-52b6-a123-237e22c626a0"
+status: "experimental"
+description: "Detects suspicious usage of common application-layer protocols (e.g., HTTP, HTTPS, DNS, SMB) by abnormal processes, with high outbound byte counts or irregular ports, possibly indicating command and control or data exfiltration."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1071"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "application-layer"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

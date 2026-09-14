@@ -1,0 +1,18 @@
+title: "Exfiltration Over Unencrypted Non-C2 Protocol - Analytic 0423 Baseline"
+id: "587fff77-0624-599d-b821-db470f6b2da6"
+status: "experimental"
+description: "Detects data access or staging events followed by outbound data flows using unencrypted protocols (e.g., FTP, HTTP) initiated by unexpected processes or to rare destinations."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1048.003"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Detects data access or staging events followed by outbound data flows using unencrypted protocols (e.g., FTP, HTTP) initiated by unexpected processes or to rare destinations."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

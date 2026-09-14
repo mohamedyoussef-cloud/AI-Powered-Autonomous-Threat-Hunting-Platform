@@ -1,0 +1,17 @@
+title: "Internal Defacement - Analytic 0229 Baseline"
+id: "c04dd80e-53a5-5d72-945d-9a85e57b6f2c"
+status: "experimental"
+description: "Adversary modifies internal UI messages (e.g., login banners, desktop wallpapers) or hosted intranet web pages by creating or altering content files using scripts or unauthorized access. Often preceded by privilege escalation or web shell deployment."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1491.001"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "Adversary modifies internal UI messages (e.g., login banners, desktop wallpapers) or hosted intranet web pages by creating or altering content files using scripts or unauthorized access. Often preceded by privilege escalation or web shell deployment."
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

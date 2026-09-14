@@ -1,0 +1,18 @@
+title: "Endpoint Denial of Service - Analytic 0587 Baseline"
+id: "4e91cda5-560a-5552-bbe0-f7772152a060"
+status: "experimental"
+description: "Instance enters degraded/unhealthy state due to abnormal process load or memory exhaustion, often caused by automation or script-based attacks."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1499"
+logsource:
+    product: "aws"
+    service: "cloudwatch"
+    definition: "Grounded source(s): AWS:CloudWatch"
+detection:
+    keywords:
+        - "script-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

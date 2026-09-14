@@ -1,0 +1,18 @@
+title: "Use Alternate Authentication Material - Analytic 0960 Baseline"
+id: "f75bfe0d-8485-596c-a0b4-a632481c5f08"
+status: "experimental"
+description: "Use of instance metadata tokens across instances or misuse of short-lived tokens issued for different roles."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1550"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "short-lived"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

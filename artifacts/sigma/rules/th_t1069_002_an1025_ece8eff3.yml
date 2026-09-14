@@ -1,0 +1,19 @@
+title: "Domain Groups - Analytic 1025 Baseline"
+id: "ece8eff3-b872-585a-a45c-68f2df071e99"
+status: "experimental"
+description: "Detection of domain group enumeration through command-line utilities such as 'net group /domain' or PowerShell cmdlets, followed by suspicious access to API calls or LSASS memory."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1069.002"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:PowerShell"
+detection:
+    keywords:
+        - "net group /domain"
+        - "PowerShell"
+        - "command-line"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

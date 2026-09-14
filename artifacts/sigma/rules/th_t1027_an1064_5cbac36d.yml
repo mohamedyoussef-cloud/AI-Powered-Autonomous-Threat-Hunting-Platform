@@ -1,0 +1,18 @@
+title: "Obfuscated Files or Information - Analytic 1064 Baseline"
+id: "5cbac36d-7fed-5b09-9f1a-d7ae67fbdc70"
+status: "experimental"
+description: "Correlates script execution or suspicious parent processes with creation or modification of encoded, compressed, or encrypted file formats (e.g., .zip, .7z, .enc) and abnormal command-line syntax or PowerShell obfuscation."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1027"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "PowerShell"
+        - "command-line"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

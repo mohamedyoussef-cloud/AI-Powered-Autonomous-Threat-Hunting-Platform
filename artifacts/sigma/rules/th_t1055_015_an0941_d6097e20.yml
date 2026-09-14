@@ -1,0 +1,26 @@
+title: "ListPlanting - Analytic 0941 Baseline"
+id: "d6097e20-7a32-567a-828d-f855bb51870c"
+status: "experimental"
+description: "Detects the use of message-based injection by monitoring for sequences involving FindWindow (EnumWindows or EnumChildWindows), VirtualAllocEx or related API calls, combined with suspicious PostMessage/SendMessage (e.g., LVM_SETITEMPOSITION) use to SysListView32 controls, followed by LVM_SORTITEMS invocation instead of WriteProcessMemory."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1055.015"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "FindWindow"
+        - "EnumWindows"
+        - "EnumChildWindows"
+        - "VirtualAllocEx"
+        - "PostMessage"
+        - "SendMessage"
+        - "SysListView32"
+        - "WriteProcessMemory"
+        - "message-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

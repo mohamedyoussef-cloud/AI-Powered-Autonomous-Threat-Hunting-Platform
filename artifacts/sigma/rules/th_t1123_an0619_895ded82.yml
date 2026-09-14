@@ -1,0 +1,17 @@
+title: "Audio Capture - Analytic 0619 Baseline"
+id: "895ded82-c8f1-5501-89ed-895d68ec4a26"
+status: "experimental"
+description: "Unusual or unauthorized processes accessing microphone APIs (e.g., winmm.dll, avrt.dll) followed by audio file writes to user-accessible or temp directories."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1123"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Sysmon, WinEventLog:Security"
+detection:
+    keywords:
+        - "user-accessible"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

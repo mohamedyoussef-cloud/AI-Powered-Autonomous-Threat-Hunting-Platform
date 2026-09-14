@@ -1,0 +1,19 @@
+title: "Exploitation for Client Execution - Analytic 0797 Baseline"
+id: "2b59314f-08c2-5f93-8c02-281b9d0d7694"
+status: "experimental"
+description: "Cause→effect chain: (1) A client app (browser, Office, PDF/Flash/reader) experiences a crash/abnormal exit or loads from an unusual location, then (2) drops or modifies a file in user-writable paths, and/or (3) spawns an unexpected child (e.g., powershell/cmd/mshta/rundll32/wscript/installer), and (4) establishes outbound C2-like connections shortly after. Correlate application logs, file writes, process lineage, and network egress within a short window."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1203"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "user-writable"
+        - "C2-like"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

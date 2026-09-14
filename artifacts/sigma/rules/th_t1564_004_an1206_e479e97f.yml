@@ -1,0 +1,20 @@
+title: "NTFS File Attributes - Analytic 1206 Baseline"
+id: "e479e97f-72f1-576f-ac28-e8222a214cde"
+status: "experimental"
+description: "Suspicious use of NTFS file attributes such as Alternate Data Streams (ADS) or Extended Attributes (EA) to hide data. Defender perspective: anomalous file creations or modifications containing colon syntax (file.ext:ads), API calls like ZwSetEaFile/ZwQueryEaFile, or PowerShell/Windows utilities interacting with -stream parameters. Correlation across file metadata anomalies, process lineage, and command execution provides context."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1564.004"
+logsource:
+    product: "windows"
+    service: "sysmon"
+    definition: "Grounded source(s): WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "ZwSetEaFile"
+        - "ZwQueryEaFile"
+        - "PowerShell"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

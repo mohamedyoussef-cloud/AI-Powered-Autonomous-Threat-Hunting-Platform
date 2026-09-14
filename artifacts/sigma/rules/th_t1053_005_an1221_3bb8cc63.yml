@@ -1,0 +1,21 @@
+title: "Scheduled Task - Analytic 1221 Baseline"
+id: "3bb8cc63-f613-5811-92ed-745f3cf2c6fe"
+status: "experimental"
+description: "Detects the creation, modification, or deletion of scheduled tasks through Task Scheduler, WMI, PowerShell, or API-based methods followed by execution from svchost.exe or taskeng.exe. Includes detection of hidden or anomalous scheduled tasks, especially those created under SYSTEM or suspicious user contexts."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1053.005"
+logsource:
+    product: "windows"
+    definition: "Grounded source(s): WinEventLog:Security, WinEventLog:Sysmon"
+detection:
+    keywords:
+        - "svchost.exe"
+        - "taskeng.exe"
+        - "PowerShell"
+        - "SYSTEM"
+        - "API-based"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"

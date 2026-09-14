@@ -1,0 +1,19 @@
+title: "Cloud Secrets Management Stores - Analytic 0366 Baseline"
+id: "ba352797-b590-55f8-82cc-81eede7992a8"
+status: "experimental"
+description: "Detection of suspicious access to cloud-native secret management systems (AWS Secrets Manager, GCP Secret Manager, Azure Key Vault, HashiCorp Vault). Focuses on abnormal secret retrieval activity, such as secrets being accessed by unusual identities, from unexpected regions, outside business hours, or at high volume. Correlates API calls to secret retrieval with surrounding authentication events, role assumptions, and anomalous execution patterns."
+author: "Autonomous Threat Hunting Platform"
+date: "2026-08-18"
+tags:
+    - "attack.t1555.006"
+logsource:
+    product: "aws"
+    service: "cloudtrail"
+    definition: "Grounded source(s): AWS:CloudTrail"
+detection:
+    keywords:
+        - "HashiCorp"
+        - "cloud-native"
+    condition: "keywords"
+falsepositives:
+    - "Unknown"
