@@ -1,0 +1,99 @@
+{
+  "task": "Task 57 - Hunt Findings Data Model",
+  "status": "complete",
+  "timestamp": "2026-09-19T05:34:11.647401+00:00",
+  "model_fields": {
+    "finding_id": "UUID - unique per finding",
+    "technique_id": "ATT&CK technique (e.g. T1059)",
+    "technique_name": "ATT&CK technique name",
+    "tactic": "ATT&CK tactic",
+    "hypothesis": "Original hypothesis text",
+    "sigma_rule_id": "UUID of the Sigma rule used",
+    "spl_query": "SPL query executed",
+    "event_count": "Number of Splunk events returned",
+    "events": "List of raw Splunk events",
+    "hunt_timestamp": "When the hunt was executed",
+    "earliest_event": "Earliest event time",
+    "latest_event": "Latest event time",
+    "triage_label": "0=FP / 1=TP / 2=NeedsReview",
+    "triage_label_name": "Human readable label",
+    "triage_confidence": "ML confidence score",
+    "analyst_verdict": "confirmed / rejected"
+  },
+  "examples": [
+    {
+      "finding_id": "c46e2f8f-7842-4328-900c-df487236336c",
+      "technique_id": "T1059.001",
+      "technique_name": "PowerShell",
+      "tactic": "Execution",
+      "hypothesis": "Adversary may use PowerShell to execute encoded commands to evade detection",
+      "sigma_rule_id": "d518759c-1ef5-46f2-a9a2-64b3a504dcc6",
+      "spl_query": "index=* EventCode=4688 CommandLine=\"*powershell*\" CommandLine=\"*-enc*\"",
+      "event_count": 2,
+      "events": [
+        {
+          "_time": "2024-01-15T10:30:00Z",
+          "host": "DESKTOP-WIN10",
+          "source": "WinEventLog:Security",
+          "sourcetype": "WinEventLog",
+          "EventCode": "4688",
+          "CommandLine": "powershell.exe -enc SGVsbG8=",
+          "Image": "C:\\Windows\\System32\\powershell.exe",
+          "User": "CORP\\john.doe",
+          "extra_fields": {}
+        },
+        {
+          "_time": "2024-01-15T10:31:00Z",
+          "host": "DESKTOP-WIN11",
+          "source": "WinEventLog:Security",
+          "sourcetype": "WinEventLog",
+          "EventCode": "4688",
+          "CommandLine": "powershell.exe -enc V2luZG93cw==",
+          "Image": "C:\\Windows\\System32\\powershell.exe",
+          "User": "CORP\\jane.doe",
+          "extra_fields": {}
+        }
+      ],
+      "hunt_timestamp": "2026-09-19T05:34:11.643412+00:00",
+      "earliest_event": "2024-01-15T10:30:00Z",
+      "latest_event": "2024-01-15T10:31:00Z",
+      "triage_label": null,
+      "triage_label_name": null,
+      "triage_confidence": null,
+      "analyst_verdict": null
+    },
+    {
+      "finding_id": "14d11d97-4ea3-4000-bbb3-bf15ce3bab63",
+      "technique_id": "T1003.001",
+      "technique_name": "LSASS Memory",
+      "tactic": "Credential Access",
+      "hypothesis": "Adversary may dump LSASS memory to extract credentials",
+      "sigma_rule_id": "0383504b-86ad-4825-9e38-cebca6dd1006",
+      "spl_query": "index=* EventCode=10 TargetImage=\"*lsass.exe*\"",
+      "event_count": 0,
+      "events": [],
+      "hunt_timestamp": "2026-09-19T05:34:11.645407+00:00",
+      "earliest_event": null,
+      "latest_event": null,
+      "triage_label": null,
+      "triage_label_name": null,
+      "triage_confidence": null,
+      "analyst_verdict": null
+    }
+  ],
+  "validation": {
+    "finding_with_events": {
+      "valid": true,
+      "errors": []
+    },
+    "empty_finding": {
+      "valid": true,
+      "errors": []
+    }
+  },
+  "summary": {
+    "total_examples": 2,
+    "all_valid": true,
+    "fields_defined": 14
+  }
+}
