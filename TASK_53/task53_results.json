@@ -1,0 +1,23 @@
+{
+  "detection_id": "82981638-3b17-4dca-9366-77d59674d69c",
+  "hunt_id": "f0e31975-70f6-4c66-ac0e-b84cdac8d59d",
+  "technique_id": "T1059.001",
+  "steps": {
+    "sigma": {
+      "status": "success",
+      "error": null
+    },
+    "spl": {
+      "status": "success",
+      "error": null
+    },
+    "validation": {
+      "passed": true,
+      "status": "passed",
+      "error": null
+    }
+  },
+  "status": "completed",
+  "sigma_rule": "title: Hunt - Adversary may use PowerShell with encoded commands\nid: cbfed1fd-b291-4489-afd0-b9f62fd42677\nstatus: experimental\ndescription: Adversary may use PowerShell with encoded commands\nlogsource:\n    category: process_creation\n    product: windows\ndetection:\n    selection:\n        CommandLine|contains:\n            - 'powershell'\n            - 'cmd'\n    condition: selection\nfalsepositives:\n    - Legitimate administrative activity\nlevel: medium\ntags:\n    - attack.execution",
+  "spl_query": "CommandLine IN (\"*powershell*\", \"*cmd*\")"
+}
