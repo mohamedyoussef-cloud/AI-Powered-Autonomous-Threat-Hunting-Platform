@@ -1,0 +1,68 @@
+{
+  "dataset": "LLM Sigma Supervised Training Corpus",
+  "version": "1.0",
+  "status": "PASS",
+  "format": "chat_messages",
+  "source_commits": [
+    "2e8fd89f82d9104c1b30321a307254ddeea17de2"
+  ],
+  "licenses": [
+    "DRL-1.1"
+  ],
+  "example_counts": {
+    "train": 2347,
+    "validation": 274,
+    "test": 290
+  },
+  "total_examples": 2911,
+  "source_status_counts": {
+    "test": 2834,
+    "stable": 77
+  },
+  "examples_with_attack_technique_tags": {
+    "train": 2073,
+    "validation": 249,
+    "test": 259
+  },
+  "conditioning_policy": {
+    "included": [
+      "title",
+      "description",
+      "ATT&CK tags",
+      "logsource",
+      "level",
+      "falsepositives"
+    ],
+    "excluded_from_prompt": [
+      "detection",
+      "condition",
+      "fields",
+      "Sigma source identifiers",
+      "author",
+      "license metadata",
+      "project internal baseline Sigma"
+    ],
+    "production_note": "This corpus trains semantic-context-to-Sigma generation. Project Detection Plans remain the governed production input contract and are not fabricated from SigmaHQ metadata."
+  },
+  "target_policy": {
+    "assistant_target": "exact SigmaHQ YAML source rule",
+    "target_normalization": "none",
+    "pysigma_parse_required": true
+  },
+  "leakage_audit": {
+    "cross_split_example_id_overlap": 0,
+    "cross_split_source_rule_id_overlap": 0,
+    "cross_split_source_rule_sha256_overlap": 0,
+    "cross_split_family_id_overlap": 0,
+    "cross_split_semantic_fingerprint_overlap": 0
+  },
+  "split_policy": {
+    "test_split_frozen": true,
+    "family_grouping_inherited_from": "../supervised_sigma_v1"
+  },
+  "file_sha256": {
+    "train.jsonl": "a426ac09157c759c0119ee931fc51de1da1d22c72ca0b5226aeb4551062da837",
+    "validation.jsonl": "e402098b1305cf295df074ac03e29a9f5c161c826b6e7b29e838a332587c2bb6",
+    "test.jsonl": "f043c3bc3775506efe1e09486e18683a0b15f51973583940ca6c88858d9fac7e"
+  }
+}

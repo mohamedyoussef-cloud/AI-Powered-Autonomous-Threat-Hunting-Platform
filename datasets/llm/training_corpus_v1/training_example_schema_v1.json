@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "llm_sigma_training_example_v1",
+  "title": "LLM Sigma Training Example",
+  "type": "object",
+  "required": [
+    "example_id",
+    "split",
+    "messages",
+    "conditioning",
+    "provenance"
+  ],
+  "properties": {
+    "example_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "split": {
+      "type": "string",
+      "enum": [
+        "train",
+        "validation",
+        "test"
+      ]
+    },
+    "messages": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "prefixItems": [
+        {
+          "type": "object",
+          "required": [
+            "role",
+            "content"
+          ],
+          "properties": {
+            "role": {
+              "const": "system"
+            },
+            "content": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "role",
+            "content"
+          ],
+          "properties": {
+            "role": {
+              "const": "user"
+            },
+            "content": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "role",
+            "content"
+          ],
+          "properties": {
+            "role": {
+              "const": "assistant"
+            },
+            "content": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "conditioning": {
+      "type": "object"
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "source_commit",
+        "source_path",
+        "source_rule_sha256",
+        "license",
+        "family_id",
+        "semantic_fingerprint"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
