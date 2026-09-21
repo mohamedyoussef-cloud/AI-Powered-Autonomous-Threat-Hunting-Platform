@@ -1,0 +1,44 @@
+{
+  "task": "Task 70 - Analyst Feedback Workflow",
+  "status": "complete",
+  "timestamp": "2026-09-21T08:13:27.514525+00:00",
+  "test_feedback": {
+    "feedback_id": "1bf5ddc9-3dc7-42bb-84d7-903f768b6917",
+    "finding_id": "21090c1c-e713-429b-915a-b992f34861e9",
+    "analyst_verdict": "confirmed",
+    "original_label": "NeedsReview",
+    "corrected_label": "TruePositive",
+    "was_ml_wrong": true,
+    "created_at": "2026-09-21T08:13:27.476710+00:00"
+  },
+  "stats": {
+    "total_feedback": 1,
+    "ml_correct": 0,
+    "ml_wrong": 1,
+    "ml_accuracy": "0.0%",
+    "verdict_counts": {
+      "confirmed": 1,
+      "rejected": 0,
+      "escalated": 0
+    },
+    "ml_errors_by_label": {
+      "NeedsReview": 1
+    }
+  },
+  "training_data": [
+    {
+      "finding_id": "21090c1c-e713-429b-915a-b992f34861e9",
+      "technique_id": "UNKNOWN",
+      "event_count": 0,
+      "correct_label": 1,
+      "correct_label_name": "TruePositive",
+      "analyst": "Sohila",
+      "timestamp": "2026-09-21T08:13:27.476710+00:00"
+    }
+  ],
+  "summary": {
+    "total_feedback": 1,
+    "ml_accuracy": "0.0%",
+    "training_examples": 1
+  }
+}
