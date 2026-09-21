@@ -1,0 +1,77 @@
+{
+  "task": "LLM Train / Validation / Test Dataset Selection",
+  "version": "1.0",
+  "status": "PASS",
+  "source_commit": "2e8fd89f82d9104c1b30321a307254ddeea17de2",
+  "total_rule_files": 3144,
+  "status_counts": {
+    "test": 2839,
+    "stable": 77,
+    "experimental": 228
+  },
+  "parse_status_counts": {
+    "parsed_clean": 3144
+  },
+  "validation_issue_severity_counts": {
+    "low": 62,
+    "medium": 1,
+    "high": 4
+  },
+  "top_validation_issue_types": [
+    [
+      "EscapedWildcardIssue",
+      54
+    ],
+    [
+      "NumberAsStringIssue",
+      8
+    ],
+    [
+      "SpecificInsteadOfGenericLogsourceIssue",
+      4
+    ],
+    [
+      "InvalidATTACKTagIssue",
+      1
+    ]
+  ],
+  "validator_finalize_issue_count": 0,
+  "selected_gold_rules": 2911,
+  "excluded_rules": 233,
+  "exclusion_reason_counts": {
+    "status_not_gold:experimental": 228,
+    "blocking_validation_severity:medium": 1,
+    "blocking_validation_severity:high": 4
+  },
+  "family_count": 2502,
+  "related_edges": 823,
+  "exact_semantic_duplicate_edges": 0,
+  "near_duplicate_edges": 67,
+  "split_rule_counts": {
+    "train": 2347,
+    "validation": 274,
+    "test": 290
+  },
+  "split_family_counts": {
+    "train": 2002,
+    "validation": 240,
+    "test": 260
+  },
+  "split_ratios_actual": {
+    "train": 0.8062521470285126,
+    "validation": 0.09412572998969426,
+    "test": 0.0996221229817932
+  },
+  "leakage_audit": {
+    "cross_split_family_overlap": 0,
+    "cross_split_semantic_fingerprint_overlap": 0,
+    "cross_split_rule_id_overlap": 0,
+    "cross_split_near_duplicate_overlap": 0
+  },
+  "invariants": {
+    "internal_baseline_sigma_used_as_gold": false,
+    "experimental_sigmahq_used_as_gold": false,
+    "test_split_frozen": true,
+    "all_selected_rules_have_provenance": true
+  }
+}

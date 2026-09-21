@@ -1,0 +1,48 @@
+{
+  "task": "LLM Train / Validation / Test Dataset Selection",
+  "version": "1.0",
+  "source": {
+    "source_id": "sigmahq_rules",
+    "repository": "SigmaHQ/sigma",
+    "source_commit": "2e8fd89f82d9104c1b30321a307254ddeea17de2",
+    "license": "DRL-1.1",
+    "rules_root": "rules/"
+  },
+  "gold_selection": {
+    "allowed_statuses": [
+      "stable",
+      "test"
+    ],
+    "excluded_statuses": [
+      "experimental"
+    ],
+    "require_pysigma_parsed_clean": true,
+    "blocking_validation_severities": [
+      "critical",
+      "error",
+      "high",
+      "medium"
+    ],
+    "internal_project_baseline_sigma_is_gold": false
+  },
+  "split_policy": {
+    "ratios": {
+      "train": 0.8,
+      "validation": 0.1,
+      "test": 0.1
+    },
+    "deterministic_salt": "llm-dataset-selection-v1",
+    "unit_of_split": "rule_family",
+    "family_links": [
+      "Sigma related IDs",
+      "exact logsource+detection semantic fingerprint",
+      "near-duplicate Jaccard >= 0.92 within same logsource block"
+    ],
+    "test_set_policy": "Freeze after LLM dataset selection for all subsequent tuning/evaluation."
+  },
+  "target_materialization": {
+    "raw_rule_bodies_copied_into_dataset_selection_manifests": false,
+    "outputs_are_selection_provenance_manifests": true,
+    "training_examples_materialized_in_next dataset-preparation stage": true
+  }
+}
