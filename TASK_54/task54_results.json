@@ -1,0 +1,188 @@
+{
+  "task": "Task 54 - Regression Testing",
+  "timestamp": "2026-09-21T11:15:20.247801+00:00",
+  "test_cases": [
+    {
+      "test_case_id": "TC-001",
+      "hypothesis": "Adversary may use PowerShell with encoded commands",
+      "technique_id": "T1059.001",
+      "tests": [
+        {
+          "test": "Sigma Generation",
+          "passed": true,
+          "checks": {
+            "has_title": true,
+            "has_detection": true,
+            "has_condition": true
+          },
+          "output_length": 375,
+          "sigma_rule": "title: Hunt - Adversary may use PowerShell with encoded commands\nid: 4e362041-99d9-46cd-abe5-9a3a2fb0ac34\nstatus: experimental\ndescription: Adversary may use PowerShell with encoded commands\nlogsource:\n    category: process_creation\n    product: windows\ndetection:\n    selection:\n        CommandLine|contains:\n            - 'powershell'\n    condition: selection\nlevel: medium"
+        },
+        {
+          "test": "SPL Compilation",
+          "passed": true,
+          "checks": {
+            "pySigma_compiled": true,
+            "is_not_empty": true
+          },
+          "spl_preview": "CommandLine=\"*powershell*\"",
+          "spl": "CommandLine=\"*powershell*\""
+        },
+        {
+          "test": "Validation Gate",
+          "passed": true,
+          "checks": {
+            "validation_passed": true,
+            "no_dangerous_cmds": true
+          }
+        },
+        {
+          "test": "ML Triage",
+          "passed": true,
+          "checks": {
+            "valid_label": true,
+            "valid_confidence": true
+          },
+          "label": 2,
+          "confidence": 0.9944
+        },
+        {
+          "test": "Report Generation",
+          "passed": true,
+          "checks": {
+            "has_hunt_id": true,
+            "has_hypothesis": true,
+            "has_status": true
+          }
+        }
+      ],
+      "passed": 5,
+      "failed": 0,
+      "status": "PASS"
+    },
+    {
+      "test_case_id": "TC-002",
+      "hypothesis": "Attacker may dump credentials from LSASS memory",
+      "technique_id": "T1003.001",
+      "tests": [
+        {
+          "test": "Sigma Generation",
+          "passed": true,
+          "checks": {
+            "has_title": true,
+            "has_detection": true,
+            "has_condition": true
+          },
+          "output_length": 369,
+          "sigma_rule": "title: Hunt - Attacker may dump credentials from LSASS memory\nid: 3e4765f8-6518-4321-9bb2-1da48cef8d9e\nstatus: experimental\ndescription: Attacker may dump credentials from LSASS memory\nlogsource:\n    category: process_creation\n    product: windows\ndetection:\n    selection:\n        CommandLine|contains:\n            - 'powershell'\n    condition: selection\nlevel: medium"
+        },
+        {
+          "test": "SPL Compilation",
+          "passed": true,
+          "checks": {
+            "pySigma_compiled": true,
+            "is_not_empty": true
+          },
+          "spl_preview": "CommandLine=\"*powershell*\"",
+          "spl": "CommandLine=\"*powershell*\""
+        },
+        {
+          "test": "Validation Gate",
+          "passed": true,
+          "checks": {
+            "validation_passed": true,
+            "no_dangerous_cmds": true
+          }
+        },
+        {
+          "test": "ML Triage",
+          "passed": true,
+          "checks": {
+            "valid_label": true,
+            "valid_confidence": true
+          },
+          "label": 2,
+          "confidence": 0.9944
+        },
+        {
+          "test": "Report Generation",
+          "passed": true,
+          "checks": {
+            "has_hunt_id": true,
+            "has_hypothesis": true,
+            "has_status": true
+          }
+        }
+      ],
+      "passed": 5,
+      "failed": 0,
+      "status": "PASS"
+    },
+    {
+      "test_case_id": "TC-003",
+      "hypothesis": "Adversary may create new local admin account",
+      "technique_id": "T1136.001",
+      "tests": [
+        {
+          "test": "Sigma Generation",
+          "passed": true,
+          "checks": {
+            "has_title": true,
+            "has_detection": true,
+            "has_condition": true
+          },
+          "output_length": 363,
+          "sigma_rule": "title: Hunt - Adversary may create new local admin account\nid: 58c21054-08fb-44f3-9611-c6d5e6f12d96\nstatus: experimental\ndescription: Adversary may create new local admin account\nlogsource:\n    category: process_creation\n    product: windows\ndetection:\n    selection:\n        CommandLine|contains:\n            - 'powershell'\n    condition: selection\nlevel: medium"
+        },
+        {
+          "test": "SPL Compilation",
+          "passed": true,
+          "checks": {
+            "pySigma_compiled": true,
+            "is_not_empty": true
+          },
+          "spl_preview": "CommandLine=\"*powershell*\"",
+          "spl": "CommandLine=\"*powershell*\""
+        },
+        {
+          "test": "Validation Gate",
+          "passed": true,
+          "checks": {
+            "validation_passed": true,
+            "no_dangerous_cmds": true
+          }
+        },
+        {
+          "test": "ML Triage",
+          "passed": true,
+          "checks": {
+            "valid_label": true,
+            "valid_confidence": true
+          },
+          "label": 2,
+          "confidence": 0.9944
+        },
+        {
+          "test": "Report Generation",
+          "passed": true,
+          "checks": {
+            "has_hunt_id": true,
+            "has_hypothesis": true,
+            "has_status": true
+          }
+        }
+      ],
+      "passed": 5,
+      "failed": 0,
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "total_test_cases": 3,
+    "total_tests": 15,
+    "total_pass": 15,
+    "total_fail": 0,
+    "pass_rate": "100.0%",
+    "status": "PASS"
+  }
+}
