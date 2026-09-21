@@ -1,0 +1,106 @@
+{
+  "task": "Task 79 - Runtime Feature Extraction",
+  "status": "complete",
+  "timestamp": "2026-09-21T10:35:50.869920+00:00",
+  "features_defined": [
+    "event_count",
+    "unique_hosts",
+    "unique_users",
+    "unique_commands",
+    "has_encoding",
+    "has_admin_user",
+    "has_suspicious_cmd",
+    "event_code_count",
+    "night_activity",
+    "avg_cmd_length"
+  ],
+  "mock_test": {
+    "events": 3,
+    "triage": {
+      "features": {
+        "event_count": 3,
+        "unique_hosts": 2,
+        "unique_users": 3,
+        "unique_commands": 3,
+        "has_encoding": 1,
+        "has_admin_user": 1,
+        "has_suspicious_cmd": 1,
+        "event_code_count": 1,
+        "night_activity": 1,
+        "avg_cmd_length": 27.33
+      },
+      "triage_label": 2,
+      "triage_label_name": "NeedsReview",
+      "triage_confidence": 0.9907,
+      "ml_source": "real"
+    }
+  },
+  "db_findings_processed": [
+    {
+      "finding_id": "d7f35a67-4b92-41ee-8231-1103278dd7aa",
+      "technique_id": "UNKNOWN",
+      "event_count": 0,
+      "features": {
+        "event_count": 0,
+        "unique_hosts": 0,
+        "unique_users": 0,
+        "unique_commands": 0,
+        "has_encoding": 0,
+        "has_admin_user": 0,
+        "has_suspicious_cmd": 0,
+        "event_code_count": 0,
+        "night_activity": 0,
+        "avg_cmd_length": 0.0
+      },
+      "triage_label_name": "TruePositive",
+      "triage_confidence": 0.9996,
+      "ml_source": "real"
+    },
+    {
+      "finding_id": "55925b49-57c1-41c0-862d-76d1fc1bd561",
+      "technique_id": "UNKNOWN",
+      "event_count": 0,
+      "features": {
+        "event_count": 0,
+        "unique_hosts": 0,
+        "unique_users": 0,
+        "unique_commands": 0,
+        "has_encoding": 0,
+        "has_admin_user": 0,
+        "has_suspicious_cmd": 0,
+        "event_code_count": 0,
+        "night_activity": 0,
+        "avg_cmd_length": 0.0
+      },
+      "triage_label_name": "TruePositive",
+      "triage_confidence": 0.9996,
+      "ml_source": "real"
+    },
+    {
+      "finding_id": "21090c1c-e713-429b-915a-b992f34861e9",
+      "technique_id": "UNKNOWN",
+      "event_count": 0,
+      "features": {
+        "event_count": 0,
+        "unique_hosts": 0,
+        "unique_users": 0,
+        "unique_commands": 0,
+        "has_encoding": 0,
+        "has_admin_user": 0,
+        "has_suspicious_cmd": 0,
+        "event_code_count": 0,
+        "night_activity": 0,
+        "avg_cmd_length": 0.0
+      },
+      "triage_label_name": "TruePositive",
+      "triage_confidence": 0.9996,
+      "ml_source": "real"
+    }
+  ],
+  "summary": {
+    "total_features": 10,
+    "findings_updated": 3,
+    "ml_source": "real",
+    "status": "COMPLETE"
+  }
+}
