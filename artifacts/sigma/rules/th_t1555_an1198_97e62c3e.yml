@@ -3,7 +3,7 @@ id: "97e62c3e-590e-551e-a5b8-a8cb7e5e8347"
 status: "experimental"
 description: "Monitors suspicious access to password stores such as LSASS, DPAPI, Windows Credential Manager, or browser credential databases. Detects anomalous process-to-process access (e.g., Mimikatz accessing LSASS) and correlation of credential store file reads with execution of non-standard processes."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1555"
 logsource:

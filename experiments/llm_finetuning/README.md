@@ -81,25 +81,25 @@ def generate_sigma(hypothesis, model, tokenizer):
 ║                  Qwen3-8B + QLoRA                    ║
 ╚══════════════════════════════════════════════════════╝
 
-Phase 1: ENVIRONMENT SETUP
+stage: ENVIRONMENT SETUP
   CUDA 12.4 GPU (15.69 GB VRAM)
   PyTorch 2.5.1 + bitsandbytes 0.50.1
           ↓
-Phase 2: BASE MODEL LOADING
+stage: BASE MODEL LOADING
   Qwen3-8B loaded in 4-bit QLoRA
   Normal: ~33GB → With 4-bit: ~5GB only
           ↓
-Phase 3: LoRA ADAPTER
+stage: LoRA ADAPTER
   Trainable: 43M / 8.2B params (0.53%)
   Target: q,k,v,o,gate,up,down projections
           ↓
-Phase 4: DATA PREPARATION
+stage: DATA PREPARATION
   train.jsonl  → 3,770 examples
   val.jsonl    →   245 examples
   test.jsonl   →   398 examples
   Format: Hypothesis (input) → Sigma Rule (output)
           ↓
-Phase 5: TRAINING
+stage: TRAINING
   Epochs: 3  |  Time: ~10 hours
   Custom BF16LossTrainer (saves ~600MB VRAM)
   Step  | Train Loss | Val Loss
@@ -109,19 +109,19 @@ Phase 5: TRAINING
   450   |   5.24     |  1.006  ← BEST
   708   |   4.57     |  1.033
           ↓
-Phase 6: BEST CHECKPOINT
+stage: BEST CHECKPOINT
   Step 450 → lowest val loss: 1.006
   Saved to: ./final_adapter (175MB)
           ↓
-Phase 7: HUGGINGFACE BACKUP
+stage: HUGGINGFACE BACKUP
   mar7788yam/hypothesis-to-sigma-qwen3-8b
   Adapter: 175MB + Tokenizer: 11.4MB
           ↓
-Phase 8: EVALUATION (Task 51)
+stage: EVALUATION ()
   Fine-tuned model on 398 test examples
   Valid Sigma: 394/398 = 99.0% ✅
           ↓
-Phase 9: BASELINE (Task 49)
+stage: BASELINE ()
   Base model (no training) on 398 examples
   Valid Sigma: 0/398 = 0.0% ❌
           ↓

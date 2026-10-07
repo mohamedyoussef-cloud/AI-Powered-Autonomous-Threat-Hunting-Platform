@@ -1,0 +1,17 @@
+{
+  "execution_result_version": "1.1",
+  "queue_total": 404,
+  "completed_unique_paths": 404,
+  "remaining": 0,
+  "status_counts": {
+    "EXECUTION_ERROR": 1,
+    "NONZERO_FINDING_CANDIDATE": 22,
+    "ZERO_INCONCLUSIVE_RUNTIME_VISIBILITY": 381
+  },
+  "nonzero_finding_candidate_rows": 22,
+  "total_nonzero_match_count": 8514,
+  "zero_results_are_conclusive_negatives": false,
+  "zero_result_interpretation": "INCONCLUSIVE_RUNTIME_VISIBILITY",
+  "timeout_seconds": 60,
+  "spawn_retries": 3
+}

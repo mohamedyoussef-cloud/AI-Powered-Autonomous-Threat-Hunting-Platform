@@ -1,6 +1,6 @@
-﻿{
+{
   "research_version": "1.0",
-  "task": "Task 46 - LLM Training Dataset Research",
+  "scope": "LLM Training Dataset Research",
   "sources": [
     {
       "source_id": "sigmahq_rules",
@@ -56,7 +56,7 @@
       "pysigma_passed": 540,
       "status": "experimental",
       "decision": "CANDIDATE_NOT_GOLD",
-      "training_target_allowed": "REQUIRES_TASK_47_SELECTION"
+      "training_target_allowed": "REQUIRES_DATASET_SELECTION"
     }
   ],
   "research_policy": {

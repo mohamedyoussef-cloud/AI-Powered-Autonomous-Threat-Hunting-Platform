@@ -1,0 +1,33 @@
+{
+  "dataset": "LLM Sigma Context-Eligible Training View",
+  "version": "1.0",
+  "status": "PASS",
+  "max_sequence_length": 2048,
+  "policy": {
+    "original_gold_corpus_modified": false,
+    "split_membership_changed": false,
+    "examples_above_limit_truncated": false,
+    "examples_above_limit_preserved_in_audit": true
+  },
+  "split_counts": {
+    "train": {
+      "original": 2347,
+      "eligible": 2322,
+      "excluded": 25
+    },
+    "validation": {
+      "original": 274,
+      "eligible": 270,
+      "excluded": 4
+    },
+    "test": {
+      "original": 290,
+      "eligible": 286,
+      "excluded": 4
+    }
+  },
+  "total_original": 2911,
+  "total_eligible": 2878,
+  "total_excluded": 33,
+  "max_excluded_length": 205048
+}

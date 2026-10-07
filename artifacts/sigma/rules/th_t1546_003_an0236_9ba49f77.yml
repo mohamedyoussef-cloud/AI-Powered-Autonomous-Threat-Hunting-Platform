@@ -3,7 +3,7 @@ id: "9ba49f77-375d-517c-9640-30dfe752dbc4"
 status: "experimental"
 description: "Monitor for creation of WMI EventFilter, EventConsumer, and FilterToConsumerBinding objects through WMI or MOF file execution. Detect command-line execution of `mofcomp.exe`, usage of `Register-WmiEvent` via PowerShell, and anomalous child processes of `WmiPrvSE.exe` that indicate triggered execution. Look for lateral anomalies in process lineage and WMI logging channels."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1546.003"
 logsource:

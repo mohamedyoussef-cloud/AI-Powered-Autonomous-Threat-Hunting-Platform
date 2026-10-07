@@ -3,7 +3,7 @@ id: "1df64ed7-481e-5f9a-aa5c-a1d7504cbcc2"
 status: "experimental"
 description: "Detection of suspicious enumeration of cloud storage objects via API calls such as AWS S3 ListObjectsV2, Azure List Blobs, or GCP ListObjects. Correlate access with account role, user context, and prior authentication activity to identify anomalous usage patterns (e.g., unusual account, unexpected regions, or large-scale enumeration in short time windows)."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1619"
 logsource:

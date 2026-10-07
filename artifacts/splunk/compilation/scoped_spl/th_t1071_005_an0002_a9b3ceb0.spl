@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("python.exe" OR "rundll32.exe" OR "PowerShell" OR "non-standard" OR "non-browser")

@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Untrusted processes creating outbound TLS/HTTPS connections with malformed certificates or header fields, often mismatched with target service behavior. Detects protocol impersonation attempts via traffic metadata analysis and host process lineage.")

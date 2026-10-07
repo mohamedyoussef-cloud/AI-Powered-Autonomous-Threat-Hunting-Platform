@@ -1,0 +1,12 @@
+{
+  "inputs": {
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_runtime\\execution\\runtime_results_v1\\runtime_execution_results_v1.jsonl": "17e8a1c527145799b838341d31512ea5f28ff0995acc1ffde045502732a37528",
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_compilation\\compiled_queries.jsonl": "d832a160929ddd64a6ea3b972b73c61a43a5eb1c771494a8178411f8c7587ced",
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_runtime\\finding_validation\\keyword_contribution_v1.jsonl": "20a00e5325718aed695ba1ec615674ff134fec2e7727a176a6af2f0992860a69"
+  },
+  "outputs": {
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_runtime\\hunt_findings\\runtime_candidate_dispositions_v1.jsonl": "1464d3a24e9d61144a0a02479a919b22a62ca016869c01d2a2141255028544b3",
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_runtime\\hunt_findings\\validated_hunt_findings_v1.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_runtime\\hunt_findings\\summary_v1.json": "4af84fa7321e4f8170825b623497ccf8601a0a69cb142263cab5c26f74f90f02"
+  }
+}

@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Creation or modification of files in directories known to be excluded from AV scanning (e.g., C:\\Windows\\Temp, Exchange server directories, or default AV exclusions). Defender perspective: correlate file creation with execution behavior or anomalous parent processes writing to excluded paths.")

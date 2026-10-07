@@ -3,7 +3,7 @@ id: "9d51c648-3f94-5b06-8d63-a59f2673575f"
 status: "experimental"
 description: "Suspicious creation or modification of inbox rules through PowerShell (New-InboxRule, Set-InboxRule) to automatically delete, move, or hide emails. Defender perspective: unusual rule activity correlated with mailbox access and filtering patterns."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1564.008"
 logsource:

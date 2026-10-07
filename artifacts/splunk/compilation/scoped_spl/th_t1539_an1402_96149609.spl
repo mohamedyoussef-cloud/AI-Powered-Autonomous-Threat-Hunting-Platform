@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Cookies" OR "chrome.exe" OR "firefox.exe" OR "msedge.exe" OR "SQLite")

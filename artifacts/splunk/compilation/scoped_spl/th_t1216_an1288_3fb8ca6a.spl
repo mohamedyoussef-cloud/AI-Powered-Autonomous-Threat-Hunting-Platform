@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("installutil.exe" OR "wscript.exe" OR "cscript.exe" OR "Microsoft-signed" OR "command-line")

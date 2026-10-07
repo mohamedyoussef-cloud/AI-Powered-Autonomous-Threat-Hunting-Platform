@@ -1,0 +1,1 @@
+"HKLM\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy also indicate adversarial actions." OR "PowerShell" OR "NetFirewallProfile" OR "SYSTEM" OR "CurrentControlSet" OR "SharedAccess" OR "FirewallPolicy" OR "Set-NetFirewallProfile"

@@ -3,7 +3,7 @@ id: "bd211736-e394-5f45-ba28-860cf1a8d653"
 status: "experimental"
 description: "Automated abuse of cloud-hosted applications (e.g., web apps, REST endpoints, internal APIs) causing compute exhaustion, high 5xx error rates, or frequent autoscaling triggers logged in app insights or cloudwatch."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1499.003"
 logsource:

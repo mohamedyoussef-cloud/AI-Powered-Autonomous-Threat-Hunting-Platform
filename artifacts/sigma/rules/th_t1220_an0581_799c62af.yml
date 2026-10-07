@@ -3,7 +3,7 @@ id: "799c62af-7b9d-5e0b-9fe3-4e08ab67bcfe"
 status: "experimental"
 description: "Execution of XSL scripts via msxsl.exe or wmic.exe using embedded JScript or VBScript for proxy execution. Detection correlates process creation, command-line patterns, and module load behavior of scripting components (e.g., jscript.dll)."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1220"
 logsource:

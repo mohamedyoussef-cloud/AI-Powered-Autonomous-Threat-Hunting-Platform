@@ -3,7 +3,7 @@ id: "0a71fc59-b34b-533a-b44f-0628b72d6703"
 status: "experimental"
 description: "Use of stolen Kerberos tickets or token impersonation resulting in logon sessions from accounts without expected interactive logon events."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1550"
 logsource:

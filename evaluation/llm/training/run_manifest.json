@@ -1,0 +1,87 @@
+{
+  "run": "Qwen3-8B Sigma QLoRA",
+  "status": "PASS",
+  "base_model_snapshot": "/home/jovyan/.cache/huggingface/hub/models--Qwen--Qwen3-8B/snapshots/b968826d9c46dd6066d109eabc6255188de91218",
+  "dataset_dir": "/home/jovyan/ThreatHuntingGPU/llm_training_v1/training_corpus_2k_v1",
+  "dataset_files": {
+    "train.jsonl": "2bedacf399c64c9ac3c651f9e290b872bcec8f998fdfa162a8f4bf6ec31c97c9",
+    "validation.jsonl": "1e30ddfe1b9959a5c6cbfce2a4fdada1bebfb51eaacd9af8707838a36b9467ec"
+  },
+  "test_split_used": false,
+  "assistant_only_loss": true,
+  "thinking_enabled": false,
+  "truncation_used": false,
+  "train_stats": {
+    "count": 2322,
+    "min": 396,
+    "p50": 622,
+    "p90": 925,
+    "p95": 1095,
+    "p99": 1553,
+    "max": 1996,
+    "supervised_tokens_total": 946897
+  },
+  "validation_stats": {
+    "count": 270,
+    "min": 433,
+    "p50": 631,
+    "p90": 878,
+    "p95": 1002,
+    "p99": 1361,
+    "max": 1500,
+    "supervised_tokens_total": 108000
+  },
+  "config": {
+    "max_sequence_length": 2048,
+    "per_device_train_batch_size": 1,
+    "per_device_eval_batch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "num_train_epochs": 1.0,
+    "learning_rate": 0.0002,
+    "lr_scheduler_type": "cosine",
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0,
+    "max_grad_norm": 0.3,
+    "logging_steps": 10,
+    "eval_strategy": "epoch",
+    "optim": "paged_adamw_8bit",
+    "seed": 42,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "lora_target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "versions": {
+    "python": "3.12.13",
+    "torch": "2.11.0+cu126",
+    "transformers": "5.18.0",
+    "peft": "0.20.0"
+  },
+  "gpu": "NVIDIA A16",
+  "elapsed_seconds": 11315.027499198914,
+  "peak_vram_allocated_gb": 14.050734519958496,
+  "peak_vram_reserved_gb": 14.404296875,
+  "train_metrics": {
+    "train_runtime": 11313.6254,
+    "train_samples_per_second": 0.205,
+    "train_steps_per_second": 0.026,
+    "total_flos": 7.2217064288256e+16,
+    "train_loss": 0.9621491759913074,
+    "epoch": 1.0
+  },
+  "eval_metrics": {
+    "eval_loss": 0.8453616499900818,
+    "eval_runtime": 394.5754,
+    "eval_samples_per_second": 0.684,
+    "eval_steps_per_second": 0.684,
+    "epoch": 1.0
+  }
+}

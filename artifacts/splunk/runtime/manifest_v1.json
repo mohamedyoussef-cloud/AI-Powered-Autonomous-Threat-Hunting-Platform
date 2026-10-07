@@ -1,0 +1,11 @@
+{
+  "inputs": {
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_compilation\\compiled_queries.jsonl": "d832a160929ddd64a6ea3b972b73c61a43a5eb1c771494a8178411f8c7587ced",
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_runtime\\evidence_gate\\grounded_path_runtime_resolution_v1.jsonl": "c43f4b28b8da965574b4c6855c63c2bac9b1a552a13f7ceef6ecfa291efe2564"
+  },
+  "outputs": {
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_runtime\\execution\\runtime_execution_queue_v1.jsonl": "3ec34172e31f8f484cb9e41e4324e906825018d700f4c4c39c78a9cea89462a0",
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_runtime\\execution\\runtime_execution_deferred_v1.jsonl": "aad1374a8422ac4829e1ced34a14f1b42eb8f3aa599233afceae387c0c4db2ca",
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_runtime\\execution\\summary_v1.json": "e233abce9e73114c19e64611fe1e085f3c8f9bb4036fd06cac04afff516b41cf"
+  }
+}

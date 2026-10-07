@@ -3,7 +3,7 @@ id: "f7c12285-e0d9-5ade-a281-67e9a54cd7d1"
 status: "experimental"
 description: "Execution of file transfer or network access activity through non-primary interfaces (e.g., WiFi, Bluetooth, cellular) by processes not typically associated with such behavior (e.g., rundll32, powershell, regsvr32)."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1011"
 logsource:

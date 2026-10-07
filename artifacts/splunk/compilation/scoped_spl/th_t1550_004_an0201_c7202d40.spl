@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Anomalous access to cloud web applications using session tokens without corresponding MFA/credential validation, often from unusual locations or device fingerprints.")

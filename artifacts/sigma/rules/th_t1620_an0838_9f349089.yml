@@ -3,7 +3,7 @@ id: "9f349089-5aa3-5bd4-b19b-80edf05c2d34"
 status: "experimental"
 description: "Detect anomalous chains of memory allocation and execution inside the same process (e.g., VirtualAlloc → memcpy → VirtualProtect → CreateThread). Unlike process injection, reflective code loading does not perform cross-process memory writes — the suspicious activity occurs entirely within the process’s own PID context."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1620"
 logsource:

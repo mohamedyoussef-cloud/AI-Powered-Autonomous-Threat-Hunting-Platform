@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Processes accessing raw logical drives (e.g., \\.\\C:) to bypass file system protections or directly manipulate data structures.")

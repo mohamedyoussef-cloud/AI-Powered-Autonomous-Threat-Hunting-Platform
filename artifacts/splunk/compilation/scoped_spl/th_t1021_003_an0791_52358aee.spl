@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("A remote DCOM invocation by a privileged account using RPC (port 135), followed by abnormal process instantiation or module loading on the remote system indicative of code execution.")

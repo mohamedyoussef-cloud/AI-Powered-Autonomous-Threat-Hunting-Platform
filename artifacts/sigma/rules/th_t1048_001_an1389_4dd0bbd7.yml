@@ -3,7 +3,7 @@ id: "4dd0bbd7-e826-5737-b73b-b45c0a08d7e8"
 status: "experimental"
 description: "Detects the execution of non-browser processes establishing outbound encrypted network connections using uncommon symmetric encryption protocols (e.g., AES via PowerShell or custom scripts) to alternate external destinations."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1048.001"
 logsource:

@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Creation or modification of cloud virtual machine images (AMIs, custom images) with persistence mechanisms, followed by infrastructure provisioning that uses these implanted images.")

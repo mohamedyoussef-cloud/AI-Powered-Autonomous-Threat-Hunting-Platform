@@ -3,7 +3,7 @@ id: "2663ddb9-0407-5a35-b57b-5ce5d065132d"
 status: "experimental"
 description: "Detects processes performing network enumeration (e.g., port scans, service probing) by correlating process creation, socket connections, and sequential destination IP probing within a time window."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1046"
 logsource:

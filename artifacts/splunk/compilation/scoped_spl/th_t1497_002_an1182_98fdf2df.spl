@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Process execution that probes user activity artifacts (e.g., desktop files, registry history) following recent user login/unlock events.")

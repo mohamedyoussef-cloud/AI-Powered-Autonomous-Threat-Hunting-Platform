@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("MSBuild.exe" OR "MSBuild" OR "LOLBins" OR "non-canonical" OR "high-risk" OR "user-writable")

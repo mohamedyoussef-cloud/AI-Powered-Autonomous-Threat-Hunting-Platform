@@ -3,7 +3,7 @@ id: "ef20c390-a5d7-5c9c-8a29-27add1f26365"
 status: "experimental"
 description: "Detects web console login events followed by read-only or metadata retrieval activity from GUI sources (e.g., browser session, mobile client) rather than API/CLI sources. Correlates across CloudTrail, IAM identity logs, and user-agent context."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1538"
 logsource:

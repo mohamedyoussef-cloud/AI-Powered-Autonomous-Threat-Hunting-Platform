@@ -3,7 +3,7 @@ id: "10612476-09c3-58e2-8d95-e228d5f8dd48"
 status: "experimental"
 description: "Behavioral sequence where removable media is mounted, files are written/updated, and subsequently read/executed on a separate host, suggesting removable-media relay communication."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1092"
 logsource:

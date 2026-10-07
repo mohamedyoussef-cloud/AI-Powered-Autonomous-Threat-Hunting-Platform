@@ -3,7 +3,7 @@ id: "d8a38434-5932-506a-9c77-93dc34992268"
 status: "experimental"
 description: "Detects FTP, SMB, or TFTP traffic initiated by suspicious processes like PowerShell, cmd.exe, or rundll32.exe—especially with large outbound file transfers or unbalanced traffic volume."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1071.002"
 logsource:

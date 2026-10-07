@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("InstallUtil.exe" OR "InstallUtil" OR "non-standard" OR "attacker-supplied" OR "command-line")

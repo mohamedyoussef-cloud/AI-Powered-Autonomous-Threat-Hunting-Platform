@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Detects execution of Lua interpreters or scripts (.lua), especially when correlated with suspicious parent processes or file drop events, indicating malicious use of embedded scripting.")

@@ -3,7 +3,7 @@ id: "a2f81468-5faa-5c7d-b92d-136ed1e45812"
 status: "experimental"
 description: "Detection of unauthorized modifications to Windows root certificate stores by monitoring registry keys, certificate installation processes, and creation of new certificate entries not in baseline trusted lists."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1553.004"
 logsource:

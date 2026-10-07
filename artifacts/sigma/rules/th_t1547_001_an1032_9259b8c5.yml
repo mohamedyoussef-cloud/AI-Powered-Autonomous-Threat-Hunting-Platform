@@ -3,7 +3,7 @@ id: "9259b8c5-f698-5046-8de3-38e7380de96e"
 status: "experimental"
 description: "Correlation of Registry key creation/modification events under known Run/Startup keys with new or unusual binary paths or script-based payloads. Multi-event detection includes registry modification followed by process execution from non-standard directories or abnormal parent-child process relationships."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1547.001"
 logsource:

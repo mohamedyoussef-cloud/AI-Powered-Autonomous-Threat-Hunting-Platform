@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("sc.exe" OR "powershell.exe" OR "HKLM\\System\\CurrentControlSet\\Services" OR "CreateServiceW" OR "CurrentControlSet" OR "SYSTEM" OR "command-line" OR "parent-child")

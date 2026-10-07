@@ -3,7 +3,7 @@ id: "48f02823-544a-5526-81d7-ca7ad6f412f0"
 status: "experimental"
 description: "Suspicious use of scripting parameters or registry edits to hide process windows (e.g., powershell.exe -WindowStyle Hidden, or registry modifications pushing window positions off screen). Defender view: correlation of hidden execution with anomalous process lineage or hVNC-like CreateDesktop API calls."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1564.003"
 logsource:

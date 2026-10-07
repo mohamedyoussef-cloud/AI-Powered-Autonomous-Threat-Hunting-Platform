@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Detects unauthorized changes to IAM authentication configurations such as disabling MFA, creating backdoor access keys, or altering trust policies. Correlates identity policy updates with unusual login behavior.")

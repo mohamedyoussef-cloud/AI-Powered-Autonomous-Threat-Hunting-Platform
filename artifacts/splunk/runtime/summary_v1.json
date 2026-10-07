@@ -1,0 +1,10 @@
+{
+  "execution_contract_version": "1.0",
+  "compiled_population": 540,
+  "literal_runtime_candidates": 418,
+  "execution_ready_exact": 404,
+  "deferred": 14,
+  "query_shape": "index+botsv3 + confirmed sourcetype scope + compiled Sigma SPL + stats count",
+  "zero_result_interpretation": "INCONCLUSIVE_RUNTIME_VISIBILITY",
+  "raw_runtime_limit": "legacy BOTS v3/current Splunk raw-event visibility is incomplete"
+}

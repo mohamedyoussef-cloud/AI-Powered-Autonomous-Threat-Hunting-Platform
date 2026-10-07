@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("SELECT * FROM" OR "SHOW DATABASES" OR "SELECT" OR "DATABASES" OR "CloudTrail" OR "AzureDiagnostics" OR "non-monitoring" OR "cross-region")

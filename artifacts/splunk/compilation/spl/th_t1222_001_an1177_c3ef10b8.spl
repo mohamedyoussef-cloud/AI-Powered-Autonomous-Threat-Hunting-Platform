@@ -1,0 +1,1 @@
+"icacls.exe" OR "takeown.exe" OR "attrib.exe" OR "cacls.exe" OR "PowerShell" OR "Multi-stage" OR "permission-modifying" OR "Command-line" OR "Set-Acl" OR "follow-on"

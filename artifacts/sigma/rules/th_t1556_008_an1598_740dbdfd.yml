@@ -3,7 +3,7 @@ id: "740dbdfd-5c5a-5d33-a1d9-16a0bfbb99a6"
 status: "experimental"
 description: "Detects registration of new or modified network provider DLLs via registry changes, anomalous file creation of DLLs in system directories, and suspicious process activity (mpnotify.exe interacting with non-standard DLLs). Multi-event correlation ties registry modification events to subsequent DLL loads during user logon activity."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1556.008"
 logsource:

@@ -3,7 +3,7 @@ id: "503c0dc8-dd54-5613-a90e-a7c297b077bd"
 status: "experimental"
 description: "Unauthorized or anomalous loading of kernel-mode drivers or DLLs, concealed services, or abnormal modification of boot components indicative of rootkit activity."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1014"
 logsource:

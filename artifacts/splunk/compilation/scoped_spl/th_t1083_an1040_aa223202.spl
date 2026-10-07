@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("dir" OR "tree" OR "non-standard")

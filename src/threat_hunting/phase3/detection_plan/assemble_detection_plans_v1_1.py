@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import hashlib
 import json
@@ -1963,7 +1963,7 @@ write_json(
 # ============================================================
 
 print(
-    "===== TASK 42 FINAL DETECTION PLAN ASSEMBLY ====="
+    "===== FINAL DETECTION PLAN ASSEMBLY ====="
 )
 
 print()
@@ -2109,12 +2109,12 @@ if audit_status != "PASS":
         print()
 
     print(
-        "TASK 42 FINAL AUDIT: FAIL"
+        "FINAL DETECTION PLAN AUDIT: FAIL"
     )
 
     raise SystemExit(1)
 
 
 print(
-    "TASK 42 FINAL AUDIT: PASS"
+    "FINAL DETECTION PLAN AUDIT: PASS"
 )

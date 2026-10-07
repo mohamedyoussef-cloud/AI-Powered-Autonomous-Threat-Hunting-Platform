@@ -1,0 +1,19 @@
+{
+  "resolver_version": "1.0",
+  "expected_tasks": 20,
+  "completed_tasks": 20,
+  "contract_valid_outputs": 16,
+  "contract_invalid_outputs": 4,
+  "decision_counts": {
+    "MATCH": 8,
+    "NO_MATCH": 4,
+    "AMBIGUOUS": 4
+  },
+  "model": "/home/jovyan/.cache/huggingface/hub/models--Qwen--Qwen3-8B/snapshots/b968826d9c46dd6066d109eabc6255188de91218",
+  "adapter": "None",
+  "max_new_tokens": 1536,
+  "repetition_penalty": 1.08,
+  "no_repeat_ngram_size": 12,
+  "sampling": false,
+  "thinking": false
+}

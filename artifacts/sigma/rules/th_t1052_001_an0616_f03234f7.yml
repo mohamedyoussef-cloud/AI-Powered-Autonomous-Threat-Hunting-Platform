@@ -3,7 +3,7 @@ id: "f03234f7-d30a-580a-a760-3a1e41833e06"
 status: "experimental"
 description: "Detects USB device insertion followed by high-volume or sensitive file access and staging activity by suspicious processes or accounts."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1052.001"
 logsource:

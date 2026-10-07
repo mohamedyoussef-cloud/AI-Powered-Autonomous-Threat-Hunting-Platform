@@ -3,7 +3,7 @@ id: "860cba53-d63d-594c-8b2e-65147d62826d"
 status: "experimental"
 description: "Detects credential dumping attempts targeting the NTDS.dit database by monitoring shadow copy creation, suspicious file access to %SystemRoot%\\NTDS\\ntds.dit, and the use of tooling like ntdsutil.exe or volume management APIs."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1003.003"
 logsource:

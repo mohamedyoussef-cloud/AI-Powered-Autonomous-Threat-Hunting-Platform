@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("OriginalFilename" OR "InternalName" OR "LOLBAS" OR "on-disk")

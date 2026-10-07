@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Creation or modification of stored procedures invoking xp_cmdshell or CLR assemblies for command execution and persistence.")

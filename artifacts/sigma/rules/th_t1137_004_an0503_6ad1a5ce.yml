@@ -3,7 +3,7 @@ id: "6ad1a5ce-26a3-542c-a9ee-5c9b69f9b198"
 status: "experimental"
 description: "Malicious HTML or script is rendered as a Home Page for a specific Outlook folder. Outlook accesses that folder, loads remote content, and executes embedded JavaScript or ActiveX/COM logic resulting in unauthorized actions or local execution."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1137.004"
 logsource:

@@ -3,7 +3,7 @@ id: "22450eb6-671d-543f-a9e8-3b020641d120"
 status: "experimental"
 description: "Detects attempts to access or enumerate cloud password/secrets storage services such as AWS Secrets Manager, Azure Key Vault, or GCP Secret Manager. Monitors API calls for abnormal enumeration or bulk retrieval of secrets."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1555"
 logsource:

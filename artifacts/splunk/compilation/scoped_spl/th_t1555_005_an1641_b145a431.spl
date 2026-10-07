@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("KeePass" OR "LastPass" OR "command-line" OR "vault-related")

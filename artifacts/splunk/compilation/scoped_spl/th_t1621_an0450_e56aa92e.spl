@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Detect abnormal MFA activity within cloud service provider logs, such as repeated generation of MFA challenges for the same user session or mismatched MFA device and login origin.")

@@ -3,7 +3,7 @@ id: "8630a117-f9b9-5e88-bcec-e982d94a059d"
 status: "experimental"
 description: "Adversary-created named mutex using system APIs (e.g., CreateMutexW) followed by conditional process termination or alternate code path indicating malware avoiding reinfection."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1480.002"
 logsource:

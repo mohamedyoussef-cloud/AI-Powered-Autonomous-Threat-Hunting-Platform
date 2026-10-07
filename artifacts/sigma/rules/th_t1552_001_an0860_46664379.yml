@@ -3,7 +3,7 @@ id: "46664379-2823-5501-9c82-1ee5a15f4b13"
 status: "experimental"
 description: "Access to local credential/config files (e.g., ~/.aws/credentials) followed by metadata API calls or cloud role assumptions."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1552.001"
 logsource:

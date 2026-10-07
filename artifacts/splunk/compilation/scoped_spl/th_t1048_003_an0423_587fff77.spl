@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Detects data access or staging events followed by outbound data flows using unencrypted protocols (e.g., FTP, HTTP) initiated by unexpected processes or to rare destinations.")

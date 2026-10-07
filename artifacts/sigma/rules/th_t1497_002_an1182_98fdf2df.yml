@@ -3,7 +3,7 @@ id: "98fdf2df-74d3-56d7-bdb8-8486b336368d"
 status: "experimental"
 description: "Process execution that probes user activity artifacts (e.g., desktop files, registry history) following recent user login/unlock events."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1497.002"
 logsource:

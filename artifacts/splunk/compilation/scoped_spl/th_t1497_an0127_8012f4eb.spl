@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Execution of discovery commands or API calls for virtualization artifacts (e.g., registry keys, device drivers, services), sleep/skipped execution behavior, or sandbox evasion DLLs before payload deployment.")

@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("wscript.exe" OR "mshta.exe" OR "rundll32.exe" OR "browser-based")

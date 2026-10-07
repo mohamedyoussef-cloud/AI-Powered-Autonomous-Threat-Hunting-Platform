@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Adversary modifies internal UI messages (e.g., login banners, desktop wallpapers) or hosted intranet web pages by creating or altering content files using scripts or unauthorized access. Often preceded by privilege escalation or web shell deployment.")

@@ -3,7 +3,7 @@ id: "f898e323-196f-5d67-b9bd-5a34d2e33362"
 status: "experimental"
 description: "Firmware flash utility invoked with elevated privileges followed by raw access to firmware device path or changes to boot configuration."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1495"
 logsource:

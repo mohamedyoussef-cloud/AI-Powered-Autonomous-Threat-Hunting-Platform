@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "requested_population": 270,
+  "evaluated_population": 270,
+  "metrics": {
+    "strict_yaml_only": {
+      "count": 240,
+      "rate": 0.8888888888888888
+    },
+    "yaml_mapping_valid": {
+      "count": 240,
+      "rate": 0.8888888888888888
+    },
+    "pysigma_parse_valid": {
+      "count": 221,
+      "rate": 0.8185185185185185
+    },
+    "pysigma_pass_no_blocking_issues": {
+      "count": 219,
+      "rate": 0.8111111111111111
+    },
+    "attack_technique_exact": {
+      "count": 234,
+      "rate": 0.8666666666666667
+    },
+    "attack_technique_recall_complete": {
+      "count": 234,
+      "rate": 0.8666666666666667
+    },
+    "attack_tactic_exact": {
+      "count": 233,
+      "rate": 0.8629629629629629
+    },
+    "logsource_exact": {
+      "count": 223,
+      "rate": 0.825925925925926
+    },
+    "level_exact": {
+      "count": 226,
+      "rate": 0.837037037037037
+    }
+  },
+  "validator_error_total": 0,
+  "validator_issue_severity_counts": {
+    "low": 5,
+    "medium": 13
+  },
+  "top_validator_issue_types": [
+    [
+      "InvalidPatternTagIssue",
+      6
+    ],
+    [
+      "InvalidNamespaceTagIssue",
+      5
+    ],
+    [
+      "NumberAsStringIssue",
+      3
+    ],
+    [
+      "InvalidATTACKTagIssue",
+      2
+    ],
+    [
+      "EscapedWildcardIssue",
+      2
+    ]
+  ],
+  "generation": {
+    "total_seconds": 14402.144834280014,
+    "mean_seconds": 53.341277164000054,
+    "max_new_tokens_reached_count": 44
+  },
+  "full_split_population": 270,
+  "dataset": "/home/jovyan/ThreatHuntingGPU/llm_training_v1/training_corpus_2k_v1/validation.jsonl",
+  "dataset_sha256": "1e30ddfe1b9959a5c6cbfce2a4fdada1bebfb51eaacd9af8707838a36b9467ec",
+  "base_model_snapshot": "/home/jovyan/.cache/huggingface/hub/models--Qwen--Qwen3-8B/snapshots/b968826d9c46dd6066d109eabc6255188de91218",
+  "adapter": "/home/jovyan/ThreatHuntingGPU/llm_training_v1/runs/qwen3_sigma_qlora_v1_full/final_adapter",
+  "adapter_used": true,
+  "test_split_used": false,
+  "sampling_enabled": false,
+  "thinking_enabled": false,
+  "output_repair_used": false,
+  "generation_strategy": "grounded_concise_v2",
+  "max_new_tokens": 1536,
+  "repetition_penalty": 1.08,
+  "no_repeat_ngram_size": 12,
+  "limit": null,
+  "example_ids": null
+}

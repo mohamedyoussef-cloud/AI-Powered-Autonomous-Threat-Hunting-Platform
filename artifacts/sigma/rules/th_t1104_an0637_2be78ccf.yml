@@ -3,7 +3,7 @@ id: "2be78ccf-6c41-5f4b-abb5-928fda8c2173"
 status: "experimental"
 description: "Initial process initiates outbound connection to first-stage C2, receives payloads or commands, then spawns or injects into a second process that establishes a new outbound connection to an unrelated destination (second-stage C2)."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1104"
 logsource:

@@ -3,7 +3,7 @@ id: "81a02cb4-aade-58c0-b5ea-4538d6a085ee"
 status: "experimental"
 description: "Discrepancies between VBA source code and p-code inside Office documents. Defender perspective: anomalies in file metadata streams, execution of Office processes loading macros without source code consistency, and script execution with no corresponding source metadata."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1564.007"
 logsource:

@@ -1,0 +1,1 @@
+"Detects unauthorized additions of users or machine accounts to privileged local or domain groups (e.g., Administrators, Remote Desktop Users)."

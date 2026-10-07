@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("SetFileTime" OR "w32tm" OR "PowerShell" OR "double-timestomp")

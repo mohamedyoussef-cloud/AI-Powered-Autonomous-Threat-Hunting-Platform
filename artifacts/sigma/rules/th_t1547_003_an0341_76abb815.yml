@@ -3,7 +3,7 @@ id: "76abb815-8388-59eb-93a7-c32a885c6e55"
 status: "experimental"
 description: "Behavioral correlation of privileged registry key creation under the W32Time TimeProviders path combined with a new DLL written to disk and potential process activity by LocalService. Indicates abuse of Time Providers for persistence."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1547.003"
 logsource:

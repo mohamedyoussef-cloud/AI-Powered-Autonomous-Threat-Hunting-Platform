@@ -1,0 +1,1 @@
+"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa" OR "lsass.exe" OR "SYSTEM" OR "CurrentControlSet" OR "non-standard" OR "non-installation"

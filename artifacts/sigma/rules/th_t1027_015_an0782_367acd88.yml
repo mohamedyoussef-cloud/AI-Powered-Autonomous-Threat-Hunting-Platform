@@ -3,7 +3,7 @@ id: "367acd88-65a6-5c79-a9d6-5ddaa50690d7"
 status: "experimental"
 description: "Monitors for compression tool usage (e.g., 7zip, WinRAR, MakeCab) that follows or precedes file modification, suspicious file types (e.g., .exe, .dll) being compressed, or dropped from self-extracting archives followed by immediate execution."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1027.015"
 logsource:

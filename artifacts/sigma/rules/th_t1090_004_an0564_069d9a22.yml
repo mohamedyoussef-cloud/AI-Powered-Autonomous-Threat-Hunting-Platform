@@ -3,7 +3,7 @@ id: "069d9a22-4444-5001-8233-d0223334cdc8"
 status: "experimental"
 description: "Suspicious outbound HTTPS connections where the TLS Server Name Indication (SNI) does not match the HTTP Host header, indicating potential use of domain fronting to mask C2 traffic via CDNs."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1090.004"
 logsource:

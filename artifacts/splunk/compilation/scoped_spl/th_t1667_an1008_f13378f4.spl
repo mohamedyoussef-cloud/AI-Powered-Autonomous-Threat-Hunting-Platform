@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Detect abnormally high volume of inbound email messages or repetitive attachments being delivered to a single mailbox within a short time window. Defenders should look for anomalous spikes in message counts and repetitive attachment file creation events correlated with targeted users.")

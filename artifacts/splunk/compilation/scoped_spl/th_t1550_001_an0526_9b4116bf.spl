@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Use of AWS STS or GCP IAM APIs to request temporary tokens or federation sessions inconsistent with normal account activity, including from unexpected principals or regions.")

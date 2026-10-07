@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("hidden" OR "attrib.exe" OR "PowerShell")

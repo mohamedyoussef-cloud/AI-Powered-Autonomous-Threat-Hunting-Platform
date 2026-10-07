@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("PowerShell" OR "PSReadLineOption" OR "SaveNothing" OR "HistorySavePath" OR "Set-PSReadLineOption")

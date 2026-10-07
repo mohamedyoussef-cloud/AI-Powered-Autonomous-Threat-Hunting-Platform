@@ -3,7 +3,7 @@ id: "4595c993-a06b-5d74-a18d-8ca49afc3daa"
 status: "experimental"
 description: "Correlate DNS queries that generate domains with high entropy or gibberish patterns, combined with short-lived connections from unusual processes. Monitor Sysmon DNS events and Windows Security logs for abnormal query rates and failed lookups."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1568.002"
 logsource:

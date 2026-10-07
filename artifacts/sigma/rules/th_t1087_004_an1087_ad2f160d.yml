@@ -3,7 +3,7 @@ id: "ad2f160d-fb59-55e8-b7bd-604106182a4b"
 status: "experimental"
 description: "Enumeration of identity roles and users via API calls such as `Get-MsolRoleMember`, `az ad user list`, or Graph API tokens from unauthorized users or automation accounts."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1087.004"
 logsource:

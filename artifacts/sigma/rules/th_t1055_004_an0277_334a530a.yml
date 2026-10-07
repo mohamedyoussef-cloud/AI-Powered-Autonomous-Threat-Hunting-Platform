@@ -3,7 +3,7 @@ id: "334a530a-0bf7-52c5-8a15-4feb17bf2b78"
 status: "experimental"
 description: "Detects malicious injection behavior involving memory allocation, remote thread queuing via APC (e.g., QueueUserAPC), and altered thread context within another live process to execute unauthorized code under legitimate context."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1055.004"
 logsource:

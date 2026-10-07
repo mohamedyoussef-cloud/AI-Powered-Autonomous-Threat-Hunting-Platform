@@ -3,7 +3,7 @@ id: "453c900b-b09c-5d74-8e57-c015b5e49dae"
 status: "experimental"
 description: "Detect sudden privilege escalations such as IAM role changes, user-assigned privilege boundaries, or elevation via assumed roles beyond normal behavior."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1548"
 logsource:

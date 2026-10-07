@@ -3,7 +3,7 @@ id: "4112cabc-6599-549d-b7d1-a3d25c150ec5"
 status: "experimental"
 description: "Unusual modifications to service binary paths, registry keys, or DLL load paths resulting in alternate execution flow. Defender observes registry key modifications, suspicious file writes into system directories, and processes loading libraries from abnormal paths."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1574"
 logsource:

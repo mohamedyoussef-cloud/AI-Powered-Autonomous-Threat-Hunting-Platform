@@ -713,7 +713,7 @@ The proposed future process is:
 
 The following schedule is a proposed implementation plan for the period from July 1 to November 1. The year and formal review dates remain to be confirmed.
 
-## Phase 1: Project Initiation and Requirements
+## Project Initiation and Requirements
 
 **Target period: July 1 – July 14**
 
@@ -731,7 +731,7 @@ The following schedule is a proposed implementation plan for the period from Jul
 
 **BRD and project plan approved — July 14**
 
-## Phase 2: Architecture and Data Preparation
+## Architecture and Data Preparation
 
 **Target period: July 15 – August 4**
 
@@ -750,7 +750,7 @@ The following schedule is a proposed implementation plan for the period from Jul
 **System architecture approved — July 21**
 **Initial dataset ingestion completed — August 4**
 
-## Phase 3: Hypothesis and Prioritization Engine
+## Hypothesis and Prioritization Engine
 
 **Target period: August 5 – August 25**
 
@@ -767,7 +767,7 @@ The following schedule is a proposed implementation plan for the period from Jul
 
 **Hypothesis Engine prototype completed — August 25**
 
-## Phase 4: AI Detection Generation
+## Detection Generation
 
 **Target period: August 26 – September 15**
 
@@ -785,7 +785,7 @@ The following schedule is a proposed implementation plan for the period from Jul
 
 **Hypothesis-to-Sigma baseline completed — September 15**
 
-## Phase 5: Validation and Query Execution
+## Validation and Query Execution
 
 **Target period: September 16 – October 1**
 
@@ -803,7 +803,7 @@ The following schedule is a proposed implementation plan for the period from Jul
 
 **Validated rule execution demonstrated — October 1**
 
-## Phase 6: Finding Triage and Case Management
+## Finding Triage and Case Management
 
 **Target period: October 2 – October 15**
 
@@ -821,10 +821,10 @@ The following schedule is a proposed implementation plan for the period from Jul
 
 **End-to-end hunt workflow completed — October 15**
 
-## Phase 7: User Interface and Integration
+## User Interface and Integration
 
 **Target period: October 5 – October 20**
-This phase may run partly in parallel with Phase 6.
+This workstream may run partly in parallel with Finding Triage and Case Management.
 
 ### Activities
 
@@ -840,7 +840,7 @@ This phase may run partly in parallel with Phase 6.
 
 **Integrated platform prototype completed — October 20**
 
-## Phase 8: Testing and Evaluation
+## Testing and Evaluation
 
 **Target period: October 16 – October 26**
 
@@ -860,7 +860,7 @@ This phase may run partly in parallel with Phase 6.
 
 **Evaluation results completed — October 26**
 
-## Phase 9: Finalization and Delivery
+## Finalization and Delivery
 
 **Target period: October 27 – November 1**
 

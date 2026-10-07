@@ -3,7 +3,7 @@ id: "9605763d-8f47-5162-8f0e-57fccde9b6d7"
 status: "experimental"
 description: "Detects Exchange Online or on-prem transport rule changes (e.g., header stripping) and mailbox export cleanup via `Remove-MailboxExportRequest`, as well as admin actions via Exchange PowerShell sessions."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1070.008"
 logsource:

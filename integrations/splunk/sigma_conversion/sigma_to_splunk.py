@@ -1,4 +1,4 @@
-# === Task 55 + 56: SIEM Connector + Sigma to SPL (with all fixes) ===
+# === SIEM Connector + Sigma to SPL (with all fixes) ===
 
 from sigma.backends.splunk import SplunkBackend
 from sigma.collection import SigmaCollection
@@ -102,7 +102,7 @@ def fix_sigma_for_pysigma(sigma_text: str) -> str:
     except Exception:
         return sigma_text
 
-# ── Task 55: SIEM Connector Interface ──────────────────────
+# ── SIEM Connector Interface ──────────────────────
 
 class SIEMConnector:
     def compile(self, sigma_rule_text: str) -> str:
@@ -126,7 +126,7 @@ class SplunkConnector(SIEMConnector):
         return bool(query and len(query) > 0)
 
 
-# ── Task 56: Sigma to SPL ───────────────────────────────────
+# ── Sigma to SPL ───────────────────────────────────
 
 def convert_sigma_to_spl(sigma_text: str, connector: SIEMConnector):
     try:
@@ -146,7 +146,7 @@ def main():
         results = json.load(f)
 
     print("=" * 60)
-    print("Task 55 + 56: Sigma → SPL Conversion (all fixes)")
+    print("Sigma → SPL Conversion (all fixes)")
     print(f"Total examples: {len(results)}")
     print("=" * 60)
 
@@ -209,7 +209,7 @@ def main():
         json.dump(output_results, f, indent=2)
 
     print("Saved to task56_spl_results.json ✅")
-    print("Task 55 + 56 Complete ✅")
+    print("Sigma to SPL Conversion Complete ✅")
 
 
 if __name__ == "__main__":

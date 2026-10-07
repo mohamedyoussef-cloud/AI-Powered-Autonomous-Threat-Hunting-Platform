@@ -3,7 +3,7 @@ id: "a746e5ee-8d28-5e94-aebc-f70514503cfe"
 status: "experimental"
 description: "Detects credential harvesting via userland API hooking (e.g., SetWindowsHookEx, IAT, or inline patching) by correlating memory modifications with hook installation functions and suspicious module loads in credential-sensitive processes like lsass.exe, explorer.exe, or winlogon.exe."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1056.004"
 logsource:

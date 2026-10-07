@@ -3,7 +3,7 @@ id: "76b60aa1-a02a-5b95-9e30-93f69bfb4cf7"
 status: "experimental"
 description: "Bulk enumeration of cloud user email identities through `Get-Recipient`, `Get-Mailbox`, `Get-User`, or Graph API directory listings by abnormal accounts or suspicious sessions."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1087.004"
 logsource:

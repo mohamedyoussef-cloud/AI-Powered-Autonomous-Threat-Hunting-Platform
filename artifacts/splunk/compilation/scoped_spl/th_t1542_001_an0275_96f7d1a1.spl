@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("fwupdate.exe" OR "non-administrative" OR "non-IT")

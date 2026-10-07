@@ -3,7 +3,7 @@ id: "5d107c26-62cb-545d-a9f6-941b607cce3d"
 status: "experimental"
 description: "Detection of clipboard access via OS utilities (e.g., clip.exe, Get-Clipboard) by non-interactive or abnormal parent processes, potentially chained with staging or exfiltration commands."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1115"
 logsource:

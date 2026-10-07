@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("SCRNSAVE.exe" OR "HKCU\\Control Panel\\Desktop values such as SCRNSAVE.exe" OR "SCRNSAVE" OR "ScreenSaveTimeout" OR "ScreenSaveActive")

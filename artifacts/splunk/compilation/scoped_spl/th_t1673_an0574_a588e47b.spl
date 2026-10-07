@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Get-VM" OR "vmrun.exe" OR "VBoxManage.exe" OR "PowerShell" OR "VMware" OR "VBoxManage" OR "Hyper-V")

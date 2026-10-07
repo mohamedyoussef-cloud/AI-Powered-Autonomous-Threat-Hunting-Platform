@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("LogonUser" OR "LsaLogonUser" OR "SetThreadToken" OR "ImpersonateLoggedOnUser" OR "PowerShell" OR "LogonType" OR "NewCredentials" OR "LogonId")

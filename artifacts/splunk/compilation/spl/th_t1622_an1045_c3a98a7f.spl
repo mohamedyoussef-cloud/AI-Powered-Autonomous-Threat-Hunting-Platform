@@ -1,0 +1,1 @@
+"IsDebuggerPresent" OR "NtQueryInformationProcess" OR "BeingDebugged" OR "OutputDebugStringW"

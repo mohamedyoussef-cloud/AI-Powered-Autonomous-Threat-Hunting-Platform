@@ -3,7 +3,7 @@ id: "aa223202-5edb-547e-83ac-21646a496951"
 status: "experimental"
 description: "Execution of file enumeration commands (e.g., 'dir', 'tree') from non-standard processes or unusual user contexts, followed by recursive directory traversal or access to sensitive locations."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1083"
 logsource:

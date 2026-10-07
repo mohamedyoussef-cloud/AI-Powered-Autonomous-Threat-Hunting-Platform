@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Excessive resource exhaustion or service crash induced by processes launched by users or scripts that rapidly consume CPU/memory or attempt malformed service interactions.")

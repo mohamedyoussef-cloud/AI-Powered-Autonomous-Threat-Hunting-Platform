@@ -3,7 +3,7 @@ id: "4fef7e2d-49e0-55ed-8600-0adfc0d9e179"
 status: "experimental"
 description: "Executable or script generating large outbound network traffic targeting remote hosts or known amplification ports"
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1498"
 logsource:

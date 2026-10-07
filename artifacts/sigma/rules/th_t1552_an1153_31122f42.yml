@@ -3,7 +3,7 @@ id: "31122f42-44eb-5282-a826-77b34c97776a"
 status: "experimental"
 description: "Unusual access to bash history, registry credentials paths, or private key files by unauthorized or scripting tools, with correlated file and process activity."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1552"
 logsource:

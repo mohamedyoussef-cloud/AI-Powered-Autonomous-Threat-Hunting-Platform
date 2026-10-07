@@ -3,7 +3,7 @@ id: "e56aa92e-4205-5766-94ab-739a5b4c37cd"
 status: "experimental"
 description: "Detect abnormal MFA activity within cloud service provider logs, such as repeated generation of MFA challenges for the same user session or mismatched MFA device and login origin."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1621"
 logsource:

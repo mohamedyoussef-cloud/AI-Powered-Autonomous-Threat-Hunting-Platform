@@ -3,7 +3,7 @@ id: "bc345c29-2287-5fa0-9afc-18469e881ac1"
 status: "experimental"
 description: "Execution of PubPrn.vbs via cscript.exe using the 'script:' moniker to load and execute a remote .sct scriptlet file, bypassing signature validation and proxying remote payloads through a signed Microsoft script host."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1216.001"
 logsource:

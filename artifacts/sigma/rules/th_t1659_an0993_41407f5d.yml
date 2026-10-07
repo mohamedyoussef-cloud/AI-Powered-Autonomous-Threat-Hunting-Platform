@@ -3,7 +3,7 @@ id: "41407f5d-371a-5925-be18-50d961975e9e"
 status: "experimental"
 description: "Detect curl/wget commands saving executable/script payloads to /tmp or /var/tmp followed by execution. Monitor packet captures or IDS/IPS alerts for injected responses or mismatched content types."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1659"
 logsource:

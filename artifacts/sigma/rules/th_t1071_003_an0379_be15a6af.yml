@@ -3,7 +3,7 @@ id: "be15a6af-322f-51cb-92b8-e912aab721fc"
 status: "experimental"
 description: "Detects unauthorized use of SMTP/IMAP/POP3 by suspicious binaries (e.g., PowerShell, rundll32) to exfiltrate data or beacon via email, often bypassing proxy or content filters."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1071.003"
 logsource:

@@ -1,0 +1,1 @@
+"lsass.exe" OR "explorer.exe" OR "winlogon.exe" OR "SetWindowsHookEx" OR "credential-sensitive"

@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("base-N" OR "high-entropy" OR "fixed-size" OR "Content-Type" OR "non-standard")

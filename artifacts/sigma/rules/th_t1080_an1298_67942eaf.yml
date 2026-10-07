@@ -3,7 +3,7 @@ id: "67942eaf-4fe8-5d60-bf29-305bf7f187cb"
 status: "experimental"
 description: "Detects adversary tampering of shared directories via file drops (e.g., malicious LNK, EXE, VBS) followed by user execution or suspicious network activity."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1080"
 logsource:

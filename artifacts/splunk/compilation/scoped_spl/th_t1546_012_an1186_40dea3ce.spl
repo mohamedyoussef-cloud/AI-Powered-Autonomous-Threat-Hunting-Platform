@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("SYSTEM" OR "security-related" OR "SYSTEM-level" OR "parent-child" OR "command-line")

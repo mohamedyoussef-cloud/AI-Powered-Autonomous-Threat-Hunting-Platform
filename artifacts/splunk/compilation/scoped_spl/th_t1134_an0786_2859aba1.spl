@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("LogonUser" OR "DuplicateTokenEx" OR "SYSTEM" OR "token-related" OR "parent-child")

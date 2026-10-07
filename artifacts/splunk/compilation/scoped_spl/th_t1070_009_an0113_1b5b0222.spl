@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("sc delete" OR "schtasks /delete" OR "reg delete")

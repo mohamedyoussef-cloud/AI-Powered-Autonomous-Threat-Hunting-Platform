@@ -3,7 +3,7 @@ id: "144d2cc0-6fdb-5b80-853f-804f48e5f4fe"
 status: "experimental"
 description: "Detects snapshot sharing, backup exports, or data object transfers from victim-owned cloud accounts to other cloud identities within the same provider (e.g., AWS, Azure) using snapshot sharing, S3 bucket policy updates, or SAS URI generation."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1537"
 logsource:

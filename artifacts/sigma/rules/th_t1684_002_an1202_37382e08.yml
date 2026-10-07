@@ -3,7 +3,7 @@ id: "37382e08-ba32-5368-a5f9-125d9dc5528c"
 status: "experimental"
 description: "Monitor email message traces and headers for failed SPF, DKIM, or DMARC checks indicating spoofed sender identities. Correlate abnormal sender domains or mismatched return-paths with elevated spoofing likelihood."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1684.002"
 logsource:

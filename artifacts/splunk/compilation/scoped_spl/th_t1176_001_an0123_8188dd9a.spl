@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Installation of a new browser extension followed by suspicious file writes or outbound network connections to untrusted domains by the browser process.")

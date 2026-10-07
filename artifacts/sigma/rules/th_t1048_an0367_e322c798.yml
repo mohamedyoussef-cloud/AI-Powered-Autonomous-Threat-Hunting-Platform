@@ -3,7 +3,7 @@ id: "e322c798-8173-5225-9cf9-22ca94b5c33c"
 status: "experimental"
 description: "Detects unusual outbound file transfer behavior using protocols like FTP, SMB, SMTP, or DNS, involving non-standard processes, off-hour activity, or uncommonly high volume."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1048"
 logsource:

@@ -3,7 +3,7 @@ id: "44d2e371-d3cd-504b-a92e-15769902af9a"
 status: "experimental"
 description: "Detects anomalous wireless connections such as unexpected SSID associations, failed or repeated authentication attempts, and connections outside of known geofenced networks. Defenders should monitor wireless connection logs and event codes for network discovery, authentication, and association events."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1669"
 logsource:

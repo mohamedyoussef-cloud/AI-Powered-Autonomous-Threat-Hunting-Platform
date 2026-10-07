@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("net.exe" OR "PowerShell" OR "non-domain" OR "non-admin")

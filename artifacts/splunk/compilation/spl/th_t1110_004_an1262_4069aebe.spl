@@ -1,0 +1,1 @@
+"Multiple failed authentication attempts using distinct username/password pairs from a single IP address or session within a short time window, targeting common services like RDP or SMB"

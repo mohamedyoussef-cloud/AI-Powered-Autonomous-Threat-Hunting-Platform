@@ -3,7 +3,7 @@ id: "ef4047d5-3de4-54a9-8feb-a32c58bd6259"
 status: "experimental"
 description: "A process (non-system or user-initiated) accesses private key files in user profile paths or system certificate stores followed by potential network connections or compression activity."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1552.004"
 logsource:

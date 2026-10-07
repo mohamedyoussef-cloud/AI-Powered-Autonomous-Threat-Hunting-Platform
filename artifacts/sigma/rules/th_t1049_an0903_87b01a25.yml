@@ -3,7 +3,7 @@ id: "87b01a25-593e-54e8-a845-125d54be0343"
 status: "experimental"
 description: "Detects usage of commands or binaries (e.g., netstat, PowerShell Get-NetTCPConnection) and WMI or API calls to enumerate local or remote network connections."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1049"
 logsource:

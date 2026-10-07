@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\UserList setting user visibility to 0" OR "SOFTWARE" OR "CurrentVersion" OR "SpecialAccounts" OR "UserList")

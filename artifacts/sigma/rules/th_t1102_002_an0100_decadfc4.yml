@@ -3,7 +3,7 @@ id: "decadfc4-1b84-5a91-b786-0952dfa7ae92"
 status: "experimental"
 description: "Suspicious processes initiating encrypted HTTPS connections to common web service domains, followed by abnormal data upload behavior or automated posting behavior indicative of C2 bidirectional traffic."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1102.002"
 logsource:

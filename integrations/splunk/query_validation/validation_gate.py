@@ -1,4 +1,4 @@
-# === Task 78: Query Validation Gate ===
+# === Query Validation Gate ===
 import json
 import re
 
@@ -65,7 +65,7 @@ def main():
         spl_results = json.load(f)
 
     print("=" * 60)
-    print("Task 78: Query Validation Gate")
+    print("Query Validation Gate")
     print(f"Total SPL queries: {len(spl_results)}")
     print("=" * 60)
 
@@ -112,7 +112,7 @@ def main():
 
     print("\n" + "=" * 60)
     print("Saved to task78_validation_results.json ✅")
-    print("Task 78 Complete ✅")
+    print("Query Validation Complete ✅")
 
 
 if __name__ == "__main__":

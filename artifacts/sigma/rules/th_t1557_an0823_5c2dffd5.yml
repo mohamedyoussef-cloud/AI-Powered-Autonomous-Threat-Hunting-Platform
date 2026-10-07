@@ -3,7 +3,7 @@ id: "5c2dffd5-e415-570c-9eb6-6585790ab6cf"
 status: "experimental"
 description: "Detects suspicious DNS/ARP poisoning attempts, unauthorized modifications to registry/network configuration, or abnormal TLS downgrade activity. Correlates changes in system configuration with subsequent unusual network flows or authentication events."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1557"
 logsource:

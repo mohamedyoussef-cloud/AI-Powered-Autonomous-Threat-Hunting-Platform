@@ -3,7 +3,7 @@ id: "9ad736b1-3ac9-526f-8e56-81f80fce01af"
 status: "experimental"
 description: "Detects hijacking of an existing thread (OpenThread) through a behavioral chain involving thread suspension (SuspendThread), memory modification (VirtualAllocEx + WriteProcessMemory), context manipulation (SetThreadContext), and thread resumption—all within another live process's address space (ResumeThread)."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1055.003"
 logsource:

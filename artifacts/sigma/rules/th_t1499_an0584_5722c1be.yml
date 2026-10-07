@@ -3,7 +3,7 @@ id: "5722c1be-abad-5bc6-aa12-e43405dbaa67"
 status: "experimental"
 description: "Excessive resource exhaustion or service crash induced by processes launched by users or scripts that rapidly consume CPU/memory or attempt malformed service interactions."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1499"
 logsource:

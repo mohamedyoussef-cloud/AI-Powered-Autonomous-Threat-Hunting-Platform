@@ -3,7 +3,7 @@ id: "7c82cffd-fbe1-5c8d-9f8b-5a28b8ce01ca"
 status: "experimental"
 description: "Monitors suspicious usage of Windows API calls like SetWindowsHookEx, GetKeyState, or polling functions within non-UI service processes, combined with Registry or driver modifications."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1056.001"
 logsource:

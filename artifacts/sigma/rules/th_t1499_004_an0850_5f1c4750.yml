@@ -3,7 +3,7 @@ id: "5f1c4750-f768-5446-a855-c36af91a428d"
 status: "experimental"
 description: "Exploitation of system or application vulnerability (e.g., CVE-based exploit) followed by service crash, restart, or repeated failure within a short time frame, impacting application/system availability."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1499.004"
 logsource:

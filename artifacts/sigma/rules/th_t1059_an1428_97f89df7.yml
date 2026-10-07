@@ -3,7 +3,7 @@ id: "97f89df7-95f3-507a-8898-1ba54b4a316b"
 status: "experimental"
 description: "Detects the execution of scripting or command interpreters (e.g., powershell.exe, cmd.exe, wscript.exe) outside expected administrative time windows or from abnormal user contexts, often followed by encoded/obfuscated arguments or secondary execution events."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1059"
 logsource:

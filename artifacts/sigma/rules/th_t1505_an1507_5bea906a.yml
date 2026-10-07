@@ -3,7 +3,7 @@ id: "5bea906a-7a3a-50fa-b3c5-4b7c1dc6b782"
 status: "experimental"
 description: "Installation of malicious IIS/Apache/SQL server modules that later execute command-line interpreters or establish outbound connections."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1505"
 logsource:

@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("CloudTrail" OR "read-only" OR "user-agent")

@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("certutil.exe" OR "powershell.exe" OR "copy.exe" OR "built-in")

@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("net user /add" OR "powershell.exe" OR "net.exe" OR "PowerShell" OR "built-in")

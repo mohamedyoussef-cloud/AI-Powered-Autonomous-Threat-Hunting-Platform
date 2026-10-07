@@ -825,7 +825,7 @@ def safe_filename(
 
 
 # ============================================================
-# Load Task 43 authoritative inputs
+# Load authoritative Sigma generation design inputs
 # ============================================================
 
 units = read_jsonl(
@@ -850,7 +850,7 @@ if (
     != "PASS"
 ):
     raise SystemExit(
-        "Task 43 design audit is not PASS"
+        "Sigma generation design audit is not PASS"
     )
 
 
@@ -1666,7 +1666,7 @@ write_json(
 # ============================================================
 
 print(
-    "===== TASK 44 BASELINE SIGMA GENERATOR ====="
+    "===== BASELINE SIGMA GENERATOR ====="
 )
 
 print()
@@ -1791,12 +1791,12 @@ if failures:
     print()
 
     print(
-        "TASK 44 BASELINE SIGMA GENERATOR: FAIL"
+        "BASELINE SIGMA GENERATOR: FAIL"
     )
 
     raise SystemExit(1)
 
 
 print(
-    "TASK 44 BASELINE SIGMA GENERATOR: PASS"
+    "BASELINE SIGMA GENERATOR: PASS"
 )

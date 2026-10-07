@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("aws iam list-users" OR "list-roles" OR "az ad user list" OR "gcloud iam service-accounts list" OR "list-users" OR "service-accounts")

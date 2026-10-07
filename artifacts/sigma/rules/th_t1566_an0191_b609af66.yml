@@ -3,7 +3,7 @@ id: "b609af66-8b87-57a9-87c9-cf5d00c469d8"
 status: "experimental"
 description: "Phishing via Office documents containing embedded macros or links that spawn processes. Detection relies on correlating Office application logs with suspicious child process execution and outbound network connections."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1566"
 logsource:

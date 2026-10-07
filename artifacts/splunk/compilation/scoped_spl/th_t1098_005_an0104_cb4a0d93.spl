@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Adversary registers a Windows device to Entra ID or bypasses conditional access by adding device via Intune registration pipeline using stolen credentials.")

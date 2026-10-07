@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("net.exe" OR "findstr.exe" OR "python.exe" OR "non-standard" OR "application-specific" OR "parent-child")

@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Script or binary performs a rapid sequence of system discovery checks (e.g., CPU count, RAM size, registry keys, running processes) indicative of VM detection")

@@ -1,0 +1,1 @@
+"sc delete" OR "schtasks /delete" OR "reg delete"

@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("cross-account" OR "third-party" OR "assume-role")

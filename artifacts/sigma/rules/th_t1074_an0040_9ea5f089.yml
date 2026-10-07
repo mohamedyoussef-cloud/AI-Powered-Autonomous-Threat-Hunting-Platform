@@ -3,7 +3,7 @@ id: "9ea5f089-68cc-5644-be3d-87cd240a2302"
 status: "experimental"
 description: "Detects staging of sensitive files into temporary or public directories, compression with 7zip/WinRAR, or batch copy prior to exfiltration."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1074"
 logsource:

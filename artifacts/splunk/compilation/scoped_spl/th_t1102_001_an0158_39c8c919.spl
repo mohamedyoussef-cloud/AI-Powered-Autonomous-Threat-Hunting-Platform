@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Detection of a process or script that accesses a common web service to retrieve content containing obfuscated indicators of a secondary C2 server (dead drop resolver behavior).")

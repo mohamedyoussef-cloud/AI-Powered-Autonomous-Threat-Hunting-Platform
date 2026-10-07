@@ -1,0 +1,28 @@
+{
+  "resolver_gate_version": "1.0",
+  "logical_sources": 25,
+  "source_status_counts": {
+    "AMBIGUOUS": 13,
+    "CONFIRMED": 9,
+    "UNAVAILABLE": 3
+  },
+  "ready_plans": 492,
+  "grounded_paths": 540,
+  "path_source_coverage_counts": {
+    "ALL_SOURCES_CONFIRMED": 518,
+    "NO_CONFIRMED_SOURCE": 1,
+    "PARTIAL_SOURCE_COVERAGE": 21
+  },
+  "live_sourcetypes": 107,
+  "live_source_sourcetype_relationships": 1100,
+  "policy": {
+    "confirmed_requires": [
+      "normalized exact live match",
+      "or unique distinctive token in live sourcetype name",
+      "or contract-valid base+LoRA agreement on same allowed live candidate"
+    ],
+    "ambiguous": "positive evidence exists but is not sufficiently corroborated",
+    "unavailable": "no credible equivalent observed in current live inventory",
+    "occurrence_claim": false
+  }
+}

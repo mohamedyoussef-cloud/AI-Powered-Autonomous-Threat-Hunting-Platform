@@ -3,7 +3,7 @@ id: "add53213-7180-5f3e-9110-edc2f722cb7a"
 status: "experimental"
 description: "Adversary uses cloud-native APIs or CLI (e.g., AWS Systems Manager, Azure Resource Graph) to list installed software on cloud workloads."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1518"
 logsource:

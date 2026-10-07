@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Detects suspicious DNS/ARP poisoning attempts, unauthorized modifications to registry/network configuration, or abnormal TLS downgrade activity. Correlates changes in system configuration with subsequent unusual network flows or authentication events.")

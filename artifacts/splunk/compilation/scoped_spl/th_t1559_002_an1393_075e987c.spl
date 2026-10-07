@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("WINWORD.EXE" OR "EXCEL.EXE" OR "WINWORD" OR "DDEAUTO" OR "parent-child")

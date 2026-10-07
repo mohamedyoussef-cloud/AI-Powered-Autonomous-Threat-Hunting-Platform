@@ -3,7 +3,7 @@ id: "e1fa1684-2176-5016-b7aa-aa29c2a180dc"
 status: "experimental"
 description: "Detection of firewall tampering by monitoring processes executing netsh, PowerShell Set-NetFirewallProfile, or sc stop mpssvc. Registry modifications under HKLM\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy also indicate adversarial actions."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1686"
 logsource:

@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("wevtutil.exe" OR "PowerShell" OR "WinEvent" OR "EventLog" OR "Get-WinEvent" OR "Get-EventLog" OR "non-administrative")

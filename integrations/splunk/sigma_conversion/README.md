@@ -1,4 +1,4 @@
-# Task 55 + 56: SIEM Connector Interface + Sigma to SPL Conversion
+# SIEM Connector Interface + Sigma to SPL Conversion
 
 ## Overview
 Converts fine-tuned model Sigma rules into executable Splunk SPL queries
@@ -31,16 +31,16 @@ Step 1 - Install requirements:
     pip install pysigma
     pip install pysigma-backend-splunk
 
-Step 2 - Make sure eval_results.json is in the same folder as task55_56.py
+Step 2 - Make sure eval_results.json is in the same folder as 56.py
 
 Step 3 - Run the script:
-    python task55_56.py
+    python 56.py
 
 Step 4 - Check the output:
-    task56_spl_results.json will be created with all SPL queries
+    spl_results.json will be created with all SPL queries
 
 ## Output Format
-Each entry in task56_spl_results.json contains:
+Each entry in spl_results.json contains:
 
     {
       "example_id": 0,
@@ -72,8 +72,8 @@ OUTPUT (SPL Query):
 ## Files
 | File                      | Description                          |
 |---------------------------|--------------------------------------|
-| task55_56.py              | SIEM Connector + conversion code     |
-| task56_spl_results.json   | 394 converted SPL queries            |
+| 56.py              | SIEM Connector + conversion code     |
+| spl_results.json   | 394 converted SPL queries            |
 | README_task55_56.md       | This file                            |
 
 ## Dependencies
@@ -82,8 +82,8 @@ OUTPUT (SPL Query):
 - pySigma Splunk Backend
 
 ## Connection to Other Tasks
-- Input comes from: Task 50-51 (Fine-tuned Qwen3-8B model)
-- Output goes to: Task 57-58 (Hunt Findings + Normalization)
+- Input: validated Sigma rules and grounded detection context
+- Output: compiled SPL queries and conversion metadata
 - SPL queries are ready to execute directly in Splunk
 
 ## Notes

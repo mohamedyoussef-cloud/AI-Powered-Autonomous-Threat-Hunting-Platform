@@ -3,7 +3,7 @@ id: "f33da4a0-3533-5d96-8d1e-975633b9a053"
 status: "experimental"
 description: "Abuse of Linux Electron binaries by modifying app.asar or config JS files and spawning unexpected child processes (bash, curl, python)."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1218.015"
 logsource:

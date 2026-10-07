@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("FindWindow" OR "EnumWindows" OR "EnumChildWindows" OR "VirtualAllocEx" OR "PostMessage" OR "SendMessage" OR "SysListView32" OR "WriteProcessMemory" OR "message-based")

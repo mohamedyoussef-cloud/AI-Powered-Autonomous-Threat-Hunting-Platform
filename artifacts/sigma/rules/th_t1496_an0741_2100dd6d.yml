@@ -3,7 +3,7 @@ id: "2100dd6d-5e15-5aa6-acee-8fcbe0b7d9f5"
 status: "experimental"
 description: "Persistent high CPU utilization combined with suspicious command-line execution (e.g., mining tools or obfuscated scripts) and outbound connections to mining/proxy networks."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1496"
 logsource:

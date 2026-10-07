@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("csc.exe" OR "ilasm.exe" OR "msbuild.exe" OR "user-space")

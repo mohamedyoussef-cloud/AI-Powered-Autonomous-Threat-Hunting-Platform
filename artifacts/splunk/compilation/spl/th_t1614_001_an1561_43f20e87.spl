@@ -1,0 +1,1 @@
+"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Nls\\Language) or suspicious processes invoking locale-related APIs (e.g." OR "SYSTEM" OR "CurrentControlSet" OR "GetUserDefaultUILanguage" OR "GetSystemDefaultUILanguage" OR "GetKeyboardLayoutList" OR "locale-related" OR "non-standard"

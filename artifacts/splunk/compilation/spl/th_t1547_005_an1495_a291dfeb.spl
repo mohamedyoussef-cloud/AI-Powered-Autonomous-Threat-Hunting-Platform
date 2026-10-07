@@ -1,0 +1,1 @@
+"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Security Packages" OR "...\\OSConfig\\Security Packages" OR "lsass.exe" OR "SYSTEM" OR "CurrentControlSet" OR "OSConfig" OR "AuditLevel"

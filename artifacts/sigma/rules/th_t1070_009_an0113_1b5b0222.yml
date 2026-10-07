@@ -3,7 +3,7 @@ id: "1b5b0222-c8e5-523a-b716-43d9bfec9059"
 status: "experimental"
 description: "Detects adversary activity that removes persistence artifacts such as services, registry keys, scheduled tasks, user accounts, and binaries through commands like `sc delete`, `schtasks /delete`, or `reg delete`."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1070.009"
 logsource:

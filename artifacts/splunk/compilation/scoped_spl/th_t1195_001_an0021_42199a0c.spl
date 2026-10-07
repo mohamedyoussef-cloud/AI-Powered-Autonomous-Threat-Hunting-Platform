@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("AppData" OR "UserProfile" OR "PowerShell" OR "non-approved")

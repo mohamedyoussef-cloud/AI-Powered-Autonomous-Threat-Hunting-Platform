@@ -1,100 +1,117 @@
-﻿# AI-Powered Autonomous Threat Hunting Platform
+# AI-Powered Autonomous Threat Hunting Platform
 
-A governed, dataset-independent threat-hunting platform that transforms heterogeneous security telemetry into ATT&CK-aligned hunt hypotheses, grounded Detection Plans, validated Sigma rules, and SIEM-ready detection workflows.
+An evidence-grounded threat hunting platform that combines telemetry normalization, MITRE ATT&CK context, hypothesis generation, deterministic detection planning, Sigma rule generation and validation, Splunk execution, and finding validation.
 
-## Current Validated Core
-
-- 1,145 canonical records
-- 2,012 telemetry evidence records: 835 operational + 1,177 regression references
-- 109 MITRE ATT&CK Data Components resolved
-- 697 Enterprise ATT&CK techniques evaluated
-- 697/697 validated hypothesis outputs
-- 505 techniques eligible for detection planning
-- 505 grounded Detection Plans
-- 492 plans ready for baseline Sigma generation
-- 540 grounded Sigma generation units
-- 540 baseline Sigma rules
-- 540/540 rules successfully loaded by pySigma 1.5.0
-- 0 parse errors and 0 HIGH/MEDIUM validation issues
+The current repository snapshot covers the complete threat-hunting workflow through validated hunt findings. Machine-learning based finding triage is intentionally outside the scope of this revision.
 
 ## Architecture
 
-Telemetry / Dataset Inputs -> Canonical Ingestion -> Environment and Telemetry Grounding -> ATT&CK Applicability / Readiness / Prioritization -> Master Hypothesis Context and Router -> Qwen Hypothesis Engine -> Detection Eligibility Gate -> Detection Plan -> Sigma Generation -> pySigma Validation -> SIEM Compilation / Controlled Execution -> Hunt Findings -> ML Triage -> Backend / Analyst UI / Automation
+``text
+Data Sources
+    |
+    v
+Telemetry Normalization
+    |
+    v
+Environment and Telemetry Grounding
+    |
+    v
+ATT&CK Applicability and Readiness
+    |
+    v
+Threat Hunting Hypothesis Engine
+    |
+    v
+Detection Eligibility
+    |
+    v
+Grounded Detection Planning
+    |
+    v
+LLM-Assisted Detection Generation
+    |
+    v
+Sigma Structural Validation
+    |
+    v
+Splunk Query Compilation
+    |
+    v
+Telemetry Resolution
+    |
+    v
+Runtime Hunt Execution
+    |
+    v
+Candidate Validation
+    |
+    v
+Validated Hunt Findings
+``
 
-The LLM is a bounded component. Deterministic components retain control over applicability, telemetry readiness, eligibility, provenance, and execution gating.
+## Design Principles
 
-## LLM Runtime
+- Telemetry availability is not treated as evidence that an attack occurred.
+- Unknown environment state is not converted into a negative conclusion.
+- Detection generation is bounded by grounded telemetry and deterministic eligibility controls.
+- LLM output is validated before it can enter execution paths.
+- Sigma parsing success is treated separately from production execution readiness.
+- Raw hunt candidates are not promoted to findings without validation.
+- Evaluation datasets are separated using leakage-resistant train, validation, and frozen-test splits.
 
-The original proposal considered a locally hosted Mistral model. During implementation, the LLM component moved to the Qwen3-8B family.
+## Verified Repository Snapshot
 
-- Qwen3-8B-AWQ for local inference through vLLM
-- Qwen3-8B for experimental QLoRA fine-tuning
+| Capability | Verified result |
+| --- | ---: |
+| Grounded detection plans | 505 |
+| Generated Sigma rules | 540 |
+| Sigma structural validation | 540 / 540 |
+| Sigma-to-Splunk compilation | 540 / 540 |
+| Runtime execution-ready paths | 404 |
+| Deferred runtime paths | 14 |
+| Non-zero runtime candidates | 22 |
+| Validated hunt findings | 0 |
+| Fine-tuned LLM frozen-test no-blocker pass | 77.97% |
+| Fine-tuned ATT&CK technique exact match | 83.57% |
+| Fine-tuned ATT&CK tactic exact match | 85.31% |
 
-Fine-tuning experiments are maintained separately from the deterministic production core.
+A zero validated-finding count does not imply that no malicious activity exists in the underlying telemetry. It means that none of the runtime candidates satisfied the platform's current finding-validation criteria.
 
-## Repository Structure
+## LLM Detection Generation
 
-- `src/` - core platform implementation
-- `schemas/` - pipeline and data contracts
-- `config/` and `configs/` - runtime and data-preparation configuration
-- `mappings/` - field and event normalization
-- `scripts/` - preparation, audit, and validation utilities
-- `artifacts/` - curated validated platform outputs
-- `experiments/` - experimental LLM work
-- `integrations/` - SIEM connectors and query tooling
-- `research/` - research and ML dataset work
-- `backend/` - API/backend components
-- `frontend/` - analyst interface
-- `infra/` - deployment configuration
-- `tests/` - automated tests
-- `evaluation/` - evaluation metrics and results
-- `docs/` - architecture and project documentation
-- `reports/` - project and hunt reports
+The detection-generation model is based on Qwen3-8B and was adapted using QLoRA.
 
-The internal `src/threat_hunting/phase3` package name is temporarily retained to preserve compatibility with the validated pipeline implementation. Repository organization uses functional component names rather than project-management task numbers.
+The authoritative training run used 2,322 training examples, 270 validation examples, and 286 frozen-test examples. Frozen-test evaluation was deterministic with sampling, thinking, and output repair disabled.
 
-## Curated Artifacts
+The LLM is not treated as an authoritative standalone production detector. Production outputs remain subject to deterministic grounding, Sigma validation, query compilation, telemetry resolution, and runtime validation.
 
-The `artifacts/` directory contains selected reproducibility outputs for environment modeling, telemetry grounding, hypotheses, detection eligibility, Detection Plans, Sigma generation, 540 baseline Sigma rules, pySigma validation, and LLM dataset research.
+Detailed evaluation artifacts are available under [evaluation/llm](evaluation/llm/).
 
-Large raw or processed telemetry datasets, model weights, checkpoints, caches, secrets, and local runtime databases are intentionally excluded from Git.
+## Repository Layout
 
-## Detection Engineering Principles
+``text
+artifacts/
+backend/
+configs/
+datasets/
+docs/
+evaluation/
+frontend/
+integrations/
+schemas/
+scripts/
+src/
+tests/
+``
 
-- Telemetry availability does not imply attack occurrence.
-- Missing evidence is not treated as evidence of absence.
-- Collection gaps remain explicit.
-- Unknown environment state remains unknown.
-- The Hypothesis Engine does not generate SIEM queries.
-- Detection eligibility is deterministic.
-- Detection Plans preserve provenance.
-- Sigma rules are validated before downstream SIEM compilation.
-- pySigma validation alone does not imply production readiness.
+## External Assets
 
-## SIEM Integration
+Large or environment-specific assets are intentionally excluded from version control, including raw BOTS v3 data, raw EVTX collections, model weights, LoRA adapter weights, Hugging Face caches, local databases, virtual environments, and secrets.
 
-Splunk is the first implemented SIEM path. Prototype components include Sigma-to-Splunk SPL conversion and pre-execution SPL validation. Elastic and Microsoft Sentinel remain future connector targets.
+## Documentation
 
-## Development
+Start with [docs/README.md](docs/README.md) for the documentation index and [docs/VALIDATION_SNAPSHOT.md](docs/VALIDATION_SNAPSHOT.md) for the current validated results.
 
-Python dependencies are defined in `pyproject.toml`. Run automated tests with `pytest -q`.
+## Project Scope
 
-## Next Development Stage
-
-Next work focuses on robust LLM training/evaluation dataset construction, grouped held-out evaluation, production detection-generation integration, controlled Splunk execution, canonical hunt findings, ML triage, backend/frontend integration, and end-to-end automation.
-
-## ATT&CK Knowledge Reproducibility
-
-The ATT&CK knowledge layer under `data/processed/knowledge/` is generated and is not versioned.
-
-Prerequisite: place the MITRE Enterprise ATT&CK 19.1 STIX bundle at:
-
-`data/raw/mitre_attack/enterprise-attack-19.1.json`
-
-Then generate the normalized ATT&CK knowledge artifacts with:
-
-```powershell
-python scripts/prepare_attack.py --project-root .
-```
-
-The generated artifacts are subsequently consumed by validation, Sigma preparation, and coverage-reporting workflows.
+This revision ends at validated hunt findings. Finding-level machine-learning triage and classification are intentionally not included in this repository snapshot.

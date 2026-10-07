@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("net use /delete" OR "Remove-SmbMapping" OR "PowerShell" OR "SmbMapping" OR "command-line")

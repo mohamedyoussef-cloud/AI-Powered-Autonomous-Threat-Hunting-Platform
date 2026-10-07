@@ -3,7 +3,7 @@ id: "d15bb196-ba58-57db-8366-8eba40215254"
 status: "experimental"
 description: "Cloud-hosted VM or container generates spoofed UDP requests to third-party services on known amplifier ports, with high outbound-to-inbound traffic ratios in VPC Flow Logs"
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1498.002"
 logsource:

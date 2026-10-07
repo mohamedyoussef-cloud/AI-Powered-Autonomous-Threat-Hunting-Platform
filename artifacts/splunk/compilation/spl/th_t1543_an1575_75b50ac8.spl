@@ -1,0 +1,1 @@
+"sc.exe" OR "powershell.exe" OR "services.exe" OR "ChangeServiceConfig" OR "System32\\services" OR "command-line" OR "API-based" OR "parent-child"

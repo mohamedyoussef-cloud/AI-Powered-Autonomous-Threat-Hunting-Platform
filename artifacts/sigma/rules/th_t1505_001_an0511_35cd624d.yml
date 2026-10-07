@@ -3,7 +3,7 @@ id: "35cd624d-85e0-5740-a473-b603fdebf71c"
 status: "experimental"
 description: "Creation or modification of stored procedures invoking xp_cmdshell or CLR assemblies for command execution and persistence."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1505.001"
 logsource:

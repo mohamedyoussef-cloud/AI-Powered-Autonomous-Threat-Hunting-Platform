@@ -3,7 +3,7 @@ id: "3fc42fcf-a9b6-5028-9f1d-3ee62bd4fdf7"
 status: "experimental"
 description: "Cloud API usage to create/import SSH keys or generate new access keys (CreateAccessKey, ImportKeyPair, CreateLoginProfile) from non-console access or unusual principals."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1098.001"
 logsource:

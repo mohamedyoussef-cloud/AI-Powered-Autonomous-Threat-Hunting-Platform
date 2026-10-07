@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("lsass.exe" OR "explorer.exe" OR "winlogon.exe" OR "SetWindowsHookEx" OR "credential-sensitive")

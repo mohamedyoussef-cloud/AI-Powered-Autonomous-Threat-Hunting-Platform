@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Detection of new IAM roles or policies attached to a user/service in AWS/GCP/Azure outside normal patterns or hours, often following account compromise.")

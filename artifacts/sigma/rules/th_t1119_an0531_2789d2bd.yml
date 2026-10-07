@@ -3,7 +3,7 @@ id: "2789d2bd-a575-5579-a8fa-f3b86478c915"
 status: "experimental"
 description: "Automated execution of native utilities and scripts to discover, enumerate, and exfiltrate files and clipboard content. Focus is on detecting repeated file access, scripting engine use, and use of command-line utilities commonly leveraged by collection scripts."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1119"
 logsource:

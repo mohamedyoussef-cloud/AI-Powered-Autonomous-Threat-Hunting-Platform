@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Event ID 4768" OR "Do not require Kerberos preauthentication" OR "0x17" OR "AS-REP" OR "AS-REQ" OR "Pre-Auth")

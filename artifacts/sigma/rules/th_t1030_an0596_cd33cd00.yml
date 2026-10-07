@@ -3,7 +3,7 @@ id: "cd33cd00-3eb2-51bc-bc2a-2a22ddb8d44f"
 status: "experimental"
 description: "Adversary uses a process to establish outbound connections that transmit uniform packet sizes at a consistent interval, avoiding threshold-based network alerts."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1030"
 logsource:

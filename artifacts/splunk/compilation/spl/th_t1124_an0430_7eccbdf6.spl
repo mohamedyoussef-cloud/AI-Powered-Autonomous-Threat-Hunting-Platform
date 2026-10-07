@@ -1,0 +1,1 @@
+"cmd.exe" OR "powershell.exe" OR "w32tm.exe" OR "net.exe" OR "at.exe" OR "TimeZone" OR "GetTickCount" OR "PowerShell" OR "Get-TimeZone" OR "time-based" OR "Start-Sleep"

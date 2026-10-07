@@ -1,0 +1,14 @@
+{
+  "finding_validation_version": "1.0",
+  "nonzero_runtime_candidates": 22,
+  "completed_unique_paths": 22,
+  "validation_state_counts": {
+    "SHARED_KEYWORD_DOMINATED": 21,
+    "SINGLE_KEYWORD_DOMINATED_NEEDS_REVIEW": 1
+  },
+  "policy": {
+    "shared_keyword_dominated": "one keyword alone reproduces the full runtime match count and the same keyword appears in at least two of the 22 nonzero candidate rules",
+    "attack_occurrence_claim": false,
+    "false_positive_claim": false
+  }
+}

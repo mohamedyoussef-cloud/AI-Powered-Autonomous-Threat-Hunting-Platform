@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("odbcconf.exe" OR "REGSVR" OR "non-standard" OR "follow-on")

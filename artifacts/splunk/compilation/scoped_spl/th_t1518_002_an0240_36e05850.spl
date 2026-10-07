@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("tasklist" OR "sc query" OR "reg query" OR "cmd.exe" OR "PowerShell" OR "CrashPlan" OR "parent-child")

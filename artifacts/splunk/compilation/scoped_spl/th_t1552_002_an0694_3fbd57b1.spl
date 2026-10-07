@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("password" OR "cred" OR "logon" OR "Reg.exe" OR "PowerShell" OR "command-line" OR "API-based")

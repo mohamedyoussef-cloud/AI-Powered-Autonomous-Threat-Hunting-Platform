@@ -3,7 +3,7 @@ id: "6ab35bf0-fa1a-5327-a3e9-5d61f0844013"
 status: "experimental"
 description: "Detection of USB-based remote access hardware (e.g., TinyPilot, PiKVM) attached to the host via drive or peripheral enumeration, triggering vendor identifiers or unusual EDID announcements."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1219.003"
 logsource:

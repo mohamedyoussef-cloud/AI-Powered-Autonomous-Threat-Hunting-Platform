@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Detects anomalous usage of local accounts to log into a system, especially accounts not typically used interactively or outside business hours.")

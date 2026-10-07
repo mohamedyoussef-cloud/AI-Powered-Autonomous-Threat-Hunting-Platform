@@ -3,7 +3,7 @@ id: "b7a31267-43da-52a0-87ae-e5d082ef1b0e"
 status: "experimental"
 description: "High-frequency file write operations using uncommon extensions, followed by ransom note creation, registry tampering, or shadow copy deletion. Often uses CLI tools like vssadmin, wbadmin, cipher, or PowerShell."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1486"
 logsource:

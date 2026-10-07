@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Use of stolen Kerberos tickets or token impersonation resulting in logon sessions from accounts without expected interactive logon events.")

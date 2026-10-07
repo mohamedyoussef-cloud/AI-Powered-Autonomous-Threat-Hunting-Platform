@@ -3,7 +3,7 @@ id: "a2dcff1d-bf5a-5338-8ba4-e2f54f163bfc"
 status: "experimental"
 description: "Detects unusual outbound connections to web services from uncommon processes using SSL/TLS, particularly those exhibiting high outbound data volume or persistence."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1102"
 logsource:

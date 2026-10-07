@@ -1,0 +1,18 @@
+{
+  "hunt_finding_validation_version": "1.0",
+  "runtime_execution_population": 404,
+  "runtime_execution_status_counts": {
+    "EXECUTION_ERROR": 1,
+    "NONZERO_FINDING_CANDIDATE": 22,
+    "ZERO_INCONCLUSIVE_RUNTIME_VISIBILITY": 381
+  },
+  "raw_nonzero_candidates": 22,
+  "candidate_disposition_counts": {
+    "REJECTED_AFTER_DOMINANT_KEYWORD_REMOVAL": 1,
+    "REJECTED_BROAD_SHARED_KEYWORD_DOMINATED": 21
+  },
+  "validated_hunt_findings": 0,
+  "validated_hunt_findings_are_attack_proof": false,
+  "zero_runtime_results_are_conclusive_negatives": false,
+  "runtime_visibility_limitation": "Legacy BOTS v3 on current Splunk has incomplete raw-event visibility; zero runtime matches remain inconclusive."
+}

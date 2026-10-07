@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("ShellExecuteW" OR "powershell.exe" OR "wscript.exe" OR "msedge.exe" OR "User-Agent")

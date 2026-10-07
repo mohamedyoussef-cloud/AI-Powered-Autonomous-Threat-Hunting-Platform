@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Unusual modifications to service binary paths, registry keys, or DLL load paths resulting in alternate execution flow. Defender observes registry key modifications, suspicious file writes into system directories, and processes loading libraries from abnormal paths.")

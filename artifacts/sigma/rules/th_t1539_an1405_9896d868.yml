@@ -3,7 +3,7 @@ id: "9896d868-3cc9-55f6-8b9c-01d096b8295e"
 status: "experimental"
 description: "Detects automation macros or VBA scripts in documents that access browser file paths, read cookie data, or attempt to exfiltrate browser session tokens over HTTP."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1539"
 logsource:

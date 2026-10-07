@@ -1,0 +1,1 @@
+"UpdateProcThreadAttribute" OR "CreateProcess" OR "CreateProcessAsUserW" OR "EventHeader" OR "ProcessId" OR "ParentProcessGuid" OR "SYSTEM"

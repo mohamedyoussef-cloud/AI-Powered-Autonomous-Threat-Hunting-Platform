@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("bitsadmin.exe" OR "svchost.exe" OR "PowerShell" OR "SetNotifyCmdLine" OR "long-lived" OR "BITS-Client")

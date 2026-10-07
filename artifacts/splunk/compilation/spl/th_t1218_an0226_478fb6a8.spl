@@ -1,0 +1,1 @@
+"rundll32.exe" OR "msiexec.exe" OR "regsvr32.exe" OR "Microsoft-signed" OR "command-line"

@@ -1,0 +1,18 @@
+{
+  "artifact": "splunk_sigma_compilation",
+  "automatic_repair_used": false,
+  "created_utc": "2026-10-03T21:34:11.922195+00:00",
+  "input_index_file": "D:\\ThreatHunting\\project\\data\\processed\\phase3\\sigma_baseline\\baseline_sigma_results_index_v1.jsonl",
+  "input_index_sha256": "sha256:ebb0e7159578002858793dd0b612236b074eb32f3d5619ed763b8cca5ba8dff4",
+  "input_rule_aggregate_sha256": "sha256:ff9b34cb2ac3fb76ab3c5b6cba61d2dfc01c9ae817ddacdd6800eb2d738508fb",
+  "input_rule_count": 540,
+  "input_rules_dir": "D:\\ThreatHunting\\project\\data\\processed\\phase3\\sigma_baseline\\rules",
+  "output_compilation_errors": "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_compilation\\compilation_errors.jsonl",
+  "output_compiled_queries": "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_compilation\\compiled_queries.jsonl",
+  "output_scoped_spl_dir": "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_compilation\\scoped_spl",
+  "output_spl_dir": "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_compilation\\spl",
+  "output_summary": "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_compilation\\summary.json",
+  "pysigma_backend_splunk_version": "2.1.0",
+  "pysigma_version": "1.5.0",
+  "sigma_mutation_used": false
+}

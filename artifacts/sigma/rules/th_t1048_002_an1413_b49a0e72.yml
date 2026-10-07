@@ -3,7 +3,7 @@ id: "b49a0e72-d4e7-58c4-93a9-58ed94f6efca"
 status: "experimental"
 description: "Detects non-browser processes that establish encrypted outbound connections (e.g., TLS/SSL) to unfamiliar or atypical destinations for the host/user, following a data staging or compression event."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1048.002"
 logsource:

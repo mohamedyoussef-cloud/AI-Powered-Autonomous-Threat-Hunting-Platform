@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("plink.exe" OR "ssh.exe" OR "netsh.exe" OR "process-to-network")

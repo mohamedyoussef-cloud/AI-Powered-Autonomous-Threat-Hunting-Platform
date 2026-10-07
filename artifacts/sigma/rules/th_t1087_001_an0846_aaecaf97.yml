@@ -3,7 +3,7 @@ id: "aaecaf97-1be8-5341-95d2-d07deca4b8dc"
 status: "experimental"
 description: "Adversary enumeration of local user accounts using Net.exe, WMI, or PowerShell."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1087.001"
 logsource:

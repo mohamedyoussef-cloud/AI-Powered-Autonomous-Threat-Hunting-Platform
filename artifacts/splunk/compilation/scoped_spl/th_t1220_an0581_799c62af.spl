@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("msxsl.exe" OR "wmic.exe" OR "JScript" OR "VBScript" OR "command-line")

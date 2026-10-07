@@ -1,0 +1,1 @@
+"VirtualAllocEx" OR "WriteProcessMemory" OR "CreateRemoteThread" OR "LoadLibrary"

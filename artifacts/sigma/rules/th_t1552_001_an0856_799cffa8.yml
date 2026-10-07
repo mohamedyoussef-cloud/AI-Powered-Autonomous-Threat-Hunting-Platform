@@ -3,7 +3,7 @@ id: "799cffa8-11ad-5b9b-bd3d-fe61ac89da28"
 status: "experimental"
 description: "Correlated file access to insecure credential files (e.g., *.env, *.xml, *.ps1) followed by suspicious process execution or authentication using retrieved credentials. Detected through Sysmon logs and Windows Security Event logs."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1552.001"
 logsource:

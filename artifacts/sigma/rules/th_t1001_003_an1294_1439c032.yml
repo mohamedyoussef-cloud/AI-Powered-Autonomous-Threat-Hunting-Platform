@@ -3,7 +3,7 @@ id: "1439c032-0f54-5464-a291-ad48e741ead0"
 status: "experimental"
 description: "Untrusted processes creating outbound TLS/HTTPS connections with malformed certificates or header fields, often mismatched with target service behavior. Detects protocol impersonation attempts via traffic metadata analysis and host process lineage."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1001.003"
 logsource:

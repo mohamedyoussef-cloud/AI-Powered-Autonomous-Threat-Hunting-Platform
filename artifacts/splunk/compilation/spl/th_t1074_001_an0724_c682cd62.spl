@@ -1,0 +1,1 @@
+"Detects file reads across locations followed by writes to temp or staging directories, often compressed or encrypted, indicating local staging behavior."

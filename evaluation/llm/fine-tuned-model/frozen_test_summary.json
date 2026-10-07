@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "requested_population": 286,
+  "evaluated_population": 286,
+  "metrics": {
+    "strict_yaml_only": {
+      "count": 251,
+      "rate": 0.8776223776223776
+    },
+    "yaml_mapping_valid": {
+      "count": 251,
+      "rate": 0.8776223776223776
+    },
+    "pysigma_parse_valid": {
+      "count": 230,
+      "rate": 0.8041958041958042
+    },
+    "pysigma_pass_no_blocking_issues": {
+      "count": 223,
+      "rate": 0.7797202797202797
+    },
+    "attack_technique_exact": {
+      "count": 239,
+      "rate": 0.8356643356643356
+    },
+    "attack_technique_recall_complete": {
+      "count": 239,
+      "rate": 0.8356643356643356
+    },
+    "attack_tactic_exact": {
+      "count": 244,
+      "rate": 0.8531468531468531
+    },
+    "logsource_exact": {
+      "count": 225,
+      "rate": 0.7867132867132867
+    },
+    "level_exact": {
+      "count": 233,
+      "rate": 0.8146853146853147
+    }
+  },
+  "validator_error_total": 0,
+  "validator_issue_severity_counts": {
+    "medium": 24,
+    "low": 4
+  },
+  "top_validator_issue_types": [
+    [
+      "InvalidATTACKTagIssue",
+      18
+    ],
+    [
+      "InvalidPatternTagIssue",
+      6
+    ],
+    [
+      "EscapedWildcardIssue",
+      3
+    ],
+    [
+      "NumberAsStringIssue",
+      1
+    ]
+  ],
+  "generation": {
+    "total_seconds": 16433.852050065994,
+    "mean_seconds": 57.4610211540769,
+    "max_new_tokens_reached_count": 51
+  },
+  "full_split_population": 286,
+  "dataset": "/home/jovyan/ThreatHuntingGPU/llm_training_v1/training_corpus_2k_v1/test.jsonl",
+  "dataset_sha256": "2dae6ee9a03715c7c28263749c389dd6d50bf64974e54ec72cc8fd1819dc43c3",
+  "base_model_snapshot": "/home/jovyan/.cache/huggingface/hub/models--Qwen--Qwen3-8B/snapshots/b968826d9c46dd6066d109eabc6255188de91218",
+  "adapter": "/home/jovyan/ThreatHuntingGPU/llm_training_v1/runs/qwen3_sigma_qlora_v1_full/final_adapter",
+  "adapter_used": true,
+  "test_split_used": true,
+  "sampling_enabled": false,
+  "thinking_enabled": false,
+  "output_repair_used": false,
+  "generation_strategy": "grounded_concise_v2",
+  "max_new_tokens": 1536,
+  "repetition_penalty": 1.08,
+  "no_repeat_ngram_size": 12,
+  "limit": null,
+  "example_ids": null
+}

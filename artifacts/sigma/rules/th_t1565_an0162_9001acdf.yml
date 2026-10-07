@@ -3,7 +3,7 @@ id: "9001acdf-994a-5a9c-bd8c-0c6c15a79c0b"
 status: "experimental"
 description: "Correlate unauthorized or anomalous file modifications, deletions, or metadata changes with suspicious process execution or API calls. Detect abnormal changes to structured data (e.g., database files, logs, financial records) outside expected business process activity."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1565"
 logsource:

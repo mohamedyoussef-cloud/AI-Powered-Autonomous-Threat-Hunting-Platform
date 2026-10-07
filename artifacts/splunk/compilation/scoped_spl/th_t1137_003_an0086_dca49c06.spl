@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Outlook form execution upon message receipt or client launch results in automated code execution within user session. Form definitions deviate from standard templates and include script logic or COM object calls embedded in form fields.")

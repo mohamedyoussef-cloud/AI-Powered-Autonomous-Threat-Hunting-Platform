@@ -3,7 +3,7 @@ id: "df0fadd5-b66a-5550-b9ea-66c5639fc343"
 status: "experimental"
 description: "Correlates LNK file execution with embedded resource extraction or suspicious network activity following initial launch, often leading to payload delivery via disguised icons."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1027.012"
 logsource:

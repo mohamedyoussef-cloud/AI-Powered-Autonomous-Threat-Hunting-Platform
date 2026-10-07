@@ -1,0 +1,16 @@
+{
+  "inputs": {
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\detection_plan\\detection_plan_baseline_dispatch_v1.jsonl": "381e6ed2be2df99fc90f149d5bbe90551a0cb1e02e17e2798d704301059fee07",
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_runtime\\sourcetype_inventory.csv": "0b88fc7a358fd44fd9f940bc266f8fa06dea237e5fff29c94fcb7fee51efb9d7",
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_runtime\\source_sourcetype_inventory.csv": "bc5c09f422c6802220d00e168e79621b4487c737ac6fd7480ec18063c28967b4",
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_runtime\\telemetry_resolution_ai_tasks_v2.jsonl": "1db1bb30472359e6a6d2451c13cfbc8e4c20f13cb2bf89023d8102d8c265f29d",
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_runtime\\telemetry_resolution_candidates.json": "6abae43b7239bd770dcd96ba2043617521ce2d5bf087cfa1de9c68405e4a875e",
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_runtime\\ai_resolution_audit\\telemetry_resolution\\output\\qwen_base_resolver_v1\\predictions.jsonl": "a4212a0511c7974b7d5787437a39791553fdcd61d9205e966039a13e57099cb5",
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_runtime\\ai_resolution_audit\\telemetry_resolution\\output\\qwen_resolver_v1\\predictions.jsonl": "4ae4ee0f4e04a465bf65fc1a6b0c1e2801269a61d340a095853e2d56189a4809"
+  },
+  "outputs": {
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_runtime\\evidence_gate\\telemetry_source_resolution_v1.jsonl": "e4301e3f8f661cabe309ba1bb785e832ecce0f47c38cbd7d5fe7282d27352e3f",
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_runtime\\evidence_gate\\grounded_path_runtime_resolution_v1.jsonl": "c43f4b28b8da965574b4c6855c63c2bac9b1a552a13f7ceef6ecfa291efe2564",
+    "D:\\ThreatHunting\\project\\data\\processed\\phase3\\splunk_runtime\\evidence_gate\\summary_v1.json": "f9e282818f5063d0cc14f8f99c5d6fee1d9ac9ce77e9619041bd53cd7a34f721"
+  }
+}

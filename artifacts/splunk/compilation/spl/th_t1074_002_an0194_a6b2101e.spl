@@ -1,0 +1,1 @@
+"Detects file transfers or mounting operations from remote hosts followed by write actions into a local staging directory, often using SMB or remote shell activity."

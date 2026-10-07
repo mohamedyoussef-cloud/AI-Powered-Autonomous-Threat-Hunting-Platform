@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import importlib.metadata
 import json
@@ -180,7 +180,7 @@ def issue_rule_ids(issue):
 
 
 # ============================================================
-# Authoritative Task 44 state
+# Authoritative baseline Sigma state
 # ============================================================
 
 baseline_index = read_jsonl(
@@ -852,7 +852,7 @@ write_json(
 # ============================================================
 
 print(
-    "===== TASK 45 PYSIGMA VALIDATION ====="
+    "===== PYSIGMA VALIDATION ====="
 )
 
 print()
@@ -1047,12 +1047,12 @@ print()
 if failures:
 
     print(
-        "TASK 45 PYSIGMA VALIDATION: FAIL"
+        "PYSIGMA VALIDATION: FAIL"
     )
 
     raise SystemExit(1)
 
 
 print(
-    "TASK 45 PYSIGMA VALIDATION: PASS"
+    "PYSIGMA VALIDATION: PASS"
 )

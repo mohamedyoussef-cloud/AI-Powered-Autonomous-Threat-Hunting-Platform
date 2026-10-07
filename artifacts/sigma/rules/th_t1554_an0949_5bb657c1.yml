@@ -3,7 +3,7 @@ id: "5bb657c1-f6f0-5cdc-9792-e288b719a630"
 status: "experimental"
 description: "Monitors for unexpected modifications of system or application binaries, particularly signed executables. Correlates file write events with subsequent unsigned or anomalously signed process execution, and checks for tampered binaries outside normal patch cycles."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1554"
 logsource:

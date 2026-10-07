@@ -3,7 +3,7 @@ id: "c7692e9d-5489-558b-ad9e-b067ddae4aa1"
 status: "experimental"
 description: "Adversary executes commands to enumerate installed antivirus, EDR, or firewall agents using WMI, registry queries, and built-in tools (e.g., tasklist, netsh, sc query). Correlated with elevated process privileges or scripting engine usage."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1518.001"
 logsource:

@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Suspicious processes initiating encrypted HTTPS connections to common web service domains, followed by abnormal data upload behavior or automated posting behavior indicative of C2 bidirectional traffic.")

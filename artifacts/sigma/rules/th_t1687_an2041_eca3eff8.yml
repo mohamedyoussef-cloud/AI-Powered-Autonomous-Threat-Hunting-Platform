@@ -3,7 +3,7 @@ id: "eca3eff8-9702-5e62-b3b2-c6e2d0219301"
 status: "experimental"
 description: "Detects exploitation of cloud-native security boundaries or management components followed by disabled logging, detached agents, changed security groups, policy bypass, or telemetry suppression. Correlates suspicious API activity with reduced control coverage."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1687"
 logsource:

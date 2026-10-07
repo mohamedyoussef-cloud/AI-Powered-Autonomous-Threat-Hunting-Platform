@@ -1,0 +1,1 @@
+"CreateProcess" OR "NtUnmapViewOfSection" OR "VirtualAllocEx" OR "WriteProcessMemory" OR "SetThreadContext" OR "ResumeThread"

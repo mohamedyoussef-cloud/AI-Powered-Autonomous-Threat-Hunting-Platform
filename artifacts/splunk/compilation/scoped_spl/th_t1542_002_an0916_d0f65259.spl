@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Detection of anomalous driver and firmware interactions, including unsigned or unexpected firmware updates, driver loads linked to hardware components, and suspicious use of privileged APIs to read/write firmware or controller memory.")

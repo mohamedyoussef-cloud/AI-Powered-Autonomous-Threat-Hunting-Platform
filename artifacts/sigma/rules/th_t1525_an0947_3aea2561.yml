@@ -3,7 +3,7 @@ id: "3aea2561-f03f-5bfb-90dd-39b073516b26"
 status: "experimental"
 description: "Creation or modification of cloud virtual machine images (AMIs, custom images) with persistence mechanisms, followed by infrastructure provisioning that uses these implanted images."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1525"
 logsource:

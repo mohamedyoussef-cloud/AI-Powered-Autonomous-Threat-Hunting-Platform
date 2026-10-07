@@ -3,7 +3,7 @@ id: "4a8b2d10-4201-5ed3-886c-74950a583b3a"
 status: "experimental"
 description: "Detects adversarial use of cloud-native APIs (e.g., AWS IAM, Azure RBAC, GCP Identity) to enumerate cloud group memberships or policy mappings via unauthorized sessions or scripts."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1069.003"
 logsource:

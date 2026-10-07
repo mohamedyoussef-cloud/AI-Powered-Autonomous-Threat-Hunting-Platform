@@ -3,7 +3,7 @@ id: "40e29547-8fcd-5d16-a46b-6c099a23bea1"
 status: "experimental"
 description: "Adversaries collecting local files via PowerShell, WMI, or direct file API calls often include recursive file listings, targeted file reads, and temporary file staging."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1005"
 logsource:

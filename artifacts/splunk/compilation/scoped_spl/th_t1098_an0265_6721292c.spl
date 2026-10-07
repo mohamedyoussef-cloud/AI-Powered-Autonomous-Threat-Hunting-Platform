@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Account attribute changes (e.g., password set, group membership, servicePrincipalName, logon hours) correlated with unusual process lineage or timing, indicating privilege escalation or persistence via valid accounts.")

@@ -3,7 +3,7 @@ id: "8a5bf1d7-b48a-52a6-ae41-2a96d265ba4e"
 status: "experimental"
 description: "Detects suspicious use of PowerShell, .NET, or script interpreters to spawn processes that mimic UAC prompts, often with credential capture dialogue boxes invoked from non-standard parent processes."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1056.002"
 logsource:

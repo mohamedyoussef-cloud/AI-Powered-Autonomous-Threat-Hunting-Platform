@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Detects attempts to clear RDP/network history and modify network configuration artifacts through command execution, registry key deletion, firewall rule changes, and suspicious file deletions (e.g., Default.rdp, registry edits to Terminal Server Client keys).")

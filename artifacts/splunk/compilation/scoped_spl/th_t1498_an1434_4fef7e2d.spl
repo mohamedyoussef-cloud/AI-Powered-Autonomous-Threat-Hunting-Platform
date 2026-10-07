@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Executable or script generating large outbound network traffic targeting remote hosts or known amplification ports")

@@ -3,7 +3,7 @@ id: "2af641f5-fc3c-5322-8aa1-5e507e629fe0"
 status: "experimental"
 description: "Use of known default service accounts or root-level cloud accounts performing authentication or changes to IAM policy."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1078.001"
 logsource:

@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("HKLM\\SYSTEM\\CurrentControlSet\\Control\\Print\\Monitors\*\\Driver" OR "spoolsv.exe" OR "AddMonitor" OR "C:\\Windows\\System32" OR "HKLM\\SYSTEM\\CurrentControlSet\\Control\\Print\\Monitors\\" OR "SYSTEM" OR "CurrentControlSet" OR "non-standard" OR "non-installation")

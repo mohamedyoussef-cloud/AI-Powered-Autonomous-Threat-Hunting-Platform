@@ -3,7 +3,7 @@ id: "7086200d-0375-57d3-bf5a-be9b84d2bd3d"
 status: "experimental"
 description: "Detects compilation activity using csc.exe, ilasm.exe, or msbuild.exe initiated by user-space processes outside typical development environments, followed by execution or network activity from newly written binaries."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1027.004"
 logsource:

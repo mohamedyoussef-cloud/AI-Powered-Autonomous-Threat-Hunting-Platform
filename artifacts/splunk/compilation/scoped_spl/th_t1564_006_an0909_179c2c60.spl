@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("VBoxManage.exe" OR "vmware-vmx.exe" OR "vmwp.exe" OR "VBoxManage" OR "vmware-vmx")

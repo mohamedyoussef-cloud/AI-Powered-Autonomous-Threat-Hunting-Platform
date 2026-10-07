@@ -3,7 +3,7 @@ id: "e61e9ab4-99eb-5327-a191-f1e180dda1a7"
 status: "experimental"
 description: "Creation of email forwarding/redirect rules in Exchange Online via New-InboxRule or transport rule cmdlets, including auto-forwarding address field usage."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1114.003"
 logsource:

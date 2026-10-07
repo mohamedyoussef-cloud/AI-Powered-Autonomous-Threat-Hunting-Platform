@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("forfiles.exe" OR "pcalua.exe" OR "wsl.exe" OR "scriptrunner.exe" OR "ssh.exe" OR "ProxyCommand" OR "LocalCommand" OR "PowerShell" OR "USERPROFILE")

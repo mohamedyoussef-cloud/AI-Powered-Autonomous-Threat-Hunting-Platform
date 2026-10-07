@@ -1,0 +1,1 @@
+"Detect repeated failed login events followed by MFA challenges triggered in rapid succession, especially if originating from service accounts or anomalous IP addresses."

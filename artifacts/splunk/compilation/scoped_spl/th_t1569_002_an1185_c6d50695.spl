@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("sc.exe" OR "net.exe" OR "services.exe" OR "PsExec" OR "non-standard")

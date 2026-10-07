@@ -3,7 +3,7 @@ id: "eda382b1-2121-524b-b062-c0cd20cd392e"
 status: "experimental"
 description: "Execution of binaries where the on-disk filename does not match PE metadata such as OriginalFilename or InternalName. Often observed with renamed LOLBAS or system binaries like rundll32, powershell, or psexec."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1036.003"
 logsource:

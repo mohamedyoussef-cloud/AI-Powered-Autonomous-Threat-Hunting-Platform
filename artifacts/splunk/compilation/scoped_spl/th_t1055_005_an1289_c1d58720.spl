@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Detects thread local storage (TLS) callback injection by monitoring memory modifications to PE headers and TLS directory structures during or after process hollowing events, followed by anomalous thread behavior prior to main entry point execution.")

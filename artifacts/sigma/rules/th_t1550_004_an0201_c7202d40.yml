@@ -3,7 +3,7 @@ id: "c7202d40-69c1-539d-b521-a0f138702188"
 status: "experimental"
 description: "Anomalous access to cloud web applications using session tokens without corresponding MFA/credential validation, often from unusual locations or device fingerprints."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1550.004"
 logsource:

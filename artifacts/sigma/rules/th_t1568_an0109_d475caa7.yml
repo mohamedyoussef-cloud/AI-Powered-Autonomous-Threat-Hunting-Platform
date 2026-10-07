@@ -3,7 +3,7 @@ id: "d475caa7-9669-5564-b0c4-e1eacd0d4a2b"
 status: "experimental"
 description: "Correlate high-frequency or anomalous DNS query activity with processes that do not normally generate network requests (e.g., Office apps, system utilities). Detect pseudo-random or high-entropy domain lookups indicative of domain generation algorithms (DGAs)."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1568"
 logsource:

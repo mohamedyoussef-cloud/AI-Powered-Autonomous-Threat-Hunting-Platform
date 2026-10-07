@@ -3,7 +3,7 @@ id: "72d21aef-b7b7-5c42-89ae-7c71b33c5a8e"
 status: "experimental"
 description: "Detects network share disconnection attempts using command-line tools like `net use /delete`, PowerShell `Remove-SmbMapping`, and correlation with process lineage and SMB session teardown activity."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1070.005"
 logsource:

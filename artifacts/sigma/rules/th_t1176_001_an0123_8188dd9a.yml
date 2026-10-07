@@ -3,7 +3,7 @@ id: "8188dd9a-7c10-515b-8b3d-01f7e87ec6bd"
 status: "experimental"
 description: "Installation of a new browser extension followed by suspicious file writes or outbound network connections to untrusted domains by the browser process."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1176.001"
 logsource:

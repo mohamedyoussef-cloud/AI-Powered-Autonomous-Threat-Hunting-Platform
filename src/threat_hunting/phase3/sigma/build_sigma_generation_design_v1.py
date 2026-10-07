@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import hashlib
 import json
@@ -148,7 +148,7 @@ if (
     != "PASS"
 ):
     raise SystemExit(
-        "Task 42 final audit is not PASS"
+        "Final detection plan audit is not PASS"
     )
 
 
@@ -681,7 +681,7 @@ design = {
         "1.0",
 
     "task":
-        "Task 43 - Sigma Generation Design",
+        "Sigma Generation Design",
 
     "source_detection_plan_contract":
         "1.1",
@@ -837,7 +837,7 @@ write_json(
 
 
 print(
-    "===== TASK 43 SIGMA GENERATION DESIGN ====="
+    "===== SIGMA GENERATION DESIGN ====="
 )
 
 print()
@@ -929,12 +929,12 @@ if failures:
     print()
 
     print(
-        "TASK 43 SIGMA GENERATION DESIGN: FAIL"
+        "SIGMA GENERATION DESIGN: FAIL"
     )
 
     raise SystemExit(1)
 
 
 print(
-    "TASK 43 SIGMA GENERATION DESIGN: PASS"
+    "SIGMA GENERATION DESIGN: PASS"
 )

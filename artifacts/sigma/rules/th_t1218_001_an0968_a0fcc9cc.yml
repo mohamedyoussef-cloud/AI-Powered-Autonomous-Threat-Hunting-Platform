@@ -3,7 +3,7 @@ id: "a0fcc9cc-0a42-50fe-9978-feaacda9b86d"
 status: "experimental"
 description: "Execution of hh.exe to open a .chm file followed by suspicious child processes or script engine invocation (VBScript, JScript, mshta, powershell). Behavior includes loading a CHM file from untrusted locations, or immediately spawning commands indicative of payload execution."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1218.001"
 logsource:

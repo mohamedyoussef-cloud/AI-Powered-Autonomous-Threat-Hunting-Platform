@@ -3,7 +3,7 @@ id: "073e2b53-eec5-5842-b928-0b859469d361"
 status: "experimental"
 description: "Detection of PowerShell history suppression using Set-PSReadLineOption with SaveNothing or altered HistorySavePath. Correlating these options with PowerShell usage highlights adversarial evasion attempts."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1690"
 logsource:

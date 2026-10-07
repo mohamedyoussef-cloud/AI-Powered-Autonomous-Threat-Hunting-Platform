@@ -3,7 +3,7 @@ id: "493804e2-1795-5bd5-a63b-aa78de51f481"
 status: "experimental"
 description: "PowerShell or script execution with parameters that suppress errors or ignore user interrupts, such as `-ErrorAction SilentlyContinue`. Defender perspective: detecting discrepancies between suppressed error arguments and continued execution behavior."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1564.011"
 logsource:

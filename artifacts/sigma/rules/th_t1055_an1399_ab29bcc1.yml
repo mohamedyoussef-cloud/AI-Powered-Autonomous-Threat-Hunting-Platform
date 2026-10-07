@@ -3,7 +3,7 @@ id: "ab29bcc1-c698-5087-84cb-9692122d04cd"
 status: "experimental"
 description: "Detects process injection by correlating memory manipulation API calls (e.g., VirtualAllocEx, WriteProcessMemory), suspicious thread creation (e.g., CreateRemoteThread), and unusual DLL loads within another process's context."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1055"
 logsource:

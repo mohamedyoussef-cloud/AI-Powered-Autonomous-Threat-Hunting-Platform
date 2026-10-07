@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("control.exe" OR "rundll32.exe" OR "non-standard")

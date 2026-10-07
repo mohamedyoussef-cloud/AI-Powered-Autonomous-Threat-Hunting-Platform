@@ -1,0 +1,25 @@
+{
+  "classification_counts": {
+    "COMPILED_DESCRIPTION_FALLBACK_NOT_EXECUTION_READY": 122,
+    "COMPILED_LITERAL_RUNTIME_CANDIDATE": 418
+  },
+  "compile_fail": 0,
+  "compile_success": 540,
+  "dangerous_pipe_command_count": 0,
+  "description_fallback_not_execution_ready": 122,
+  "input_rules": 540,
+  "keyword_mode_counts": {
+    "GROUNDED_DESCRIPTION_FALLBACK": 122,
+    "GROUNDED_LITERAL_KEYWORDS": 418
+  },
+  "nonempty_spl": 540,
+  "query_count_histogram": {
+    "1": 540
+  },
+  "runtime_environment_note": "Compilation is evaluated independently from runtime findings. BOTS v3 bucket manifest contains 2,030,269 events; current Splunk 9.4.13 raw-event search visibility is incomplete, so zero-result raw searches are not treated as conclusive negative findings.",
+  "runtime_execution_candidates": 418,
+  "runtime_execution_performed": false,
+  "sigma_mutation_used": false,
+  "splunk_index_scope": "botsv3",
+  "status": "PASS"
+}

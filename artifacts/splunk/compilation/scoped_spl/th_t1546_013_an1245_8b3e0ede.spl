@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("-NoProfile" OR "PowerShell" OR "NoProfile" OR "profile-based")

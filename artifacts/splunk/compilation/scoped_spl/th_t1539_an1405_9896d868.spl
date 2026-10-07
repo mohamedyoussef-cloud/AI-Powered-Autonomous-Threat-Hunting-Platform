@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Detects automation macros or VBA scripts in documents that access browser file paths, read cookie data, or attempt to exfiltrate browser session tokens over HTTP.")

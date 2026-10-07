@@ -3,7 +3,7 @@ id: "43a42484-5a69-5081-a36f-348913afcdf8"
 status: "experimental"
 description: "Detects adversary behavior deleting artifacts (e.g., dropped payloads, evidence files) using native or external utilities (e.g., del, erase, SDelete). Detects deletion events correlated with unusual process lineage or timing post-execution."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1070.004"
 logsource:

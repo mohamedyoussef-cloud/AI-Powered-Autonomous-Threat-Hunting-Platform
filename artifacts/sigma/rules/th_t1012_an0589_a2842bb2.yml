@@ -3,7 +3,7 @@ id: "a2842bb2-217b-5180-942d-cd8e3cdd91dd"
 status: "experimental"
 description: "Registry read access associated with suspicious or non-interactive processes querying system config, installed software, or security settings."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1012"
 logsource:

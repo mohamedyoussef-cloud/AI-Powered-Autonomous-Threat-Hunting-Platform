@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("JavaScript" OR "EventID" OR "HostUrl" OR "ReferrerUrl" OR "browser-based" OR "client-driven" OR "follow-on")

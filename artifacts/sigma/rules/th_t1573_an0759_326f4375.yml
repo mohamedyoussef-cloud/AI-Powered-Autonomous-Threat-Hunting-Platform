@@ -3,7 +3,7 @@ id: "326f4375-490c-5042-9dea-7bb35d8c1af8"
 status: "experimental"
 description: "Processes that normally do not initiate network connections establishing outbound encrypted TLS/SSL sessions, especially with asymmetric traffic volumes (client sending more than receiving) or non-standard certificate chains. Defender observations correlate process creation with unexpected network encryption libraries being loaded."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1573"
 logsource:

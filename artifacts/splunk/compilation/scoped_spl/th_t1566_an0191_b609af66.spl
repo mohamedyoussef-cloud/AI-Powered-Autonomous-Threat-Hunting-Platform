@@ -1,0 +1,1 @@
+search index=botsv3 earliest=0 ("Phishing via Office documents containing embedded macros or links that spawn processes. Detection relies on correlating Office application logs with suspicious child process execution and outbound network connections.")

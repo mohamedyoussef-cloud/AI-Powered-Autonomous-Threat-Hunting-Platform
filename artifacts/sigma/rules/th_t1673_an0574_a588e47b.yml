@@ -3,7 +3,7 @@ id: "a588e47b-ffe9-5fc2-aac7-c78183baf547"
 status: "experimental"
 description: "Detects enumeration of VMs using PowerShell (`Get-VM`), VMware Workstation (`vmrun.exe`), or Hyper-V (`VBoxManage.exe`). Defender observes suspicious command lines executed by unexpected users or outside normal administrative sessions."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1673"
 logsource:

@@ -1,0 +1,1 @@
+"Detects the creation or execution of padded binary files (e.g., large size but minimal legitimate content) followed by process execution or lateral movement from the host."

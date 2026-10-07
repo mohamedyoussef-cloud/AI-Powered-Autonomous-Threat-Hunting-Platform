@@ -3,7 +3,7 @@ id: "e836d623-24f4-5d71-b9fa-54551f40480a"
 status: "experimental"
 description: "Enumeration of services via native CLI tools (e.g., `sc query`, `tasklist /svc`, `net start`) or API calls via PowerShell and WMI."
 author: "Autonomous Threat Hunting Platform"
-date: "2026-08-18"
+date: "2026-10-03"
 tags:
     - "attack.t1007"
 logsource:

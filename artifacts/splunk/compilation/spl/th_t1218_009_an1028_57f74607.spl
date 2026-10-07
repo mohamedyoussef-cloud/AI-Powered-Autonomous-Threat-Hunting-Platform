@@ -1,0 +1,1 @@
+"Regsvcs.exe" OR "Regasm.exe" OR "HKCR\\CLSID/ProgID during COM registration" OR "ComRegisterFunction" OR "ComUnregisterFunction" OR "ProgID"
