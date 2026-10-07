@@ -148,3 +148,42 @@ restore/
 # The repository intentionally versions curated schemas,
 # configuration, evaluation results and validated Phase 1
 # artifacts in these formats.
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local environments
+.venv/
+venv/
+
+# Secrets / local configuration
+.env
+.env.*
+!.env.example
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Model weights and caches
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf
+*.tar.gz
+.cache/
+huggingface/
+
+# Raw / large ML datasets
+GUIDE.zip
+y_train*.csv
+y_val*.csv
+y_test*.csv
+
+# Frontend dependencies/build output
+node_modules/
+dist/
