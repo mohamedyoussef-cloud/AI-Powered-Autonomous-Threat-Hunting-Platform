@@ -33,3 +33,10 @@ jobs:
 
       - name: Build frontend
         run: npm run build
+      - name: Save frontend build
+        uses: actions/upload-artifact@v4
+        with:
+          name: threat-hunting-frontend
+          path: frontend/dist/
+          if-no-files-found: error
+          retention-days: 7
