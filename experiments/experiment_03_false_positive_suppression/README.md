@@ -1,29 +1,12 @@
-# Experiment 03: False-Positive Suppression
+# Experiment 03 — ML triage research
 
-## Objective
+Historical proposal for finding-level classification, superseded by the completed organization-disjoint GUIDE study.
 
-Evaluate whether a machine learning classifier can reduce analyst review workload by classifying hunt findings into confirmed threat, false positive, or analyst review required.
+## Contents
+- No executable or data files are tracked in this folder at this snapshot.
 
-## Dataset / Knowledge Source
+## Interpretation and usage
 
-- Public labeled security datasets where available
-- Synthetic or manually labeled demonstration results
+The frozen XGBoost TE v3.1 macro-F1 is 0.4523 on held-out organizations. The model is approved only for analyst-assisted triage; do not claim autonomous false-positive suppression or invent verified SIEM-generalization performance. See the frozen evaluation JSON under `backend/app/data/ml_triage/ml_triage_production_v1/evaluation/`.
 
-## Method
-
-1. Prepare labeled hunt-result samples.
-2. Extract relevant features from normalized results.
-3. Train and test baseline ML models.
-4. Compare classifier output with analyst labels.
-
-## Metrics
-
-- Precision
-- Recall
-- F1-score
-- Confusion matrix
-- False-positive reduction percentage
-
-## Results
-
-Pending execution after result normalization and ML triage are implemented.
+[Related overview](../../docs/README.md)

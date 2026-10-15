@@ -1,15 +1,14 @@
-# Summaries
+# Telemetry evidence summaries
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Aggregate data-component, ATT&CK-technique and integrated telemetry evidence summaries.
 
 ## Contents
+- [`integrated_telemetry_evidence_summary_v1_1.json`](integrated_telemetry_evidence_summary_v1_1.json) — structured integrated telemetry evidence summary v1 1 records
+- [`technique_telemetry_evidence_summary_v1_1.csv`](technique_telemetry_evidence_summary_v1_1.csv) — tracked research asset
+- **Additional tracked files:** 1 (see directory listing for complete inventory).
 
-Files in this directory:
+## Interpretation and usage
 
-- `data_component_telemetry_evidence_summary_v1_1.csv`
-- `integrated_telemetry_evidence_summary_v1_1.json`
-- `technique_telemetry_evidence_summary_v1_1.csv`
+Summaries facilitate coverage analysis; use their underlying inventories for reproducibility and do not assume universal telemetry availability.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../README.md)

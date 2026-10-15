@@ -1,14 +1,13 @@
-# Research source code
+# Research pipeline source
 
-Core detection and data-processing pipeline outside the web application.
+Reusable ATT&CK context, telemetry processing, detection planning and data-normalization code, distinct from the web API.
 
 ## Contents
+- [`threat_hunting/`](threat_hunting/) — python research components for environmental suitability, telemetry inventories and ATT&CK-grounded detection pipeline stages.
+- [`threat_hunting_data/`](threat_hunting_data/) — shared source preparation, normalization, schema validation and feature-contract helpers.
 
-Subdirectories:
+## Interpretation and usage
 
-- `threat_hunting/`
-- `threat_hunting_data/`
+The executable source modules live under `threat_hunting/` and `threat_hunting_data/`. Outputs from historical runs are versioned under `artifacts/`.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../docs/README.md)

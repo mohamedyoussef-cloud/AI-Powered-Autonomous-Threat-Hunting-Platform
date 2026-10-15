@@ -1,23 +1,15 @@
-# Detection plans
+# Detection-plan evidence
 
-Detection-plan outputs linking hypotheses, observables, telemetry requirements and detection feasibility.
+Versioned detection plans, context retrieval, path-resolution indexes and final audits connecting ATT&CK-grounded hypotheses to feasible detection logic.
 
 ## Contents
+- [`detection_plan_summary_v1_1.json`](detection_plan_summary_v1_1.json) — aggregate plan outcomes and counts
+- [`detection_plan_final_audit_v1_1.json`](detection_plan_final_audit_v1_1.json) — final plan-stage audit
+- [`detection_plans_v1_1.jsonl`](detection_plans_v1_1.jsonl) — individual grounded plan records
+- **Additional tracked files:** 8 (see directory listing for complete inventory).
 
-Files in this directory:
+## Interpretation and usage
 
-- `detection_plan_baseline_dispatch_errors_v1.jsonl`
-- `detection_plan_baseline_dispatch_v1.jsonl`
-- `detection_plan_errors_v1_1.jsonl`
-- `detection_plan_final_audit_v1_1.json`
-- `detection_plan_path_resolution_index_v1.jsonl`
-- `detection_plan_rag_contexts_v1.jsonl`
-- `detection_plan_rag_errors_v1.jsonl`
-- `detection_plan_rag_index_v1.jsonl`
-- `detection_plan_results_index_v1_1.jsonl`
-- `detection_plan_summary_v1_1.json`
-- `detection_plans_v1_1.jsonl`
+Read `detection_plan_summary_v1_1.json` and `detection_plan_final_audit_v1_1.json` before interpreting individual JSONL records; a plan is a proposal constrained by telemetry and validation, not a detection hit.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../README.md)

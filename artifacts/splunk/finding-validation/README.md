@@ -1,14 +1,13 @@
-# Finding Validation
+# Runtime keyword contribution review
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Evidence assessing keyword-driven hit contributions during review of raw hunt candidates.
 
 ## Contents
+- [`keyword_contribution_summary_v1.json`](keyword_contribution_summary_v1.json) — structured keyword contribution summary v1 records
+- [`keyword_contribution_v1.jsonl`](keyword_contribution_v1.jsonl) — versioned line-delimited records
 
-Files in this directory:
+## Interpretation and usage
 
-- `keyword_contribution_summary_v1.json`
-- `keyword_contribution_v1.jsonl`
+Broad keyword matches are not confirmed threats. Cross-reference the validated dispositions under `../../hunt-findings/`.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../README.md)

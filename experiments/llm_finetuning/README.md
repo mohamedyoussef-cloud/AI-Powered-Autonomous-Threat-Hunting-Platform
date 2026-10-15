@@ -1,132 +1,15 @@
-# Hypothesis → Sigma Rule: Fine-Tuned LLM Component
+# Historical LLM fine-tuning experiment — 398-example run
 
-## Overview
-Converts natural-language threat hunting hypotheses into
-structured Sigma detection rules using fine-tuned Qwen3-8B.
+This folder records an **earlier** Qwen3-8B Sigma-generation experiment and strategy comparison. It is intentionally retained for research provenance, but **is not** the authoritative final locked benchmark.
 
-## Model
-- Base model: Qwen/Qwen3-8B
-- Adapter: mar7788yam/hypothesis-to-sigma-qwen3-8b (HuggingFace, private)
-- Method: QLoRA fine-tuning (4-bit quantization)
-- Trainable parameters: 43.6M / 8.2B (0.53%)
+## Archived files
 
-## Results
-| Approach                  | Valid Sigma | Technique Match |
-|---------------------------|-------------|-----------------|
-| Prompt-Only (no training) | 0.0%        | 52.5%           |
-| Fine-Tuned QLoRA (ours)   | 99.0%       | 66.6%           |
+- [`eval_results.json`](eval_results.json) — candidate outputs from the earlier evaluation.
+- [`baseline_results.json`](baseline_results.json) — earlier baseline results.
+- [`strategy_selection.json`](strategy_selection.json) — recorded strategy-selection metadata.
 
-## Training Details
-- Dataset: 3,770 train / 245 val / 398 test
-- Epochs: 3
-- Training time: ~10 hours
-- Best checkpoint: Step 450 (val loss: 1.006)
+## Interpretation
 
-## How to Use for backend phase ##
-from peft import PeftModel
-from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
-import torch
+The original exploratory run used a **398-example evaluation population**; any validity percentage associated with that run belongs to that protocol alone. The subsequent locked benchmark uses **286 frozen examples**, with a **223/286 (77.97%) no-blocker pass** for the fine-tuned model and 0/286 for its base comparator. These are **different experiments** and must not be compared or combined as though they evaluated the same split and gate.
 
-def load_model():
-    bnb_config = BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_quant_type="nf4",
-        bnb_4bit_compute_dtype=torch.bfloat16,
-    )
-    tokenizer = AutoTokenizer.from_pretrained(
-        "mar7788yam/hypothesis-to-sigma-qwen3-8b"
-    )
-    base = AutoModelForCausalLM.from_pretrained(
-        "Qwen/Qwen3-8B",
-        quantization_config=bnb_config,
-        device_map={"": 0},
-    )
-    model = PeftModel.from_pretrained(
-        base, "mar7788yam/hypothesis-to-sigma-qwen3-8b"
-    )
-    return model, tokenizer
-
-def generate_sigma(hypothesis, model, tokenizer):
-    prompt = f"### Hypothesis:\n{hypothesis}\n\n### Sigma Detection:\n"
-    inputs = tokenizer(prompt, return_tensors="pt",
-                      truncation=True, max_length=512).to(model.device)
-    with torch.no_grad():
-        outputs = model.generate(
-            **inputs,
-            max_new_tokens=1200,
-            do_sample=False,
-            repetition_penalty=1.1,
-            pad_token_id=tokenizer.eos_token_id,
-        )
-    length = inputs["input_ids"].shape[1]
-    return tokenizer.decode(outputs[0][length:], skip_special_tokens=True)
-
-## Output Files
-- eval_results.json       : fine-tuned model results on 398 test examples
-- baseline_results.json   : base model results on 398 test examples
-- final_adapter/          : saved LoRA adapter weights (175MB)
-- task52_strategy_selection.json : strategy comparison results
-
-
-
-
-
-# PIPELINE:
-
-## Pipeline
-
-```
-╔══════════════════════════════════════════════════════╗
-║       Hypothesis → Sigma Fine-Tuning Pipeline        ║
-║                  Qwen3-8B + QLoRA                    ║
-╚══════════════════════════════════════════════════════╝
-
-stage: ENVIRONMENT SETUP
-  CUDA 12.4 GPU (15.69 GB VRAM)
-  PyTorch 2.5.1 + bitsandbytes 0.50.1
-          ↓
-stage: BASE MODEL LOADING
-  Qwen3-8B loaded in 4-bit QLoRA
-  Normal: ~33GB → With 4-bit: ~5GB only
-          ↓
-stage: LoRA ADAPTER
-  Trainable: 43M / 8.2B params (0.53%)
-  Target: q,k,v,o,gate,up,down projections
-          ↓
-stage: DATA PREPARATION
-  train.jsonl  → 3,770 examples
-  val.jsonl    →   245 examples
-  test.jsonl   →   398 examples
-  Format: Hypothesis (input) → Sigma Rule (output)
-          ↓
-stage: TRAINING
-  Epochs: 3  |  Time: ~10 hours
-  Custom BF16LossTrainer (saves ~600MB VRAM)
-  Step  | Train Loss | Val Loss
-  50    |   8.77     |  1.192
-  150   |   6.73     |  1.094
-  300   |   5.59     |  1.054
-  450   |   5.24     |  1.006  ← BEST
-  708   |   4.57     |  1.033
-          ↓
-stage: BEST CHECKPOINT
-  Step 450 → lowest val loss: 1.006
-  Saved to: ./final_adapter (175MB)
-          ↓
-stage: HUGGINGFACE BACKUP
-  mar7788yam/hypothesis-to-sigma-qwen3-8b
-  Adapter: 175MB + Tokenizer: 11.4MB
-          ↓
-stage: EVALUATION ()
-  Fine-tuned model on 398 test examples
-  Valid Sigma: 394/398 = 99.0% ✅
-          ↓
-stage: BASELINE ()
-  Base model (no training) on 398 examples
-  Valid Sigma: 0/398 = 0.0% ❌
-          ↓
-FINAL COMPARISON
-  Base Model  →  0%  ❌
-  Fine-Tuned  → 99%  ✅
-  Improvement → +99% 🚀
-```
+Use [`evaluation/llm/README.md`](../../evaluation/llm/README.md) and [`datasets/llm/qwen3_sigma_training_v1/`](../../datasets/llm/qwen3_sigma_training_v1/) for the authoritative MSc evaluation. The historical checkpoint/infrastructure details are not required for public release, and this directory is not an independently deployable LLM provider.

@@ -1,11 +1,12 @@
-# Interface contracts
+# Interface contracts — reserved
 
-Machine-readable agreements among datasets, generation, validation, runtime and ML integrations.
+Design-level placeholder for cross-component contracts. There are no tracked executable contract files in this folder.
 
 ## Contents
+- No executable or data files are tracked in this folder at this snapshot.
 
-No tracked contents are present yet; this directory is reserved for the stated component.
+## Interpretation and usage
 
-## Provenance and maintenance
+Until formal shared contracts are consolidated here, authoritative API interfaces live under `backend/app/schemas/` and research input/output schemas under root `schemas/`.
 
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../docs/README.md)

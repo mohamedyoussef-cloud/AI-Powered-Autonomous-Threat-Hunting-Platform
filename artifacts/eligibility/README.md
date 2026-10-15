@@ -1,15 +1,14 @@
-# Detection eligibility
+# Detection eligibility decisions
 
-Eligibility/gating evidence that constrains which detection plans can proceed.
+Recorded gating decisions identifying which hypothesis/detection paths were eligible to proceed.
 
 ## Contents
+- [`detection_eligibility_errors_v1.jsonl`](detection_eligibility_errors_v1.jsonl) — versioned line-delimited records
+- [`detection_eligibility_index_v1.jsonl`](detection_eligibility_index_v1.jsonl) — versioned line-delimited records
+- [`detection_eligibility_outputs_v1.jsonl`](detection_eligibility_outputs_v1.jsonl) — versioned line-delimited records
 
-Files in this directory:
+## Interpretation and usage
 
-- `detection_eligibility_errors_v1.jsonl`
-- `detection_eligibility_index_v1.jsonl`
-- `detection_eligibility_outputs_v1.jsonl`
+Use index, outputs and error records together: an excluded or blocked path must not be counted as a validated detection.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../README.md)

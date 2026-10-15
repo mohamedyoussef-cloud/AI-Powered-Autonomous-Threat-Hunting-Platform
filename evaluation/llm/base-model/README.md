@@ -1,14 +1,13 @@
-# Base Model
+# Base-model locked evaluation
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Recorded output and summary for the unadapted Qwen3-8B generation baseline.
 
 ## Contents
+- [`frozen_test_predictions.jsonl`](frozen_test_predictions.jsonl) — versioned line-delimited records
+- [`frozen_test_summary.json`](frozen_test_summary.json) — structured frozen test summary records
 
-Files in this directory:
+## Interpretation and usage
 
-- `frozen_test_predictions.jsonl`
-- `frozen_test_summary.json`
+Compare against the fine-tuned candidate on the same 286-example frozen benchmark and using the same validity gates; do not transfer metrics between earlier experiments.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../README.md)

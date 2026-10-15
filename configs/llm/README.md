@@ -1,13 +1,12 @@
-# LLM configuration
+# LLM task configuration
 
-Training/inference configuration and provenance; no model weights or internal GPU host details.
+Tracked LLM experiment task/format configuration, distinct from trained checkpoint files.
 
 ## Contents
+- [`qwen3_qlora_config.json`](qwen3_qlora_config.json) — structured qwen3 qlora config records
 
-Files in this directory:
+## Interpretation and usage
 
-- `qwen3_qlora_config.json`
+These configurations support reproducibility; they do not provide a running Qwen inference service or its weights.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../docs/README.md)

@@ -1,14 +1,13 @@
-# Ingestion
+# Canonical telemetry ingestion
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Programs for building canonical source inventories and normalized evidence records.
 
 ## Contents
+- [`build_canonical_telemetry_evidence_v2.py`](build_canonical_telemetry_evidence_v2.py) — implementation of build canonical telemetry evidence v2
+- [`build_canonical_telemetry_inventory_v1.py`](build_canonical_telemetry_inventory_v1.py) — implementation of build canonical telemetry inventory v1
 
-Files in this directory:
+## Interpretation and usage
 
-- `build_canonical_telemetry_evidence_v2.py`
-- `build_canonical_telemetry_inventory_v1.py`
+Raw telemetry requires a lawful, separately provisioned source. See `artifacts/telemetry/canonical/` for recorded products.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../README.md)

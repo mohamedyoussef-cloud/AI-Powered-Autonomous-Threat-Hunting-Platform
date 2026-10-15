@@ -1,27 +1,12 @@
-# Experiment 04: End-to-End Hunt Workflow
+# Experiment 04 — hunt execution study
 
-## Objective
+Historical test design for an end-to-end threat-hunting campaign.
 
-Evaluate the complete threat hunting workflow from campaign creation to final documentation against a traditional manual process.
+## Contents
+- No executable or data files are tracked in this folder at this snapshot.
 
-## Dataset / Knowledge Source
+## Interpretation and usage
 
-- Public datasets or mock SIEM connectors
-- Synthetic SOC campaign scenarios
+The recorded runtime stage executed 404 ready hunts; 22 produced nonzero raw results and zero validated true findings. Consult the raw execution manifests and dispositions under `artifacts/splunk/runtime/` and `artifacts/hunt-findings/`.
 
-## Method
-
-1. Run a manual baseline hunt planning and documentation process.
-2. Run the same scenario through the platform-assisted workflow.
-3. Compare completion time, documentation quality, and analyst review effort.
-
-## Metrics
-
-- Campaign completion time
-- Number of analyst manual steps
-- Documentation completeness
-- Reviewer acceptance rate
-
-## Results
-
-Pending execution after the integrated prototype is completed.
+[Related overview](../../docs/README.md)

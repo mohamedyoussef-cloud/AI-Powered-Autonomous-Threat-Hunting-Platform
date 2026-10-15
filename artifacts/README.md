@@ -1,25 +1,21 @@
-# Pipeline Artifacts
+# Threat-hunting research evidence
 
-## Detection Plans
-rtifacts/detection-plans/
+Versioned outputs of the ATT&CK-grounded detection-engineering research. This is **evidence**, not raw telemetry or a collection of confirmed incidents.
 
-Grounded detection plans, path-resolution indexes, generation contexts, and validation outputs.
+| Stage | Folder | Interpretation |
+| --- | --- | --- |
+| Context | [`environment/`](environment/) | Platform applicability and telemetry readiness |
+| Hypotheses | [`hypotheses/`](hypotheses/) | ATT&CK-grounded hunt proposals |
+| Gate | [`eligibility/`](eligibility/) | Eligibility and rejection decisions |
+| Plans | [`detection-plans/`](detection-plans/) | Observable, path and data-source requirements |
+| Rules | [`sigma/`](sigma/) | 540 research Sigma rules and pySigma checks |
+| Queries and execution | [`splunk/`](splunk/) | SPL, telemetry resolution, queue and runtime evidence |
+| Findings | [`hunt-findings/`](hunt-findings/) | Validated candidate dispositions |
+| Data support | [`telemetry/`](telemetry/) | Canonical and resolved telemetry summaries |
+| Method support | [`research/`](research/) | Dataset selection/research metadata |
 
-## Sigma
-rtifacts/sigma/
+## Reading the results correctly
 
-Contains baseline Sigma rules, generation metadata, and pySigma validation results.
+The recorded runtime batch executed **404** execution-ready hunts, of which **22** produced nonzero raw search results. Post-execution validation yielded **zero confirmed malicious hunt findings**. These figures are stage-scoped: Sigma validity is not SIEM availability; raw search hits are not validated positives; an ML probability is not an analyst verdict.
 
-Current validated rule population: **540**
-
-## Splunk
-rtifacts/splunk/
-
-Contains Sigma-to-SPL compilation outputs, telemetry-resolution evidence, execution queues, runtime results, and finding-validation artifacts.
-
-## Hunt Findings
-rtifacts/hunt-findings/
-
-Contains runtime candidate dispositions, validation summaries, manifests, and the authoritative validated-findings feed.
-
-Current validated-findings records: **0**
+Consult the versioned manifests and stage-specific summaries before citing totals. For architecture and limitations, see [`docs/VALIDATION_AND_LIMITATIONS.md`](../docs/VALIDATION_AND_LIMITATIONS.md).

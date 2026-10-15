@@ -1,15 +1,14 @@
-# Detection Eligibility
+# Detection eligibility gate
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Builds and audits the eligibility decisions used to constrain which hypothesis/detection paths may advance.
 
 ## Contents
+- [`__init__.py`](__init__.py) — Python package initialization
+- [`audit_detection_eligibility_gate_v1.py`](audit_detection_eligibility_gate_v1.py) — implementation of audit detection eligibility gate v1
+- [`run_detection_eligibility_gate_v1.py`](run_detection_eligibility_gate_v1.py) — implementation of run detection eligibility gate v1
 
-Files in this directory:
+## Interpretation and usage
 
-- `__init__.py`
-- `audit_detection_eligibility_gate_v1.py`
-- `run_detection_eligibility_gate_v1.py`
+Recorded gate evidence is in `artifacts/eligibility/`; outputs must not be confused with runtime hunt success.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../../README.md)

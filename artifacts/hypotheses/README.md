@@ -1,19 +1,18 @@
-# Threat-hunting hypotheses
+# Grounded hypothesis inventory
 
-ATT&CK-grounded hypotheses and associated provenance, generated during the research pipeline.
+Hypothesis-engine outputs, source-specific hypothesis categories, errors and routing manifests.
 
 ## Contents
+- [`collection_gap_outputs_v1.jsonl`](collection_gap_outputs_v1.jsonl) — versioned line-delimited records
+- [`environment_resolution_outputs_v1.jsonl`](environment_resolution_outputs_v1.jsonl) — versioned line-delimited records
+- [`hypothesis_engine_dispatch_manifest_v1.jsonl`](hypothesis_engine_dispatch_manifest_v1.jsonl) — versioned line-delimited records
+- [`hypothesis_engine_errors_v1.jsonl`](hypothesis_engine_errors_v1.jsonl) — versioned line-delimited records
+- [`hypothesis_engine_results_index_v1.jsonl`](hypothesis_engine_results_index_v1.jsonl) — versioned line-delimited records
+- [`pre_attack_outputs_v1.jsonl`](pre_attack_outputs_v1.jsonl) — versioned line-delimited records
+- **Additional tracked files:** 1 (see directory listing for complete inventory).
 
-Files in this directory:
+## Interpretation and usage
 
-- `collection_gap_outputs_v1.jsonl`
-- `environment_resolution_outputs_v1.jsonl`
-- `hypothesis_engine_dispatch_manifest_v1.jsonl`
-- `hypothesis_engine_errors_v1.jsonl`
-- `hypothesis_engine_results_index_v1.jsonl`
-- `pre_attack_outputs_v1.jsonl`
-- `runtime_hunt_outputs_v1.jsonl`
+Hypotheses describe what could be hunted. They do not establish that events occurred or that a rule can execute with the available telemetry.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../README.md)

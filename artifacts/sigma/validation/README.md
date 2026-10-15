@@ -1,17 +1,14 @@
-# Validation
+# pySigma validation results
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Audit and issue records for the research Sigma validation stage.
 
 ## Contents
+- [`pysigma_validation_summary_v1.json`](pysigma_validation_summary_v1.json) — validation-stage outcome summary
+- [`pysigma_validation_issues_v1.jsonl`](pysigma_validation_issues_v1.jsonl) — individual validation issues
+- **Additional tracked files:** 3 (see directory listing for complete inventory).
 
-Files in this directory:
+## Interpretation and usage
 
-- `pysigma_validation_audit_v1.json`
-- `pysigma_validation_errors_v1.jsonl`
-- `pysigma_validation_issues_v1.jsonl`
-- `pysigma_validation_results_index_v1.jsonl`
-- `pysigma_validation_summary_v1.json`
+Validation is a gating stage; the 540-rule research result refers to this pipeline, not blanket approval of every runtime draft.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../README.md)

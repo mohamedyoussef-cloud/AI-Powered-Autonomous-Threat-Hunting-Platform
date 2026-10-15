@@ -1,15 +1,14 @@
-# Detection Plan
+# Detection plan schemas
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Plan-record formats, including versioned revisions and semantic-output structure.
 
 ## Contents
+- [`detection_plan_llm_semantic_output_v1.schema.json`](detection_plan_llm_semantic_output_v1.schema.json) — structured detection plan llm semantic output v1.schema records
+- [`detection_plan_v1.schema.json`](detection_plan_v1.schema.json) — structured detection plan v1.schema records
+- [`detection_plan_v1_1.schema.json`](detection_plan_v1_1.schema.json) — structured detection plan v1 1.schema records
 
-Files in this directory:
+## Interpretation and usage
 
-- `detection_plan_llm_semantic_output_v1.schema.json`
-- `detection_plan_v1.schema.json`
-- `detection_plan_v1_1.schema.json`
+Select the schema version corresponding to the data file. Keep ATT&CK mapping, observables and telemetry requirements traceable through downstream Sigma work.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../../docs/README.md)

@@ -1,16 +1,14 @@
-# Backend maintenance scripts
+# Backend support scripts
 
-Database initialization, pipeline loading and backend integration verification tools.
+Schema creation, data-preparation import and integration verification scripts for the web application.
 
 ## Contents
+- [`init_db.py`](init_db.py) — implementation of init db
+- [`load_pipeline_data.py`](load_pipeline_data.py) — implementation of load pipeline data
+- **Additional tracked files:** 2 (see directory listing for complete inventory).
 
-Files in this directory:
+## Interpretation and usage
 
-- `__init__.py`
-- `init_db.py`
-- `load_pipeline_data.py`
-- `verify_phase3_integration.py`
+`init_db.py` creates tables only. Import jobs require authorized source data and correct paths; never assume a public Git clone includes a live database.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../README.md)

@@ -1,14 +1,13 @@
-# Telemetry Resolution
+# Telemetry resolution and review
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Evidence that links detection data-source requirements to observed or assessed telemetry capabilities.
 
 ## Contents
+- [`evidence-gate/`](evidence-gate/) — grounded-path and telemetry-source resolution outputs with manifest and summary.
+- [`resolution-audit/`](resolution-audit/) — audit area for comparing telemetry-resolution decisions with their supporting model-assisted research runs.
 
-Subdirectories:
+## Interpretation and usage
 
-- `evidence-gate/`
-- `resolution-audit/`
+Unresolved/ambiguous sources must not be labeled available merely because SPL was generated. See the evidence gate and resolution audits below.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../README.md)

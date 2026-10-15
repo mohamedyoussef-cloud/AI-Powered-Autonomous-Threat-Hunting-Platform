@@ -1,15 +1,14 @@
-# Sigma rule artifacts
+# Sigma detection artifacts
 
-Generated Sigma rules and their generation/validation evidence. Preserve rule identities and validation provenance.
+Generated rule corpus and accompanying generation/pySigma validation evidence.
 
 ## Contents
+- [`generation/`](generation/) — generation units, results indexes, baseline summaries and blocked-generation cases.
+- [`rules/`](rules/)
+- [`validation/`](validation/) — audit and issue records for the research Sigma validation stage.
 
-Subdirectories:
+## Interpretation and usage
 
-- `generation/`
-- `rules/`
-- `validation/`
+There are 540 research Sigma rule files in `rules/`. The generator audit, validation summaries and actual YAML should be evaluated together; schema validity is not confirmed hunt effectiveness.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../README.md)

@@ -1,16 +1,15 @@
-# Splunk research artifacts
+# Splunk compilation and execution evidence
 
-Compiled SPL queries, telemetry-resolution assessments, execution evidence and finding-validation records. Do not interpret raw hits as validated true positives.
+Compilation products, telemetry-resolution results, execution queues and post-execution review outputs.
 
 ## Contents
+- [`compilation/`](compilation/)
+- [`finding-validation/`](finding-validation/) — evidence assessing keyword-driven hit contributions during review of raw hunt candidates.
+- [`runtime/`](runtime/) — recorded execution queue, deferred workloads, summary and runtime result bundle.
+- [`telemetry-resolution/`](telemetry-resolution/) — evidence that links detection data-source requirements to observed or assessed telemetry capabilities.
 
-Subdirectories:
+## Interpretation and usage
 
-- `compilation/`
-- `finding-validation/`
-- `runtime/`
-- `telemetry-resolution/`
+Separate compiled SPL (`compilation/`) from telemetry eligibility (`telemetry-resolution/`), execution observations (`runtime/`) and candidate review (`finding-validation/`).
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../README.md)

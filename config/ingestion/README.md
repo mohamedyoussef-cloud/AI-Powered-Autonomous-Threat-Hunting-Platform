@@ -1,15 +1,14 @@
-# Ingestion
+# Source ingestion policy
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Reference environment and evidence-policy inputs used to describe data acquisition and source applicability.
 
 ## Contents
+- [`platform_discovery_policy_v2.json`](platform_discovery_policy_v2.json) — structured platform discovery policy v2 records
+- [`reference_environment_v1.json`](reference_environment_v1.json) — structured reference environment v1 records
+- [`reference_telemetry_evidence_v2.json`](reference_telemetry_evidence_v2.json) — structured reference telemetry evidence v2 records
 
-Files in this directory:
+## Interpretation and usage
 
-- `platform_discovery_policy_v2.json`
-- `reference_environment_v1.json`
-- `reference_telemetry_evidence_v2.json`
+These files describe policy/reference conditions; they do not bundle source telemetry or grant collection permission.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../docs/README.md)

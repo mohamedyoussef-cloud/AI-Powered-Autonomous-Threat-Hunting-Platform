@@ -1,29 +1,12 @@
-# Experiment 02: Query Generation
+# Experiment 02 — historical design
 
-## Objective
+An early proposed protocol for translating hypotheses to detection queries.
 
-Evaluate whether reviewed LLM-generated detection queries can reduce manual query writing effort for approved hunt hypotheses.
+## Contents
+- No executable or data files are tracked in this folder at this snapshot.
 
-## Dataset / Knowledge Source
+## Interpretation and usage
 
-- Sigma rule examples
-- Public SIEM query examples
-- Selected public telemetry datasets or mock events
+The later validated Sigma and SPL evidence is in `artifacts/sigma/` and `artifacts/splunk/`; do not cite original planned pass rates as results.
 
-## Method
-
-1. Select approved hypotheses from campaign records.
-2. Generate detection logic for one initial query language.
-3. Validate syntax and analyst-required edits.
-4. Compare against manually written baseline queries.
-
-## Metrics
-
-- Syntax validity
-- Query correctness
-- Analyst edit rate
-- Execution or simulated execution success rate
-
-## Results
-
-Pending execution after query generation is implemented.
+[Related overview](../../docs/README.md)

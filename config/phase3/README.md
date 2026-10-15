@@ -1,20 +1,18 @@
-# Phase3
+# Phase 3 detection policy
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Versioned routing, evidence-signature, environment-profile and prioritization policies for detection construction.
 
 ## Contents
+- [`adaptive_prioritization_policy_product_v1.json`](adaptive_prioritization_policy_product_v1.json) — structured adaptive prioritization policy product v1 records
+- [`adaptive_prioritization_policy_product_v2.json`](adaptive_prioritization_policy_product_v2.json) — structured adaptive prioritization policy product v2 records
+- [`adaptive_prioritization_policy_v1.json`](adaptive_prioritization_policy_v1.json) — structured adaptive prioritization policy v1 records
+- [`environment_profile.lab.json`](environment_profile.lab.json) — structured environment profile.lab records
+- [`hypothesis_engine_task_contracts_v1.json`](hypothesis_engine_task_contracts_v1.json) — structured hypothesis engine task contracts v1 records
+- [`hypothesis_router_policy_v1.json`](hypothesis_router_policy_v1.json) — structured hypothesis router policy v1 records
+- **Additional tracked files:** 2 (see directory listing for complete inventory).
 
-Files in this directory:
+## Interpretation and usage
 
-- `adaptive_prioritization_policy_product_v1.json`
-- `adaptive_prioritization_policy_product_v2.json`
-- `adaptive_prioritization_policy_v1.json`
-- `environment_profile.lab.json`
-- `hypothesis_engine_task_contracts_v1.json`
-- `hypothesis_router_policy_v1.json`
-- `llm_provider.local_qwen3_8b.json`
-- `platform_evidence_signatures_v1.json`
+LLM provider configuration is illustrative/configurable and must not disclose private inference endpoints; model-backed generation should be reported as available only when connected.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../docs/README.md)

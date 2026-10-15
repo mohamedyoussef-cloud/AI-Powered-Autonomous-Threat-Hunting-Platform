@@ -1,28 +1,12 @@
-# Experiment 01: Hypothesis Generation
+# Experiment 01 — historical design
 
-## Objective
+An early methodology/proposal for ATT&CK-grounded hypothesis generation.
 
-Evaluate whether MITRE ATT&CK-guided hypothesis generation can reduce analyst preparation time and improve hypothesis structure compared with a manual baseline.
+## Contents
+- No executable or data files are tracked in this folder at this snapshot.
 
-## Dataset / Knowledge Source
+## Interpretation and usage
 
-- MITRE ATT&CK Enterprise techniques
-- Public threat hunting examples or synthetic campaign scenarios
+The completed research artifacts are in `artifacts/hypotheses/` and the executable stage is under `src/threat_hunting/phase3/hypothesis_engine/`. Treat this folder as experiment design, not as a live results ledger.
 
-## Method
-
-1. Define a set of hunt campaign scenarios.
-2. Generate or prepare ATT&CK-aligned hypotheses.
-3. Compare generated hypotheses against manual analyst-created hypotheses.
-4. Record analyst review decisions and required edits.
-
-## Metrics
-
-- MITRE mapping accuracy
-- Hypothesis relevance score
-- Analyst acceptance rate
-- Preparation time saved
-
-## Results
-
-Pending execution after the MVP workflow is implemented.
+[Related overview](../../docs/README.md)

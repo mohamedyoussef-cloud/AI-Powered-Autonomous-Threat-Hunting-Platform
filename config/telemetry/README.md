@@ -1,15 +1,14 @@
-# Telemetry
+# Logical telemetry configuration
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Versioned source-identity and capability registry policies used during telemetry matching.
 
 ## Contents
+- [`capability_registry_v2.json`](capability_registry_v2.json) — structured capability registry v2 records
+- [`source_identity_policy_v2.json`](source_identity_policy_v2.json) — structured source identity policy v2 records
+- [`source_identity_policy_v2_1.json`](source_identity_policy_v2_1.json) — structured source identity policy v2 1 records
 
-Files in this directory:
+## Interpretation and usage
 
-- `capability_registry_v2.json`
-- `source_identity_policy_v2.json`
-- `source_identity_policy_v2_1.json`
+These source identities are abstractions; actual index/field mappings and credentialed SIEM access remain environment-specific.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../docs/README.md)

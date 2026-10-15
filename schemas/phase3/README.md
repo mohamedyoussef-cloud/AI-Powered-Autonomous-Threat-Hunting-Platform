@@ -1,20 +1,16 @@
-# Phase3
+# Phase 3 data contracts
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Versioned schema definitions for hypothesis outputs, eligibility decisions and detection plans.
 
 ## Contents
+- [`detection_eligibility/`](detection_eligibility/) — jSON Schema for the gating output of the detection eligibility stage.
+- [`detection_plan/`](detection_plan/) — plan-record formats, including versioned revisions and semantic-output structure.
+- [`hypothesis_engine/`](hypothesis_engine/) — contracts for pre-attack, collection-gap, environmental-resolution and runtime hunt hypotheses.
+- [`environment_profile.schema.json`](environment_profile.schema.json) — structured environment profile.schema records
+- [`hypothesis_output.schema.json`](hypothesis_output.schema.json) — structured hypothesis output.schema records
 
-Subdirectories:
+## Interpretation and usage
 
-- `detection_eligibility/`
-- `detection_plan/`
-- `hypothesis_engine/`
+Use the schema version matching each recorded artifact; do not silently coerce earlier structures into newer output formats.
 
-Files in this directory:
-
-- `environment_profile.schema.json`
-- `hypothesis_output.schema.json`
-
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../docs/README.md)

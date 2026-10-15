@@ -1,20 +1,16 @@
-# Runtime
+# Hunt execution scheduling
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Recorded execution queue, deferred workloads, summary and runtime result bundle.
 
 ## Contents
+- [`runtime_results_v1/`](runtime_results_v1/) — per-query search outcomes, errors and manifest for the recorded Splunk runtime batch.
+- [`summary_v1.json`](summary_v1.json) — recorded aggregate outcomes
+- [`runtime_execution_queue_v1.jsonl`](runtime_execution_queue_v1.jsonl) — searches scheduled for runtime
+- [`runtime_execution_deferred_v1.jsonl`](runtime_execution_deferred_v1.jsonl) — deferred execution candidates
+- **Additional tracked files:** 1 (see directory listing for complete inventory).
 
-Subdirectories:
+## Interpretation and usage
 
-- `runtime_results_v1/`
+The recorded study executed 404 ready hunts. Some queries were deferred for execution-readiness reasons; neither successful execution nor nonzero hits alone establish a validated threat.
 
-Files in this directory:
-
-- `manifest_v1.json`
-- `runtime_execution_deferred_v1.jsonl`
-- `runtime_execution_queue_v1.jsonl`
-- `summary_v1.json`
-
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../README.md)

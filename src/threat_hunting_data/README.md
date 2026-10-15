@@ -1,18 +1,17 @@
-# Threat Hunting Data
+# Data preparation and normalization
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Shared source preparation, normalization, schema validation and feature-contract helpers.
 
 ## Contents
+- [`__init__.py`](__init__.py) — Python package initialization
+- [`bots_preparation.py`](bots_preparation.py) — implementation of bots preparation
+- [`evtx_preparation.py`](evtx_preparation.py) — implementation of evtx preparation
+- [`feature_contracts.py`](feature_contracts.py) — implementation of feature contracts
+- [`normalization.py`](normalization.py) — implementation of normalization
+- [`schema_validation.py`](schema_validation.py) — implementation of schema validation
 
-Files in this directory:
+## Interpretation and usage
 
-- `__init__.py`
-- `bots_preparation.py`
-- `evtx_preparation.py`
-- `feature_contracts.py`
-- `normalization.py`
-- `schema_validation.py`
+The files cover ATT&CK-aligned security data preparation. Keep the GUIDE/XGBoost ML source fields distinct from canonical EVTX or Sigma fields unless explicitly validated.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../README.md)

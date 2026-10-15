@@ -1,16 +1,15 @@
-# Backend core
+# Backend core infrastructure
 
-Configuration, database engine, authentication helpers and shared application infrastructure.
+Application settings, SQLAlchemy initialization and shared security helpers.
 
 ## Contents
+- [`config.py`](config.py) — implementation of config
+- [`database.py`](database.py) — implementation of database
+- [`security.py`](security.py) — implementation of security
+- **Additional tracked files:** 1 (see directory listing for complete inventory).
 
-Files in this directory:
+## Interpretation and usage
 
-- `__init__.py`
-- `config.py`
-- `database.py`
-- `security.py`
+Configure secrets and database locations with environment variables. Local demo authentication settings are not suitable for Internet-facing deployment without hardening.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../README.md)

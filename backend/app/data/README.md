@@ -1,13 +1,12 @@
-# Runtime data boundary
+# Runtime data and model boundary
 
-Local application data and optional model assets live here at runtime. Do not commit live SQLite databases or credentials.
+Local SQLite state and optionally installed inference assets sit under the backend data directory.
 
 ## Contents
+- [`ml_triage/`](ml_triage/) — the source tree for the locked XGBoost three-class GUIDE alert model bundle and preprocessing/evaluation metadata.
 
-Subdirectories:
+## Interpretation and usage
 
-- `ml_triage/`
+Application databases and credentials must remain untracked. Only vetted model contracts/evaluation evidence are committed; the frozen XGBoost weights require separate distribution.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../README.md)

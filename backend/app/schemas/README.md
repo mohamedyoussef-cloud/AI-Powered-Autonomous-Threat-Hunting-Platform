@@ -1,15 +1,14 @@
-# API schemas
+# API request and response contracts
 
-Pydantic input/output contracts for application endpoints.
+Pydantic schemas for endpoint inputs, outputs and campaign payloads.
 
 ## Contents
+- [`__init__.py`](__init__.py) — Python package initialization
+- [`api_schemas.py`](api_schemas.py) — implementation of api schemas
+- [`campaign.py`](campaign.py) — implementation of campaign
 
-Files in this directory:
+## Interpretation and usage
 
-- `__init__.py`
-- `api_schemas.py`
-- `campaign.py`
+Update schemas when changing the API contract, then run endpoint tests; schemas here are not the same as the canonical research schemas under root `schemas/`.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../README.md)

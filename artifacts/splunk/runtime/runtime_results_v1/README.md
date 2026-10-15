@@ -1,16 +1,15 @@
-# Runtime Results V1
+# Runtime execution results
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Per-query search outcomes, errors and manifest for the recorded Splunk runtime batch.
 
 ## Contents
+- [`summary_v1.json`](summary_v1.json) — recorded aggregate outcomes
+- [`runtime_execution_results_v1.jsonl`](runtime_execution_results_v1.jsonl) — per-hunt execution result records
+- [`runtime_execution_errors_v1.jsonl`](runtime_execution_errors_v1.jsonl) — captured execution errors
+- **Additional tracked files:** 1 (see directory listing for complete inventory).
 
-Files in this directory:
+## Interpretation and usage
 
-- `manifest_v1.json`
-- `runtime_execution_errors_v1.jsonl`
-- `runtime_execution_results_v1.jsonl`
-- `summary_v1.json`
+Inspect individual result and error records together with `summary_v1.json`; 22 nonzero raw-result hunts are not 22 confirmed detections.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../../README.md)

@@ -1,13 +1,12 @@
-# Research
+# Research dataset-selection evidence
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Structured study notes documenting the preparation and selection of LLM training sources.
 
 ## Contents
+- [`llm_training_dataset_research_v1.json`](llm_training_dataset_research_v1.json) — structured llm training dataset research v1 records
 
-Files in this directory:
+## Interpretation and usage
 
-- `llm_training_dataset_research_v1.json`
+Treat this as supporting research metadata; authoritative dataset partitions and checksums live under `datasets/llm/` and `evaluation/llm/`.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../README.md)

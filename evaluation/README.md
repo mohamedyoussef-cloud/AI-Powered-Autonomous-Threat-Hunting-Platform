@@ -1,18 +1,14 @@
-# Evaluation evidence
+# Validation and evaluation evidence
 
-Metrics, split policies and assessment protocols. Frozen-test reports must never be silently recalculated or retuned.
+Study metrics, evaluation summaries and locked evidence separated from model weights and deployment credentials.
 
 ## Contents
+- [`llm/`](llm/) — fine-tuning/evaluation artifacts for the ATT&CK hypothesis-to-Sigma generation task.
+- [`metrics.md`](metrics.md) — documentation for metrics
+- [`results.md`](results.md) — documentation for results
 
-Subdirectories:
+## Interpretation and usage
 
-- `llm/`
+Model evaluations are split-specific; runtime hunt results are separately documented under `artifacts/splunk/`. Never cite ML metrics as a measured end-to-end detection precision.
 
-Files in this directory:
-
-- `metrics.md`
-- `results.md`
-
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../docs/README.md)

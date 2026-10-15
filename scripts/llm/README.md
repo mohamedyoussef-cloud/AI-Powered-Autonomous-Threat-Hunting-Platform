@@ -1,17 +1,14 @@
-# LLM research scripts
+# Qwen training and evaluation scripts
 
-Source for LLM dataset preparation, evaluation or inference-related experiments. GPU-intensive execution is optional and separate.
+Training and evaluation procedures for research Sigma generation, plus telemetry-resolver experiments.
 
 ## Contents
+- [`train_qwen3_sigma_qlora.py`](train_qwen3_sigma_qlora.py) — implementation of train qwen3 sigma qlora
+- [`evaluate_sigma_generation_v2.py`](evaluate_sigma_generation_v2.py) — implementation of evaluate sigma generation v2
+- **Additional tracked files:** 3 (see directory listing for complete inventory).
 
-Files in this directory:
+## Interpretation and usage
 
-- `evaluate_sigma_generation.py`
-- `evaluate_sigma_generation_v2.py`
-- `telemetry_resolver_qwen.py`
-- `telemetry_resolver_qwen_base.py`
-- `train_qwen3_sigma_qlora.py`
+GPU-intensive procedures are optional research reproduction tasks. `train_qwen3_sigma_qlora.py` does not define the running backend provider; check recorded split contracts before any training.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../docs/README.md)

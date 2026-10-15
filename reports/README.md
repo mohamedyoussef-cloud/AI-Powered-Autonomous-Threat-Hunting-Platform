@@ -1,14 +1,13 @@
-# Research reports
+# Reports and reporting placeholders
 
-Academic/engineering summaries with traceable underlying evidence and explicit limitations.
+Entry points for forthcoming MSc report text and illustrative hunt report examples.
 
 ## Contents
+- [`final_project_report/`](final_project_report/) — reserved directory for the academic report and related citations, figures and final deliverables.
+- [`sample_hunt_reports/`](sample_hunt_reports/) — reserved folder for example report exports from the analyst-facing application.
 
-Subdirectories:
+## Interpretation and usage
 
-- `final_project_report/`
-- `sample_hunt_reports/`
+Real research evidence belongs in `artifacts/` and `evaluation/`. An illustrative report must be labeled illustrative, not evidence of a confirmed incident.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../docs/README.md)

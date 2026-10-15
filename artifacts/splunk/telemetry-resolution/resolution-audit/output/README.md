@@ -1,14 +1,13 @@
-# Output
+# Telemetry resolver evaluation outputs
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Versioned baseline and candidate resolver artifacts for comparison of telemetry selection experiments.
 
 ## Contents
+- [`qwen_base_resolver_v1/`](qwen_base_resolver_v1/) — frozen prediction records and aggregate summary for the baseline resolver experiment.
+- [`qwen_resolver_v1/`](qwen_resolver_v1/) — prediction records and aggregate summary for a model-assisted telemetry-resolution experiment.
 
-Subdirectories:
+## Interpretation and usage
 
-- `qwen_base_resolver_v1/`
-- `qwen_resolver_v1/`
+Keep base and candidate runs distinct and use their recorded summaries; neither directory alone proves a live data source.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../../../README.md)

@@ -1,13 +1,12 @@
-# Datasets
+# Dataset documentation and allowed inputs
 
-This folder stores dataset references, loading scripts, and sample data notes.
+Versioned dataset metadata and modest training-corpus artifacts, not a bulk mirror of the raw telemetry collections.
 
-## Dataset Sources
+## Contents
+- [`llm/`](llm/) — training and frozen evaluation corpora, schema contracts and selection/audit manifests for the detection-generation research.
 
-1. MITRE ATT&CK Enterprise Dataset
-2. Splunk BOTS v3
-3. EVTX-ATTACK-SAMPLES
-4. Sigma Rules Repository
-5. DARPA Transparent Computing Datasets
+## Interpretation and usage
 
+Check each source license. GUIDE ML feature training/evaluation is separate from the LLM Sigma training records found under `llm/`.
 
+[Related overview](../docs/README.md)

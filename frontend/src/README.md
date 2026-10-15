@@ -1,15 +1,14 @@
-# Frontend source
+# Frontend application source
 
-React components, interface logic, styling and client-side report generation. Never embed credentials in client code.
+React interface code, styling and client-side report helpers.
 
 ## Contents
+- [`main.jsx`](main.jsx) — tracked research asset
+- [`index.css`](index.css) — tracked research asset
+- [`reports.js`](reports.js) — tracked research asset
 
-Files in this directory:
+## Interpretation and usage
 
-- `index.css`
-- `main.jsx`
-- `reports.js`
+`main.jsx` currently contains significant UI logic; `reports.js` implements presentation/export helpers. Client code must never contain backend secrets or internal deployment endpoints.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../README.md)

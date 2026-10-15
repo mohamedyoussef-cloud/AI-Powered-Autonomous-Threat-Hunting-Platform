@@ -1,14 +1,13 @@
-# Resolved
+# Resolved telemetry relationships
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Resolved source-to-capability mapping evidence produced by the research pipeline.
 
 ## Contents
+- [`attack_data_component_evidence_v2_1.jsonl`](attack_data_component_evidence_v2_1.jsonl) — versioned line-delimited records
+- [`technique_telemetry_evidence_v2_1.jsonl`](technique_telemetry_evidence_v2_1.jsonl) — versioned line-delimited records
 
-Files in this directory:
+## Interpretation and usage
 
-- `attack_data_component_evidence_v2_1.jsonl`
-- `technique_telemetry_evidence_v2_1.jsonl`
+Verify resolution provenance before associating a logical telemetry source with a specific SIEM index.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../README.md)

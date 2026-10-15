@@ -1,20 +1,16 @@
-# Experiment configuration
+# Canonical data and pipeline registry
 
-Canonical project configuration, including the core dataset registry. The registry is a description of sources, not evidence that raw data is bundled.
+Dataset source declarations, quality rules, EVTX field mapping and core pipeline contract.
 
 ## Contents
+- [`llm/`](llm/) — tracked LLM experiment task/format configuration, distinct from trained checkpoint files.
+- [`dataset_registry.yaml`](dataset_registry.yaml) — configuration for dataset registry
+- [`pipeline_contract.yaml`](pipeline_contract.yaml) — configuration for pipeline contract
+- [`quality_rules.yaml`](quality_rules.yaml) — configuration for quality rules
+- **Additional tracked files:** 1 (see directory listing for complete inventory).
 
-Subdirectories:
+## Interpretation and usage
 
-- `llm/`
+`dataset_registry.yaml` is the canonical research registry. DARPA provenance-graph data are recorded as `future_extension_only` / `excluded_from_core`, not an active training source.
 
-Files in this directory:
-
-- `dataset_registry.yaml`
-- `evtx_event_mapping.yaml`
-- `pipeline_contract.yaml`
-- `quality_rules.yaml`
-
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../docs/README.md)

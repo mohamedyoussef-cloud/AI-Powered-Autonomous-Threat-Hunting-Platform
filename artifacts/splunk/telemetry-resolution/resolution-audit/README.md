@@ -1,13 +1,12 @@
-# Resolution Audit
+# Telemetry resolution audit
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Audit area for comparing telemetry-resolution decisions with their supporting model-assisted research runs.
 
 ## Contents
+- [`output/`](output/) — versioned baseline and candidate resolver artifacts for comparison of telemetry selection experiments.
 
-Subdirectories:
+## Interpretation and usage
 
-- `output/`
+Qwen resolution output is a research artifact; deployment-time source mappings still require independent evidence and configuration.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../../README.md)

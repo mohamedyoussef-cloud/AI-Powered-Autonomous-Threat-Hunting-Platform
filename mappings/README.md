@@ -1,16 +1,14 @@
-# Semantic mappings
+# Canonical event field mappings
 
-ATT&CK, telemetry and field mapping resources for rule compilation and execution; unmapped fields must remain explicit.
+Field/value normalization and event taxonomies linking heterogeneous telemetry to canonical feature schemas.
 
 ## Contents
+- [`field_mapping.yaml`](field_mapping.yaml) — configuration for field mapping
+- [`evtx_samples_csv_field_mapping.yaml`](evtx_samples_csv_field_mapping.yaml) — configuration for evtx samples csv field mapping
+- **Additional tracked files:** 2 (see directory listing for complete inventory).
 
-Files in this directory:
+## Interpretation and usage
 
-- `event_taxonomy.yaml`
-- `evtx_samples_csv_field_mapping.yaml`
-- `field_mapping.yaml`
-- `value_normalization.yaml`
+Mappings are source- and version-dependent. A GUIDE classifier feature should not be inferred from an unrelated Sigma/EVTX attribute without validated semantics.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../docs/README.md)

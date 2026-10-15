@@ -1,13 +1,12 @@
-# Detection Eligibility
+# Eligibility decision schema
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+JSON Schema for the gating output of the detection eligibility stage.
 
 ## Contents
+- [`eligibility_output_v1.schema.json`](eligibility_output_v1.schema.json) — structured eligibility output v1.schema records
 
-Files in this directory:
+## Interpretation and usage
 
-- `eligibility_output_v1.schema.json`
+This schema documents path admission criteria; a passing eligibility record is not a confirmed runtime finding.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../../docs/README.md)

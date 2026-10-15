@@ -1,20 +1,14 @@
-# Supervised Sigma V1
+# SigmaHQ supervised-data audit
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Policy, selection summary, family indexes and split manifests for SigmaHQ-assisted corpus preparation.
 
 ## Contents
+- [`dataset_selection_summary_v1.json`](dataset_selection_summary_v1.json) — corpus selection decisions
+- [`dataset_policy_v1.json`](dataset_policy_v1.json) — supervised data partition and quality policy
+- **Additional tracked files:** 6 (see directory listing for complete inventory).
 
-Files in this directory:
+## Interpretation and usage
 
-- `dataset_policy_v1.json`
-- `dataset_selection_summary_v1.json`
-- `sigmahq_family_index_v1.jsonl`
-- `sigmahq_inventory_v1.jsonl`
-- `sigmahq_near_duplicate_pairs_v1.jsonl`
-- `test_manifest_v1.jsonl`
-- `train_manifest_v1.jsonl`
-- `validation_manifest_v1.jsonl`
+These source-selection manifests document inclusion/exclusion and near-duplicate review. Do not treat the presence of external SigmaHQ references as permission to redistribute unlicensed raw assets.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../../docs/README.md)

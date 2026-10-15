@@ -1,15 +1,14 @@
-# Canonical
+# Canonical telemetry inventories
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Normalized telemetry capability/evidence inventories produced by the pipeline.
 
 ## Contents
+- [`canonical_telemetry_capabilities_v2.jsonl`](canonical_telemetry_capabilities_v2.jsonl) — versioned line-delimited records
+- [`canonical_telemetry_evidence_v2.jsonl`](canonical_telemetry_evidence_v2.jsonl) — versioned line-delimited records
+- [`canonical_telemetry_inventory_v1.jsonl`](canonical_telemetry_inventory_v1.jsonl) — versioned line-delimited records
 
-Files in this directory:
+## Interpretation and usage
 
-- `canonical_telemetry_capabilities_v2.jsonl`
-- `canonical_telemetry_evidence_v2.jsonl`
-- `canonical_telemetry_inventory_v1.jsonl`
+These records are intermediate analysis outputs. Interpret them through the summaries and readiness gates rather than as current SIEM configuration.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../README.md)

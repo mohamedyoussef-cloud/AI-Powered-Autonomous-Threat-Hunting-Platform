@@ -1,20 +1,15 @@
-# Generation
+# Sigma generation records
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Generation units, results indexes, baseline summaries and blocked-generation cases.
 
 ## Contents
+- [`baseline_sigma_summary_v1.json`](baseline_sigma_summary_v1.json) — generation-stage counts
+- [`sigma_generation_design_audit_v1.json`](sigma_generation_design_audit_v1.json) — generation-design audit
+- [`sigma_generation_blocked_v1.jsonl`](sigma_generation_blocked_v1.jsonl) — blocked rule-generation records
+- **Additional tracked files:** 5 (see directory listing for complete inventory).
 
-Files in this directory:
+## Interpretation and usage
 
-- `baseline_sigma_errors_v1.jsonl`
-- `baseline_sigma_generation_audit_v1.json`
-- `baseline_sigma_results_index_v1.jsonl`
-- `baseline_sigma_summary_v1.json`
-- `sigma_generation_blocked_v1.jsonl`
-- `sigma_generation_design_audit_v1.json`
-- `sigma_generation_design_v1.json`
-- `sigma_generation_units_v1.jsonl`
+Distinguish attempted generation from generated, valid, and execution-eligible rules. Consult the companion pySigma validation reports in `../validation/`.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../README.md)

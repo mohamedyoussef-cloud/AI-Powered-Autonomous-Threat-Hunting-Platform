@@ -1,17 +1,16 @@
-# Qwen3 Sigma Training V1
+# Locked Qwen3 Sigma corpus
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Train/validation/frozen test splits used for the research Qwen3-8B QLoRA evaluation.
 
 ## Contents
+- [`context_length_summary.json`](context_length_summary.json) — input length eligibility summary
+- [`train.jsonl`](train.jsonl) — versioned line-delimited records
+- [`validation.jsonl`](validation.jsonl) — versioned line-delimited records
+- [`test.jsonl`](test.jsonl) — versioned line-delimited records
+- **Additional tracked files:** 1 (see directory listing for complete inventory).
 
-Files in this directory:
+## Interpretation and usage
 
-- `context_length_summary.json`
-- `excluded_by_context_length.jsonl`
-- `test.jsonl`
-- `train.jsonl`
-- `validation.jsonl`
+Recorded split sizes: train 2,322; validation 270; frozen test 286. The frozen split must not be reused for further training or tuning; see `evaluation/llm/README.md`.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../../docs/README.md)

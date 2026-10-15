@@ -1,18 +1,17 @@
-# Telemetry
+# Telemetry capability analysis
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+ATT&CK data-component requirements, generic evidence construction and capability-resolution audits.
 
 ## Contents
+- [`audit_generic_attack_telemetry_evidence_v2.py`](audit_generic_attack_telemetry_evidence_v2.py) — implementation of audit generic attack telemetry evidence v2
+- [`audit_generic_attack_telemetry_evidence_v2_1.py`](audit_generic_attack_telemetry_evidence_v2_1.py) — implementation of audit generic attack telemetry evidence v2 1
+- [`build_attack_data_component_requirements_v2.py`](build_attack_data_component_requirements_v2.py) — implementation of build attack data component requirements v2
+- [`build_generic_attack_telemetry_evidence_v2.py`](build_generic_attack_telemetry_evidence_v2.py) — implementation of build generic attack telemetry evidence v2
+- [`build_generic_attack_telemetry_evidence_v2_1.py`](build_generic_attack_telemetry_evidence_v2_1.py) — implementation of build generic attack telemetry evidence v2 1
+- [`build_generic_capability_resolver_v2.py`](build_generic_capability_resolver_v2.py) — implementation of build generic capability resolver v2
 
-Files in this directory:
+## Interpretation and usage
 
-- `audit_generic_attack_telemetry_evidence_v2.py`
-- `audit_generic_attack_telemetry_evidence_v2_1.py`
-- `build_attack_data_component_requirements_v2.py`
-- `build_generic_attack_telemetry_evidence_v2.py`
-- `build_generic_attack_telemetry_evidence_v2_1.py`
-- `build_generic_capability_resolver_v2.py`
+Telemetry availability must be checked for the target deployment; research capability maps are not synonymous with live source access.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../README.md)

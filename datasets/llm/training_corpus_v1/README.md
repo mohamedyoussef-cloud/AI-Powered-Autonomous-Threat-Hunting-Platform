@@ -1,17 +1,14 @@
-# Training Corpus V1
+# Exploratory Sigma training corpus
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Earlier curated train/validation/test partitions and their build summaries and schema.
 
 ## Contents
+- [`dataset_build_summary_v1.json`](dataset_build_summary_v1.json) — dataset build report
+- [`training_example_schema_v1.json`](training_example_schema_v1.json) — schema for individual training examples
+- **Additional tracked files:** 3 (see directory listing for complete inventory).
 
-Files in this directory:
+## Interpretation and usage
 
-- `dataset_build_summary_v1.json`
-- `test.jsonl`
-- `train.jsonl`
-- `training_example_schema_v1.json`
-- `validation.jsonl`
+These files are research intermediates. Avoid conflating their split sizes with the later authoritative Qwen3 frozen benchmark in `qwen3_sigma_training_v1/`.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../../docs/README.md)

@@ -1,16 +1,15 @@
-# Hypothesis Engine
+# Hypothesis-family schemas
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Contracts for pre-attack, collection-gap, environmental-resolution and runtime hunt hypotheses.
 
 ## Contents
+- [`collection_gap_output_v1.schema.json`](collection_gap_output_v1.schema.json) — structured collection gap output v1.schema records
+- [`environment_resolution_output_v1.schema.json`](environment_resolution_output_v1.schema.json) — structured environment resolution output v1.schema records
+- [`pre_attack_output_v1.schema.json`](pre_attack_output_v1.schema.json) — structured pre attack output v1.schema records
+- [`runtime_hunt_output_v1.schema.json`](runtime_hunt_output_v1.schema.json) — structured runtime hunt output v1.schema records
 
-Files in this directory:
+## Interpretation and usage
 
-- `collection_gap_output_v1.schema.json`
-- `environment_resolution_output_v1.schema.json`
-- `pre_attack_output_v1.schema.json`
-- `runtime_hunt_output_v1.schema.json`
+These distinguish hypothesis types and support output validation; they do not state that detection has actually fired.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../../docs/README.md)

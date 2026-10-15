@@ -1,16 +1,15 @@
-# Research materials
+# Research design and methodology
 
-Methodology and study-related content supporting the master's project.
+Problem statement, research questions, methodology and literature-review materials for the MSc study.
 
 ## Contents
+- [`literature-review.md`](literature-review.md) — documentation for literature-review
+- [`methodology.md`](methodology.md) — documentation for methodology
+- [`problem-statement.md`](problem-statement.md) — documentation for problem-statement
+- [`research-questions.md`](research-questions.md) — documentation for research-questions
 
-Files in this directory:
+## Interpretation and usage
 
-- `literature-review.md`
-- `methodology.md`
-- `problem-statement.md`
-- `research-questions.md`
+Where early research text describes future work, cross-reference the final recorded experimental evidence before claiming implementation status.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../docs/README.md)

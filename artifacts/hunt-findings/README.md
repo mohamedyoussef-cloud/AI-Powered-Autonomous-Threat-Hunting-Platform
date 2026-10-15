@@ -1,16 +1,15 @@
-# Hunt finding evidence
+# Hunt finding validation
 
-Results of hunts and the subsequent validation decisions; distinguish execution hits from analyst-validated findings.
+Candidate dispositions and validated finding outputs from the recorded Splunk runtime investigation.
 
 ## Contents
+- [`summary_v1.json`](summary_v1.json) — recorded aggregate outcomes
+- [`validated_hunt_findings_v1.jsonl`](validated_hunt_findings_v1.jsonl) — analyst-validated finding feed
+- [`runtime_candidate_dispositions_v1.jsonl`](runtime_candidate_dispositions_v1.jsonl) — candidate review/disposition records
+- **Additional tracked files:** 1 (see directory listing for complete inventory).
 
-Files in this directory:
+## Interpretation and usage
 
-- `manifest_v1.json`
-- `runtime_candidate_dispositions_v1.jsonl`
-- `summary_v1.json`
-- `validated_hunt_findings_v1.jsonl`
+The validated findings feed is the authoritative outcome; raw positive search counts are not verified malicious findings. The recorded study reports zero confirmed findings.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../README.md)

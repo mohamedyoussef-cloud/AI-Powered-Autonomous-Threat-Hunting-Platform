@@ -1,14 +1,13 @@
-# Qwen Resolver V1
+# Candidate telemetry resolver run
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Prediction records and aggregate summary for a model-assisted telemetry-resolution experiment.
 
 ## Contents
+- [`predictions.jsonl`](predictions.jsonl) — versioned line-delimited records
+- [`summary.json`](summary.json) — structured summary records
 
-Files in this directory:
+## Interpretation and usage
 
-- `predictions.jsonl`
-- `summary.json`
+The baseline comparison is in the adjacent `qwen_base_resolver_v1/` folder. This is research evidence, not a running external provider.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../../../../README.md)

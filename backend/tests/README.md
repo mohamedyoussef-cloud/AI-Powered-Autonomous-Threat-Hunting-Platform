@@ -1,16 +1,15 @@
-# Backend test suite
+# Backend regression tests
 
-Regression and integration tests. Tests must use temporary, synthetic databases rather than copying production data.
+API, hunt-engine and ML inference/compatibility tests.
 
 ## Contents
+- [`test_api.py`](test_api.py) — implementation of test api
+- [`test_hunt_engine.py`](test_hunt_engine.py) — implementation of test hunt engine
+- [`test_ml_triage.py`](test_ml_triage.py) — implementation of test ml triage
+- **Additional tracked files:** 1 (see directory listing for complete inventory).
 
-Files in this directory:
+## Interpretation and usage
 
-- `__init__.py`
-- `test_api.py`
-- `test_hunt_engine.py`
-- `test_ml_triage.py`
+Run `python -m pytest tests -q` from `backend/`. The hunt fixture uses an isolated synthetic database. The optional full ML tests are skipped when the 142 MB frozen model bundle is absent; a skip is not evidence of inference success.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../README.md)

@@ -1,14 +1,13 @@
-# Fine Tuned Model
+# Fine-tuned Qwen3 locked evaluation
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Saved frozen benchmark outputs and summaries for Qwen3-8B QLoRA detection generation.
 
 ## Contents
+- [`frozen_test_predictions.jsonl`](frozen_test_predictions.jsonl) — versioned line-delimited records
+- [`frozen_test_summary.json`](frozen_test_summary.json) — structured frozen test summary records
 
-Files in this directory:
+## Interpretation and usage
 
-- `frozen_test_predictions.jsonl`
-- `frozen_test_summary.json`
+No-blocker pass was 223/286 (77.97%) on the recorded frozen set; passing this gate does not imply a validated hunt or zero analyst-review requirement.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../README.md)

@@ -1,14 +1,13 @@
-# Validation
+# Qwen validation-split outputs
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Validation records used before the frozen benchmark was evaluated.
 
 ## Contents
+- [`predictions.jsonl`](predictions.jsonl) — versioned line-delimited records
+- [`summary.json`](summary.json) — structured summary records
 
-Files in this directory:
+## Interpretation and usage
 
-- `predictions.jsonl`
-- `summary.json`
+Training/validation assessments are separate from locked test outcomes. No changes to the model or thresholds are justified by re-reading frozen outcomes.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../README.md)

@@ -1,14 +1,13 @@
-# Infrastructure
+# Infrastructure and deployment notes
 
-Deployment infrastructure and environment-independent operational configuration.
+Compose and deployment guidance for the research platform, not a guarantee of production readiness.
 
 ## Contents
+- [`docker-compose.yml`](docker-compose.yml) — tracked research asset
+- [`deployment-notes.md`](deployment-notes.md) — documentation for deployment-notes
 
-Files in this directory:
+## Interpretation and usage
 
-- `deployment-notes.md`
-- `docker-compose.yml`
+Review container/service configuration before public exposure. The optional external Qwen inference provider, the frozen ML bundle and real SIEM credentials are separate deployment dependencies.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../docs/README.md)

@@ -1,28 +1,17 @@
-# Domain services
+# Detection and triage domain services
 
-Detection generation/validation, telemetry, hunting execution and triage orchestration. Optional integrations must not masquerade as available services.
+Services implement generation-provider selection, Sigma parsing/compilation, hunting, telemetry, context retrieval, dataset catalogs and risk-scoring orchestration.
 
 ## Contents
+- [`detection_providers.py`](detection_providers.py) — implementation of detection providers
+- [`sigma_engine.py`](sigma_engine.py) — implementation of sigma engine
+- [`ml_triage.py`](ml_triage.py) — implementation of ml triage
+- [`triage.py`](triage.py) — implementation of triage
+- [`campaign_engine.py`](campaign_engine.py) — implementation of campaign engine
+- **Additional tracked files:** 11 (see directory listing for complete inventory).
 
-Files in this directory:
+## Interpretation and usage
 
-- `__init__.py`
-- `campaign_engine.py`
-- `connectors.py`
-- `dataset_catalog.py`
-- `detection_plans.py`
-- `detection_providers.py`
-- `evtx_hunt.py`
-- `ml_triage.py`
-- `phase3_hypothesis.py`
-- `post_task46_runtime.py`
-- `rule_generator.py`
-- `rule_retrieval.py`
-- `sigma_engine.py`
-- `technique_intelligence.py`
-- `telemetry.py`
-- `triage.py`
+`ml_triage.py` enforces bundle integrity/feature compatibility; `triage.py` supplies an explicitly identified heuristic route when appropriate. The frozen model is advisory, not a verdict engine.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../README.md)

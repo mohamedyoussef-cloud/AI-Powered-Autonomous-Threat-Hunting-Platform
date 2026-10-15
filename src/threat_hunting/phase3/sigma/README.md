@@ -1,16 +1,15 @@
-# Sigma pipeline
+# Sigma generation and pySigma gates
 
-Sigma rule generation, validation and conversion logic; backend execution uses separately configured services.
+Scripts for baseline generation design, rule drafting and pySigma validation.
 
 ## Contents
+- [`build_sigma_generation_design_v1.py`](build_sigma_generation_design_v1.py) — implementation of build sigma generation design v1
+- [`generate_baseline_sigma_v1.py`](generate_baseline_sigma_v1.py) — implementation of generate baseline sigma v1
+- [`generate_baseline_sigma_v1_1.py`](generate_baseline_sigma_v1_1.py) — implementation of generate baseline sigma v1 1
+- [`validate_baseline_sigma_pysigma_v1.py`](validate_baseline_sigma_pysigma_v1.py) — implementation of validate baseline sigma pysigma v1
 
-Files in this directory:
+## Interpretation and usage
 
-- `build_sigma_generation_design_v1.py`
-- `generate_baseline_sigma_v1.py`
-- `generate_baseline_sigma_v1_1.py`
-- `validate_baseline_sigma_pysigma_v1.py`
+Generated YAML is checked against Sigma schema and field/technique requirements before conversion; successful parsing alone is not a validated SIEM detection.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../../README.md)

@@ -1,13 +1,12 @@
-# Training
+# Qwen fine-tuning run evidence
 
-This directory contains version-controlled project components. Its contents are listed below; refer to the parent documentation for interpretation and scope.
+Training configuration/provenance summaries for the evaluated QLoRA candidate.
 
 ## Contents
+- [`run_manifest.json`](run_manifest.json) — structured run manifest records
 
-Files in this directory:
+## Interpretation and usage
 
-- `run_manifest.json`
+These are records of a completed training run. Do not assume its checkpoint is included or that retraining is required for repository use.
 
-## Provenance and maintenance
-
-Do not add secrets, raw private datasets, cached runtime databases, or unverified performance claims. Keep versioned evidence distinct from generated build output.
+[Related overview](../../README.md)
