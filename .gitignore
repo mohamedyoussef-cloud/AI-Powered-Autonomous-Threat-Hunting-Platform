@@ -200,3 +200,11 @@ backend/static/
 **/__pycache__/
 **/.pytest_cache/
 backend/app/data/ml_triage/ml_triage_production_v1/model/xgboost_te_v3_1.json
+
+# Private GUIDE-derived ML assets
+/backend/app/data/ml_triage/ml_triage_production_v1/preprocessing/target_encoding/*_mapping.parquet
+/backend/app/data/ml_triage/ml_triage_production_v1/provenance/org_split_map_v2.csv
+/backend/app/data/ml_triage/ml_triage_production_v1/provenance/split_contract_v2.json
+/backend/app/data/ml_triage/ml_triage_production_v1/source_reference/
+/backend/app/data/ml_triage/ml_triage_production_v1/bundle_manifest.json
+/backend/app/data/ml_triage/ml_triage_production_v1/model/xgboost_te_v3_1.json
