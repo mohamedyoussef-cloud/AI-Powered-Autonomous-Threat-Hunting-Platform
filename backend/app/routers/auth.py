@@ -35,6 +35,17 @@ JWT_SECRET = os.environ.get(
 
 TOKEN_TTL = 60 * 60 * 8
 
+# Explicit production opt-in. Development demo accounts must never become
+# Internet-accessible accounts through a default configuration.
+PRODUCTION = os.environ.get("THREATHUNT_ENV", "development").strip().lower() == "production"
+if PRODUCTION:
+    required_secret = os.environ.get("THREATHUNT_AUTH_SECRET", "")
+    if (len(required_secret) < 32 or required_secret in {
+        "CHANGE_THIS_THREATHUNT_SECRET_IN_PRODUCTION",
+        "change-me-long-random-string",
+    }):
+        raise RuntimeError("Production requires a unique THREATHUNT_AUTH_SECRET (32+ characters)")
+
 
 ROLES = {
     "Administrator": {
@@ -215,71 +226,60 @@ def decode_token(token: str) -> dict[str, Any]:
 
 
 def seed_database():
+    """Bootstrap explicit production admin OR local-only demo accounts.
 
+    Production refuses previously seeded demo passwords. No insecure defaults.
+    """
     con = db()
-
-    con.execute(
-        """
-        CREATE TABLE IF NOT EXISTS users (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT NOT NULL,
-            email TEXT NOT NULL UNIQUE,
-            password_hash TEXT NOT NULL,
-            role TEXT NOT NULL,
-            active INTEGER NOT NULL DEFAULT 1,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL
-        )
-        """
-    )
-
-    existing = con.execute(
-        "SELECT COUNT(*) AS n FROM users"
-    ).fetchone()["n"]
-
-    if existing == 0:
-
-        now = time.strftime(
-            "%Y-%m-%d %H:%M:%S"
-        )
-
-        users = [
-            (
-                "Sohila Mahmoud",
-                "admin@enterprise.local",
-                "Administrator",
-            ),
-            (
-                "Threat Hunter",
-                "analyst@enterprise.local",
-                "Analyst",
-            ),
-            (
-                "Security Monitor",
-                "monitor@enterprise.local",
-                "Monitor",
-            ),
-        ]
-
-        for name, email, role in users:
-            con.execute(
-                """
-                INSERT INTO users
-                (name,email,password_hash,role,active,created_at,updated_at)
-                VALUES (?,?,?,?,1,?,?)
-                """,
-                (
-                    name,
-                    email,
-                    hash_password("threathunt"),
-                    role,
-                    now,
-                    now,
-                ),
+    try:
+        con.execute("""
+            CREATE TABLE IF NOT EXISTS users (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT NOT NULL,
+                email TEXT NOT NULL UNIQUE,
+                password_hash TEXT NOT NULL,
+                role TEXT NOT NULL,
+                active INTEGER NOT NULL DEFAULT 1,
+                created_at TEXT NOT NULL,
+                updated_at TEXT NOT NULL
             )
-
-    con.commit()
-    con.close()
+        """)
+        existing = con.execute("SELECT COUNT(*) AS n FROM users").fetchone()["n"]
+        if existing == 0:
+            now = time.strftime("%Y-%m-%d %H:%M:%S")
+            if PRODUCTION:
+                email = os.environ.get("THREATHUNT_BOOTSTRAP_ADMIN_EMAIL", "").strip().lower()
+                password = os.environ.get("THREATHUNT_BOOTSTRAP_ADMIN_PASSWORD", "")
+                if (not email or "@" not in email or len(password) < 16
+                        or password == "threathunt"):
+                    raise RuntimeError(
+                        "First production start requires THREATHUNT_BOOTSTRAP_ADMIN_EMAIL "
+                        "and THREATHUNT_BOOTSTRAP_ADMIN_PASSWORD (16+ chars)"
+                    )
+                users = [("Initial Administrator", email, "Administrator", password)]
+            else:
+                users = [
+                    ("Sohila Mahmoud", "admin@enterprise.local", "Administrator", "threathunt"),
+                    ("Threat Hunter", "analyst@enterprise.local", "Analyst", "threathunt"),
+                    ("Security Monitor", "monitor@enterprise.local", "Monitor", "threathunt"),
+                ]
+            for name, email, role, password in users:
+                con.execute("""
+                    INSERT INTO users
+                    (name,email,password_hash,role,active,created_at,updated_at)
+                    VALUES (?,?,?,?,1,?,?)
+                """, (name, email, hash_password(password), role, now, now))
+        if PRODUCTION:
+            known_demo_emails = (
+                "admin@enterprise.local", "analyst@enterprise.local", "monitor@enterprise.local"
+            )
+            for email in known_demo_emails:
+                row = con.execute("SELECT password_hash FROM users WHERE lower(email)=?", (email,)).fetchone()
+                if row is not None and verify_password("threathunt", row["password_hash"]):
+                    raise RuntimeError("Production refused: replace existing demo account credentials")
+        con.commit()
+    finally:
+        con.close()
 
 
 seed_database()
