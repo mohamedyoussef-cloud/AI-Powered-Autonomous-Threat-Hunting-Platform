@@ -25,5 +25,6 @@ jobs:
           pip install -r backend/requirements.txt
 
       - name: Import FastAPI app
+        working-directory: backend
         run: |
-          python -c "from backend.app.main import app; print(app.title)"
+          python -c "from app.main import app; print(app.title)"

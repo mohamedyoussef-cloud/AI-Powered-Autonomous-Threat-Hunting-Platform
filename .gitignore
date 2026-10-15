@@ -208,3 +208,7 @@ backend/app/data/ml_triage/ml_triage_production_v1/model/xgboost_te_v3_1.json
 /backend/app/data/ml_triage/ml_triage_production_v1/source_reference/
 /backend/app/data/ml_triage/ml_triage_production_v1/bundle_manifest.json
 /backend/app/data/ml_triage/ml_triage_production_v1/model/xgboost_te_v3_1.json
+
+# Backend ORM Python sources are application code, not ML model weights.
+!/backend/app/models/
+!/backend/app/models/*.py
