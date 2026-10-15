@@ -1,0 +1,41 @@
+{
+  "version": "ml_triage_runtime_contract_v1",
+  "model_version": "xgboost_te_v3_1",
+  "model_family": "XGBoost",
+  "model_file": "model/xgboost_te_v3_1.json",
+  "best_iteration": 59,
+  "feature_count": 103,
+  "class_mapping": {
+    "0": "TRUE_POSITIVE",
+    "1": "BENIGN_POSITIVE",
+    "2": "FALSE_POSITIVE"
+  },
+  "probability_handling": {
+    "calibration": "identity",
+    "row_normalization": true
+  },
+  "decision_policy": {
+    "TRUE_POSITIVE_multiplier": 1.9,
+    "BENIGN_POSITIVE_multiplier": 1.0,
+    "FALSE_POSITIVE_multiplier": 1.2
+  },
+  "evaluated_tp_threshold": 0.5,
+  "deployment_mode": "analyst_assisted",
+  "autonomous_actions_enabled": false,
+  "runtime_outputs": [
+    "predicted_class",
+    "probability_true_positive",
+    "probability_benign_positive",
+    "probability_false_positive",
+    "model_probability",
+    "model_version",
+    "route",
+    "needs_review"
+  ],
+  "notes": [
+    "BENIGN_POSITIVE and FALSE_POSITIVE remain distinct classes.",
+    "NEEDS_REVIEW is an operational state, not a supervised class.",
+    "Analyst verdict/history must not be used as an ML input.",
+    "Frozen Test is final and must not be used for further tuning."
+  ]
+}

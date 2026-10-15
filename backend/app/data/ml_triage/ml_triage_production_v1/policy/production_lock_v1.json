@@ -1,0 +1,121 @@
+{
+  "version": "production_candidate_v1",
+  "status": "LOCKED_FOR_FROZEN_TEST",
+  "model": {
+    "family": "XGBoost",
+    "version": "xgboost_te_v3_1",
+    "feature_contract": "feature_contract_v2",
+    "target_encoding": "target_encoding_v3_1",
+    "model_selection_complete": true
+  },
+  "probability_handling": {
+    "row_normalization": true,
+    "deployed_calibration": "identity",
+    "temperature_scaling_deployed": false,
+    "reason": "Temperature scaling produced only negligible log-loss improvement while ECE and Brier score worsened. Production v1 therefore uses normalized native probabilities.",
+    "ui_name": "model_probability",
+    "do_not_claim": "perfectly_calibrated_probability"
+  },
+  "decision_policy": {
+    "TRUE_POSITIVE_multiplier": 1.9,
+    "BENIGN_POSITIVE_multiplier": 1.0,
+    "FALSE_POSITIVE_multiplier": 1.2,
+    "selected_on": "validation_only"
+  },
+  "routing_policy": {
+    "TRUE_POSITIVE": {
+      "auto_escalation_enabled": true,
+      "minimum_model_probability": 0.5,
+      "minimum_validation_precision_target": 0.95,
+      "route_if_threshold_met": "PRIORITY_ESCALATION",
+      "route_if_threshold_not_met": "NEEDS_REVIEW"
+    },
+    "BENIGN_POSITIVE": {
+      "auto_close_enabled": false,
+      "route": "BENIGN_REVIEW_QUEUE"
+    },
+    "FALSE_POSITIVE": {
+      "auto_close_enabled": false,
+      "auto_suppress_enabled": false,
+      "route": "FALSE_POSITIVE_REVIEW_QUEUE"
+    },
+    "safety_rule": "ML v1 may prioritize/deprioritize findings but must not automatically suppress or close BP/FP findings."
+  },
+  "validation": {
+    "metrics": {
+      "accuracy": 0.6070770960576369,
+      "balanced_accuracy": 0.5591406066691135,
+      "macro_f1": 0.5654244346058123,
+      "per_class": {
+        "TRUE_POSITIVE": {
+          "precision": 0.8157049666633066,
+          "recall": 0.6274194888267383,
+          "f1": 0.7092793573975351,
+          "support": 722260
+        },
+        "BENIGN_POSITIVE": {
+          "precision": 0.6003027372104163,
+          "recall": 0.738100922729898,
+          "f1": 0.662108177845316,
+          "support": 879564
+        },
+        "FALSE_POSITIVE": {
+          "precision": 0.33899815808836237,
+          "recall": 0.31190140845070424,
+          "f1": 0.32488576857458584,
+          "support": 440200
+        }
+      },
+      "confusion_matrix": [
+        [
+          453160,
+          179341,
+          89759
+        ],
+        [
+          52401,
+          649207,
+          177956
+        ],
+        [
+          49983,
+          252918,
+          137299
+        ]
+      ]
+    },
+    "tp_auto_escalation": {
+      "threshold": 0.5,
+      "auto_escalated_tp_rows": 309131,
+      "coverage_of_all_validation": 0.15138460664517164,
+      "tp_precision": 0.9509107789254394
+    }
+  },
+  "class_semantics": {
+    "0": "TRUE_POSITIVE",
+    "1": "BENIGN_POSITIVE",
+    "2": "FALSE_POSITIVE",
+    "operational_only": "NEEDS_REVIEW"
+  },
+  "artifact_sha256": {
+    "models/xgboost_te_v3_1/xgboost_te_v3_1.json": "d6efb2e0d6b5ccd1a3b18efb60e6e14ed31d5a7b10adb7ace5e573038862ade7",
+    "models/xgboost_te_v3_1/categorical_levels_v3_1.joblib": "5ae39c95c70a306bf780088d95b8faee30fccba015a5920a5aff14706cd17bcf",
+    "models/xgboost_te_v3_1/model_contract_v3_1.json": "c84799bd1ec3e9b2bf7af32405c9ce14a5b022005cd5c664e4d8994a862cbb60",
+    "config/feature_contract_v2.json": "c482005533b50e5658079487bf2c37782313ed9ce98546502eae7df771b2248b",
+    "models/target_encoding_v3_1/target_encoding_contract_v3_1.json": "0962632a1a7efef376fb02588b4b79a2d06d46c8d2acea78fd6352e431545f2c",
+    "splits/org_split_map_v2.csv": "f782a1691b0be67769cc8bdd26b3d5e71a5236c1d874be0f0bfff764863190ef",
+    "config/split_contract_v2.json": "f12162329083860f8abdd65b6eed8ee6865d720922ef3dd1be51cdc6fd445365",
+    "models/target_encoding_v3_1/AlertTitle_mapping.parquet": "5626a3284885e8364526a4de25e7205f6a527e7afcbe2956e768f02dfe5b14bd",
+    "models/target_encoding_v3_1/ApplicationName_mapping.parquet": "048572354a4579502f8625113df7ae5c6dfc65630fd80ee5b4764dd3678f1140",
+    "models/target_encoding_v3_1/Category_mapping.parquet": "54076ac133dadc701082d36e38af943104b798500bbfec32a4ed9a6fd42812ba",
+    "models/target_encoding_v3_1/CountryCode_mapping.parquet": "70896aa83f069dc19508ddf98372f9d90c7eeff6d3898e5561d1c8bcb22aa3fd",
+    "models/target_encoding_v3_1/DetectorId_mapping.parquet": "5830c493298424d5acd227761b364c9478a9583e802f8ca2eb18ebd439ed744d",
+    "models/target_encoding_v3_1/EntityType_mapping.parquet": "df0d6e93c4d32379e8ed980a29aae95a635e59b747ed59b26fc4824e5f459b1a",
+    "models/target_encoding_v3_1/ResourceType_mapping.parquet": "9f9fdbe29860c46bc56dd5891a7510c6f777c55aa94d367e4ab744dee40bf3c7",
+    "models/target_encoding_v3_1/ThreatFamily_mapping.parquet": "6c9863bc3ab3444492790c95468b84cedf96578d92c6e882a6f9c810635ea554"
+  },
+  "frozen_test": {
+    "opened": false,
+    "rule": "No model, preprocessing, multiplier, threshold, or routing change is permitted after Frozen Test evaluation."
+  }
+}

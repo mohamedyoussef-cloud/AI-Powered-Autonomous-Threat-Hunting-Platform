@@ -186,3 +186,17 @@ y_test*.csv
 # Frontend dependencies/build output
 node_modules/
 dist/
+
+# Publication safety rules (2026)
+**/.env
+**/.env.*
+!**/.env.example
+**/*backup_before*
+**/*.backup_*
+**/*.bak
+frontend/node_modules/
+frontend/dist/
+backend/static/
+**/__pycache__/
+**/.pytest_cache/
+backend/app/data/ml_triage/ml_triage_production_v1/model/xgboost_te_v3_1.json

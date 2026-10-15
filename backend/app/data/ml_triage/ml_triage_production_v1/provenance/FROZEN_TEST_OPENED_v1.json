@@ -1,0 +1,19 @@
+{
+  "version": "frozen_test_open_marker_v1",
+  "status": "COMPLETED",
+  "opened_at_utc": "2026-10-10T14:04:06.599592+00:00",
+  "script_sha256": "19d4e6db49526ce9cbbcc95dbb6e6beb3a0310b8b3c38f3f3faf5606eca65b66",
+  "production_lock_sha256": "8fc0294a137bab11927d959a1b680cc8d7e64937dd755fc0c059f69280909827",
+  "model_version": "xgboost_te_v3_1",
+  "best_iteration": 59,
+  "policy_multipliers": [
+    1.9,
+    1.0,
+    1.2
+  ],
+  "tp_auto_escalation_threshold": 0.5,
+  "no_tuning_after_open": true,
+  "completed_at_utc": "2026-10-10T14:06:15.096130+00:00",
+  "final_report": "reports/final_evaluation_v1/frozen_test_final_v1.json",
+  "final_report_sha256": "aabd5b71c532f302acef24a295ae769b3042314ed1438db5608c486660d22fe1"
+}

@@ -1,0 +1,3 @@
+Frozen Test final evaluation completed.
+This result is final.
+Do not tune the model, preprocessing, target encodings, calibration, class multipliers, confidence threshold, or routing policy against Frozen Test results.

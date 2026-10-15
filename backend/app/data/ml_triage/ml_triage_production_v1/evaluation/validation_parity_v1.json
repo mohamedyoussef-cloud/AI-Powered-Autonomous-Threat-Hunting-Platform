@@ -1,0 +1,90 @@
+{
+  "version": "validation_parity_v1",
+  "split": "validation",
+  "production_candidate": "production_candidate_v1",
+  "model": "xgboost_te_v3_1",
+  "best_iteration": 59,
+  "feature_count": 103,
+  "rows": 2042024,
+  "class_counts": {
+    "TRUE_POSITIVE": 722260,
+    "BENIGN_POSITIVE": 879564,
+    "FALSE_POSITIVE": 440200
+  },
+  "probability_handling": "identity + row normalization",
+  "decision_multipliers": [
+    1.9,
+    1.0,
+    1.2
+  ],
+  "classification": {
+    "accuracy": 0.6070770960576369,
+    "balanced_accuracy": 0.5591406066691135,
+    "macro_f1": 0.5654244346058123,
+    "per_class": {
+      "TRUE_POSITIVE": {
+        "precision": 0.8157049666633066,
+        "recall": 0.6274194888267383,
+        "f1": 0.7092793573975351,
+        "support": 722260
+      },
+      "BENIGN_POSITIVE": {
+        "precision": 0.6003027372104163,
+        "recall": 0.738100922729898,
+        "f1": 0.662108177845316,
+        "support": 879564
+      },
+      "FALSE_POSITIVE": {
+        "precision": 0.33899815808836237,
+        "recall": 0.31190140845070424,
+        "f1": 0.32488576857458584,
+        "support": 440200
+      }
+    },
+    "confusion_matrix": [
+      [
+        453160,
+        179341,
+        89759
+      ],
+      [
+        52401,
+        649207,
+        177956
+      ],
+      [
+        49983,
+        252918,
+        137299
+      ]
+    ]
+  },
+  "native_probability_metrics": {
+    "log_loss": 0.8858069181442261,
+    "multiclass_brier": 0.5335211094672215
+  },
+  "routing": {
+    "tp_auto_threshold": 0.5,
+    "tp_auto_escalated_rows": 309131,
+    "tp_auto_escalation_precision": 0.9509107789254394,
+    "tp_auto_escalation_coverage": 0.15138460664517164,
+    "route_counts": {
+      "PRIORITY_ESCALATION": 309131,
+      "NEEDS_REVIEW": 246413,
+      "BENIGN_REVIEW_QUEUE": 1081466,
+      "FALSE_POSITIVE_REVIEW_QUEUE": 405014
+    },
+    "bp_auto_close": false,
+    "fp_auto_close": false,
+    "fp_auto_suppress": false
+  },
+  "script_sha256": "19d4e6db49526ce9cbbcc95dbb6e6beb3a0310b8b3c38f3f3faf5606eca65b66",
+  "production_lock_sha256": "8fc0294a137bab11927d959a1b680cc8d7e64937dd755fc0c059f69280909827",
+  "validation_parity": {
+    "confusion_matrix_exact": true,
+    "macro_f1_exact": true,
+    "tp_auto_count_exact": true,
+    "tp_auto_precision_exact": true,
+    "passed": true
+  }
+}

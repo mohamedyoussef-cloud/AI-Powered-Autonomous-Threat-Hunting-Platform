@@ -1,0 +1,26 @@
+{
+  "version": "deployment_decision_v1",
+  "model_version": "xgboost_te_v3_1",
+  "deployment_status": "APPROVED_FOR_ANALYST_ASSISTED_TRIAGE",
+  "autonomous_actions_enabled": false,
+  "capabilities": {
+    "three_class_prediction": true,
+    "three_class_probabilities": true,
+    "priority_recommendation": true,
+    "queue_recommendation": true,
+    "analyst_assistance": true,
+    "automatic_final_verdict": false,
+    "automatic_false_positive_suppression": false,
+    "automatic_benign_closure": false,
+    "automatic_priority_escalation": false
+  },
+  "reason": {
+    "validation_macro_f1": 0.5654244346058123,
+    "frozen_macro_f1": 0.4522655317718596,
+    "validation_tp_auto_precision": 0.9509107789254394,
+    "frozen_tp_auto_precision": 0.8327355919150125,
+    "conclusion": "Frozen unseen-organization evaluation showed a material generalization gap. The model is deployed as analyst-assisted triage and recommendation only."
+  },
+  "frozen_test_is_final": true,
+  "model_retuning_after_frozen": false
+}

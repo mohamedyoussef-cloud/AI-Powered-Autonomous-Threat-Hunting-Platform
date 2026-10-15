@@ -1,0 +1,84 @@
+{
+  "version": "target_encoding_v3_1",
+  "method": "OrgId-group-aware cross-fitted multiclass target encoding",
+  "folds": 5,
+  "fold_assignment": "OrgId modulo 5",
+  "smoothing_alpha": 50.0,
+  "columns": [
+    "AlertTitle",
+    "DetectorId",
+    "ApplicationName",
+    "ThreatFamily",
+    "Category",
+    "EntityType",
+    "ResourceType",
+    "CountryCode"
+  ],
+  "global_train_class_counts": [
+    3370547,
+    4104629,
+    2054265
+  ],
+  "global_train_priors": [
+    0.35369829143178494,
+    0.43073135139826146,
+    0.21557035716995362
+  ],
+  "fold_class_counts": [
+    [
+      1637723,
+      606964,
+      384864
+    ],
+    [
+      631799,
+      1016685,
+      425117
+    ],
+    [
+      367977,
+      773568,
+      463159
+    ],
+    [
+      405742,
+      829844,
+      279291
+    ],
+    [
+      327306,
+      877568,
+      501834
+    ]
+  ],
+  "fold_excluded_priors": [
+    [
+      0.2511379166914255,
+      0.5069160522848914,
+      0.24194603102368298
+    ],
+    [
+      0.36732923453292987,
+      0.4141644670486491,
+      0.218506298418421
+    ],
+    [
+      0.3788857598681193,
+      0.42033710393165097,
+      0.20077713620022974
+    ],
+    [
+      0.3699271725823139,
+      0.4086042609429534,
+      0.22146856647473276
+    ],
+    [
+      0.38902529333418384,
+      0.41252347485207536,
+      0.1984512318137408
+    ]
+  ],
+  "train_encoding": "statistics AND smoothing prior exclude the row's entire OrgId fold",
+  "validation_encoding": "statistics and smoothing prior fitted on all training organizations",
+  "frozen_test_used": false
+}

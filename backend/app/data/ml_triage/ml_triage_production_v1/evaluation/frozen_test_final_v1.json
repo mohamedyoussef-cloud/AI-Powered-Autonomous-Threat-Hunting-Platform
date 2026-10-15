@@ -1,0 +1,92 @@
+{
+  "version": "frozen_test_final_v1",
+  "split": "frozen_test",
+  "production_candidate": "production_candidate_v1",
+  "model": "xgboost_te_v3_1",
+  "best_iteration": 59,
+  "feature_count": 103,
+  "rows": 2042024,
+  "class_counts": {
+    "TRUE_POSITIVE": 722260,
+    "BENIGN_POSITIVE": 879564,
+    "FALSE_POSITIVE": 440200
+  },
+  "probability_handling": "identity + row normalization",
+  "decision_multipliers": [
+    1.9,
+    1.0,
+    1.2
+  ],
+  "classification": {
+    "accuracy": 0.495835994092136,
+    "balanced_accuracy": 0.45557770697811745,
+    "macro_f1": 0.4522655317718596,
+    "per_class": {
+      "TRUE_POSITIVE": {
+        "precision": 0.5528221962564209,
+        "recall": 0.611821227812699,
+        "f1": 0.5808273122669397,
+        "support": 722260
+      },
+      "BENIGN_POSITIVE": {
+        "precision": 0.5106063476467384,
+        "recall": 0.542381225243416,
+        "f1": 0.5260143682295743,
+        "support": 879564
+      },
+      "FALSE_POSITIVE": {
+        "precision": 0.3033759967313373,
+        "recall": 0.21253066787823716,
+        "f1": 0.2499549148190648,
+        "support": 440200
+      }
+    },
+    "confusion_matrix": [
+      [
+        441894,
+        192974,
+        87392
+      ],
+      [
+        275070,
+        477059,
+        127435
+      ],
+      [
+        82378,
+        264266,
+        93556
+      ]
+    ]
+  },
+  "native_probability_metrics": {
+    "log_loss": 0.9608633518218994,
+    "multiclass_brier": 0.5823690459106218
+  },
+  "routing": {
+    "tp_auto_threshold": 0.5,
+    "tp_auto_escalated_rows": 264886,
+    "tp_auto_escalation_precision": 0.8327355919150125,
+    "tp_auto_escalation_coverage": 0.1297173784441319,
+    "route_counts": {
+      "PRIORITY_ESCALATION": 264886,
+      "NEEDS_REVIEW": 534456,
+      "BENIGN_REVIEW_QUEUE": 934299,
+      "FALSE_POSITIVE_REVIEW_QUEUE": 308383
+    },
+    "bp_auto_close": false,
+    "fp_auto_close": false,
+    "fp_auto_suppress": false
+  },
+  "script_sha256": "19d4e6db49526ce9cbbcc95dbb6e6beb3a0310b8b3c38f3f3faf5606eca65b66",
+  "production_lock_sha256": "8fc0294a137bab11927d959a1b680cc8d7e64937dd755fc0c059f69280909827",
+  "generalization_delta_vs_validation": {
+    "accuracy": -0.11124110196550091,
+    "balanced_accuracy": -0.10356289969099602,
+    "macro_f1": -0.11315890283395269,
+    "tp_f1": -0.12845204513059538,
+    "bp_f1": -0.1360938096157417,
+    "fp_f1": -0.07493085375552105
+  },
+  "post_frozen_rule": "RESULT IS FINAL. No model, feature, target encoding, multiplier, threshold, calibration, or routing tuning is permitted."
+}

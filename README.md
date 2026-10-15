@@ -552,3 +552,28 @@ The current release represents a validated **pre-ML autonomous threat hunting pi
 - candidate finding validation
 
 The next major stage is supervised finding-level ML triage using trustworthy labels and leakage-resistant dataset construction.
+
+## Integrated Platform — Release Branch
+
+The repository combines reproducible autonomous threat-hunting research with a FastAPI backend and React frontend.
+
+### Platform components
+
+- ATT&CK-grounded hypothesis generation and detection planning
+- Sigma rule generation, validation and Splunk query compilation
+- Telemetry-aware threat hunting and analyst-facing findings
+- Optional Qwen3-8B detection-generation provider
+- Frozen XGBoost model for analyst-assisted triage
+- Research artifacts, evaluation evidence and reproducibility documentation
+
+### Documentation
+
+- [Architecture](docs/PLATFORM_ARCHITECTURE.md)
+- [Developer Setup](docs/DEVELOPER_SETUP.md)
+- [Model Distribution](docs/MODEL_DISTRIBUTION.md)
+- [Validation and Limitations](docs/VALIDATION_AND_LIMITATIONS.md)
+- [Security and Privacy](docs/SECURITY_AND_PRIVACY.md)
+
+### Release status
+
+This branch contains the integrated application source and research evidence. The frozen XGBoost model is distributed separately and is not included in a standard Git clone. The LLM provider requires independent configuration. Production deployment requires additional validation and security hardening.

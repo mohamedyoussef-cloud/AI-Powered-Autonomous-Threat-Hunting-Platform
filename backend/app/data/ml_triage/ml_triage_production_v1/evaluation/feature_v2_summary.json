@@ -1,0 +1,176 @@
+{
+  "version": "feature_engineering_v2",
+  "rows": {
+    "train": 9529441,
+    "validation": 2042024
+  },
+  "class_counts": {
+    "train": {
+      "BenignPositive": 4104629,
+      "TruePositive": 3370547,
+      "FalsePositive": 2054265
+    },
+    "validation": {
+      "BenignPositive": 879564,
+      "TruePositive": 722260,
+      "FalsePositive": 440200
+    }
+  },
+  "features": {
+    "version": "guide_features_v2",
+    "categorical": [
+      "AlertTitle",
+      "Category",
+      "MitreTechniques",
+      "EntityType",
+      "EvidenceRole",
+      "ApplicationName",
+      "ThreatFamily",
+      "ResourceType",
+      "Roles",
+      "OSFamily",
+      "OSVersion",
+      "AntispamDirection",
+      "CountryCode",
+      "State",
+      "City",
+      "DetectorId",
+      "Category__EntityType",
+      "Category__EvidenceRole",
+      "AlertTitle__Category",
+      "ThreatFamily__Category",
+      "OSFamily__Category",
+      "ResourceType__EntityType",
+      "CountryCode__Category",
+      "DetectorId__Category"
+    ],
+    "presence": [
+      "has_ip_address",
+      "has_url",
+      "has_sha256",
+      "has_device",
+      "has_account_sid",
+      "has_account_upn",
+      "has_account_object_id",
+      "has_network_message",
+      "has_email_cluster",
+      "has_registry_key",
+      "has_file_name",
+      "has_folder_path"
+    ],
+    "numeric": [
+      "evidence_presence_count",
+      "identity_evidence_count",
+      "network_evidence_count",
+      "file_evidence_count",
+      "registry_evidence_count",
+      "mitre_technique_count",
+      "roles_count",
+      "alert_title_length",
+      "hour_sin",
+      "hour_cos",
+      "dow_sin",
+      "dow_cos",
+      "month_sin",
+      "month_cos",
+      "dom_sin",
+      "dom_cos",
+      "is_weekend",
+      "is_business_hours",
+      "is_night",
+      "timestamp_missing",
+      "AlertTitle__train_logfreq",
+      "AlertTitle__seen_in_train",
+      "AlertTitle__rare_in_train",
+      "DetectorId__train_logfreq",
+      "DetectorId__seen_in_train",
+      "DetectorId__rare_in_train",
+      "DeviceId__train_logfreq",
+      "DeviceId__seen_in_train",
+      "DeviceId__rare_in_train",
+      "ApplicationName__train_logfreq",
+      "ApplicationName__seen_in_train",
+      "ApplicationName__rare_in_train",
+      "ThreatFamily__train_logfreq",
+      "ThreatFamily__seen_in_train",
+      "ThreatFamily__rare_in_train",
+      "Category__train_logfreq",
+      "Category__seen_in_train",
+      "Category__rare_in_train",
+      "EntityType__train_logfreq",
+      "EntityType__seen_in_train",
+      "EntityType__rare_in_train",
+      "ResourceType__train_logfreq",
+      "ResourceType__seen_in_train",
+      "ResourceType__rare_in_train",
+      "OSFamily__train_logfreq",
+      "OSFamily__seen_in_train",
+      "OSFamily__rare_in_train",
+      "CountryCode__train_logfreq",
+      "CountryCode__seen_in_train",
+      "CountryCode__rare_in_train"
+    ],
+    "label_mapping": {
+      "TruePositive": 0,
+      "BenignPositive": 1,
+      "FalsePositive": 2
+    },
+    "frequency_maps_fit_on": "train_only",
+    "raw_detector_id_used": "categorical_pre_investigation",
+    "raw_entity_identifiers_used": false,
+    "hard_excluded": [
+      "Id",
+      "OrgId",
+      "IncidentId",
+      "AlertId",
+      "IncidentGrade",
+      "LastVerdict",
+      "Usage"
+    ],
+    "quarantined_fields_used": false,
+    "frozen_test_materialized": false
+  },
+  "frequency_summary": {
+    "AlertTitle": {
+      "unique_train_values": 70229,
+      "max_count": 1529378
+    },
+    "DetectorId": {
+      "unique_train_values": 6337,
+      "max_count": 1529378
+    },
+    "DeviceId": {
+      "unique_train_values": 53570,
+      "max_count": 9170388
+    },
+    "ApplicationName": {
+      "unique_train_values": 2083,
+      "max_count": 9355115
+    },
+    "ThreatFamily": {
+      "unique_train_values": 1673,
+      "max_count": 9445630
+    },
+    "Category": {
+      "unique_train_values": 20,
+      "max_count": 4484893
+    },
+    "EntityType": {
+      "unique_train_values": 30,
+      "max_count": 2504441
+    },
+    "ResourceType": {
+      "unique_train_values": 25,
+      "max_count": 9522477
+    },
+    "OSFamily": {
+      "unique_train_values": 6,
+      "max_count": 9346498
+    },
+    "CountryCode": {
+      "unique_train_values": 223,
+      "max_count": 8700658
+    }
+  },
+  "frozen_test_used": false
+}

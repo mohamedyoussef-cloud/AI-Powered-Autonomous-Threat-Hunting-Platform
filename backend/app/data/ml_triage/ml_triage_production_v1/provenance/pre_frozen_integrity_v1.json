@@ -1,0 +1,33 @@
+{
+  "version": "pre_frozen_integrity_v1",
+  "production_candidate": "production_candidate_v1",
+  "locked_artifacts_verified": true,
+  "original_locked_sha256": {
+    "models/xgboost_te_v3_1/xgboost_te_v3_1.json": "d6efb2e0d6b5ccd1a3b18efb60e6e14ed31d5a7b10adb7ace5e573038862ade7",
+    "models/xgboost_te_v3_1/categorical_levels_v3_1.joblib": "5ae39c95c70a306bf780088d95b8faee30fccba015a5920a5aff14706cd17bcf",
+    "models/xgboost_te_v3_1/model_contract_v3_1.json": "c84799bd1ec3e9b2bf7af32405c9ce14a5b022005cd5c664e4d8994a862cbb60",
+    "config/feature_contract_v2.json": "c482005533b50e5658079487bf2c37782313ed9ce98546502eae7df771b2248b",
+    "models/target_encoding_v3_1/target_encoding_contract_v3_1.json": "0962632a1a7efef376fb02588b4b79a2d06d46c8d2acea78fd6352e431545f2c",
+    "splits/org_split_map_v2.csv": "f782a1691b0be67769cc8bdd26b3d5e71a5236c1d874be0f0bfff764863190ef",
+    "config/split_contract_v2.json": "f12162329083860f8abdd65b6eed8ee6865d720922ef3dd1be51cdc6fd445365",
+    "models/target_encoding_v3_1/AlertTitle_mapping.parquet": "5626a3284885e8364526a4de25e7205f6a527e7afcbe2956e768f02dfe5b14bd",
+    "models/target_encoding_v3_1/ApplicationName_mapping.parquet": "048572354a4579502f8625113df7ae5c6dfc65630fd80ee5b4764dd3678f1140",
+    "models/target_encoding_v3_1/Category_mapping.parquet": "54076ac133dadc701082d36e38af943104b798500bbfec32a4ed9a6fd42812ba",
+    "models/target_encoding_v3_1/CountryCode_mapping.parquet": "70896aa83f069dc19508ddf98372f9d90c7eeff6d3898e5561d1c8bcb22aa3fd",
+    "models/target_encoding_v3_1/DetectorId_mapping.parquet": "5830c493298424d5acd227761b364c9478a9583e802f8ca2eb18ebd439ed744d",
+    "models/target_encoding_v3_1/EntityType_mapping.parquet": "df0d6e93c4d32379e8ed980a29aae95a635e59b747ed59b26fc4824e5f459b1a",
+    "models/target_encoding_v3_1/ResourceType_mapping.parquet": "9f9fdbe29860c46bc56dd5891a7510c6f777c55aa94d367e4ab744dee40bf3c7",
+    "models/target_encoding_v3_1/ThreatFamily_mapping.parquet": "6c9863bc3ab3444492790c95468b84cedf96578d92c6e882a6f9c810635ea554"
+  },
+  "supplemental_preprocessing_sha256": {
+    "models/feature_transform_v2/train_frequency_maps_v2.joblib": "066dbbb4405a87f6dc4dca3d4ff9592a218dd959241978bf4818cd8aa62d55bf",
+    "reports/feature_engineering_v2/feature_v2_summary.json": "25013f1640d7dae03afebad7ced549f5cf3efa5f4968b2b823708341874f84c8",
+    "src/build_features_v2.py": "5698b197e72f659f4d05d97aada2a1631e0877e030f72884c2642b7a6151924d",
+    "src/build_target_encoding_v3_1.py": "1175efa49f4969170cac81ab61735283e55cda8fa9c6a8b8ade31913ff451d29",
+    "src/train_xgboost_te_v3_1.py": "71208a03c5ff050aaea3ea175818ac7f0c356f0a1bd87ba0bb15f8fb283c4443",
+    "src/finalize_product_lock_v1.py": "7342ceea009bd37c1e6a9c897715ade50c5b5c9b0591c248457543c687cbb37c"
+  },
+  "model_or_policy_changed": false,
+  "frozen_test_opened": false,
+  "note": "Integrity/provenance supplement created before first Frozen Test access. No model, preprocessing logic, policy, threshold, or routing behavior was changed."
+}
