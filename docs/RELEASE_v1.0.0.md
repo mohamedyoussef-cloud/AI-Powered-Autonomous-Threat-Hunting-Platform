@@ -1,52 +1,36 @@
-# v1.0.0 — Research prototype release
+# AI-Powered Autonomous Threat Hunting Platform — v1.0.0
 
-**Scope:** FastAPI + React threat-hunting research platform, evidence-gated Sigma/SPL
-generation and execution, plus optional Qwen provider and analyst-assisted XGBoost triage.
-Not a production-certified autonomous SOC system.
+**Release status:** Integrated platform release · Core implementation complete · Local and CI validation passed · **Live-stream telemetry validation pending**
 
-## Validated at release preparation
+This release delivers the integrated FastAPI and React threat-hunting platform, bringing together ATT&CK-grounded hypothesis generation, detection eligibility and planning, Sigma rule generation and validation, Splunk SPL compilation, hunt execution, evidence-aware findings, and an analyst-facing interface. It supports an optional Qwen3-8B detection-generation provider and analyst-assisted XGBoost triage.
 
-- GitHub Basic CI and Frontend Build: 2/2 successful on the prior integration commit;
-  verify both again on the *release* commit before tagging.
-- Local backend test suite: 24 passed, 3 skipped.
-- Frozen-model tests: 8 passed using a complete local ML runtime bundle.
-- FastAPI + React assets + real XGBoost API integration smoke: passed; 16 runtime
-  asset hashes and 103 model features verified; verdict leakage gate passed.
-- Analyst-assisted only. Never auto-close or suppress incidents based on ML scores.
-- Research evidence includes 540 pySigma-validated rules and 404 executed hunts;
-  no validated true-positive operational findings are claimed.
+The platform is **ready for controlled deployment and live-telemetry acceptance testing**. The implemented and tested workflows are available now; the remaining operational validation is to exercise them against authorized, continuously arriving SIEM telemetry. This release does not present untested live-stream detection accuracy or operational readiness as established results.
 
-## Model and artifact distribution
+## Verification completed
 
-The model is NOT tracked in Git and is NOT included in a standard clone.
-Verified private candidate: `ml_triage_runtime_candidate_v1.zip` (59.04 MiB).
-SHA-256: `ebb00bf6d2a708fa80a3bf3d3125050b8355ee61f588fe546ed7ed2135b3df80`.
-The frozen model was not retrained or modified. The runtime ZIP contains 16 original
-assets and a separately generated deployment manifest. Original 32-file research
-provenance and results remain intact in the private handoff.
+- **GitHub Actions:** Basic CI and Frontend Build both succeeded (**2/2**) for commit `0a802d1`, the commit tagged `v1.0.0`.
+- **Backend:** 24 tests passed; 3 were skipped and are not counted as validated.
+- **XGBoost:** 8 tests passed with the unchanged frozen model and full local runtime dependencies.
+- **End-to-end integration smoke:** FastAPI health, compiled React page and JavaScript assets, frozen-model loading, live API inference, and the analyst-verdict leakage gate all passed. The 16 packaged runtime assets passed SHA-256 verification; the model uses 103 features.
+- **Research execution evidence:** 540 Sigma rules generated with validation and compilation artifacts, and 404 recorded hunt executions. These counts measure engineering and execution stages—not 540 confirmed detections or 404 proven incidents. No independently validated operational true-positive findings are claimed.
+- **Analyst safety:** XGBoost scores support analyst triage only. Insufficient GUIDE-compatible fields must yield an explicitly identified heuristic fallback rather than an asserted model prediction. No automatic incident closure or suppression is claimed.
 
-Microsoft describes GUIDE as licensed under CDLA-Permissive-2.0 in its research paper:
-https://arxiv.org/html/2407.09017
-License details: https://cdla.dev/permissive-2-0/
-Before public upload of the model archive, finish a **human review of the two Joblib
-files and training-derived mapping keys** and include any applicable license notice.
-Do not upload source_reference, organization split maps, internal path manifests, or
-the original unrestricted research handoff. This Release may initially ship
-source code without a public model binary.
+## Model availability and reproducibility
 
-## Deployment boundary
+The source repository does not include the frozen model weights or complete runtime package. A locally verified runtime package is prepared but has not yet been attached publicly:
 
-Production mode fails closed without strong auth configuration. Development mode
-contains known demo accounts and must be bound only to a trusted loopback address.
-See `docs/SECURITY_AND_PRIVACY.md` and `docs/DEVELOPER_SETUP.md`. Validate real SIEM
-permissions and telemetry availability independently. The React build artifact is
-published by GitHub Actions, not committed under `backend/static`.
+- `ml_triage_runtime_candidate_v1.zip` — **59.04 MiB**
+- SHA-256: `ebb00bf6d2a708fa80a3bf3d3125050b8355ee61f588fe546ed7ed2135b3df80`
+- Contents: 16 original, integrity-checked runtime assets and a separate deployment manifest.
 
-## Remaining limitations
+The model was **not retrained or modified**. Public attachment remains subject to final content review of serialized Joblib assets, training-derived mapping keys, and appropriate attribution. The original source-reference files, organization split maps, internal-path manifests, and unrestricted research handoff are not public release assets. The [Microsoft GUIDE paper](https://arxiv.org/html/2407.09017) describes the dataset as CDLA-Permissive-2.0; see the [license text](https://cdla.dev/permissive-2-0/).
 
-- 3 backend tests intentionally skipped; their functionality is not established by
-  those test results.
-- CI validates import/build, not full SIEM integration.
-- XGBoost GUIDE-trained features may be absent in Sigma/EVTX findings; in that case
-  the system must report heuristic triage rather than a model inference.
-- Public historic Git commits still contain previously tracked GUIDE-derived metadata.
+## Deployment and next validation stage
+
+Authentication requires explicit secure production configuration; local development accounts are not intended for public exposure. The React distribution is produced through GitHub Actions, while SIEM connectors and optional Qwen inference require environment-specific configuration.
+
+**Pending live-stream acceptance:** Connect to an authorized SIEM with continuous telemetry, check field coverage and detection routing, validate end-to-end event-to-finding behavior, measure false positives and processing latency, and review permissions and operational monitoring. These are acceptance activities, not missing core implementation claims.
+
+Historical Git commits may still contain GUIDE-derived metadata removed from the current branch; publication-history remediation, if required, is separate from this release.
+
+**Documentation:** [Architecture](https://github.com/mohamedyoussef-cloud/AI-Powered-Autonomous-Threat-Hunting-Platform/blob/main/docs/PLATFORM_ARCHITECTURE.md) · [Developer setup](https://github.com/mohamedyoussef-cloud/AI-Powered-Autonomous-Threat-Hunting-Platform/blob/main/docs/DEVELOPER_SETUP.md) · [Security and privacy](https://github.com/mohamedyoussef-cloud/AI-Powered-Autonomous-Threat-Hunting-Platform/blob/main/docs/SECURITY_AND_PRIVACY.md) · [Validation scope](https://github.com/mohamedyoussef-cloud/AI-Powered-Autonomous-Threat-Hunting-Platform/blob/main/docs/VALIDATION_AND_LIMITATIONS.md)

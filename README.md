@@ -4,7 +4,7 @@
 
 An evidence-driven research and software platform for converting MITRE ATT&CK-grounded hunting hypotheses into validated Sigma detections, executable SIEM searches, and analyst-reviewable findings. It brings together a reproducible research pipeline with a FastAPI backend and React dashboard.
 
-> **Project status:** Research prototype with an integrated application. This repository is **not** a fully autonomous SOC decision system or a production-certified security control. External data sources, SIEM access and optional inference providers require configuration.
+> **Project status:** Integrated platform v1.0.0 — core implementation complete and validated through CI, local tests, and API/UI/ML integration. **Ready for controlled deployment and live-stream telemetry acceptance testing.** Operational detection effectiveness on continuously arriving SIEM data remains to be verified.
 
 [Architecture](docs/PLATFORM_ARCHITECTURE.md) · [Developer setup](docs/DEVELOPER_SETUP.md) · [Evaluation & limitations](docs/VALIDATION_AND_LIMITATIONS.md) · [Security](docs/SECURITY_AND_PRIVACY.md) · [Model distribution](docs/MODEL_DISTRIBUTION.md)
 
@@ -102,4 +102,4 @@ MSc cybersecurity research, 2025–2026.
 
 **Project team:** Mohamed Youssef · Mohanad Ghoraba · Maryam Abdalbary · Sohila Mahmoud.
 
-This project combines a research contribution (grounded detection generation, validity gates and honest held-out evaluation) with a software prototype. Findings and system limitations are documented to support technical review and academic reproducibility.
+This project combines an implemented threat-hunting platform with a research contribution in grounded detection generation, validation gates, and held-out evaluation. Its software workflows have passed local and CI integration checks; live-stream SIEM acceptance and operational performance evaluation remain the next validation stage.
