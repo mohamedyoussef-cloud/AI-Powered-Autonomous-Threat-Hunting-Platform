@@ -77,6 +77,9 @@ def _warm_ml_triage():
     """Load the frozen ML bundle in the background so the first finding is not delayed."""
     import threading
     from app.services.ml_triage import get_engine
+    import os
+    if os.environ.get("ML_TRIAGE_MODE", "auto").strip().lower() == "off":
+        return
     threading.Thread(target=get_engine().ensure_loaded, daemon=True, name="ml-triage-warmup").start()
 
 
