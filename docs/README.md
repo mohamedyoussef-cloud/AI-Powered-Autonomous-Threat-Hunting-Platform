@@ -12,8 +12,7 @@ This index separates current platform integration guidance from earlier research
 
 ## Requirements and research design
 
-- [Software requirements specification](SRS.md), [business requirements](BRD.md) and [system design](system-design.md).
-- [Initial architecture](architecture.md) — historical design view; prefer the platform architecture for the integrated codebase.
+- [Software requirements specification](SRS.md) and [business requirements](BRD.md).
 - [Project roadmap](PROJECT_ROADMAP.md) and [implementation roadmap](IMPLEMENTATION_ROADMAP.md) — historical planning records rather than real-time completion status.
 - [Decision log](DECISION_LOG.md) — design provenance and tradeoffs.
 
@@ -22,9 +21,5 @@ This index separates current platform integration guidance from earlier research
 - [Data preparation specification](DATA_PREPARATION_SPEC.md) and [data dictionary](DATA_DICTIONARY.md).
 - [BOTS v3 Splunk prerequisites](BOTSV3_SPLUNK_REQUIREMENTS.md).
 - [Validation snapshot](VALIDATION_SNAPSHOT.md) — stage-specific snapshot; compare with recorded artifacts before citing numbers.
-
-## Earlier coordination documents
-
-[User input checklist](USER_INPUT_CHECKLIST.md) and [next required inputs](NEXT_REQUIRED_INPUTS.md) are retained as historical coordination records, **not** a live release checklist.
 
 Research-grade conclusions belong to the versioned artifacts and frozen evaluation files, not to a UI status badge or a historical TODO list. See the [repository overview](../README.md).
