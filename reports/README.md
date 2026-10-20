@@ -1,10 +1,10 @@
 # Reports and reporting placeholders
 
-Entry points for forthcoming MSc report text and illustrative hunt report examples.
+This directory documents how academic and analyst-facing reports are handled. The final MSc report is kept separate from the public source repository.
 
 ## Contents
-- [`final_project_report/`](final_project_report/) — reserved directory for the academic report and related citations, figures and final deliverables.
-- [`sample_hunt_reports/`](sample_hunt_reports/) — reserved folder for example report exports from the analyst-facing application.
+
+Final project report - submitted separately through the university's designated submission platform. The full PDF is not published here to protect personal information and respect academic submission requirements.
 
 ## Interpretation and usage
 
