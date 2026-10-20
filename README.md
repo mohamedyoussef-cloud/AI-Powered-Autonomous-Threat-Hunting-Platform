@@ -73,7 +73,7 @@ Supporting evidence: [Sigma rules and validation](artifacts/sigma/README.md), [S
 | [`docs/`](docs/) | Architecture, setup, evaluation boundaries, privacy and model distribution |
 | [`.github/workflows/`](.github/workflows/) | CI workflows, including the frontend build check |
 
-Additional `scripts/`, `tests/`, `integrations/`, `schemas/` and `infra/` directories support the existing research and application workflows. The root README is an entry point, not a duplicate of their documentation.
+Additional `scripts/`, `tests/`, `integrations/` and `schemas/` directories support the existing research and application workflows. The root README is an entry point, not a duplicate of their documentation.
 
 ## Getting started
 
@@ -98,7 +98,7 @@ The repository excludes private infrastructure details, credentials, bulky raw d
 
 ## Academic project
 
-MSc cybersecurity research, 2025–2026.
+MSc cybersecurity research, 2025-2026.
 
 **Project team:** Mohamed Youssef · Mohanad Ghoraba · Maryam Abdalbary · Sohila Mahmoud.
 
